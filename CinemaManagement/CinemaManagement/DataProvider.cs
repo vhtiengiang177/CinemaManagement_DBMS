@@ -20,7 +20,7 @@ namespace CinemaManagement
 
         private DataProvider()
         {
-
+ 
         }
 
         private string connectionString = @"Data Source=DESKTOP-A4OR5I7;Initial Catalog=viduDB;Integrated Security=True";

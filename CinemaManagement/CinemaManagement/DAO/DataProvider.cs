@@ -23,7 +23,7 @@ namespace CinemaManagement.DAO
  
         }
 
-        private string connectionString = @"Data Source=DESKTOP-A4OR5I7;Initial Catalog=viduDB;Integrated Security=True";
+        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

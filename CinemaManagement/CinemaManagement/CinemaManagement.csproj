@@ -88,6 +88,13 @@
   <ItemGroup>
     <Compile Include="BLL\CreateQRCode.cs" />
     <Compile Include="BLL\Employee_BL.cs" />
+    <Compile Include="Customer\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DTO\Employee.cs" />
     <Compile Include="fAddEmployee.cs">
@@ -116,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Customer\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAddEmployee.resx">
       <DependentUpon>fAddEmployee.cs</DependentUpon>
     </EmbeddedResource>

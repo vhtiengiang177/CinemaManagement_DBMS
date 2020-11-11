@@ -40,7 +40,7 @@ namespace CinemaManagement.DAO
 
         public bool DeletePromotion(string id)
         {
-            string query = "exec sp_DeleteCustomer @id_promotion ";
+            string query = "exec sp_DeletePromotion @id_promotion ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id }) > 0;
         }
     }

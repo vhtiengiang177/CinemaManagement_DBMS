@@ -31,8 +31,13 @@
             this.plMain = new System.Windows.Forms.Panel();
             this.plListMain = new System.Windows.Forms.Panel();
             this.plControl = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnLoadListEmployee = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSortTypeEmployee = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbSortTypeEmployee = new System.Windows.Forms.ComboBox();
             this.plList = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.plSearch = new System.Windows.Forms.Panel();
@@ -40,7 +45,13 @@
             this.txtSearchEmployee = new System.Windows.Forms.TextBox();
             this.cbmTypeSearchEmployee = new System.Windows.Forms.ComboBox();
             this.plInforMain = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEditEmployee = new System.Windows.Forms.Button();
             this.plInforContact = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbCinema = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.plAddress = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,6 +64,11 @@
             this.txtPhoneEmployee = new System.Windows.Forms.TextBox();
             this.btnAddNewEmployee = new System.Windows.Forms.Button();
             this.plInfor = new System.Windows.Forms.Panel();
+            this.btnAddImg = new System.Windows.Forms.Button();
+            this.txtStateEmployee = new System.Windows.Forms.TextBox();
+            this.plGender = new System.Windows.Forms.Panel();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.plID = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pl = new System.Windows.Forms.Panel();
@@ -65,34 +81,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
+            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.plGender = new System.Windows.Forms.Panel();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
-            this.txtStateEmployee = new System.Windows.Forms.TextBox();
-            this.btnEditEmployee = new System.Windows.Forms.Button();
-            this.btnAddImg = new System.Windows.Forms.Button();
-            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
-            this.cmbCinema = new System.Windows.Forms.ComboBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.plMain.SuspendLayout();
             this.plListMain.SuspendLayout();
             this.plControl.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.plList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             this.plSearch.SuspendLayout();
             this.plInforMain.SuspendLayout();
             this.plInforContact.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.plAddress.SuspendLayout();
             this.plEmail.SuspendLayout();
             this.plPhone.SuspendLayout();
             this.plInfor.SuspendLayout();
+            this.plGender.SuspendLayout();
             this.plID.SuspendLayout();
             this.pl.SuspendLayout();
             this.plIdentify.SuspendLayout();
@@ -100,8 +109,6 @@
             this.plType.SuspendLayout();
             this.plName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.plGender.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMain
@@ -125,31 +132,79 @@
             // 
             // plControl
             // 
-            this.plControl.Controls.Add(this.btnDeleteEmployee);
-            this.plControl.Controls.Add(this.btnLoadListEmployee);
+            this.plControl.Controls.Add(this.flowLayoutPanel1);
+            this.plControl.Controls.Add(this.panel2);
             this.plControl.Location = new System.Drawing.Point(4, 520);
             this.plControl.Name = "plControl";
             this.plControl.Size = new System.Drawing.Size(495, 64);
             this.plControl.TabIndex = 2;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnDeleteEmployee);
+            this.flowLayoutPanel1.Controls.Add(this.btnLoadListEmployee);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(298, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 62);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // btnDeleteEmployee
             // 
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(297, 3);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(3, 3);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
             this.btnDeleteEmployee.Size = new System.Drawing.Size(90, 58);
             this.btnDeleteEmployee.TabIndex = 2;
             this.btnDeleteEmployee.Text = "Xóa";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnLoadListEmployee
             // 
-            this.btnLoadListEmployee.Location = new System.Drawing.Point(393, 3);
+            this.btnLoadListEmployee.Location = new System.Drawing.Point(99, 3);
             this.btnLoadListEmployee.Name = "btnLoadListEmployee";
             this.btnLoadListEmployee.Size = new System.Drawing.Size(90, 58);
             this.btnLoadListEmployee.TabIndex = 1;
             this.btnLoadListEmployee.Text = "Load Data";
             this.btnLoadListEmployee.UseVisualStyleBackColor = true;
             this.btnLoadListEmployee.Click += new System.EventHandler(this.btnLoadListEmployee_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSortTypeEmployee);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.cmbSortTypeEmployee);
+            this.panel2.Location = new System.Drawing.Point(1, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(290, 58);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnSortTypeEmployee
+            // 
+            this.btnSortTypeEmployee.Location = new System.Drawing.Point(198, 1);
+            this.btnSortTypeEmployee.Name = "btnSortTypeEmployee";
+            this.btnSortTypeEmployee.Size = new System.Drawing.Size(90, 58);
+            this.btnSortTypeEmployee.TabIndex = 5;
+            this.btnSortTypeEmployee.Text = "Thống kê";
+            this.btnSortTypeEmployee.UseVisualStyleBackColor = true;
+            this.btnSortTypeEmployee.Click += new System.EventHandler(this.btnSortTypeEmployee_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(0, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(172, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Thống kê theo chức vụ nhân viên:";
+            // 
+            // cmbSortTypeEmployee
+            // 
+            this.cmbSortTypeEmployee.FormattingEnabled = true;
+            this.cmbSortTypeEmployee.Location = new System.Drawing.Point(3, 21);
+            this.cmbSortTypeEmployee.Name = "cmbSortTypeEmployee";
+            this.cmbSortTypeEmployee.Size = new System.Drawing.Size(169, 21);
+            this.cmbSortTypeEmployee.TabIndex = 4;
+            this.cmbSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cmbSortTypeEmployee_SelectedValueChanged);
             // 
             // plList
             // 
@@ -201,8 +256,7 @@
             "Mã nhân viên",
             "Số điện thoại",
             "Tên nhân viên",
-            "CMND",
-            "Chức vụ"});
+            "CMND"});
             this.cbmTypeSearchEmployee.Location = new System.Drawing.Point(5, 26);
             this.cbmTypeSearchEmployee.Name = "cbmTypeSearchEmployee";
             this.cbmTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
@@ -221,6 +275,36 @@
             this.plInforMain.Size = new System.Drawing.Size(408, 588);
             this.plInforMain.TabIndex = 1;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(141, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(80, 37);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(55, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 37);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnEditEmployee
+            // 
+            this.btnEditEmployee.Location = new System.Drawing.Point(235, 7);
+            this.btnEditEmployee.Name = "btnEditEmployee";
+            this.btnEditEmployee.Size = new System.Drawing.Size(80, 37);
+            this.btnEditEmployee.TabIndex = 5;
+            this.btnEditEmployee.Text = "Edit";
+            this.btnEditEmployee.UseVisualStyleBackColor = true;
+            this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
+            // 
             // plInforContact
             // 
             this.plInforContact.Controls.Add(this.panel1);
@@ -232,6 +316,32 @@
             this.plInforContact.Name = "plInforContact";
             this.plInforContact.Size = new System.Drawing.Size(401, 210);
             this.plInforContact.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cmbCinema);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(4, 171);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(391, 36);
+            this.panel1.TabIndex = 3;
+            // 
+            // cmbCinema
+            // 
+            this.cmbCinema.FormattingEnabled = true;
+            this.cmbCinema.Location = new System.Drawing.Point(137, 7);
+            this.cmbCinema.Name = "cmbCinema";
+            this.cmbCinema.Size = new System.Drawing.Size(233, 21);
+            this.cmbCinema.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Rạp:";
             // 
             // label8
             // 
@@ -325,6 +435,7 @@
             this.btnAddNewEmployee.TabIndex = 3;
             this.btnAddNewEmployee.Text = "Add new employee";
             this.btnAddNewEmployee.UseVisualStyleBackColor = true;
+            this.btnAddNewEmployee.Click += new System.EventHandler(this.btnAddNewEmployee_Click);
             // 
             // plInfor
             // 
@@ -342,6 +453,54 @@
             this.plInfor.Name = "plInfor";
             this.plInfor.Size = new System.Drawing.Size(403, 308);
             this.plInfor.TabIndex = 0;
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Location = new System.Drawing.Point(41, 259);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(80, 37);
+            this.btnAddImg.TabIndex = 10;
+            this.btnAddImg.Text = "Thêm ảnh";
+            this.btnAddImg.UseVisualStyleBackColor = true;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
+            // 
+            // txtStateEmployee
+            // 
+            this.txtStateEmployee.Location = new System.Drawing.Point(285, 272);
+            this.txtStateEmployee.Name = "txtStateEmployee";
+            this.txtStateEmployee.Size = new System.Drawing.Size(100, 20);
+            this.txtStateEmployee.TabIndex = 9;
+            // 
+            // plGender
+            // 
+            this.plGender.Controls.Add(this.rdbMale);
+            this.plGender.Controls.Add(this.rdbFemale);
+            this.plGender.Location = new System.Drawing.Point(165, 260);
+            this.plGender.Name = "plGender";
+            this.plGender.Size = new System.Drawing.Size(99, 36);
+            this.plGender.TabIndex = 8;
+            // 
+            // rdbMale
+            // 
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Location = new System.Drawing.Point(48, 15);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(47, 17);
+            this.rdbMale.TabIndex = 1;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Nam";
+            this.rdbMale.UseVisualStyleBackColor = true;
+            // 
+            // rdbFemale
+            // 
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(3, 15);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(39, 17);
+            this.rdbFemale.TabIndex = 0;
+            this.rdbFemale.TabStop = true;
+            this.rdbFemale.Text = "Nữ";
+            this.rdbFemale.UseVisualStyleBackColor = true;
             // 
             // plID
             // 
@@ -442,6 +601,14 @@
             this.plType.Size = new System.Drawing.Size(231, 44);
             this.plType.TabIndex = 2;
             // 
+            // cmbTypeEmployee
+            // 
+            this.cmbTypeEmployee.FormattingEnabled = true;
+            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 10);
+            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
+            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cmbTypeEmployee.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -468,128 +635,19 @@
             // 
             // picEmployee
             // 
+            this.picEmployee.Image = global::CinemaManagement.Properties.Resources.imgEmployee;
             this.picEmployee.Location = new System.Drawing.Point(16, 18);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(145, 164);
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.cmbCinema);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(4, 171);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 36);
-            this.panel1.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Rạp:";
-            // 
-            // plGender
-            // 
-            this.plGender.Controls.Add(this.rdbMale);
-            this.plGender.Controls.Add(this.rdbFemale);
-            this.plGender.Location = new System.Drawing.Point(165, 260);
-            this.plGender.Name = "plGender";
-            this.plGender.Size = new System.Drawing.Size(99, 36);
-            this.plGender.TabIndex = 8;
-            // 
-            // rdbMale
-            // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.Location = new System.Drawing.Point(48, 15);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(47, 17);
-            this.rdbMale.TabIndex = 1;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Nam";
-            this.rdbMale.UseVisualStyleBackColor = true;
-            // 
-            // rdbFemale
-            // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(3, 15);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(39, 17);
-            this.rdbFemale.TabIndex = 0;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Nữ";
-            this.rdbFemale.UseVisualStyleBackColor = true;
-            // 
-            // txtStateEmployee
-            // 
-            this.txtStateEmployee.Location = new System.Drawing.Point(285, 272);
-            this.txtStateEmployee.Name = "txtStateEmployee";
-            this.txtStateEmployee.Size = new System.Drawing.Size(100, 20);
-            this.txtStateEmployee.TabIndex = 9;
-            // 
-            // btnEditEmployee
-            // 
-            this.btnEditEmployee.Location = new System.Drawing.Point(235, 7);
-            this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(80, 37);
-            this.btnEditEmployee.TabIndex = 5;
-            this.btnEditEmployee.Text = "Edit";
-            this.btnEditEmployee.UseVisualStyleBackColor = true;
-            this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
-            // 
-            // btnAddImg
-            // 
-            this.btnAddImg.Location = new System.Drawing.Point(41, 259);
-            this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(80, 37);
-            this.btnAddImg.TabIndex = 10;
-            this.btnAddImg.Text = "Thêm ảnh";
-            this.btnAddImg.UseVisualStyleBackColor = true;
-            // 
-            // cmbTypeEmployee
-            // 
-            this.cmbTypeEmployee.FormattingEnabled = true;
-            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 10);
-            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
-            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
-            this.cmbTypeEmployee.TabIndex = 2;
-            // 
-            // cmbCinema
-            // 
-            this.cmbCinema.FormattingEnabled = true;
-            this.cmbCinema.Location = new System.Drawing.Point(137, 7);
-            this.cmbCinema.Name = "cmbCinema";
-            this.cmbCinema.Size = new System.Drawing.Size(233, 21);
-            this.cmbCinema.TabIndex = 2;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(55, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 37);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(141, 7);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 37);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 603);
+            this.ClientSize = new System.Drawing.Size(921, 664);
             this.Controls.Add(this.plMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "fEmployee";
@@ -597,6 +655,9 @@
             this.plMain.ResumeLayout(false);
             this.plListMain.ResumeLayout(false);
             this.plControl.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.plList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).EndInit();
             this.plSearch.ResumeLayout(false);
@@ -604,6 +665,8 @@
             this.plInforMain.ResumeLayout(false);
             this.plInforContact.ResumeLayout(false);
             this.plInforContact.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.plAddress.ResumeLayout(false);
             this.plAddress.PerformLayout();
             this.plEmail.ResumeLayout(false);
@@ -612,6 +675,8 @@
             this.plPhone.PerformLayout();
             this.plInfor.ResumeLayout(false);
             this.plInfor.PerformLayout();
+            this.plGender.ResumeLayout(false);
+            this.plGender.PerformLayout();
             this.plID.ResumeLayout(false);
             this.plID.PerformLayout();
             this.pl.ResumeLayout(false);
@@ -625,10 +690,6 @@
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.plGender.ResumeLayout(false);
-            this.plGender.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -688,5 +749,10 @@
         private System.Windows.Forms.ComboBox cmbCinema;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cmbSortTypeEmployee;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSortTypeEmployee;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

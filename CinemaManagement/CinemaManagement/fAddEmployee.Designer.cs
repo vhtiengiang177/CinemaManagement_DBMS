@@ -45,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPhoneEmployee = new System.Windows.Forms.TextBox();
             this.plInfor = new System.Windows.Forms.Panel();
+            this.btnAddImg = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.plGender = new System.Windows.Forms.Panel();
@@ -62,12 +63,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
+            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.btnAddImg = new System.Windows.Forms.Button();
-            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbCinema = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.plInforMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.plInforContact.SuspendLayout();
@@ -84,6 +87,7 @@
             this.plType.SuspendLayout();
             this.plName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // plInforMain
@@ -134,9 +138,11 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // plInforContact
             // 
+            this.plInforContact.Controls.Add(this.panel3);
             this.plInforContact.Controls.Add(this.label8);
             this.plInforContact.Controls.Add(this.plAddress);
             this.plInforContact.Controls.Add(this.plEmail);
@@ -149,7 +155,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 16);
+            this.label8.Location = new System.Drawing.Point(11, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 3;
@@ -159,15 +165,15 @@
             // 
             this.plAddress.Controls.Add(this.label7);
             this.plAddress.Controls.Add(this.txtAddressEmployee);
-            this.plAddress.Location = new System.Drawing.Point(3, 151);
+            this.plAddress.Location = new System.Drawing.Point(0, 104);
             this.plAddress.Name = "plAddress";
-            this.plAddress.Size = new System.Drawing.Size(391, 56);
+            this.plAddress.Size = new System.Drawing.Size(391, 37);
             this.plAddress.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 21);
+            this.label7.Location = new System.Drawing.Point(8, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 1;
@@ -175,7 +181,7 @@
             // 
             // txtAddressEmployee
             // 
-            this.txtAddressEmployee.Location = new System.Drawing.Point(138, 18);
+            this.txtAddressEmployee.Location = new System.Drawing.Point(138, 6);
             this.txtAddressEmployee.Name = "txtAddressEmployee";
             this.txtAddressEmployee.Size = new System.Drawing.Size(243, 20);
             this.txtAddressEmployee.TabIndex = 0;
@@ -184,15 +190,15 @@
             // 
             this.plEmail.Controls.Add(this.label6);
             this.plEmail.Controls.Add(this.txtEmailEmployee);
-            this.plEmail.Location = new System.Drawing.Point(3, 96);
+            this.plEmail.Location = new System.Drawing.Point(0, 67);
             this.plEmail.Name = "plEmail";
-            this.plEmail.Size = new System.Drawing.Size(391, 56);
+            this.plEmail.Size = new System.Drawing.Size(391, 34);
             this.plEmail.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 21);
+            this.label6.Location = new System.Drawing.Point(8, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 1;
@@ -200,7 +206,7 @@
             // 
             // txtEmailEmployee
             // 
-            this.txtEmailEmployee.Location = new System.Drawing.Point(138, 18);
+            this.txtEmailEmployee.Location = new System.Drawing.Point(138, 3);
             this.txtEmailEmployee.Name = "txtEmailEmployee";
             this.txtEmailEmployee.Size = new System.Drawing.Size(243, 20);
             this.txtEmailEmployee.TabIndex = 0;
@@ -209,9 +215,9 @@
             // 
             this.plPhone.Controls.Add(this.label5);
             this.plPhone.Controls.Add(this.txtPhoneEmployee);
-            this.plPhone.Location = new System.Drawing.Point(3, 37);
+            this.plPhone.Location = new System.Drawing.Point(0, 18);
             this.plPhone.Name = "plPhone";
-            this.plPhone.Size = new System.Drawing.Size(391, 56);
+            this.plPhone.Size = new System.Drawing.Size(391, 43);
             this.plPhone.TabIndex = 0;
             // 
             // label5
@@ -225,7 +231,7 @@
             // 
             // txtPhoneEmployee
             // 
-            this.txtPhoneEmployee.Location = new System.Drawing.Point(138, 18);
+            this.txtPhoneEmployee.Location = new System.Drawing.Point(138, 12);
             this.txtPhoneEmployee.Name = "txtPhoneEmployee";
             this.txtPhoneEmployee.Size = new System.Drawing.Size(243, 20);
             this.txtPhoneEmployee.TabIndex = 0;
@@ -246,6 +252,16 @@
             this.plInfor.Name = "plInfor";
             this.plInfor.Size = new System.Drawing.Size(403, 333);
             this.plInfor.TabIndex = 0;
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Location = new System.Drawing.Point(41, 275);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(80, 37);
+            this.btnAddImg.TabIndex = 11;
+            this.btnAddImg.Text = "Thêm ảnh";
+            this.btnAddImg.UseVisualStyleBackColor = true;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
             // 
             // panel1
             // 
@@ -394,6 +410,14 @@
             this.plType.Size = new System.Drawing.Size(231, 44);
             this.plType.TabIndex = 2;
             // 
+            // cmbTypeEmployee
+            // 
+            this.cmbTypeEmployee.FormattingEnabled = true;
+            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 11);
+            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
+            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cmbTypeEmployee.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -420,28 +444,39 @@
             // 
             // picEmployee
             // 
+            this.picEmployee.Image = global::CinemaManagement.Properties.Resources.imgEmployee;
             this.picEmployee.Location = new System.Drawing.Point(16, 45);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(145, 164);
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // btnAddImg
+            // panel3
             // 
-            this.btnAddImg.Location = new System.Drawing.Point(41, 275);
-            this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(80, 37);
-            this.btnAddImg.TabIndex = 11;
-            this.btnAddImg.Text = "Thêm ảnh";
-            this.btnAddImg.UseVisualStyleBackColor = true;
+            this.panel3.Controls.Add(this.cmbCinema);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(3, 144);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(391, 36);
+            this.panel3.TabIndex = 4;
             // 
-            // cmbTypeEmployee
+            // cmbCinema
             // 
-            this.cmbTypeEmployee.FormattingEnabled = true;
-            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 11);
-            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
-            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
-            this.cmbTypeEmployee.TabIndex = 3;
+            this.cmbCinema.FormattingEnabled = true;
+            this.cmbCinema.Location = new System.Drawing.Point(137, 7);
+            this.cmbCinema.Name = "cmbCinema";
+            this.cmbCinema.Size = new System.Drawing.Size(233, 21);
+            this.cmbCinema.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Rạp:";
             // 
             // fAddEmployee
             // 
@@ -479,6 +514,8 @@
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -525,5 +562,8 @@
         private System.Windows.Forms.PictureBox picEmployee;
         private System.Windows.Forms.Button btnAddImg;
         private System.Windows.Forms.ComboBox cmbTypeEmployee;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cmbCinema;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -105,6 +105,12 @@
     <Compile Include="fAddEmployee.Designer.cs">
       <DependentUpon>fAddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCategoryMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCategoryMovie.Designer.cs">
+      <DependentUpon>fCategoryMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAddEmployee.resx">
       <DependentUpon>fAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCategoryMovie.resx">
+      <DependentUpon>fCategoryMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fEmployee.resx">
       <DependentUpon>fEmployee.cs</DependentUpon>
@@ -174,7 +183,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\pexels-lydia-bond-1550618.jpg" />
+=======
+    <None Include="Resources\Nền.jpg" />
+>>>>>>> ad15129dc82e0782dbcc178b78e475c89f9362ce
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

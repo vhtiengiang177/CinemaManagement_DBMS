@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMovie));
-            this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnSearchMovie = new System.Windows.Forms.Button();
             this.txtSearchMovie = new System.Windows.Forms.TextBox();
             this.picPosterMovie = new System.Windows.Forms.PictureBox();
@@ -56,10 +55,10 @@
             this.btnDeleteMovie = new System.Windows.Forms.Button();
             this.splcBody = new System.Windows.Forms.SplitContainer();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSortMovie = new System.Windows.Forms.Button();
-            this.pnlHeader.SuspendLayout();
+            this.cboSortMovie = new System.Windows.Forms.ComboBox();
+            this.dtgListMovie = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.picReload = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPosterMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
             this.splcBody.Panel1.SuspendLayout();
@@ -69,27 +68,16 @@
             this.splctnBodyRight.Panel1.SuspendLayout();
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
-            this.pnlHeader.Controls.Add(this.btnSearchMovie);
-            this.pnlHeader.Controls.Add(this.txtSearchMovie);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(921, 55);
-            this.pnlHeader.TabIndex = 1;
             // 
             // btnSearchMovie
             // 
             this.btnSearchMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSearchMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSearchMovie.Location = new System.Drawing.Point(545, 13);
+            this.btnSearchMovie.Location = new System.Drawing.Point(387, 14);
             this.btnSearchMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchMovie.Name = "btnSearchMovie";
             this.btnSearchMovie.Size = new System.Drawing.Size(106, 34);
@@ -99,18 +87,17 @@
             // 
             // txtSearchMovie
             // 
-            this.txtSearchMovie.Location = new System.Drawing.Point(271, 19);
+            this.txtSearchMovie.Location = new System.Drawing.Point(140, 20);
             this.txtSearchMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchMovie.Name = "txtSearchMovie";
-            this.txtSearchMovie.Size = new System.Drawing.Size(268, 25);
+            this.txtSearchMovie.Size = new System.Drawing.Size(241, 25);
             this.txtSearchMovie.TabIndex = 2;
             // 
             // picPosterMovie
             // 
             this.picPosterMovie.BackColor = System.Drawing.Color.Transparent;
             this.picPosterMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPosterMovie.Image = ((System.Drawing.Image)(resources.GetObject("picPosterMovie.Image")));
-            this.picPosterMovie.Location = new System.Drawing.Point(31, 37);
+            this.picPosterMovie.Location = new System.Drawing.Point(57, 34);
             this.picPosterMovie.Name = "picPosterMovie";
             this.picPosterMovie.Size = new System.Drawing.Size(133, 167);
             this.picPosterMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,7 +110,7 @@
             this.lblInfoMovie.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoMovie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfoMovie.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblInfoMovie.Location = new System.Drawing.Point(118, 8);
+            this.lblInfoMovie.Location = new System.Drawing.Point(112, 9);
             this.lblInfoMovie.Name = "lblInfoMovie";
             this.lblInfoMovie.Size = new System.Drawing.Size(141, 19);
             this.lblInfoMovie.TabIndex = 4;
@@ -133,7 +120,7 @@
             // 
             this.lblIDMovie.AutoSize = true;
             this.lblIDMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblIDMovie.Location = new System.Drawing.Point(36, 207);
+            this.lblIDMovie.Location = new System.Drawing.Point(55, 204);
             this.lblIDMovie.Name = "lblIDMovie";
             this.lblIDMovie.Size = new System.Drawing.Size(67, 17);
             this.lblIDMovie.TabIndex = 6;
@@ -143,7 +130,7 @@
             // 
             this.lblShowIDMovie.AutoSize = true;
             this.lblShowIDMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblShowIDMovie.Location = new System.Drawing.Point(98, 207);
+            this.lblShowIDMovie.Location = new System.Drawing.Point(121, 204);
             this.lblShowIDMovie.Name = "lblShowIDMovie";
             this.lblShowIDMovie.Size = new System.Drawing.Size(66, 17);
             this.lblShowIDMovie.TabIndex = 7;
@@ -153,7 +140,7 @@
             // 
             this.lblNameMovie.AutoSize = true;
             this.lblNameMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameMovie.Location = new System.Drawing.Point(57, 247);
+            this.lblNameMovie.Location = new System.Drawing.Point(16, 246);
             this.lblNameMovie.Name = "lblNameMovie";
             this.lblNameMovie.Size = new System.Drawing.Size(73, 17);
             this.lblNameMovie.TabIndex = 8;
@@ -161,7 +148,7 @@
             // 
             // txtNameMovie
             // 
-            this.txtNameMovie.Location = new System.Drawing.Point(157, 241);
+            this.txtNameMovie.Location = new System.Drawing.Point(116, 240);
             this.txtNameMovie.Name = "txtNameMovie";
             this.txtNameMovie.Size = new System.Drawing.Size(215, 25);
             this.txtNameMovie.TabIndex = 9;
@@ -170,7 +157,7 @@
             // 
             this.lblDirectorMovie.AutoSize = true;
             this.lblDirectorMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblDirectorMovie.Location = new System.Drawing.Point(57, 289);
+            this.lblDirectorMovie.Location = new System.Drawing.Point(16, 288);
             this.lblDirectorMovie.Name = "lblDirectorMovie";
             this.lblDirectorMovie.Size = new System.Drawing.Size(70, 17);
             this.lblDirectorMovie.TabIndex = 10;
@@ -180,7 +167,7 @@
             // 
             this.lblCategoryMovie.AutoSize = true;
             this.lblCategoryMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblCategoryMovie.Location = new System.Drawing.Point(57, 335);
+            this.lblCategoryMovie.Location = new System.Drawing.Point(16, 334);
             this.lblCategoryMovie.Name = "lblCategoryMovie";
             this.lblCategoryMovie.Size = new System.Drawing.Size(63, 17);
             this.lblCategoryMovie.TabIndex = 11;
@@ -190,7 +177,7 @@
             // 
             this.lblRunningTime.AutoSize = true;
             this.lblRunningTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblRunningTime.Location = new System.Drawing.Point(57, 380);
+            this.lblRunningTime.Location = new System.Drawing.Point(16, 379);
             this.lblRunningTime.Name = "lblRunningTime";
             this.lblRunningTime.Size = new System.Drawing.Size(85, 17);
             this.lblRunningTime.TabIndex = 12;
@@ -200,7 +187,7 @@
             // 
             this.lblLanguageMovie.AutoSize = true;
             this.lblLanguageMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblLanguageMovie.Location = new System.Drawing.Point(57, 468);
+            this.lblLanguageMovie.Location = new System.Drawing.Point(16, 467);
             this.lblLanguageMovie.Name = "lblLanguageMovie";
             this.lblLanguageMovie.Size = new System.Drawing.Size(76, 17);
             this.lblLanguageMovie.TabIndex = 13;
@@ -208,7 +195,7 @@
             // 
             // txtDirectorMovie
             // 
-            this.txtDirectorMovie.Location = new System.Drawing.Point(157, 286);
+            this.txtDirectorMovie.Location = new System.Drawing.Point(116, 285);
             this.txtDirectorMovie.Name = "txtDirectorMovie";
             this.txtDirectorMovie.Size = new System.Drawing.Size(216, 25);
             this.txtDirectorMovie.TabIndex = 14;
@@ -216,16 +203,16 @@
             // cboCategoryMovie
             // 
             this.cboCategoryMovie.FormattingEnabled = true;
-            this.cboCategoryMovie.Location = new System.Drawing.Point(157, 331);
+            this.cboCategoryMovie.Location = new System.Drawing.Point(116, 330);
             this.cboCategoryMovie.Name = "cboCategoryMovie";
-            this.cboCategoryMovie.Size = new System.Drawing.Size(216, 25);
+            this.cboCategoryMovie.Size = new System.Drawing.Size(215, 25);
             this.cboCategoryMovie.TabIndex = 15;
             // 
             // lblReleaseDate
             // 
             this.lblReleaseDate.AutoSize = true;
             this.lblReleaseDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblReleaseDate.Location = new System.Drawing.Point(57, 426);
+            this.lblReleaseDate.Location = new System.Drawing.Point(16, 425);
             this.lblReleaseDate.Name = "lblReleaseDate";
             this.lblReleaseDate.Size = new System.Drawing.Size(116, 17);
             this.lblReleaseDate.TabIndex = 16;
@@ -235,7 +222,7 @@
             // 
             this.lblStateMovie.AutoSize = true;
             this.lblStateMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblStateMovie.Location = new System.Drawing.Point(57, 507);
+            this.lblStateMovie.Location = new System.Drawing.Point(16, 506);
             this.lblStateMovie.Name = "lblStateMovie";
             this.lblStateMovie.Size = new System.Drawing.Size(76, 17);
             this.lblStateMovie.TabIndex = 17;
@@ -245,7 +232,7 @@
             // 
             this.rdoActiveMovie.AutoSize = true;
             this.rdoActiveMovie.BackColor = System.Drawing.Color.Transparent;
-            this.rdoActiveMovie.Location = new System.Drawing.Point(141, 507);
+            this.rdoActiveMovie.Location = new System.Drawing.Point(100, 506);
             this.rdoActiveMovie.Name = "rdoActiveMovie";
             this.rdoActiveMovie.Size = new System.Drawing.Size(92, 21);
             this.rdoActiveMovie.TabIndex = 18;
@@ -257,7 +244,7 @@
             // 
             this.rdoInactiveMovie.AutoSize = true;
             this.rdoInactiveMovie.BackColor = System.Drawing.Color.Transparent;
-            this.rdoInactiveMovie.Location = new System.Drawing.Point(240, 507);
+            this.rdoInactiveMovie.Location = new System.Drawing.Point(199, 506);
             this.rdoInactiveMovie.Name = "rdoInactiveMovie";
             this.rdoInactiveMovie.Size = new System.Drawing.Size(138, 21);
             this.rdoInactiveMovie.TabIndex = 19;
@@ -267,21 +254,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 465);
+            this.textBox1.Location = new System.Drawing.Point(116, 464);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 25);
             this.textBox1.TabIndex = 20;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 375);
+            this.textBox2.Location = new System.Drawing.Point(116, 374);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 25);
             this.textBox2.TabIndex = 21;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 421);
+            this.dateTimePicker1.Location = new System.Drawing.Point(131, 420);
             this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
@@ -293,7 +280,7 @@
             this.btnInsertMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnInsertMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsertMovie.Location = new System.Drawing.Point(224, 49);
+            this.btnInsertMovie.Location = new System.Drawing.Point(12, 546);
             this.btnInsertMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInsertMovie.Name = "btnInsertMovie";
             this.btnInsertMovie.Size = new System.Drawing.Size(106, 34);
@@ -306,7 +293,7 @@
             this.btnUpdateMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdateMovie.Location = new System.Drawing.Point(224, 108);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(124, 546);
             this.btnUpdateMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
             this.btnUpdateMovie.Size = new System.Drawing.Size(106, 34);
@@ -319,7 +306,7 @@
             this.btnDeleteMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDeleteMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteMovie.Location = new System.Drawing.Point(224, 170);
+            this.btnDeleteMovie.Location = new System.Drawing.Point(236, 546);
             this.btnDeleteMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteMovie.Name = "btnDeleteMovie";
             this.btnDeleteMovie.Size = new System.Drawing.Size(106, 34);
@@ -331,11 +318,12 @@
             // 
             this.splcBody.BackColor = System.Drawing.Color.Transparent;
             this.splcBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splcBody.Location = new System.Drawing.Point(0, 55);
+            this.splcBody.Location = new System.Drawing.Point(0, 0);
             this.splcBody.Name = "splcBody";
             // 
             // splcBody.Panel1
             // 
+            this.splcBody.Panel1.Controls.Add(this.button1);
             this.splcBody.Panel1.Controls.Add(this.btnDeleteMovie);
             this.splcBody.Panel1.Controls.Add(this.btnInsertMovie);
             this.splcBody.Panel1.Controls.Add(this.btnUpdateMovie);
@@ -363,8 +351,8 @@
             // 
             this.splcBody.Panel2.AccessibleName = "";
             this.splcBody.Panel2.Controls.Add(this.splctnBodyRight);
-            this.splcBody.Size = new System.Drawing.Size(921, 548);
-            this.splcBody.SplitterDistance = 406;
+            this.splcBody.Size = new System.Drawing.Size(921, 603);
+            this.splcBody.SplitterDistance = 362;
             this.splcBody.TabIndex = 25;
             // 
             // splctnBodyRight
@@ -376,61 +364,74 @@
             // 
             // splctnBodyRight.Panel1
             // 
-            this.splctnBodyRight.Panel1.Controls.Add(this.btnSortMovie);
-            this.splctnBodyRight.Panel1.Controls.Add(this.comboBox1);
+            this.splctnBodyRight.Panel1.Controls.Add(this.picReload);
+            this.splctnBodyRight.Panel1.Controls.Add(this.btnSearchMovie);
+            this.splctnBodyRight.Panel1.Controls.Add(this.txtSearchMovie);
+            this.splctnBodyRight.Panel1.Controls.Add(this.cboSortMovie);
             // 
             // splctnBodyRight.Panel2
             // 
-            this.splctnBodyRight.Panel2.Controls.Add(this.dataGridView1);
-            this.splctnBodyRight.Size = new System.Drawing.Size(511, 548);
-            this.splctnBodyRight.SplitterDistance = 57;
+            this.splctnBodyRight.Panel2.Controls.Add(this.dtgListMovie);
+            this.splctnBodyRight.Size = new System.Drawing.Size(555, 603);
+            this.splctnBodyRight.SplitterDistance = 62;
             this.splctnBodyRight.TabIndex = 0;
             // 
-            // dataGridView1
+            // cboSortMovie
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(511, 487);
-            this.dataGridView1.TabIndex = 0;
+            this.cboSortMovie.FormattingEnabled = true;
+            this.cboSortMovie.Items.AddRange(new object[] {
+            "Tất cả",
+            "Hoạt động",
+            "Ngừng hoạt động"});
+            this.cboSortMovie.Location = new System.Drawing.Point(13, 20);
+            this.cboSortMovie.Name = "cboSortMovie";
+            this.cboSortMovie.Size = new System.Drawing.Size(121, 25);
+            this.cboSortMovie.TabIndex = 0;
             // 
-            // comboBox1
+            // dtgListMovie
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(99, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 25);
-            this.comboBox1.TabIndex = 0;
+            this.dtgListMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgListMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgListMovie.Location = new System.Drawing.Point(0, 0);
+            this.dtgListMovie.Name = "dtgListMovie";
+            this.dtgListMovie.Size = new System.Drawing.Size(555, 537);
+            this.dtgListMovie.TabIndex = 0;
             // 
-            // btnSortMovie
+            // button1
             // 
-            this.btnSortMovie.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSortMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSortMovie.Location = new System.Drawing.Point(307, 11);
-            this.btnSortMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSortMovie.Name = "btnSortMovie";
-            this.btnSortMovie.Size = new System.Drawing.Size(106, 34);
-            this.btnSortMovie.TabIndex = 4;
-            this.btnSortMovie.Text = "Sắp xếp";
-            this.btnSortMovie.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(199, 166);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 34);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // picReload
+            // 
+            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
+            this.picReload.Location = new System.Drawing.Point(507, 15);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(36, 33);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReload.TabIndex = 4;
+            this.picReload.TabStop = false;
             // 
             // fMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::CinemaManagement.Properties.Resources.Nền;
             this.ClientSize = new System.Drawing.Size(921, 603);
             this.Controls.Add(this.splcBody);
-            this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fMovie";
             this.Text = "fMovie";
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPosterMovie)).EndInit();
             this.splcBody.Panel1.ResumeLayout(false);
             this.splcBody.Panel1.PerformLayout();
@@ -438,16 +439,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).EndInit();
             this.splcBody.ResumeLayout(false);
             this.splctnBodyRight.Panel1.ResumeLayout(false);
+            this.splctnBodyRight.Panel1.PerformLayout();
             this.splctnBodyRight.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.TextBox txtSearchMovie;
         private System.Windows.Forms.Button btnSearchMovie;
         private System.Windows.Forms.PictureBox picPosterMovie;
@@ -474,8 +476,9 @@
         private System.Windows.Forms.Button btnDeleteMovie;
         private System.Windows.Forms.SplitContainer splcBody;
         private System.Windows.Forms.SplitContainer splctnBodyRight;
-        private System.Windows.Forms.Button btnSortMovie;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cboSortMovie;
+        private System.Windows.Forms.DataGridView dtgListMovie;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picReload;
     }
 }

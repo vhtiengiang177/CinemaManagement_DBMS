@@ -27,20 +27,20 @@ namespace CinemaManagement.DAO
 
         public bool AddPromotion(string id, string name, DateTime start, DateTime end, string objects, double values)
         {
-            string query = "exec sp_Promotion_Insert @id_promtion , @name_promotion , @starttime_promotion , @endtime_promotion , @object_promotion , @value_promotion ";
+            string query = "exec sp_Promotion_Insert @id_promotion , @name_promotion , @starttime_promotion , @endtime_promotion , @object_promotion , @value_promotion ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id,name, Convert.ToDateTime(start), Convert.ToDateTime(end), objects, Convert.ToDouble(values) }) > 0;
         }
 
         
-        public bool UpdatePromotion(string id, string name, DateTime start, DateTime end, string objects, double values)
+        public bool UpdatePromotion(string id, string name, string start, string end, string objects, double values)
         {
-            string query = "exec sp_UpdateCustomer @id_promtion , @name_promotion , @starttime_promotion , @endtime_promotion , @object_promotion , @value_promotion ";
+            string query = "exec sp_Promotion_Update @id_promotion , @name_promotion , @starttime_promotion , @endtime_promotion , @object_promotion , @value_promotion ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, name, Convert.ToDateTime(start), Convert.ToDateTime(end), objects, Convert.ToDouble(values) }) > 0;
         }
 
         public bool DeletePromotion(string id)
         {
-            string query = "exec sp_DeletePromotion @id_promotion ";
+            string query = "exec sp_Promotion_Delete @id_promotion ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id }) > 0;
         }
     }

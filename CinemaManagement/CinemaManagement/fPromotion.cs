@@ -54,9 +54,9 @@ namespace CinemaManagement
             this.txt_IDPromotion.Text =
             dgvPromotion.Rows[r].Cells[0].Value.ToString();
             this.txt_NamePromotion.Text =
-            dgvPromotion.Rows[r].Cells[2].Value.ToString();
-            this.txt_DateStart.Text =
             dgvPromotion.Rows[r].Cells[1].Value.ToString();
+            this.txt_DateStart.Text =
+            dgvPromotion.Rows[r].Cells[2].Value.ToString();
             
             this.txt_DateEnd.Text =
             dgvPromotion.Rows[r].Cells[3].Value.ToString();
@@ -117,7 +117,7 @@ namespace CinemaManagement
                 {
 
                     // Thực hiện câu lệnh SQL 
-                    bool f = PromotionDAO.Intance.DeletePromotion(txt_IDPromotion.Text.Trim());
+                    bool f = PromotionDAO.Intance.DeletePromotion(id/*txt_IDPromotion.Text.Trim()*/);
                     if (f)
                     {
                         // Cập nhật lại DataGridView 
@@ -197,8 +197,8 @@ namespace CinemaManagement
                     f = PromotionDAO.Intance.UpdatePromotion(
                    this.txt_IDPromotion.Text.ToString(),
                    this.txt_NamePromotion.Text.ToString(),
-                   Convert.ToDateTime(this.txt_DateStart.Text.ToString()),
-                   Convert.ToDateTime(this.txt_DateEnd.Text.ToString()),
+                   this.txt_DateStart.Text.ToString(),
+                   this.txt_DateEnd.Text.ToString(),
                    this.txtObjectPromotion.Text.ToString(),
                    Convert.ToDouble(this.txtValuePromotion.Text.ToString()));
                     if (f)

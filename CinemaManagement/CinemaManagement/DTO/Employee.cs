@@ -11,8 +11,8 @@ namespace CinemaManagement.DTO
     public class Employee
     {
         private string id_employee;
-        private string last_employee;
-        private string firstname_employee;
+        private string name_employee;
+       
         private DateTime birthday_employee;
         private string sex_employee;
         private string identitycard_employee;
@@ -22,29 +22,24 @@ namespace CinemaManagement.DTO
         private Double salary_employee;
         private string id_typeemployee;
         private string id_cinema;
-        private MemoryStream img_employee;
+        private byte[] img_employee;
         private string qr_employee;
-        private string state_employee;
+        private Byte state_employee;
         private string username_employee;
         private string password;
 
         public string Id_employee {
             get { return this.id_employee; }
-            set { this.id_employee = value; } 
+            set { this.id_employee = value; }
         }
 
-        public string Last_employee
+        public string Name_employee
         {
-            get { return this.last_employee; }
-            set { this.last_employee = value; }
+            get { return this.name_employee; }
+            set { this.name_employee = value; }
         }
 
-        public string Firstname_employee
-        {
-            get { return this.firstname_employee; }
-            set { this.firstname_employee = value; }
-        }
-
+  
         public DateTime Birthday_employee
         {
             get { return this.birthday_employee; }
@@ -71,8 +66,8 @@ namespace CinemaManagement.DTO
 
         public string Email_employee
         {
-            get { return this.Email_employee; }
-            set { this.Email_employee = value; }
+            get { return this.email_employee; }
+            set { this.email_employee = value; }
         }
 
         public string Address_employee
@@ -99,7 +94,7 @@ namespace CinemaManagement.DTO
             set { this.id_cinema = value; }
         }
 
-        public MemoryStream Img_employee
+        public byte[] Img_employee
         {
             get { return this.img_employee; }
             set { this.img_employee = value; }
@@ -111,7 +106,7 @@ namespace CinemaManagement.DTO
             set { this.qr_employee = value; }
         }
 
-        public string State_employee
+        public Byte State_employee
         {
             get { return this.state_employee; }
             set { this.state_employee = value; }
@@ -129,12 +124,13 @@ namespace CinemaManagement.DTO
             set { this.password = value; }
         }
 
-
-        public Employee(string id, string lastName, string firstname, DateTime birthDay, string gender, string identity, string phone, string email, string address, double salary, string idType, string idCinema, MemoryStream img, string qr, string state, string userName, string pass)
+        public Employee()
+        { }
+        public Employee(string id, string name, DateTime birthDay, string gender, string identity, string phone, string email, string address, double salary, string idType, string idCinema, byte[] img, string qr, Byte state, string userName, string pass)
         {
             this.Id_employee = id;
-            this.Last_employee = lastName;
-            this.Firstname_employee = firstname;
+
+            this.name_employee = name;
             this.Birthday_employee = birthDay;
             this.Sex_employeeloyee = gender;
             this.Identitycard_employee = identity;
@@ -149,6 +145,26 @@ namespace CinemaManagement.DTO
             this.State_employee = state;
             this.Username_employee = userName;
             this.Password = pass;
+        }
+
+
+        public Employee(string id, string name, DateTime birthDay, string gender, string identity, string phone, string email, string address, double salary, string idType, string idCinema, byte[] img, string qr, Byte state)
+        {
+            this.Id_employee = id;
+            this.name_employee = name;
+            this.Birthday_employee = birthDay;
+            this.Sex_employeeloyee = gender;
+            this.Identitycard_employee = identity;
+            this.Phone_employee = phone;
+            this.Email_employee = email;
+            this.Address_employee = address;
+            this.Salary_employee = salary;
+            this.Id_typeemployee = idType;
+            this.Id_cinema = idCinema;
+            this.Img_employee = img;
+            this.Qr_employee = qr;
+            this.State_employee = state;
+         
         }
     }
 }

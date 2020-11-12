@@ -183,7 +183,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <None Include="Resources\pexels-lydia-bond-1550618.jpg" />
+
     <None Include="Resources\Nền.jpg" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,6 +22,11 @@ namespace CinemaManagement.DAO
 
         }
 
+
+        //cách viết 
+        //viết câu query như bìnhthuongwf
+        //return dataprovrder . instance (Thằng nào cũng v, hk cần khai báo, cứ gọi class.instance là ra) . execute(tùy loại) (query, new object[]{ các object, viết theo thứ tự của câu query}
+
         public bool AddCustomer(string id_Customer, string name_Customer, string phone_Customer, string birthday_Customer, string address_Customer, string email_Customer, string point_Customer, string id_Typecustomer)
         {
             string query = "exec sp_InsertCustomer @id , @name , @birthday , @phone , @email , @address , @point , @type ";

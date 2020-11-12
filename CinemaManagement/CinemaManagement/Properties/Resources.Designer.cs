@@ -19,7 +19,11 @@ namespace CinemaManagement.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+=======
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+>>>>>>> ad15129dc82e0782dbcc178b78e475c89f9362ce
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +67,15 @@ namespace CinemaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
+        internal static System.Drawing.Bitmap imgEmployee {
+            get {
+                object obj = ResourceManager.GetObject("imgEmployee", resourceCulture);
+=======
         internal static System.Drawing.Bitmap Nền {
             get {
                 object obj = ResourceManager.GetObject("Nền", resourceCulture);
+>>>>>>> ad15129dc82e0782dbcc178b78e475c89f9362ce
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

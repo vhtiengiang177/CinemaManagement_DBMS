@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployee));
             this.plMain = new System.Windows.Forms.Panel();
             this.plListMain = new System.Windows.Forms.Panel();
             this.plControl = new System.Windows.Forms.Panel();
@@ -635,11 +636,12 @@
             // 
             // picEmployee
             // 
-            this.picEmployee.Image = global::CinemaManagement.Properties.Resources.imgEmployee;
+            this.picEmployee.BackColor = System.Drawing.SystemColors.Control;
+            this.picEmployee.Image = ((System.Drawing.Image)(resources.GetObject("picEmployee.Image")));
             this.picEmployee.Location = new System.Drawing.Point(16, 18);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(145, 164);
-            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 

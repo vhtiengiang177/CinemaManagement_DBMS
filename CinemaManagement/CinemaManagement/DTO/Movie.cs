@@ -17,7 +17,7 @@ namespace CinemaManagement.DTO
         private DateTime releasedate_movie;
         private string language_movie;
         private string state_movie;
-        private MemoryStream poster_movie;
+        private MemoryStream img_movie;
 
         // Mã phim
         public string Id_movie
@@ -76,13 +76,13 @@ namespace CinemaManagement.DTO
         }
 
         // Poster phim 
-        public MemoryStream Poster_movie
+        public MemoryStream Img_movie
         {
-            get { return poster_movie; }
-            set { poster_movie = value; }
+            get { return img_movie; }
+            set { img_movie = value; }
         }
 
-        public Movie(string id_movie, string name_movie, string language_movie, string director_movie, string runningtime_movie, DateTime releasedate_movie, string id_categorymovie, MemoryStream poster_movie)
+        public Movie(string id_movie, string name_movie, string language_movie, string director_movie, string runningtime_movie, DateTime releasedate_movie, string id_categorymovie, MemoryStream img_movie)
         {
             this.Id_movie = id_movie;
             this.Name_movie = name_movie;
@@ -91,7 +91,7 @@ namespace CinemaManagement.DTO
             this.Runningtime_movie = runningtime_movie;
             this.Releasedate_movie = releasedate_movie;
             this.Id_categorymovie = id_categorymovie;
-            this.Poster_movie = poster_movie;
+            this.Img_movie = img_movie;
         }
     }
 }

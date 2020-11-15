@@ -444,7 +444,6 @@
             // 
             // picEmployee
             // 
-            this.picEmployee.Image = global::CinemaManagement.Properties.Resources.imgEmployee;
             this.picEmployee.Location = new System.Drawing.Point(16, 45);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(145, 164);

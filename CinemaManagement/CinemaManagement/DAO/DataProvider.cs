@@ -25,21 +25,25 @@ namespace CinemaManagement.DAO
 
         private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS;Integrated Security=True";
 
-
-        // execute query trả về table, nên là return table. dùng cho datasoure của dgv
+        /// <summary>
+        /// Execute query trả về table. Dùng cho DataSoure của DataGridView.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
 
-            //tạo connect 
+            // Tạo connect 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                //mở connect
+                // Mở connect
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
 
-                //para là ds truyền vào từ hàm. Khác null là có para truyền vào
+                // para là ds truyền vào từ hàm. Khác null là có para truyền vào
                 if (parameter != null)
                 {
                     //cắt từ bằng 2 dấu space
@@ -47,10 +51,10 @@ namespace CinemaManagement.DAO
                     int i = 0;
                     foreach (string item in listPara)
                     {
-                        //nếu từ có dấu @ 
+                        // Nếu từ có dấu @ 
                         if (item.Contains("@"))
                         {
-                            //add giá trị thứ i của para vào câu query thay cho item
+                            // Add giá trị thứ i của para vào câu query thay cho item
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
@@ -68,10 +72,14 @@ namespace CinemaManagement.DAO
             return data;
         }
 
-
-        // execute non query trả về số hàng, CHỈ DÙNG CHO INSERT UPDATE DELETE, hk dùng đc cho SELECT
-        //ví dụ khi insert hay update sql ghi là 1 row affect hoặc 2 rows affect, thì câu này trả ra những số đó như 1 hoặc 2
-        //không dùng được cho đăng nhập, vì hk dùng đc cho câu select --> đăng nhập dùng execute query, đếm table. row >0 
+        /// <summary>
+        /// Trả về số hàng, CHỈ DÙNG CHO INSERT UPDATE DELETE, không dùng đc cho SELECT
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        // Ví dụ khi insert hay update sql ghi là 1 row affect hoặc 2 rows affect, thì câu này trả ra những số đó như 1 hoặc 2
+        // Không dùng được cho đăng nhập, vì không dùng được cho câu select --> đăng nhập dùng execute query, đếm table. row >0 
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
@@ -104,8 +112,12 @@ namespace CinemaManagement.DAO
             return data;
         }
 
-
-        //trả về ô đầu tiên của hàng đầu tiên --> phù hợp cho câu truy vấn select count() ...  ít xài
+        /// <summary>
+        /// Trả về ô đầu tiên của hàng đầu tiên --> phù hợp cho câu truy vấn select count()
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCategoryMovie));
             this.splctnBody = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblIDCategoryMovie = new System.Windows.Forms.Label();
-            this.lblShowIDCategoryMovie = new System.Windows.Forms.Label();
-            this.lblNameCategoryMovie = new System.Windows.Forms.Label();
-            this.txtNameCategoryMovie = new System.Windows.Forms.TextBox();
             this.btnDeleteCategoryMovie = new System.Windows.Forms.Button();
             this.btnInsertCategoryMovie = new System.Windows.Forms.Button();
             this.btnUpdateCategoryMovie = new System.Windows.Forms.Button();
+            this.txtNameCategoryMovie = new System.Windows.Forms.TextBox();
+            this.lblNameCategoryMovie = new System.Windows.Forms.Label();
+            this.lblShowIDCategoryMovie = new System.Windows.Forms.Label();
+            this.lblIDCategoryMovie = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
-            this.dtgCategoryMovie = new System.Windows.Forms.DataGridView();
+            this.picReload = new System.Windows.Forms.PictureBox();
             this.btnSearchCategoryMovie = new System.Windows.Forms.Button();
             this.txtSearchCategoryMovie = new System.Windows.Forms.TextBox();
-            this.picReload = new System.Windows.Forms.PictureBox();
+            this.dtgCategoryMovie = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splctnBody)).BeginInit();
             this.splctnBody.Panel1.SuspendLayout();
             this.splctnBody.Panel2.SuspendLayout();
@@ -51,8 +51,8 @@
             this.splctnBodyRight.Panel1.SuspendLayout();
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // splctnBody
@@ -79,50 +79,6 @@
             this.splctnBody.Size = new System.Drawing.Size(778, 381);
             this.splctnBody.SplitterDistance = 357;
             this.splctnBody.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỂ LOẠI PHIM";
-            // 
-            // lblIDCategoryMovie
-            // 
-            this.lblIDCategoryMovie.AutoSize = true;
-            this.lblIDCategoryMovie.Location = new System.Drawing.Point(25, 72);
-            this.lblIDCategoryMovie.Name = "lblIDCategoryMovie";
-            this.lblIDCategoryMovie.Size = new System.Drawing.Size(81, 17);
-            this.lblIDCategoryMovie.TabIndex = 1;
-            this.lblIDCategoryMovie.Text = "Mã thể loại:";
-            // 
-            // lblShowIDCategoryMovie
-            // 
-            this.lblShowIDCategoryMovie.AutoSize = true;
-            this.lblShowIDCategoryMovie.Location = new System.Drawing.Point(103, 72);
-            this.lblShowIDCategoryMovie.Name = "lblShowIDCategoryMovie";
-            this.lblShowIDCategoryMovie.Size = new System.Drawing.Size(81, 17);
-            this.lblShowIDCategoryMovie.TabIndex = 2;
-            this.lblShowIDCategoryMovie.Text = "ma-the-loai";
-            // 
-            // lblNameCategoryMovie
-            // 
-            this.lblNameCategoryMovie.AutoSize = true;
-            this.lblNameCategoryMovie.Location = new System.Drawing.Point(20, 108);
-            this.lblNameCategoryMovie.Name = "lblNameCategoryMovie";
-            this.lblNameCategoryMovie.Size = new System.Drawing.Size(87, 17);
-            this.lblNameCategoryMovie.TabIndex = 3;
-            this.lblNameCategoryMovie.Text = "Tên thể loại:";
-            // 
-            // txtNameCategoryMovie
-            // 
-            this.txtNameCategoryMovie.Location = new System.Drawing.Point(106, 105);
-            this.txtNameCategoryMovie.Name = "txtNameCategoryMovie";
-            this.txtNameCategoryMovie.Size = new System.Drawing.Size(216, 25);
-            this.txtNameCategoryMovie.TabIndex = 4;
             // 
             // btnDeleteCategoryMovie
             // 
@@ -163,6 +119,50 @@
             this.btnUpdateCategoryMovie.Text = "Sửa";
             this.btnUpdateCategoryMovie.UseVisualStyleBackColor = false;
             // 
+            // txtNameCategoryMovie
+            // 
+            this.txtNameCategoryMovie.Location = new System.Drawing.Point(106, 105);
+            this.txtNameCategoryMovie.Name = "txtNameCategoryMovie";
+            this.txtNameCategoryMovie.Size = new System.Drawing.Size(216, 25);
+            this.txtNameCategoryMovie.TabIndex = 4;
+            // 
+            // lblNameCategoryMovie
+            // 
+            this.lblNameCategoryMovie.AutoSize = true;
+            this.lblNameCategoryMovie.Location = new System.Drawing.Point(20, 108);
+            this.lblNameCategoryMovie.Name = "lblNameCategoryMovie";
+            this.lblNameCategoryMovie.Size = new System.Drawing.Size(87, 17);
+            this.lblNameCategoryMovie.TabIndex = 3;
+            this.lblNameCategoryMovie.Text = "Tên thể loại:";
+            // 
+            // lblShowIDCategoryMovie
+            // 
+            this.lblShowIDCategoryMovie.AutoSize = true;
+            this.lblShowIDCategoryMovie.Location = new System.Drawing.Point(103, 72);
+            this.lblShowIDCategoryMovie.Name = "lblShowIDCategoryMovie";
+            this.lblShowIDCategoryMovie.Size = new System.Drawing.Size(81, 17);
+            this.lblShowIDCategoryMovie.TabIndex = 2;
+            this.lblShowIDCategoryMovie.Text = "ma-the-loai";
+            // 
+            // lblIDCategoryMovie
+            // 
+            this.lblIDCategoryMovie.AutoSize = true;
+            this.lblIDCategoryMovie.Location = new System.Drawing.Point(25, 72);
+            this.lblIDCategoryMovie.Name = "lblIDCategoryMovie";
+            this.lblIDCategoryMovie.Size = new System.Drawing.Size(81, 17);
+            this.lblIDCategoryMovie.TabIndex = 1;
+            this.lblIDCategoryMovie.Text = "Mã thể loại:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(111, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "THỂ LOẠI PHIM";
+            // 
             // splctnBodyRight
             // 
             this.splctnBodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,14 +183,15 @@
             this.splctnBodyRight.SplitterDistance = 56;
             this.splctnBodyRight.TabIndex = 0;
             // 
-            // dtgCategoryMovie
+            // picReload
             // 
-            this.dtgCategoryMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoryMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgCategoryMovie.Location = new System.Drawing.Point(0, 0);
-            this.dtgCategoryMovie.Name = "dtgCategoryMovie";
-            this.dtgCategoryMovie.Size = new System.Drawing.Size(417, 321);
-            this.dtgCategoryMovie.TabIndex = 0;
+            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
+            this.picReload.Location = new System.Drawing.Point(370, 7);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(36, 33);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReload.TabIndex = 28;
+            this.picReload.TabStop = false;
             // 
             // btnSearchCategoryMovie
             // 
@@ -213,26 +214,25 @@
             this.txtSearchCategoryMovie.Size = new System.Drawing.Size(241, 25);
             this.txtSearchCategoryMovie.TabIndex = 5;
             // 
-            // picReload
+            // dtgCategoryMovie
             // 
-            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(370, 7);
-            this.picReload.Name = "picReload";
-            this.picReload.Size = new System.Drawing.Size(36, 33);
-            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReload.TabIndex = 28;
-            this.picReload.TabStop = false;
+            this.dtgCategoryMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCategoryMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgCategoryMovie.Location = new System.Drawing.Point(0, 0);
+            this.dtgCategoryMovie.Name = "dtgCategoryMovie";
+            this.dtgCategoryMovie.Size = new System.Drawing.Size(417, 321);
+            this.dtgCategoryMovie.TabIndex = 0;
             // 
             // fCategoryMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CinemaManagement.Properties.Resources.Nền;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(778, 381);
             this.Controls.Add(this.splctnBody);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fCategoryMovie";
             this.Text = "Thể loại phim";
             this.splctnBody.Panel1.ResumeLayout(false);
@@ -245,8 +245,8 @@
             this.splctnBodyRight.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).EndInit();
             this.ResumeLayout(false);
 
         }

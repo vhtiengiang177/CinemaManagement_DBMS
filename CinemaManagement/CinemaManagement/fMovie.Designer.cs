@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMovie));
             this.btnSearchMovie = new System.Windows.Forms.Button();
             this.txtSearchMovie = new System.Windows.Forms.TextBox();
-            this.picPosterMovie = new System.Windows.Forms.PictureBox();
+            this.picImageMovie = new System.Windows.Forms.PictureBox();
             this.lblInfoMovie = new System.Windows.Forms.Label();
             this.lblIDMovie = new System.Windows.Forms.Label();
             this.lblShowIDMovie = new System.Windows.Forms.Label();
@@ -54,12 +54,12 @@
             this.btnUpdateMovie = new System.Windows.Forms.Button();
             this.btnDeleteMovie = new System.Windows.Forms.Button();
             this.splcBody = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
+            this.picReload = new System.Windows.Forms.PictureBox();
             this.cboSortMovie = new System.Windows.Forms.ComboBox();
             this.dtgListMovie = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.picReload = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picPosterMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
             this.splcBody.Panel1.SuspendLayout();
             this.splcBody.Panel2.SuspendLayout();
@@ -68,8 +68,8 @@
             this.splctnBodyRight.Panel1.SuspendLayout();
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchMovie
@@ -93,16 +93,16 @@
             this.txtSearchMovie.Size = new System.Drawing.Size(241, 25);
             this.txtSearchMovie.TabIndex = 2;
             // 
-            // picPosterMovie
+            // picImageMovie
             // 
-            this.picPosterMovie.BackColor = System.Drawing.Color.Transparent;
-            this.picPosterMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPosterMovie.Location = new System.Drawing.Point(57, 34);
-            this.picPosterMovie.Name = "picPosterMovie";
-            this.picPosterMovie.Size = new System.Drawing.Size(133, 167);
-            this.picPosterMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPosterMovie.TabIndex = 3;
-            this.picPosterMovie.TabStop = false;
+            this.picImageMovie.BackColor = System.Drawing.Color.Transparent;
+            this.picImageMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImageMovie.Location = new System.Drawing.Point(57, 34);
+            this.picImageMovie.Name = "picImageMovie";
+            this.picImageMovie.Size = new System.Drawing.Size(133, 167);
+            this.picImageMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImageMovie.TabIndex = 3;
+            this.picImageMovie.TabStop = false;
             // 
             // lblInfoMovie
             // 
@@ -327,7 +327,7 @@
             this.splcBody.Panel1.Controls.Add(this.btnDeleteMovie);
             this.splcBody.Panel1.Controls.Add(this.btnInsertMovie);
             this.splcBody.Panel1.Controls.Add(this.btnUpdateMovie);
-            this.splcBody.Panel1.Controls.Add(this.picPosterMovie);
+            this.splcBody.Panel1.Controls.Add(this.picImageMovie);
             this.splcBody.Panel1.Controls.Add(this.lblInfoMovie);
             this.splcBody.Panel1.Controls.Add(this.dateTimePicker1);
             this.splcBody.Panel1.Controls.Add(this.lblIDMovie);
@@ -355,6 +355,19 @@
             this.splcBody.SplitterDistance = 362;
             this.splcBody.TabIndex = 25;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(199, 166);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 34);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // splctnBodyRight
             // 
             this.splctnBodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -373,8 +386,18 @@
             // 
             this.splctnBodyRight.Panel2.Controls.Add(this.dtgListMovie);
             this.splctnBodyRight.Size = new System.Drawing.Size(555, 603);
-            this.splctnBodyRight.SplitterDistance = 62;
+            this.splctnBodyRight.SplitterDistance = 61;
             this.splctnBodyRight.TabIndex = 0;
+            // 
+            // picReload
+            // 
+            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
+            this.picReload.Location = new System.Drawing.Point(507, 15);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(36, 33);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReload.TabIndex = 4;
+            this.picReload.TabStop = false;
             // 
             // cboSortMovie
             // 
@@ -394,37 +417,14 @@
             this.dtgListMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgListMovie.Location = new System.Drawing.Point(0, 0);
             this.dtgListMovie.Name = "dtgListMovie";
-            this.dtgListMovie.Size = new System.Drawing.Size(555, 537);
+            this.dtgListMovie.Size = new System.Drawing.Size(555, 538);
             this.dtgListMovie.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(199, 166);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 34);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // picReload
-            // 
-            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(507, 15);
-            this.picReload.Name = "picReload";
-            this.picReload.Size = new System.Drawing.Size(36, 33);
-            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReload.TabIndex = 4;
-            this.picReload.TabStop = false;
             // 
             // fMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CinemaManagement.Properties.Resources.Nền;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(921, 603);
             this.Controls.Add(this.splcBody);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -432,7 +432,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fMovie";
             this.Text = "fMovie";
-            ((System.ComponentModel.ISupportInitialize)(this.picPosterMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
             this.splcBody.Panel1.ResumeLayout(false);
             this.splcBody.Panel1.PerformLayout();
             this.splcBody.Panel2.ResumeLayout(false);
@@ -443,8 +443,8 @@
             this.splctnBodyRight.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,7 +452,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtSearchMovie;
         private System.Windows.Forms.Button btnSearchMovie;
-        private System.Windows.Forms.PictureBox picPosterMovie;
+        private System.Windows.Forms.PictureBox picImageMovie;
         private System.Windows.Forms.Label lblInfoMovie;
         private System.Windows.Forms.Label lblIDMovie;
         private System.Windows.Forms.Label lblShowIDMovie;

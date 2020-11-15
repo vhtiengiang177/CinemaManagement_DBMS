@@ -90,8 +90,8 @@ namespace CinemaManagement
                 string state = dgvListEmployee.Rows[r].Cells[13].Value.ToString();
             
                 if (state.Equals("True"))
-                        this.txtStateEmployee.Text = "Vẫn còn hoạt động";
-                    else this.txtStateEmployee.Text = "Ngưng hoạt động";
+                        this.txtStateEmployee.Text = "Đang hoạt động";
+                    else this.txtStateEmployee.Text = "Ngừng hoạt động";
 
             if (dgvListEmployee.Rows[r].Cells[11].Value != DBNull.Value)
             {

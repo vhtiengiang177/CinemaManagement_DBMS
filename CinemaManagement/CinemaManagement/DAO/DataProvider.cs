@@ -23,7 +23,7 @@ namespace CinemaManagement.DAO
  
         }
 
-        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS;Integrated Security=True";
+        private string connectionString = @"Data Source=localhost;Initial Catalog=Cinema_DBMS;Integrated Security=True";
 
         /// <summary>
         /// Execute query trả về table. Dùng cho DataSoure của DataGridView.

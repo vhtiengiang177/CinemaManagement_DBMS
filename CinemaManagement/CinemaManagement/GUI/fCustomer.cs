@@ -15,7 +15,8 @@ namespace CinemaManagement.GUI
     {
         public fCustomer()
         {
-            InitializeComponent(); loadData();
+            InitializeComponent();
+            loadData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

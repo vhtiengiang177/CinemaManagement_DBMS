@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,13 @@ namespace CinemaManagement.GUI
         public fMovie()
         {
             InitializeComponent();
-            
+            LoadData();
+        }
+
+        // Tải lại toàn bộ dữ liệu
+        public void LoadData()
+        {
+            dtgMovie.DataSource = MovieDAO.Instance.LoadData();
         }
 
 

@@ -58,7 +58,7 @@
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
             this.picReload = new System.Windows.Forms.PictureBox();
             this.cboSortMovie = new System.Windows.Forms.ComboBox();
-            this.dtgListMovie = new System.Windows.Forms.DataGridView();
+            this.dtgMovie = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
             this.splcBody.Panel1.SuspendLayout();
@@ -69,7 +69,7 @@
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchMovie
@@ -384,7 +384,7 @@
             // 
             // splctnBodyRight.Panel2
             // 
-            this.splctnBodyRight.Panel2.Controls.Add(this.dtgListMovie);
+            this.splctnBodyRight.Panel2.Controls.Add(this.dtgMovie);
             this.splctnBodyRight.Size = new System.Drawing.Size(555, 603);
             this.splctnBodyRight.SplitterDistance = 61;
             this.splctnBodyRight.TabIndex = 0;
@@ -413,14 +413,14 @@
             this.cboSortMovie.Size = new System.Drawing.Size(121, 25);
             this.cboSortMovie.TabIndex = 0;
             // 
-            // dtgListMovie
+            // dtgMovie
             // 
-            this.dtgListMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgListMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgListMovie.Location = new System.Drawing.Point(0, 0);
-            this.dtgListMovie.Name = "dtgListMovie";
-            this.dtgListMovie.Size = new System.Drawing.Size(555, 538);
-            this.dtgListMovie.TabIndex = 0;
+            this.dtgMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgMovie.Location = new System.Drawing.Point(0, 0);
+            this.dtgMovie.Name = "dtgMovie";
+            this.dtgMovie.Size = new System.Drawing.Size(555, 538);
+            this.dtgMovie.TabIndex = 0;
             // 
             // fMovie
             // 
@@ -446,7 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgListMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMovie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,7 +479,7 @@
         private System.Windows.Forms.SplitContainer splcBody;
         private System.Windows.Forms.SplitContainer splctnBodyRight;
         private System.Windows.Forms.ComboBox cboSortMovie;
-        private System.Windows.Forms.DataGridView dtgListMovie;
+        private System.Windows.Forms.DataGridView dtgMovie;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picReload;
     }

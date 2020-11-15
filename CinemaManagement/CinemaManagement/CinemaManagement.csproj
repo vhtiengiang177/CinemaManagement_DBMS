@@ -94,11 +94,11 @@
   <ItemGroup>
     <Compile Include="BLL\CreateQRCode.cs" />
     <Compile Include="BLL\Employee_BL.cs" />
-    <Compile Include="Customer\CustomerForm.cs">
+    <Compile Include="GUI\fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <Compile Include="GUI\fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\CategoryMovieDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
@@ -109,63 +109,63 @@
     <Compile Include="DTO\Employee.cs" />
     <Compile Include="DTO\Movie.cs" />
     <Compile Include="DTO\Promotion.cs" />
-    <Compile Include="fAddEmployee.cs">
+    <Compile Include="GUI\fAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAddEmployee.Designer.cs">
+    <Compile Include="GUI\fAddEmployee.Designer.cs">
       <DependentUpon>fAddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCategoryMovie.cs">
+    <Compile Include="GUI\fCategoryMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fCategoryMovie.Designer.cs">
+    <Compile Include="GUI\fCategoryMovie.Designer.cs">
       <DependentUpon>fCategoryMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="fEmployee.cs">
+    <Compile Include="GUI\fEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fEmployee.Designer.cs">
+    <Compile Include="GUI\fEmployee.Designer.cs">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMain.cs">
+    <Compile Include="GUI\fMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMain.Designer.cs">
+    <Compile Include="GUI\fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMovie.cs">
+    <Compile Include="GUI\fMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMovie.Designer.cs">
+    <Compile Include="GUI\fMovie.Designer.cs">
       <DependentUpon>fMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="fPromotion.cs">
+    <Compile Include="GUI\fPromotion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fPromotion.Designer.cs">
+    <Compile Include="GUI\fPromotion.Designer.cs">
       <DependentUpon>fPromotion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Customer\CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddEmployee.resx">
+    <EmbeddedResource Include="GUI\fAddEmployee.resx">
       <DependentUpon>fAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fCategoryMovie.resx">
+    <EmbeddedResource Include="GUI\fCategoryMovie.resx">
       <DependentUpon>fCategoryMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fEmployee.resx">
+    <EmbeddedResource Include="GUI\fEmployee.resx">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMain.resx">
+    <EmbeddedResource Include="GUI\fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMovie.resx">
+    <EmbeddedResource Include="GUI\fMovie.resx">
       <DependentUpon>fMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fPromotion.resx">
+    <EmbeddedResource Include="GUI\fPromotion.resx">
       <DependentUpon>fPromotion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

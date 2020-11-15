@@ -140,7 +140,7 @@
             // 
             this.lblNameMovie.AutoSize = true;
             this.lblNameMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameMovie.Location = new System.Drawing.Point(16, 246);
+            this.lblNameMovie.Location = new System.Drawing.Point(44, 238);
             this.lblNameMovie.Name = "lblNameMovie";
             this.lblNameMovie.Size = new System.Drawing.Size(73, 17);
             this.lblNameMovie.TabIndex = 8;
@@ -148,7 +148,7 @@
             // 
             // txtNameMovie
             // 
-            this.txtNameMovie.Location = new System.Drawing.Point(116, 240);
+            this.txtNameMovie.Location = new System.Drawing.Point(132, 235);
             this.txtNameMovie.Name = "txtNameMovie";
             this.txtNameMovie.Size = new System.Drawing.Size(215, 25);
             this.txtNameMovie.TabIndex = 9;
@@ -157,7 +157,7 @@
             // 
             this.lblDirectorMovie.AutoSize = true;
             this.lblDirectorMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblDirectorMovie.Location = new System.Drawing.Point(16, 288);
+            this.lblDirectorMovie.Location = new System.Drawing.Point(47, 283);
             this.lblDirectorMovie.Name = "lblDirectorMovie";
             this.lblDirectorMovie.Size = new System.Drawing.Size(70, 17);
             this.lblDirectorMovie.TabIndex = 10;
@@ -167,7 +167,7 @@
             // 
             this.lblCategoryMovie.AutoSize = true;
             this.lblCategoryMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblCategoryMovie.Location = new System.Drawing.Point(16, 334);
+            this.lblCategoryMovie.Location = new System.Drawing.Point(54, 328);
             this.lblCategoryMovie.Name = "lblCategoryMovie";
             this.lblCategoryMovie.Size = new System.Drawing.Size(63, 17);
             this.lblCategoryMovie.TabIndex = 11;
@@ -177,7 +177,7 @@
             // 
             this.lblRunningTime.AutoSize = true;
             this.lblRunningTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblRunningTime.Location = new System.Drawing.Point(16, 379);
+            this.lblRunningTime.Location = new System.Drawing.Point(33, 372);
             this.lblRunningTime.Name = "lblRunningTime";
             this.lblRunningTime.Size = new System.Drawing.Size(85, 17);
             this.lblRunningTime.TabIndex = 12;
@@ -187,7 +187,7 @@
             // 
             this.lblLanguageMovie.AutoSize = true;
             this.lblLanguageMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblLanguageMovie.Location = new System.Drawing.Point(16, 467);
+            this.lblLanguageMovie.Location = new System.Drawing.Point(41, 462);
             this.lblLanguageMovie.Name = "lblLanguageMovie";
             this.lblLanguageMovie.Size = new System.Drawing.Size(76, 17);
             this.lblLanguageMovie.TabIndex = 13;
@@ -195,7 +195,7 @@
             // 
             // txtDirectorMovie
             // 
-            this.txtDirectorMovie.Location = new System.Drawing.Point(116, 285);
+            this.txtDirectorMovie.Location = new System.Drawing.Point(132, 280);
             this.txtDirectorMovie.Name = "txtDirectorMovie";
             this.txtDirectorMovie.Size = new System.Drawing.Size(216, 25);
             this.txtDirectorMovie.TabIndex = 14;
@@ -203,7 +203,7 @@
             // cboCategoryMovie
             // 
             this.cboCategoryMovie.FormattingEnabled = true;
-            this.cboCategoryMovie.Location = new System.Drawing.Point(116, 330);
+            this.cboCategoryMovie.Location = new System.Drawing.Point(132, 325);
             this.cboCategoryMovie.Name = "cboCategoryMovie";
             this.cboCategoryMovie.Size = new System.Drawing.Size(215, 25);
             this.cboCategoryMovie.TabIndex = 15;
@@ -212,7 +212,7 @@
             // 
             this.lblReleaseDate.AutoSize = true;
             this.lblReleaseDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblReleaseDate.Location = new System.Drawing.Point(16, 425);
+            this.lblReleaseDate.Location = new System.Drawing.Point(3, 421);
             this.lblReleaseDate.Name = "lblReleaseDate";
             this.lblReleaseDate.Size = new System.Drawing.Size(116, 17);
             this.lblReleaseDate.TabIndex = 16;
@@ -222,7 +222,7 @@
             // 
             this.lblStateMovie.AutoSize = true;
             this.lblStateMovie.BackColor = System.Drawing.Color.Transparent;
-            this.lblStateMovie.Location = new System.Drawing.Point(16, 506);
+            this.lblStateMovie.Location = new System.Drawing.Point(41, 504);
             this.lblStateMovie.Name = "lblStateMovie";
             this.lblStateMovie.Size = new System.Drawing.Size(76, 17);
             this.lblStateMovie.TabIndex = 17;
@@ -232,19 +232,19 @@
             // 
             this.rdoActiveMovie.AutoSize = true;
             this.rdoActiveMovie.BackColor = System.Drawing.Color.Transparent;
-            this.rdoActiveMovie.Location = new System.Drawing.Point(100, 506);
+            this.rdoActiveMovie.Location = new System.Drawing.Point(132, 502);
             this.rdoActiveMovie.Name = "rdoActiveMovie";
-            this.rdoActiveMovie.Size = new System.Drawing.Size(92, 21);
+            this.rdoActiveMovie.Size = new System.Drawing.Size(129, 21);
             this.rdoActiveMovie.TabIndex = 18;
             this.rdoActiveMovie.TabStop = true;
-            this.rdoActiveMovie.Text = "Hoạt động";
+            this.rdoActiveMovie.Text = "Đang hoạt động";
             this.rdoActiveMovie.UseVisualStyleBackColor = false;
             // 
             // rdoInactiveMovie
             // 
             this.rdoInactiveMovie.AutoSize = true;
             this.rdoInactiveMovie.BackColor = System.Drawing.Color.Transparent;
-            this.rdoInactiveMovie.Location = new System.Drawing.Point(199, 506);
+            this.rdoInactiveMovie.Location = new System.Drawing.Point(132, 525);
             this.rdoInactiveMovie.Name = "rdoInactiveMovie";
             this.rdoInactiveMovie.Size = new System.Drawing.Size(138, 21);
             this.rdoInactiveMovie.TabIndex = 19;
@@ -254,24 +254,24 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 464);
+            this.textBox1.Location = new System.Drawing.Point(132, 459);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 25);
             this.textBox1.TabIndex = 20;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 374);
+            this.textBox2.Location = new System.Drawing.Point(132, 369);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 25);
             this.textBox2.TabIndex = 21;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 420);
+            this.dateTimePicker1.Location = new System.Drawing.Point(132, 415);
             this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
             this.dateTimePicker1.TabIndex = 22;
             this.dateTimePicker1.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
@@ -280,7 +280,7 @@
             this.btnInsertMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnInsertMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInsertMovie.Location = new System.Drawing.Point(12, 546);
+            this.btnInsertMovie.Location = new System.Drawing.Point(12, 555);
             this.btnInsertMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInsertMovie.Name = "btnInsertMovie";
             this.btnInsertMovie.Size = new System.Drawing.Size(106, 34);
@@ -293,7 +293,7 @@
             this.btnUpdateMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdateMovie.Location = new System.Drawing.Point(124, 546);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(124, 555);
             this.btnUpdateMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
             this.btnUpdateMovie.Size = new System.Drawing.Size(106, 34);
@@ -306,7 +306,7 @@
             this.btnDeleteMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDeleteMovie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteMovie.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteMovie.Location = new System.Drawing.Point(236, 546);
+            this.btnDeleteMovie.Location = new System.Drawing.Point(236, 555);
             this.btnDeleteMovie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteMovie.Name = "btnDeleteMovie";
             this.btnDeleteMovie.Size = new System.Drawing.Size(106, 34);
@@ -404,7 +404,9 @@
             this.cboSortMovie.FormattingEnabled = true;
             this.cboSortMovie.Items.AddRange(new object[] {
             "Tất cả",
-            "Hoạt động",
+            "Tên phim",
+            "Đạo diễn",
+            "Đang hoạt động",
             "Ngừng hoạt động"});
             this.cboSortMovie.Location = new System.Drawing.Point(13, 20);
             this.cboSortMovie.Name = "cboSortMovie";

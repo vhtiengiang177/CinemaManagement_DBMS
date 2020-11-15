@@ -15,6 +15,9 @@ namespace CinemaManagement
         public fMovie()
         {
             InitializeComponent();
+            
         }
+
+
     }
 }

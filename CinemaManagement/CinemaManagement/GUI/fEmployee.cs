@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using CinemaManagement.BLL;
 using CinemaManagement.DTO;
 
-namespace CinemaManagement
+namespace CinemaManagement.GUI
 {
     public partial class fEmployee : Form
     {

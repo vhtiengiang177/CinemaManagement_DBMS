@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaManagement
+namespace CinemaManagement.GUI
 {
     public partial class fMovie : Form
     {

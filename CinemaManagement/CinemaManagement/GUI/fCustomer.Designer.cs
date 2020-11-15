@@ -1,6 +1,6 @@
-﻿namespace CinemaManagement.Customer
+﻿namespace CinemaManagement.GUI
 {
-    partial class CustomerForm
+    partial class fCustomer
     {
         /// <summary>
         /// Required designer variable.

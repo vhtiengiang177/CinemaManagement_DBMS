@@ -1,4 +1,4 @@
-﻿namespace CinemaManagement
+﻿namespace CinemaManagement.GUI
 {
     partial class fPromotion
     {

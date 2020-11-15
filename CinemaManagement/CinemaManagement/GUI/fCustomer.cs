@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaManagement.Customer
+namespace CinemaManagement.GUI
 {
-    public partial class CustomerForm : Form
+    public partial class fCustomer : Form
     {
-        public CustomerForm()
+        public fCustomer()
         {
             InitializeComponent(); loadData();
         }

@@ -365,7 +365,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 34);
             this.button1.TabIndex = 25;
-            this.button1.Text = "Thêm";
+            this.button1.Text = "Thêm hình";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // splctnBodyRight
@@ -415,10 +415,12 @@
             // 
             // dtgMovie
             // 
+            this.dtgMovie.AllowUserToAddRows = false;
             this.dtgMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgMovie.Location = new System.Drawing.Point(0, 0);
             this.dtgMovie.Name = "dtgMovie";
+            this.dtgMovie.ReadOnly = true;
             this.dtgMovie.Size = new System.Drawing.Size(555, 538);
             this.dtgMovie.TabIndex = 0;
             // 

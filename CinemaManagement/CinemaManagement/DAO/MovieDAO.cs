@@ -67,7 +67,7 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public DataTable LoadData()
         {
-            string query = "SELECT @id_movie, @name_movie, @language_movie, @director_movie, @runningtime_movie, @releasedate_movie, @name_categorymovie, @img_movie, @state_movie FROM Movie, CategoryMovie WHERE Movie.id_categorymovie = CategoryMovie.id_categorymovie";
+            string query = "SELECT * FROM v_LoadData";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

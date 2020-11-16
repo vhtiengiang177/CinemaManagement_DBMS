@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagement.DAO;
 
 namespace CinemaManagement.GUI
 {
@@ -42,17 +43,17 @@ namespace CinemaManagement.GUI
 
         public void setDataCmbTypeEmployee()
         {
-            cmbTypeEmployee.DataSource = Employee_BL.Instance.getDataTypeEmployee();
-            cmbTypeEmployee.ValueMember = "id_typeemployee";
-            cmbTypeEmployee.DisplayMember = "name_typeemployee";
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.ValueMember = "id_typeemployee";
+            cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
 
 
         public void setDataCmbCinema()
         {
-            cmbCinema.DataSource = Employee_BL.Instance.getDataCinema();
-            cmbCinema.ValueMember = "id_cinema";
-            cmbCinema.DisplayMember = "name_cinema";
+            cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            cboCinema.ValueMember = "id_cinema";
+            cboCinema.DisplayMember = "name_cinema";
         }
 
 
@@ -60,8 +61,8 @@ namespace CinemaManagement.GUI
         {
            
             txtNameEmployee.Clear();
-            cmbTypeEmployee.Text = "";
-            cmbCinema.Text = "";
+            cboTypeEmployee.Text = "";
+            cboCinema.Text = "";
             txtID.Text = fAddEmployee.idNew;
             txtBirthday.Clear();
             txtSalary.Clear();
@@ -69,8 +70,8 @@ namespace CinemaManagement.GUI
             txtPhoneEmployee.Clear();
             txtEmailEmployee.Clear();
             txtAddressEmployee.Clear();         
-            rdbFemale.Checked = false;
-            rdbMale.Checked = false;
+            rdoFemale.Checked = false;
+            rdoMale.Checked = false;
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace CinemaManagement.GUI
         public Employee createEmp()
         {
             string gender = "";
-            if (rdbFemale.Checked)
+            if (rdoFemale.Checked)
                 gender = "Nữ";
             else gender = "Nam";
 
@@ -139,8 +140,8 @@ namespace CinemaManagement.GUI
                                      this.txtEmailEmployee.Text.Trim(),
                                      this.txtAddressEmployee.Text.Trim(),
                                      salary,
-                                     this.cmbTypeEmployee.SelectedValue.ToString().Trim(),
-                                     this.cmbCinema.SelectedValue.ToString().Trim(),
+                                     this.cboTypeEmployee.SelectedValue.ToString().Trim(),
+                                     this.cboCinema.SelectedValue.ToString().Trim(),
                                      arrImage,
                                      this.txtID.Text.Trim(),
                                      state); return emp;
@@ -150,11 +151,11 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                if (Employee_BL.Instance.InsertEmployee(createEmp()) )
+                if (EmployeeDAO.Instance.InsertEmployee(createEmp()) )
                 {
                     MessageBox.Show("Đã thêm thành công !");
                     
-                    fAddEmployee.idNew = (string)Employee_BL.Instance.createNewIDEmployee();
+                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
                     clearValue();
 
                 }

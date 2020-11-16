@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CreateQRCode.cs" />
-    <Compile Include="BLL\Employee_BL.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="GUI\fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

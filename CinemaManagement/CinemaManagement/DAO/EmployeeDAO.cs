@@ -5,26 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using CinemaManagement.DAO;
+
 using CinemaManagement.DTO;
-namespace CinemaManagement.BLL
+namespace CinemaManagement.DAO
 {
 
-    public class Employee_BL
+    public class EmployeeDAO
     {
-        private static Employee_BL instance;
-        public static Employee_BL Instance
+        private static EmployeeDAO instance;
+        public static EmployeeDAO Instance
         {
-            get { if (instance == null) instance = new Employee_BL();
-                return Employee_BL.instance;
+            get { if (instance == null) instance = new EmployeeDAO();
+                return EmployeeDAO.instance;
             }
 
-            private set { Employee_BL.instance = value; }
+            private set { EmployeeDAO.instance = value; }
         }
 
 
 
-        private Employee_BL()
+        private EmployeeDAO()
         { }
 
         public DataTable LoadData()

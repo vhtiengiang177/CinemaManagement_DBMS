@@ -29,8 +29,8 @@ namespace CinemaManagement.GUI
             btnCancel.Hide();
             btnAddImg.Hide();
             btnSave.Hide();
-            unenableEdit(false);
-            setArrayByteImage();
+            UnenableEdit(false);
+            SetArrayByteImage();
             this.txtID.Enabled = false;
         }
         #region LOADDATA
@@ -39,42 +39,42 @@ namespace CinemaManagement.GUI
         {
             dgvListEmployee.DataSource = EmployeeDAO.Instance.LoadData();
             dgvListEmployee.AutoResizeColumns();
-            clearValue();
-            setDataCmbTypeEmployee();
-            setDataCmbCinema();
+            ClearValue();
+            SetDataCboTypeEmployee();
+            SetDataCboCinema();
             cboSortTypeEmployee.Enabled = false;
             dgvListEmployee_CellClick(null, null);
         }
 
-        public void setDataCmbTypeEmployee()
+        public void SetDataCboTypeEmployee()
         {
-            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.GetDataTypeEmployee();
             cboTypeEmployee.ValueMember = "id_typeemployee";
             cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
 
-        public void setDataCmbSortTypeEmployee()
+        public void SetDataCboSortTypeEmployee()
         {
-            cboSortTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboSortTypeEmployee.DataSource = EmployeeDAO.Instance.GetDataTypeEmployee();
             cboSortTypeEmployee.ValueMember = "id_typeemployee";
             cboSortTypeEmployee.DisplayMember = "name_typeemployee";
         }
 
-        public void setDataCmbCinema()
+        public void SetDataCboCinema()
         {
-            cmbCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            cmbCinema.DataSource = EmployeeDAO.Instance.GetDataCinema();
             cmbCinema.ValueMember = "id_cinema";
             cmbCinema.DisplayMember = "name_cinema";
         }
 
-        public void loadDataOnTextBoxInforEmployee(int r)
+        public void LoadDataOnTextBoxInforEmployee(int r)
         {
 
                 this.txtID.Text = dgvListEmployee.Rows[r].Cells[0].Value.ToString();
                 this.txtNameEmployee.Text = dgvListEmployee.Rows[r].Cells[1].Value.ToString();
                 this.txtBirthday.Text = dgvListEmployee.Rows[r].Cells[2].Value.ToString();
-                string gender = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
-                if (gender == "Nữ")
+                string sex = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
+                if (sex == "Nữ")
                 {
                     rdoFemale.Checked = true;
                 }
@@ -91,7 +91,7 @@ namespace CinemaManagement.GUI
                 string state = dgvListEmployee.Rows[r].Cells[13].Value.ToString();
             
                 if (state.Equals("True"))
-                        this.txtStateEmployee.Text = "Vẫn còn hoạt động";
+                        this.txtStateEmployee.Text = "Đang hoạt động";
                     else this.txtStateEmployee.Text = "Ngưng hoạt động";
 
             if (dgvListEmployee.Rows[r].Cells[11].Value != DBNull.Value)
@@ -99,7 +99,7 @@ namespace CinemaManagement.GUI
                 this.picEmployee.Image = (System.Drawing.Image)
              dgvListEmployee.Rows[r].Cells[11].FormattedValue;
 
-                setArrayByteImage();
+                SetArrayByteImage();
             }
             else this.picEmployee.Image = this.picEmployee.ErrorImage;
 
@@ -109,7 +109,7 @@ namespace CinemaManagement.GUI
         /// <summary>
         /// Để set giá trị arrayImage tránh tình trạng giá trị null và lấy giá trị
         /// </summary>
-        public void setArrayByteImage()
+        public void SetArrayByteImage()
         {
             ms = new MemoryStream();
             this.picEmployee.Image.Save(ms, picEmployee.Image.RawFormat);
@@ -129,7 +129,7 @@ namespace CinemaManagement.GUI
         /// enable các textbox
         /// </summary>
         /// <param name="enable"></param>
-        public void unenableEdit(bool enable)
+        public void UnenableEdit(bool enable)
         {
             this.txtNameEmployee.Enabled = enable;
            
@@ -152,7 +152,7 @@ namespace CinemaManagement.GUI
             if(sender != null)
             {
                 fEmployee.cellClickIndex = dgvListEmployee.CurrentCell.RowIndex;
-                loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
+                LoadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
             }    
         }
 
@@ -161,14 +161,14 @@ namespace CinemaManagement.GUI
             btnCancel.Show();
             btnAddImg.Show();
             btnSave.Show();
-            unenableEdit(true);
+            UnenableEdit(true);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EmployeeDAO.Instance.EditInfoEmployee(createEmp()) != 0)
+                if (EmployeeDAO.Instance.EditInfoEmployee(CreateEmp()) != 0)
                 {
                     MessageBox.Show("Đã lưu thành công !");
                     LoadData();
@@ -176,7 +176,7 @@ namespace CinemaManagement.GUI
                 btnCancel.Hide();
                 btnAddImg.Hide();
                 btnSave.Hide();
-                unenableEdit(false);
+                UnenableEdit(false);
             } catch(SqlException ex)
             {
                 MessageBox.Show("Không thể lưu vào table Employee !" + ex.Message);
@@ -185,7 +185,7 @@ namespace CinemaManagement.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
+            LoadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
         }
 
 
@@ -193,12 +193,12 @@ namespace CinemaManagement.GUI
         /// Tạo một nhân viên chứa các giá trị đã chọn
         /// </summary>
         /// <returns></returns>
-        public Employee createEmp()
+        public Employee CreateEmp()
         {
-            string gender = "";
+            string sex = "";
             if (rdoFemale.Checked)
-                gender = "Nữ";
-            else gender = "Nam";
+                sex = "Nữ";
+            else sex = "Nam";
 
             Byte state = 0;
             if (txtStateEmployee.Text.Contains("Ngưng"))
@@ -220,7 +220,7 @@ namespace CinemaManagement.GUI
             emp = new Employee(this.txtID.Text.Trim(),
                                      name,
                                      birthDay,
-                                     gender.Trim(),
+                                     sex.Trim(),
                                      this.txtIndentity.Text.Trim(),
                                      this.txtPhoneEmployee.Text.Trim(),
                                      this.txtEmailEmployee.Text.Trim(),
@@ -240,7 +240,7 @@ namespace CinemaManagement.GUI
                 try
                 {
                     MessageBox.Show(txtID.Text.Trim());
-                    if (EmployeeDAO.Instance.deleteEmployee(txtID.Text.Trim()))
+                    if (EmployeeDAO.Instance.DeleteEmployee(txtID.Text.Trim()))
                         MessageBox.Show("Đã xóa nhân viên");
                     LoadData();
 
@@ -253,7 +253,7 @@ namespace CinemaManagement.GUI
 
 
 
-        public void clearValue()
+        public void ClearValue()
         {
             txtID.Clear();
             txtNameEmployee.Clear();
@@ -279,13 +279,13 @@ namespace CinemaManagement.GUI
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 this.picEmployee.Image = System.Drawing.Image.FromFile(openFile.FileName);
-                setArrayByteImage();
+                SetArrayByteImage();
             }
         }
 
         private void btnAddNewEmployee_Click(object sender, EventArgs e)
         {
-            string idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
+            string idNew = (string)EmployeeDAO.Instance.CreateNewIDEmployee();
             fAddEmployee fAdd = new fAddEmployee(idNew);
             fAdd.ShowDialog();
         }
@@ -295,14 +295,14 @@ namespace CinemaManagement.GUI
             if (cboSortTypeEmployee.Enabled)
             {
                 string idType = cboSortTypeEmployee.SelectedValue.ToString().Trim();
-                dgvListEmployee.DataSource = EmployeeDAO.Instance.search_TypeEmployee(idType);
+                dgvListEmployee.DataSource = EmployeeDAO.Instance.Search_TypeEmployee(idType);
             }
         }
 
         private void btnSortTypeEmployee_Click(object sender, EventArgs e)
         {
             cboSortTypeEmployee.Enabled = true;
-            setDataCmbSortTypeEmployee();
+            SetDataCboSortTypeEmployee();
           
         }
     }

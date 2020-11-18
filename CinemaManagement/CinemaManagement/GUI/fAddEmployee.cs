@@ -43,7 +43,7 @@ namespace CinemaManagement.GUI
 
         public void setDataCmbTypeEmployee()
         {
-            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.GetDataTypeEmployee();
             cboTypeEmployee.ValueMember = "id_typeemployee";
             cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
@@ -51,7 +51,7 @@ namespace CinemaManagement.GUI
 
         public void setDataCmbCinema()
         {
-            cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            cboCinema.DataSource = EmployeeDAO.Instance.GetDataCinema();
             cboCinema.ValueMember = "id_cinema";
             cboCinema.DisplayMember = "name_cinema";
         }
@@ -155,7 +155,7 @@ namespace CinemaManagement.GUI
                 {
                     MessageBox.Show("Đã thêm thành công !");
                     
-                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
+                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.CreateNewIDEmployee();
                     clearValue();
 
                 }

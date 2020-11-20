@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="BLL\CreateQRCode.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DTO\Customer.cs" />
     <Compile Include="GUI\fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

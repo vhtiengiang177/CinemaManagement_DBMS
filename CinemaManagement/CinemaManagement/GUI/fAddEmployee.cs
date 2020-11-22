@@ -41,9 +41,10 @@ namespace CinemaManagement.GUI
             txtID.Enabled = false;
         }
 
+        #region SET DATA
         public void setDataCmbTypeEmployee()
         {
-            cboTypeEmployee.DataSource = EmployeeDAO.Instance.GetDataTypeEmployee();
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
             cboTypeEmployee.ValueMember = "id_typeemployee";
             cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
@@ -51,7 +52,7 @@ namespace CinemaManagement.GUI
 
         public void setDataCmbCinema()
         {
-            cboCinema.DataSource = EmployeeDAO.Instance.GetDataCinema();
+            cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
             cboCinema.ValueMember = "id_cinema";
             cboCinema.DisplayMember = "name_cinema";
         }
@@ -86,31 +87,6 @@ namespace CinemaManagement.GUI
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            clearValue();
-
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAddImg_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Open File";
-            openFile.Filter = "Image files (*.jpg)|*.jpg|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                this.picEmployee.Image = System.Drawing.Image.FromFile(openFile.FileName);
-                setArrayByteImage();
-            }
-        }
-
-
         public Employee createEmp()
         {
             string gender = "";
@@ -127,7 +103,7 @@ namespace CinemaManagement.GUI
 
             Double salary = 0;
             if (this.txtSalary.Text != "")
-            salary = Convert.ToDouble(this.txtSalary.Text);
+                salary = Convert.ToDouble(this.txtSalary.Text);
             string name = txtNameEmployee.Text.Trim();
 
             Employee emp = new Employee();
@@ -147,24 +123,62 @@ namespace CinemaManagement.GUI
                                      state); return emp;
         }
 
+        #endregion
+
+        #region ADD
+
+        private void btnAddImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Open File";
+            openFile.Filter = "Image files (*.jpg)|*.jpg|All files (*.*)|*.*";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                this.picEmployee.Image = System.Drawing.Image.FromFile(openFile.FileName);
+                setArrayByteImage();
+            }
+        }
+
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EmployeeDAO.Instance.InsertEmployee(createEmp()) )
+                if (EmployeeDAO.Instance.insertEmployee(createEmp()))
                 {
                     MessageBox.Show("Đã thêm thành công !");
-                    
-                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.CreateNewIDEmployee();
+
+                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
                     clearValue();
 
                 }
-              
+
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Không thể thêm vào table Employee !" + ex.Message);
             }
         }
+        #endregion
+
+        #region CANCEL ADD
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clearValue();
+
+        }
+
+        #endregion
+
+        #region EXIT
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
     }
 }

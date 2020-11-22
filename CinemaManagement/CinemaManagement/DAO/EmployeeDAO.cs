@@ -27,7 +27,7 @@ namespace CinemaManagement.DAO
         private EmployeeDAO()
         { }
 
-        public DataTable LoadData()
+        public DataTable loadData()
         {
             string query = "exec sp_showEmployee";
             return DataProvider.Instance.ExecuteQuery(query);
@@ -39,7 +39,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="emp"></param>
         /// <returns></returns>
-        public int EditInfoEmployee(Employee emp)
+        public int editInfoEmployee(Employee emp)
         {
             string query = "exec sp_updateInforEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,
@@ -54,7 +54,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public bool DeleteEmployee(string ID)
+        public bool deleteEmployee(string ID)
         {
             string query = "exec sp_deleteEmployee @ID";
                 return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ID }) > 0;
@@ -65,7 +65,7 @@ namespace CinemaManagement.DAO
         /// Thêm nhân viên
         /// </summary>
         /// <returns></returns>
-        public bool InsertEmployee(Employee emp)
+        public bool insertEmployee(Employee emp)
         {
             string query = "exec sp_InsertInfoEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee  ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,
@@ -79,7 +79,7 @@ namespace CinemaManagement.DAO
         ///  Lấy dữ liệu từ table loại nhân viên - chức vụ
         /// </summary>
         /// <returns></returns>
-        public DataTable GetDataTypeEmployee()
+        public DataTable getDataTypeEmployee()
         {
             string query = "select * from TypeEmployee";
             return DataProvider.Instance.ExecuteQuery(query);
@@ -90,7 +90,7 @@ namespace CinemaManagement.DAO
         /// Lấy dữ liệu từ table Cinema
         /// </summary>
         /// <returns></returns>
-        public DataTable GetDataCinema()
+        public DataTable getDataCinema()
         {
             string query = "select * from Cinema";
             return DataProvider.Instance.ExecuteQuery(query);
@@ -102,7 +102,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public DataTable Search_IDEmployee(string ID)
+        public DataTable search_IDEmployee(string ID)
         {
             string query = "exec sp_search_ID_Employee @ID ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { ID });
@@ -114,7 +114,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="phone"></param>
         /// <returns></returns>
-        public DataTable Search_PhoneEmployee(string phone)
+        public DataTable search_PhoneEmployee(string phone)
         {
             string query = "exec sp_search_Phone_Employee @phone ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { phone });
@@ -126,7 +126,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="identityCard"></param>
         /// <returns></returns>
-        public DataTable Search_IdentityCardEmployee(string identityCard)
+        public DataTable search_IdentityCardEmployee(string identityCard)
         {
             string query = "exec sp_search_IdentityCard_Employee @identityCard ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { identityCard });
@@ -137,7 +137,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="idType"></param>
         /// <returns>Danh sách nhân viên</returns>
-        public DataTable Search_TypeEmployee(string idType)
+        public DataTable search_TypeEmployee(string idType)
         {
             string query = "select * from dbo.fun_sort_typeEmployee( @idType )";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { idType });
@@ -148,7 +148,7 @@ namespace CinemaManagement.DAO
         /// Tạo một ID cho nhân viên khi vào form để tạo mới nhân viên 
         /// </summary>
         /// <returns> Mã nhân viên: id_employee</returns>
-        public object CreateNewIDEmployee()
+        public object createNewIDEmployee()
         {
             string query = "select dbo.fun_create_newID_Employee()";
             return DataProvider.Instance.ExecuteScalar(query);

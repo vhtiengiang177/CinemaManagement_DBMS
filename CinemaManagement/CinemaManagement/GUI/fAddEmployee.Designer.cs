@@ -72,6 +72,7 @@
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.plInforMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.plInforContact.SuspendLayout();
@@ -184,9 +185,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(11, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Contact:";
+            this.label8.Text = "CONTACT:";
             // 
             // plAddress
             // 
@@ -293,7 +294,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(20, 9);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(91, 29);
             this.panel1.TabIndex = 8;
@@ -301,11 +302,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 1);
+            this.label9.Location = new System.Drawing.Point(5, 7);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.Size = new System.Drawing.Size(85, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Information";
+            this.label9.Text = "INFORMATION:";
             // 
             // plGender
             // 
@@ -456,15 +457,16 @@
             // 
             // plName
             // 
+            this.plName.Controls.Add(this.label11);
             this.plName.Controls.Add(this.txtNameEmployee);
-            this.plName.Location = new System.Drawing.Point(165, 45);
+            this.plName.Location = new System.Drawing.Point(165, 27);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(231, 44);
+            this.plName.Size = new System.Drawing.Size(231, 62);
             this.plName.TabIndex = 1;
             // 
             // txtNameEmployee
             // 
-            this.txtNameEmployee.Location = new System.Drawing.Point(32, 13);
+            this.txtNameEmployee.Location = new System.Drawing.Point(32, 31);
             this.txtNameEmployee.Name = "txtNameEmployee";
             this.txtNameEmployee.Size = new System.Drawing.Size(188, 20);
             this.txtNameEmployee.TabIndex = 0;
@@ -478,6 +480,15 @@
             this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(84, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Tên nhân viên";
             // 
             // fAddEmployee
             // 
@@ -566,5 +577,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cboCinema;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -37,7 +37,7 @@ namespace CinemaManagement.GUI
             rdoActiveMovie.Checked = true;
         }
 
-        // Thêm hình cho phim
+        // Thêm hình phim
         private void btnInsertImage_Click(object sender, EventArgs e)
         {
             this.openIMG.FileName = string.Empty;
@@ -56,6 +56,18 @@ namespace CinemaManagement.GUI
                 }
             }
         }
+
+        // Xóa hình phim
+        private void btnDeleteImage_Click(object sender, EventArgs e)
+        {
+            this.picImageMovie.Image = null;
+        }
+
+        private void btnInsertMovie_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
         
 
     }

@@ -33,7 +33,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="mo"></param>
         /// <returns></returns>
-        public bool InsertMovie(Movie mo)
+        public bool insertMovie(Movie mo)
         {
             string query = "EXEC sp_InsertMovie @id_movie, @name_movie, @language_movie, @director_movie, @runningtime_movie, @releasedate_movie, @id_categorymovie, @img_movie, @state_movie";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie, mo.Name_movie, mo.Language_movie, mo.Director_movie, mo.Runningtime_movie, Convert.ToDateTime(mo.Releasedate_movie), mo.Id_categorymovie, mo.Img_movie, mo.State_movie }) > 0;
@@ -44,7 +44,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="mo"></param>
         /// <returns></returns>
-        public bool UpdateMovie(Movie mo)
+        public bool updateMovie(Movie mo)
         {
             string query = "EXEC sp_UpdateMovie @id_movie, @name_movie, @language_movie, @director_movie, @runningtime_movie, @releasedate_movie, @id_categorymovie, @img_movie, @state_movie";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie, mo.Name_movie, mo.Language_movie, mo.Director_movie, mo.Runningtime_movie, Convert.ToDateTime(mo.Releasedate_movie), mo.Id_categorymovie, mo.Img_movie, mo.State_movie }) > 0;
@@ -55,7 +55,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="mo"></param>
         /// <returns></returns>
-        public bool DeleteMovie(Movie mo)
+        public bool deleteMovie(Movie mo)
         {
             string query = "EXEC sp_DeleteMovie @id_movie";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie }) > 0;
@@ -65,7 +65,7 @@ namespace CinemaManagement.DAO
         /// Tải tất cả dữ liệu.
         /// </summary>
         /// <returns></returns>
-        public DataTable LoadData()
+        public DataTable loadData()
         {
             string query = "SELECT * FROM v_LoadData";
             return DataProvider.Instance.ExecuteQuery(query);
@@ -76,7 +76,7 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public DataTable SearchMovie(string search)
+        public DataTable searchMovie(string search)
         {
             string query = "EXEC sp_SearchMovie @search";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { search });

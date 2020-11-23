@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -27,23 +28,23 @@ namespace CinemaManagement.DAO
         //viết câu query như bìnhthuongwf
         //return dataprovrder . instance (Thằng nào cũng v, hk cần khai báo, cứ gọi class.instance là ra) . execute(tùy loại) (query, new object[]{ các object, viết theo thứ tự của câu query}
 
-        public bool AddCustomer(string id_Customer, string name_Customer, string phone_Customer, string birthday_Customer, string address_Customer, string email_Customer, string point_Customer, string id_Typecustomer)
+        public bool AddCustomer(Customer cus)
         {
-            string query = "exec sp_InsertCustomer @id , @name , @birthday , @phone , @email , @address , @point , @type ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_Customer, name_Customer, Convert.ToDateTime(birthday_Customer), phone_Customer, email_Customer, address_Customer, Convert.ToInt32(point_Customer), id_Typecustomer }) > 0;
+            string query = "exec sp_InsertCustomer @id_customer , @lname_customer , @fname_customer , @birthday_customer , @sex_customer , @identitycard_customer , @phone_customer , @email_customer , @address_customer , @point_customer , @id_typecustomer , @qr_customer ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer}) > 0;
         }
 
 
-        public bool UpdateCustomer(string id_Customer, string name_Customer, string phone_Customer, string birthday_Customer, string address_Customer, string email_Customer, string point_Customer, string id_Typecustomer)
+        public bool UpdateCustomer(Customer cus)
         {
-            string query = "exec sp_UpdateCustomer @id , @name , @birthday , @phone , @email , @address , @point , @type ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_Customer, name_Customer, Convert.ToDateTime(birthday_Customer), phone_Customer, email_Customer, address_Customer, Convert.ToInt32(point_Customer), id_Typecustomer }) > 0;
+            string query = "exec sp_UpdateCustomer @id_customer , @lname_customer , @fname_customer , @birthday_customer , @sex_customer , @identitycard_customer , @phone_customer , @email_customer , @address_customer , @point_customer , @id_typecustomer , @qr_customer ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer }) > 0;
         }
 
-        public bool DeleteCustomer(string id_Customer)
+        public bool DeleteCustomer(Customer cus)
         {
-            string query = "exec sp_DeleteCustomer @id";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_Customer }) > 0;
+            string query = "exec sp_DeleteCustomer @id ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer }) > 0;
         }
 
         public DataTable LoadData()
@@ -56,6 +57,19 @@ namespace CinemaManagement.DAO
         {
             string query = "select * from fu_SearchCustomer('% @search %')";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+        
+
+        public DataTable GetTypeCustomer()
+        {
+            string query = "select * from TypeCustomer";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetCustomerById(string id)
+        {
+            string query = "exec sp_findCustomerById @id ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
     }
 }

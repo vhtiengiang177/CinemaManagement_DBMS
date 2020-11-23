@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CinemaManagement.BLL;
+using CinemaManagement.DAO;
 using CinemaManagement.DTO;
+
 
 namespace CinemaManagement.GUI
 {
@@ -24,7 +25,7 @@ namespace CinemaManagement.GUI
         public fEmployee()
         {
             InitializeComponent();
-            LoadData();
+            loadData();
             btnCancel.Hide();
             btnAddImg.Hide();
             btnSave.Hide();
@@ -34,64 +35,53 @@ namespace CinemaManagement.GUI
         }
         #region LOADDATA
 
-        public void LoadData()
+        private void dgvListEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvListEmployee.DataSource = Employee_BL.Instance.LoadData();
+            if (sender != null)
+            {
+                fEmployee.cellClickIndex = dgvListEmployee.CurrentCell.RowIndex;
+                loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
+            }
+        }
+
+        public void loadData()
+        {
+            dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
             dgvListEmployee.AutoResizeColumns();
             clearValue();
-            setDataCmbTypeEmployee();
-            setDataCmbCinema();
-            cmbSortTypeEmployee.Enabled = false;
+            setDataCboTypeEmployee();
+            setDataCboCinema();
+            cboSortTypeEmployee.Enabled = false;
             dgvListEmployee_CellClick(null, null);
         }
 
-        public void setDataCmbTypeEmployee()
-        {
-            cmbTypeEmployee.DataSource = Employee_BL.Instance.getDataTypeEmployee();
-            cmbTypeEmployee.ValueMember = "id_typeemployee";
-            cmbTypeEmployee.DisplayMember = "name_typeemployee";
-        }
-
-        public void setDataCmbSortTypeEmployee()
-        {
-            cmbSortTypeEmployee.DataSource = Employee_BL.Instance.getDataTypeEmployee();
-            cmbSortTypeEmployee.ValueMember = "id_typeemployee";
-            cmbSortTypeEmployee.DisplayMember = "name_typeemployee";
-        }
-
-        public void setDataCmbCinema()
-        {
-            cmbCinema.DataSource = Employee_BL.Instance.getDataCinema();
-            cmbCinema.ValueMember = "id_cinema";
-            cmbCinema.DisplayMember = "name_cinema";
-        }
 
         public void loadDataOnTextBoxInforEmployee(int r)
         {
 
-                this.txtID.Text = dgvListEmployee.Rows[r].Cells[0].Value.ToString();
-                this.txtNameEmployee.Text = dgvListEmployee.Rows[r].Cells[1].Value.ToString();
-                this.txtBirthday.Text = dgvListEmployee.Rows[r].Cells[2].Value.ToString();
-                string gender = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
-                if (gender == "Nữ")
-                {
-                    rdbFemale.Checked = true;
-                }
-                else
-                    rdbMale.Checked = true;
+            this.txtID.Text = dgvListEmployee.Rows[r].Cells[0].Value.ToString();
+            this.txtNameEmployee.Text = dgvListEmployee.Rows[r].Cells[1].Value.ToString();
+            this.txtBirthday.Text = dgvListEmployee.Rows[r].Cells[2].Value.ToString();
+            string sex = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
+            if (sex == "Nữ")
+            {
+                rdoFemale.Checked = true;
+            }
+            else
+                rdoMale.Checked = true;
 
-                this.txtIndentity.Text = dgvListEmployee.Rows[r].Cells[4].Value.ToString();
-                this.txtPhoneEmployee.Text = dgvListEmployee.Rows[r].Cells[5].Value.ToString();
-                this.txtEmailEmployee.Text = dgvListEmployee.Rows[r].Cells[6].Value.ToString();
-                this.txtAddressEmployee.Text = dgvListEmployee.Rows[r].Cells[7].Value.ToString();
-                this.txtSalary.Text = dgvListEmployee.Rows[r].Cells[8].Value.ToString();
-                this.cmbTypeEmployee.Text = dgvListEmployee.Rows[r].Cells[9].Value.ToString();
-                this.cmbCinema.Text = dgvListEmployee.Rows[r].Cells[10].Value.ToString();
-                string state = dgvListEmployee.Rows[r].Cells[13].Value.ToString();
-            
-                if (state.Equals("True"))
-                        this.txtStateEmployee.Text = "Vẫn còn hoạt động";
-                    else this.txtStateEmployee.Text = "Ngưng hoạt động";
+            this.txtIndentity.Text = dgvListEmployee.Rows[r].Cells[4].Value.ToString();
+            this.txtPhoneEmployee.Text = dgvListEmployee.Rows[r].Cells[5].Value.ToString();
+            this.txtEmailEmployee.Text = dgvListEmployee.Rows[r].Cells[6].Value.ToString();
+            this.txtAddressEmployee.Text = dgvListEmployee.Rows[r].Cells[7].Value.ToString();
+            this.txtSalary.Text = dgvListEmployee.Rows[r].Cells[8].Value.ToString();
+            this.cboTypeEmployee.Text = dgvListEmployee.Rows[r].Cells[9].Value.ToString();
+            this.cmbCinema.Text = dgvListEmployee.Rows[r].Cells[10].Value.ToString();
+            string state = dgvListEmployee.Rows[r].Cells[13].Value.ToString();
+
+            if (state.Equals("True"))
+                this.txtStateEmployee.Text = "Đang hoạt động";
+            else this.txtStateEmployee.Text = "Ngưng hoạt động";
 
             if (dgvListEmployee.Rows[r].Cells[11].Value != DBNull.Value)
             {
@@ -105,6 +95,40 @@ namespace CinemaManagement.GUI
         }
 
 
+
+        private void btnLoadListEmployee_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+
+        #endregion
+
+        #region SET DATA
+
+        public void setDataCboTypeEmployee()
+        {
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.ValueMember = "id_typeemployee";
+            cboTypeEmployee.DisplayMember = "name_typeemployee";
+        }
+
+        public void setDataCboSortTypeEmployee()
+        {
+            cboSortTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboSortTypeEmployee.ValueMember = "id_typeemployee";
+            cboSortTypeEmployee.DisplayMember = "name_typeemployee";
+        }
+
+        public void setDataCboCinema()
+        {
+            cmbCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            cmbCinema.ValueMember = "id_cinema";
+            cmbCinema.DisplayMember = "name_cinema";
+        }
+
+
+
         /// <summary>
         /// Để set giá trị arrayImage tránh tình trạng giá trị null và lấy giá trị
         /// </summary>
@@ -116,13 +140,6 @@ namespace CinemaManagement.GUI
             ms.Close();
         }
 
-        #endregion
-
-        private void btnLoadListEmployee_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
 
         /// <summary>
         /// enable các textbox
@@ -131,60 +148,19 @@ namespace CinemaManagement.GUI
         public void unenableEdit(bool enable)
         {
             this.txtNameEmployee.Enabled = enable;
-           
+
             this.txtIndentity.Enabled = enable;
             this.txtPhoneEmployee.Enabled = enable;
             this.txtSalary.Enabled = enable;
             this.txtEmailEmployee.Enabled = enable;
             this.txtBirthday.Enabled = enable;
             this.cmbCinema.Enabled = enable;
-            this.cmbTypeEmployee.Enabled = enable;
+            this.cboTypeEmployee.Enabled = enable;
             this.txtStateEmployee.Enabled = enable;
             this.txtAddressEmployee.Enabled = enable;
-            this.rdbFemale.Enabled = enable;
-            this.rdbMale.Enabled = enable;
+            this.rdoFemale.Enabled = enable;
+            this.rdoMale.Enabled = enable;
 
-        }
-
-        private void dgvListEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(sender != null)
-            {
-                fEmployee.cellClickIndex = dgvListEmployee.CurrentCell.RowIndex;
-                loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
-            }    
-        }
-
-        private void btnEditEmployee_Click(object sender, EventArgs e)
-        {
-            btnCancel.Show();
-            btnAddImg.Show();
-            btnSave.Show();
-            unenableEdit(true);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Employee_BL.Instance.EditInfoEmployee(createEmp()) != 0)
-                {
-                    MessageBox.Show("Đã lưu thành công !");
-                    LoadData();
-                }
-                btnCancel.Hide();
-                btnAddImg.Hide();
-                btnSave.Hide();
-                unenableEdit(false);
-            } catch(SqlException ex)
-            {
-                MessageBox.Show("Không thể lưu vào table Employee !" + ex.Message);
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
         }
 
 
@@ -194,10 +170,10 @@ namespace CinemaManagement.GUI
         /// <returns></returns>
         public Employee createEmp()
         {
-            string gender = "";
-            if (rdbFemale.Checked)
-                gender = "Nữ";
-            else gender = "Nam";
+            string sex = "";
+            if (rdoFemale.Checked)
+                sex = "Nữ";
+            else sex = "Nam";
 
             Byte state = 0;
             if (txtStateEmployee.Text.Contains("Ngưng"))
@@ -214,49 +190,29 @@ namespace CinemaManagement.GUI
                 salary = Convert.ToDouble(this.txtSalary.Text);
 
             string name = dgvListEmployee.Rows[fEmployee.cellClickIndex].Cells[1].Value.ToString().Trim();
-          
+
             Employee emp = new Employee();
             emp = new Employee(this.txtID.Text.Trim(),
                                      name,
                                      birthDay,
-                                     gender.Trim(),
+                                     sex.Trim(),
                                      this.txtIndentity.Text.Trim(),
                                      this.txtPhoneEmployee.Text.Trim(),
                                      this.txtEmailEmployee.Text.Trim(),
                                      this.txtAddressEmployee.Text.Trim(),
                                      salary,
-                                     this.cmbTypeEmployee.SelectedValue.ToString().Trim(),
+                                     this.cboTypeEmployee.SelectedValue.ToString().Trim(),
                                      this.cmbCinema.SelectedValue.ToString().Trim(),
                                      arrImage,
                                      this.txtID.Text.Trim(),
-                                     state) ; return emp;
+                                     state); return emp;
         }
-
-        private void btnDeleteEmployee_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có muốn xóa nhân viên đã chọn ?", "Thông tin", MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
-                try
-                {
-                    MessageBox.Show(txtID.Text.Trim());
-                    if (Employee_BL.Instance.deleteEmployee(txtID.Text.Trim()))
-                        MessageBox.Show("Đã xóa nhân viên");
-                    LoadData();
-
-                }catch(SqlException ex)
-                { MessageBox.Show("Không thể xóa khỏi table Employee " + ex.Message);
-                  
-                }
-        }
-        
-
-
 
         public void clearValue()
         {
             txtID.Clear();
             txtNameEmployee.Clear();
-            cmbTypeEmployee.Text = "";
+            cboTypeEmployee.Text = "";
             cmbCinema.Text = "";
             txtBirthday.Clear();
             txtSalary.Clear();
@@ -265,8 +221,20 @@ namespace CinemaManagement.GUI
             txtEmailEmployee.Clear();
             txtAddressEmployee.Clear();
             txtStateEmployee.Clear();
-            rdbFemale.Checked = false;
-            rdbMale.Checked = false;
+            rdoFemale.Checked = false;
+            rdoMale.Checked = false;
+        }
+
+        #endregion
+
+        #region EDIT
+
+        private void btnEditEmployee_Click(object sender, EventArgs e)
+        {
+            btnCancel.Show();
+            btnAddImg.Show();
+            btnSave.Show();
+            unenableEdit(true);
         }
 
         private void btnAddImg_Click(object sender, EventArgs e)
@@ -282,28 +250,93 @@ namespace CinemaManagement.GUI
             }
         }
 
-        private void btnAddNewEmployee_Click(object sender, EventArgs e)
-        {
-            string idNew = (string)Employee_BL.Instance.createNewIDEmployee();
-            fAddEmployee fAdd = new fAddEmployee(idNew);
-            fAdd.ShowDialog();
-        }
+        #endregion
+
+        #region SORT
+
 
         private void cmbSortTypeEmployee_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cmbSortTypeEmployee.Enabled)
+            if (cboSortTypeEmployee.Enabled)
             {
-                string idType = cmbSortTypeEmployee.SelectedValue.ToString().Trim();
-                dgvListEmployee.DataSource = Employee_BL.Instance.search_TypeEmployee(idType);
+                string idType = cboSortTypeEmployee.SelectedValue.ToString().Trim();
+                dgvListEmployee.DataSource = EmployeeDAO.Instance.search_TypeEmployee(idType);
             }
         }
 
         private void btnSortTypeEmployee_Click(object sender, EventArgs e)
         {
-            cmbSortTypeEmployee.Enabled = true;
-            setDataCmbSortTypeEmployee();
-          
+            cboSortTypeEmployee.Enabled = true;
+            setDataCboSortTypeEmployee();
+
         }
+
+        #endregion
+
+        #region DELETE
+
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa nhân viên đã chọn ?", "Thông tin", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+                try
+                {
+                    MessageBox.Show(txtID.Text.Trim());
+                    if (EmployeeDAO.Instance.deleteEmployee(txtID.Text.Trim()))
+                        MessageBox.Show("Đã xóa nhân viên");
+                    loadData();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Không thể xóa khỏi table Employee " + ex.Message);
+
+                }
+        }
+
+        #endregion
+
+        #region SAVE
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EmployeeDAO.Instance.editInfoEmployee(createEmp()) != 0)
+                {
+                    MessageBox.Show("Đã lưu thành công !");
+                    loadData();
+                }
+                btnCancel.Hide();
+                btnAddImg.Hide();
+                btnSave.Hide();
+                unenableEdit(false);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Không thể lưu vào table Employee !" + ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region CANCEL
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
+        }
+        #endregion
+
+        #region ADD NEW
+        private void btnAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            string idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
+            fAddEmployee fAdd = new fAddEmployee(idNew);
+            fAdd.ShowDialog();
+        }
+
+        #endregion
+
     }
 }
 

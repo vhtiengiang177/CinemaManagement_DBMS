@@ -38,13 +38,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSortTypeEmployee = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbSortTypeEmployee = new System.Windows.Forms.ComboBox();
+            this.cboSortTypeEmployee = new System.Windows.Forms.ComboBox();
             this.plList = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.plSearch = new System.Windows.Forms.Panel();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.txtSearchEmployee = new System.Windows.Forms.TextBox();
-            this.cbmTypeSearchEmployee = new System.Windows.Forms.ComboBox();
+            this.cboTypeSearchEmployee = new System.Windows.Forms.ComboBox();
             this.plInforMain = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -68,8 +68,8 @@
             this.btnAddImg = new System.Windows.Forms.Button();
             this.txtStateEmployee = new System.Windows.Forms.TextBox();
             this.plGender = new System.Windows.Forms.Panel();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.plID = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pl = new System.Windows.Forms.Panel();
@@ -82,7 +82,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
-            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
+            this.cboTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
@@ -173,7 +173,7 @@
             // 
             this.panel2.Controls.Add(this.btnSortTypeEmployee);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.cmbSortTypeEmployee);
+            this.panel2.Controls.Add(this.cboSortTypeEmployee);
             this.panel2.Location = new System.Drawing.Point(1, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(290, 58);
@@ -198,14 +198,14 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Thống kê theo chức vụ nhân viên:";
             // 
-            // cmbSortTypeEmployee
+            // cboSortTypeEmployee
             // 
-            this.cmbSortTypeEmployee.FormattingEnabled = true;
-            this.cmbSortTypeEmployee.Location = new System.Drawing.Point(3, 21);
-            this.cmbSortTypeEmployee.Name = "cmbSortTypeEmployee";
-            this.cmbSortTypeEmployee.Size = new System.Drawing.Size(169, 21);
-            this.cmbSortTypeEmployee.TabIndex = 4;
-            this.cmbSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cmbSortTypeEmployee_SelectedValueChanged);
+            this.cboSortTypeEmployee.FormattingEnabled = true;
+            this.cboSortTypeEmployee.Location = new System.Drawing.Point(3, 21);
+            this.cboSortTypeEmployee.Name = "cboSortTypeEmployee";
+            this.cboSortTypeEmployee.Size = new System.Drawing.Size(169, 21);
+            this.cboSortTypeEmployee.TabIndex = 4;
+            this.cboSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cmbSortTypeEmployee_SelectedValueChanged);
             // 
             // plList
             // 
@@ -228,7 +228,7 @@
             // 
             this.plSearch.Controls.Add(this.btnSearchEmployee);
             this.plSearch.Controls.Add(this.txtSearchEmployee);
-            this.plSearch.Controls.Add(this.cbmTypeSearchEmployee);
+            this.plSearch.Controls.Add(this.cboTypeSearchEmployee);
             this.plSearch.Location = new System.Drawing.Point(3, 6);
             this.plSearch.Name = "plSearch";
             this.plSearch.Size = new System.Drawing.Size(498, 68);
@@ -250,18 +250,18 @@
             this.txtSearchEmployee.Size = new System.Drawing.Size(256, 20);
             this.txtSearchEmployee.TabIndex = 1;
             // 
-            // cbmTypeSearchEmployee
+            // cboTypeSearchEmployee
             // 
-            this.cbmTypeSearchEmployee.FormattingEnabled = true;
-            this.cbmTypeSearchEmployee.Items.AddRange(new object[] {
+            this.cboTypeSearchEmployee.FormattingEnabled = true;
+            this.cboTypeSearchEmployee.Items.AddRange(new object[] {
             "Mã nhân viên",
             "Số điện thoại",
             "Tên nhân viên",
             "CMND"});
-            this.cbmTypeSearchEmployee.Location = new System.Drawing.Point(5, 26);
-            this.cbmTypeSearchEmployee.Name = "cbmTypeSearchEmployee";
-            this.cbmTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
-            this.cbmTypeSearchEmployee.TabIndex = 0;
+            this.cboTypeSearchEmployee.Location = new System.Drawing.Point(5, 26);
+            this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
+            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
+            this.cboTypeSearchEmployee.TabIndex = 0;
             // 
             // plInforMain
             // 
@@ -474,34 +474,34 @@
             // 
             // plGender
             // 
-            this.plGender.Controls.Add(this.rdbMale);
-            this.plGender.Controls.Add(this.rdbFemale);
+            this.plGender.Controls.Add(this.rdoMale);
+            this.plGender.Controls.Add(this.rdoFemale);
             this.plGender.Location = new System.Drawing.Point(165, 260);
             this.plGender.Name = "plGender";
             this.plGender.Size = new System.Drawing.Size(99, 36);
             this.plGender.TabIndex = 8;
             // 
-            // rdbMale
+            // rdoMale
             // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.Location = new System.Drawing.Point(48, 15);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(47, 17);
-            this.rdbMale.TabIndex = 1;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Nam";
-            this.rdbMale.UseVisualStyleBackColor = true;
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Location = new System.Drawing.Point(48, 15);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(47, 17);
+            this.rdoMale.TabIndex = 1;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Nam";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
-            // rdbFemale
+            // rdoFemale
             // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(3, 15);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(39, 17);
-            this.rdbFemale.TabIndex = 0;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Nữ";
-            this.rdbFemale.UseVisualStyleBackColor = true;
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Location = new System.Drawing.Point(3, 15);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(39, 17);
+            this.rdoFemale.TabIndex = 0;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Nữ";
+            this.rdoFemale.UseVisualStyleBackColor = true;
             // 
             // plID
             // 
@@ -595,20 +595,20 @@
             // 
             // plType
             // 
-            this.plType.Controls.Add(this.cmbTypeEmployee);
+            this.plType.Controls.Add(this.cboTypeEmployee);
             this.plType.Controls.Add(this.label1);
             this.plType.Location = new System.Drawing.Point(165, 68);
             this.plType.Name = "plType";
             this.plType.Size = new System.Drawing.Size(231, 44);
             this.plType.TabIndex = 2;
             // 
-            // cmbTypeEmployee
+            // cboTypeEmployee
             // 
-            this.cmbTypeEmployee.FormattingEnabled = true;
-            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 10);
-            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
-            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
-            this.cmbTypeEmployee.TabIndex = 2;
+            this.cboTypeEmployee.FormattingEnabled = true;
+            this.cboTypeEmployee.Location = new System.Drawing.Point(98, 10);
+            this.cboTypeEmployee.Name = "cboTypeEmployee";
+            this.cboTypeEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cboTypeEmployee.TabIndex = 2;
             // 
             // label1
             // 
@@ -708,7 +708,7 @@
         private System.Windows.Forms.Panel plSearch;
         private System.Windows.Forms.Button btnSearchEmployee;
         private System.Windows.Forms.TextBox txtSearchEmployee;
-        private System.Windows.Forms.ComboBox cbmTypeSearchEmployee;
+        private System.Windows.Forms.ComboBox cboTypeSearchEmployee;
         private System.Windows.Forms.Panel plInforMain;
         private System.Windows.Forms.Button btnAddNewEmployee;
         private System.Windows.Forms.Panel plInfor;
@@ -743,15 +743,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtStateEmployee;
         private System.Windows.Forms.Panel plGender;
-        private System.Windows.Forms.RadioButton rdbMale;
-        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Button btnEditEmployee;
         private System.Windows.Forms.Button btnAddImg;
-        private System.Windows.Forms.ComboBox cmbTypeEmployee;
+        private System.Windows.Forms.ComboBox cboTypeEmployee;
         private System.Windows.Forms.ComboBox cmbCinema;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ComboBox cmbSortTypeEmployee;
+        private System.Windows.Forms.ComboBox cboSortTypeEmployee;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSortTypeEmployee;

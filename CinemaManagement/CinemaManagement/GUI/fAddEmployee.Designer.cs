@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddEmployee));
             this.plInforMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.plInforContact = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cboCinema = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.plAddress = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,8 +53,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.plGender = new System.Windows.Forms.Panel();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.plID = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pl = new System.Windows.Forms.Panel();
@@ -63,17 +67,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
-            this.cmbTypeEmployee = new System.Windows.Forms.ComboBox();
+            this.cboTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbCinema = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.plInforMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.plInforContact.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.plAddress.SuspendLayout();
             this.plEmail.SuspendLayout();
             this.plPhone.SuspendLayout();
@@ -87,7 +90,6 @@
             this.plType.SuspendLayout();
             this.plName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // plInforMain
@@ -152,14 +154,40 @@
             this.plInforContact.Size = new System.Drawing.Size(401, 210);
             this.plInforContact.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cboCinema);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(3, 144);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(391, 36);
+            this.panel3.TabIndex = 4;
+            // 
+            // cboCinema
+            // 
+            this.cboCinema.FormattingEnabled = true;
+            this.cboCinema.Location = new System.Drawing.Point(137, 7);
+            this.cboCinema.Name = "cboCinema";
+            this.cboCinema.Size = new System.Drawing.Size(233, 21);
+            this.cboCinema.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Rạp:";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(11, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Contact:";
+            this.label8.Text = "CONTACT:";
             // 
             // plAddress
             // 
@@ -266,7 +294,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(20, 9);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(91, 29);
             this.panel1.TabIndex = 8;
@@ -274,42 +302,42 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 1);
+            this.label9.Location = new System.Drawing.Point(5, 7);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.Size = new System.Drawing.Size(85, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Information";
+            this.label9.Text = "INFORMATION:";
             // 
             // plGender
             // 
-            this.plGender.Controls.Add(this.rdbMale);
-            this.plGender.Controls.Add(this.rdbFemale);
+            this.plGender.Controls.Add(this.rdoMale);
+            this.plGender.Controls.Add(this.rdoFemale);
             this.plGender.Location = new System.Drawing.Point(167, 287);
             this.plGender.Name = "plGender";
             this.plGender.Size = new System.Drawing.Size(99, 36);
             this.plGender.TabIndex = 7;
             // 
-            // rdbMale
+            // rdoMale
             // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.Location = new System.Drawing.Point(48, 15);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(47, 17);
-            this.rdbMale.TabIndex = 1;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Nam";
-            this.rdbMale.UseVisualStyleBackColor = true;
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Location = new System.Drawing.Point(48, 15);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(47, 17);
+            this.rdoMale.TabIndex = 1;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Nam";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
-            // rdbFemale
+            // rdoFemale
             // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(3, 15);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(39, 17);
-            this.rdbFemale.TabIndex = 0;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Nữ";
-            this.rdbFemale.UseVisualStyleBackColor = true;
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Location = new System.Drawing.Point(3, 15);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(39, 17);
+            this.rdoFemale.TabIndex = 0;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Nữ";
+            this.rdoFemale.UseVisualStyleBackColor = true;
             // 
             // plID
             // 
@@ -403,20 +431,20 @@
             // 
             // plType
             // 
-            this.plType.Controls.Add(this.cmbTypeEmployee);
+            this.plType.Controls.Add(this.cboTypeEmployee);
             this.plType.Controls.Add(this.label1);
             this.plType.Location = new System.Drawing.Point(165, 95);
             this.plType.Name = "plType";
             this.plType.Size = new System.Drawing.Size(231, 44);
             this.plType.TabIndex = 2;
             // 
-            // cmbTypeEmployee
+            // cboTypeEmployee
             // 
-            this.cmbTypeEmployee.FormattingEnabled = true;
-            this.cmbTypeEmployee.Location = new System.Drawing.Point(98, 11);
-            this.cmbTypeEmployee.Name = "cmbTypeEmployee";
-            this.cmbTypeEmployee.Size = new System.Drawing.Size(121, 21);
-            this.cmbTypeEmployee.TabIndex = 3;
+            this.cboTypeEmployee.FormattingEnabled = true;
+            this.cboTypeEmployee.Location = new System.Drawing.Point(98, 11);
+            this.cboTypeEmployee.Name = "cboTypeEmployee";
+            this.cboTypeEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cboTypeEmployee.TabIndex = 3;
             // 
             // label1
             // 
@@ -429,21 +457,23 @@
             // 
             // plName
             // 
+            this.plName.Controls.Add(this.label11);
             this.plName.Controls.Add(this.txtNameEmployee);
-            this.plName.Location = new System.Drawing.Point(165, 45);
+            this.plName.Location = new System.Drawing.Point(165, 27);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(231, 44);
+            this.plName.Size = new System.Drawing.Size(231, 62);
             this.plName.TabIndex = 1;
             // 
             // txtNameEmployee
             // 
-            this.txtNameEmployee.Location = new System.Drawing.Point(32, 13);
+            this.txtNameEmployee.Location = new System.Drawing.Point(32, 31);
             this.txtNameEmployee.Name = "txtNameEmployee";
             this.txtNameEmployee.Size = new System.Drawing.Size(188, 20);
             this.txtNameEmployee.TabIndex = 0;
             // 
             // picEmployee
             // 
+            this.picEmployee.Image = ((System.Drawing.Image)(resources.GetObject("picEmployee.Image")));
             this.picEmployee.Location = new System.Drawing.Point(16, 45);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(145, 164);
@@ -451,31 +481,14 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // panel3
+            // label11
             // 
-            this.panel3.Controls.Add(this.cmbCinema);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(3, 144);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(391, 36);
-            this.panel3.TabIndex = 4;
-            // 
-            // cmbCinema
-            // 
-            this.cmbCinema.FormattingEnabled = true;
-            this.cmbCinema.Location = new System.Drawing.Point(137, 7);
-            this.cmbCinema.Name = "cmbCinema";
-            this.cmbCinema.Size = new System.Drawing.Size(233, 21);
-            this.cmbCinema.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Rạp:";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(84, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Tên nhân viên";
             // 
             // fAddEmployee
             // 
@@ -489,6 +502,8 @@
             this.panel2.ResumeLayout(false);
             this.plInforContact.ResumeLayout(false);
             this.plInforContact.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.plAddress.ResumeLayout(false);
             this.plAddress.PerformLayout();
             this.plEmail.ResumeLayout(false);
@@ -513,8 +528,6 @@
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -541,8 +554,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel plGender;
-        private System.Windows.Forms.RadioButton rdbMale;
-        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Panel plID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel pl;
@@ -560,9 +573,10 @@
         private System.Windows.Forms.TextBox txtNameEmployee;
         private System.Windows.Forms.PictureBox picEmployee;
         private System.Windows.Forms.Button btnAddImg;
-        private System.Windows.Forms.ComboBox cmbTypeEmployee;
+        private System.Windows.Forms.ComboBox cboTypeEmployee;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cmbCinema;
+        private System.Windows.Forms.ComboBox cboCinema;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaManagement.DAO;
 
 namespace CinemaManagement.GUI
 {
@@ -40,19 +41,20 @@ namespace CinemaManagement.GUI
             txtID.Enabled = false;
         }
 
+        #region SET DATA
         public void setDataCmbTypeEmployee()
         {
-            cmbTypeEmployee.DataSource = Employee_BL.Instance.getDataTypeEmployee();
-            cmbTypeEmployee.ValueMember = "id_typeemployee";
-            cmbTypeEmployee.DisplayMember = "name_typeemployee";
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.ValueMember = "id_typeemployee";
+            cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
 
 
         public void setDataCmbCinema()
         {
-            cmbCinema.DataSource = Employee_BL.Instance.getDataCinema();
-            cmbCinema.ValueMember = "id_cinema";
-            cmbCinema.DisplayMember = "name_cinema";
+            cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            cboCinema.ValueMember = "id_cinema";
+            cboCinema.DisplayMember = "name_cinema";
         }
 
 
@@ -60,8 +62,8 @@ namespace CinemaManagement.GUI
         {
            
             txtNameEmployee.Clear();
-            cmbTypeEmployee.Text = "";
-            cmbCinema.Text = "";
+            cboTypeEmployee.Text = "";
+            cboCinema.Text = "";
             txtID.Text = fAddEmployee.idNew;
             txtBirthday.Clear();
             txtSalary.Clear();
@@ -69,8 +71,8 @@ namespace CinemaManagement.GUI
             txtPhoneEmployee.Clear();
             txtEmailEmployee.Clear();
             txtAddressEmployee.Clear();         
-            rdbFemale.Checked = false;
-            rdbMale.Checked = false;
+            rdoFemale.Checked = false;
+            rdoMale.Checked = false;
         }
 
         /// <summary>
@@ -85,16 +87,45 @@ namespace CinemaManagement.GUI
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        public Employee createEmp()
         {
-            clearValue();
+            string gender = "";
+            if (rdoFemale.Checked)
+                gender = "Nữ";
+            else gender = "Nam";
 
+            Byte state = 1;
+
+            DateTime birthDay;
+            if (this.txtBirthday.Text != "")
+                birthDay = DateTime.Parse(this.txtBirthday.Text);
+            else birthDay = DateTime.Now;
+
+            Double salary = 0;
+            if (this.txtSalary.Text != "")
+                salary = Convert.ToDouble(this.txtSalary.Text);
+            string name = txtNameEmployee.Text.Trim();
+
+            Employee emp = new Employee();
+            emp = new Employee(this.txtID.Text.Trim(),
+                                     name,
+                                     birthDay,
+                                     gender.Trim(),
+                                     this.txtIndentity.Text.Trim(),
+                                     this.txtPhoneEmployee.Text.Trim(),
+                                     this.txtEmailEmployee.Text.Trim(),
+                                     this.txtAddressEmployee.Text.Trim(),
+                                     salary,
+                                     this.cboTypeEmployee.SelectedValue.ToString().Trim(),
+                                     this.cboCinema.SelectedValue.ToString().Trim(),
+                                     arrImage,
+                                     this.txtID.Text.Trim(),
+                                     state); return emp;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
+
+        #region ADD
 
         private void btnAddImg_Click(object sender, EventArgs e)
         {
@@ -110,60 +141,44 @@ namespace CinemaManagement.GUI
         }
 
 
-        public Employee createEmp()
-        {
-            string gender = "";
-            if (rdbFemale.Checked)
-                gender = "Nữ";
-            else gender = "Nam";
-
-            Byte state = 1;
-
-            DateTime birthDay;
-            if (this.txtBirthday.Text != "")
-                birthDay = DateTime.Parse(this.txtBirthday.Text);
-            else birthDay = DateTime.Now;
-
-            Double salary = 0;
-            if (this.txtSalary.Text != "")
-            salary = Convert.ToDouble(this.txtSalary.Text);
-            string name = txtNameEmployee.Text.Trim();
-
-            Employee emp = new Employee();
-            emp = new Employee(this.txtID.Text.Trim(),
-                                     name,
-                                     birthDay,
-                                     gender.Trim(),
-                                     this.txtIndentity.Text.Trim(),
-                                     this.txtPhoneEmployee.Text.Trim(),
-                                     this.txtEmailEmployee.Text.Trim(),
-                                     this.txtAddressEmployee.Text.Trim(),
-                                     salary,
-                                     this.cmbTypeEmployee.SelectedValue.ToString().Trim(),
-                                     this.cmbCinema.SelectedValue.ToString().Trim(),
-                                     arrImage,
-                                     this.txtID.Text.Trim(),
-                                     state); return emp;
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Employee_BL.Instance.InsertEmployee(createEmp()) )
+                if (EmployeeDAO.Instance.insertEmployee(createEmp()))
                 {
                     MessageBox.Show("Đã thêm thành công !");
-                    
-                    fAddEmployee.idNew = (string)Employee_BL.Instance.createNewIDEmployee();
+
+                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
                     clearValue();
 
                 }
-              
+
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Không thể thêm vào table Employee !" + ex.Message);
             }
         }
+        #endregion
+
+        #region CANCEL ADD
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clearValue();
+
+        }
+
+        #endregion
+
+        #region EXIT
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
     }
 }

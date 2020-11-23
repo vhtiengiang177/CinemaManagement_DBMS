@@ -5,29 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using CinemaManagement.DAO;
+
 using CinemaManagement.DTO;
-namespace CinemaManagement.BLL
+namespace CinemaManagement.DAO
 {
 
-    public class Employee_BL
+    public class EmployeeDAO
     {
-        private static Employee_BL instance;
-        public static Employee_BL Instance
+        private static EmployeeDAO instance;
+        public static EmployeeDAO Instance
         {
-            get { if (instance == null) instance = new Employee_BL();
-                return Employee_BL.instance;
+            get { if (instance == null) instance = new EmployeeDAO();
+                return EmployeeDAO.instance;
             }
 
-            private set { Employee_BL.instance = value; }
+            private set { EmployeeDAO.instance = value; }
         }
 
 
 
-        private Employee_BL()
+        private EmployeeDAO()
         { }
 
-        public DataTable LoadData()
+        public DataTable loadData()
         {
             string query = "exec sp_showEmployee";
             return DataProvider.Instance.ExecuteQuery(query);
@@ -39,7 +39,7 @@ namespace CinemaManagement.BLL
         /// </summary>
         /// <param name="emp"></param>
         /// <returns></returns>
-        public int EditInfoEmployee(Employee emp)
+        public int editInfoEmployee(Employee emp)
         {
             string query = "exec sp_updateInforEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,
@@ -65,7 +65,7 @@ namespace CinemaManagement.BLL
         /// Thêm nhân viên
         /// </summary>
         /// <returns></returns>
-        public bool InsertEmployee(Employee emp)
+        public bool insertEmployee(Employee emp)
         {
             string query = "exec sp_InsertInfoEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee  ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,

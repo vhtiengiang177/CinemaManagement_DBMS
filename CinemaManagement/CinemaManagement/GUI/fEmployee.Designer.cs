@@ -116,9 +116,10 @@
             // 
             this.plMain.Controls.Add(this.plListMain);
             this.plMain.Controls.Add(this.plInforMain);
-            this.plMain.Location = new System.Drawing.Point(1, 3);
+            this.plMain.Location = new System.Drawing.Point(1, 4);
+            this.plMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plMain.Name = "plMain";
-            this.plMain.Size = new System.Drawing.Size(937, 642);
+            this.plMain.Size = new System.Drawing.Size(1249, 790);
             this.plMain.TabIndex = 0;
             // 
             // plListMain
@@ -126,34 +127,38 @@
             this.plListMain.Controls.Add(this.plControl);
             this.plListMain.Controls.Add(this.plList);
             this.plListMain.Controls.Add(this.plSearch);
-            this.plListMain.Location = new System.Drawing.Point(3, 3);
+            this.plListMain.Location = new System.Drawing.Point(4, 4);
+            this.plListMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plListMain.Name = "plListMain";
-            this.plListMain.Size = new System.Drawing.Size(504, 585);
+            this.plListMain.Size = new System.Drawing.Size(672, 720);
             this.plListMain.TabIndex = 2;
             // 
             // plControl
             // 
             this.plControl.Controls.Add(this.flowLayoutPanel1);
             this.plControl.Controls.Add(this.panel2);
-            this.plControl.Location = new System.Drawing.Point(4, 520);
+            this.plControl.Location = new System.Drawing.Point(5, 640);
+            this.plControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plControl.Name = "plControl";
-            this.plControl.Size = new System.Drawing.Size(495, 64);
+            this.plControl.Size = new System.Drawing.Size(660, 79);
             this.plControl.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnDeleteEmployee);
             this.flowLayoutPanel1.Controls.Add(this.btnLoadListEmployee);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(298, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(397, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 62);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(261, 76);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // btnDeleteEmployee
             // 
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(3, 3);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(4, 4);
+            this.btnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(90, 58);
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(120, 71);
             this.btnDeleteEmployee.TabIndex = 2;
             this.btnDeleteEmployee.Text = "Xóa";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
@@ -161,9 +166,10 @@
             // 
             // btnLoadListEmployee
             // 
-            this.btnLoadListEmployee.Location = new System.Drawing.Point(99, 3);
+            this.btnLoadListEmployee.Location = new System.Drawing.Point(132, 4);
+            this.btnLoadListEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoadListEmployee.Name = "btnLoadListEmployee";
-            this.btnLoadListEmployee.Size = new System.Drawing.Size(90, 58);
+            this.btnLoadListEmployee.Size = new System.Drawing.Size(120, 71);
             this.btnLoadListEmployee.TabIndex = 1;
             this.btnLoadListEmployee.Text = "Load Data";
             this.btnLoadListEmployee.UseVisualStyleBackColor = true;
@@ -174,16 +180,18 @@
             this.panel2.Controls.Add(this.btnSortTypeEmployee);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.cboSortTypeEmployee);
-            this.panel2.Location = new System.Drawing.Point(1, 5);
+            this.panel2.Location = new System.Drawing.Point(1, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(290, 58);
+            this.panel2.Size = new System.Drawing.Size(387, 71);
             this.panel2.TabIndex = 3;
             // 
             // btnSortTypeEmployee
             // 
-            this.btnSortTypeEmployee.Location = new System.Drawing.Point(198, 1);
+            this.btnSortTypeEmployee.Location = new System.Drawing.Point(264, 1);
+            this.btnSortTypeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSortTypeEmployee.Name = "btnSortTypeEmployee";
-            this.btnSortTypeEmployee.Size = new System.Drawing.Size(90, 58);
+            this.btnSortTypeEmployee.Size = new System.Drawing.Size(120, 71);
             this.btnSortTypeEmployee.TabIndex = 5;
             this.btnSortTypeEmployee.Text = "Thống kê";
             this.btnSortTypeEmployee.UseVisualStyleBackColor = true;
@@ -193,34 +201,39 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(0, 1);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(172, 13);
+            this.label10.Size = new System.Drawing.Size(223, 17);
             this.label10.TabIndex = 3;
             this.label10.Text = "Thống kê theo chức vụ nhân viên:";
             // 
             // cboSortTypeEmployee
             // 
             this.cboSortTypeEmployee.FormattingEnabled = true;
-            this.cboSortTypeEmployee.Location = new System.Drawing.Point(3, 21);
+            this.cboSortTypeEmployee.Location = new System.Drawing.Point(4, 26);
+            this.cboSortTypeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboSortTypeEmployee.Name = "cboSortTypeEmployee";
-            this.cboSortTypeEmployee.Size = new System.Drawing.Size(169, 21);
+            this.cboSortTypeEmployee.Size = new System.Drawing.Size(224, 24);
             this.cboSortTypeEmployee.TabIndex = 4;
             this.cboSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cmbSortTypeEmployee_SelectedValueChanged);
             // 
             // plList
             // 
             this.plList.Controls.Add(this.dgvListEmployee);
-            this.plList.Location = new System.Drawing.Point(4, 81);
+            this.plList.Location = new System.Drawing.Point(5, 100);
+            this.plList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plList.Name = "plList";
-            this.plList.Size = new System.Drawing.Size(496, 433);
+            this.plList.Size = new System.Drawing.Size(661, 533);
             this.plList.TabIndex = 1;
             // 
             // dgvListEmployee
             // 
             this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEmployee.Location = new System.Drawing.Point(1, 5);
+            this.dgvListEmployee.Location = new System.Drawing.Point(1, 6);
+            this.dgvListEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvListEmployee.Name = "dgvListEmployee";
-            this.dgvListEmployee.Size = new System.Drawing.Size(495, 427);
+            this.dgvListEmployee.RowHeadersWidth = 51;
+            this.dgvListEmployee.Size = new System.Drawing.Size(660, 526);
             this.dgvListEmployee.TabIndex = 0;
             this.dgvListEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellClick);
             // 
@@ -229,25 +242,28 @@
             this.plSearch.Controls.Add(this.btnSearchEmployee);
             this.plSearch.Controls.Add(this.txtSearchEmployee);
             this.plSearch.Controls.Add(this.cboTypeSearchEmployee);
-            this.plSearch.Location = new System.Drawing.Point(3, 6);
+            this.plSearch.Location = new System.Drawing.Point(4, 7);
+            this.plSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plSearch.Name = "plSearch";
-            this.plSearch.Size = new System.Drawing.Size(498, 68);
+            this.plSearch.Size = new System.Drawing.Size(664, 84);
             this.plSearch.TabIndex = 0;
             // 
             // btnSearchEmployee
             // 
-            this.btnSearchEmployee.Location = new System.Drawing.Point(404, 19);
+            this.btnSearchEmployee.Location = new System.Drawing.Point(539, 23);
+            this.btnSearchEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchEmployee.Name = "btnSearchEmployee";
-            this.btnSearchEmployee.Size = new System.Drawing.Size(80, 37);
+            this.btnSearchEmployee.Size = new System.Drawing.Size(107, 46);
             this.btnSearchEmployee.TabIndex = 2;
             this.btnSearchEmployee.Text = "Tìm kiếm";
             this.btnSearchEmployee.UseVisualStyleBackColor = true;
             // 
             // txtSearchEmployee
             // 
-            this.txtSearchEmployee.Location = new System.Drawing.Point(129, 27);
+            this.txtSearchEmployee.Location = new System.Drawing.Point(172, 33);
+            this.txtSearchEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchEmployee.Name = "txtSearchEmployee";
-            this.txtSearchEmployee.Size = new System.Drawing.Size(256, 20);
+            this.txtSearchEmployee.Size = new System.Drawing.Size(340, 22);
             this.txtSearchEmployee.TabIndex = 1;
             // 
             // cboTypeSearchEmployee
@@ -258,9 +274,10 @@
             "Số điện thoại",
             "Tên nhân viên",
             "CMND"});
-            this.cboTypeSearchEmployee.Location = new System.Drawing.Point(5, 26);
+            this.cboTypeSearchEmployee.Location = new System.Drawing.Point(7, 32);
+            this.cboTypeSearchEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
-            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
+            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(125, 24);
             this.cboTypeSearchEmployee.TabIndex = 0;
             // 
             // plInforMain
@@ -271,16 +288,18 @@
             this.plInforMain.Controls.Add(this.plInforContact);
             this.plInforMain.Controls.Add(this.btnAddNewEmployee);
             this.plInforMain.Controls.Add(this.plInfor);
-            this.plInforMain.Location = new System.Drawing.Point(507, 0);
+            this.plInforMain.Location = new System.Drawing.Point(676, 0);
+            this.plInforMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plInforMain.Name = "plInforMain";
-            this.plInforMain.Size = new System.Drawing.Size(408, 588);
+            this.plInforMain.Size = new System.Drawing.Size(544, 724);
             this.plInforMain.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(141, 7);
+            this.btnSave.Location = new System.Drawing.Point(188, 9);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 37);
+            this.btnSave.Size = new System.Drawing.Size(107, 46);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -288,9 +307,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(55, 7);
+            this.btnCancel.Location = new System.Drawing.Point(73, 9);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 37);
+            this.btnCancel.Size = new System.Drawing.Size(107, 46);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -298,9 +318,10 @@
             // 
             // btnEditEmployee
             // 
-            this.btnEditEmployee.Location = new System.Drawing.Point(235, 7);
+            this.btnEditEmployee.Location = new System.Drawing.Point(313, 9);
+            this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(80, 37);
+            this.btnEditEmployee.Size = new System.Drawing.Size(107, 46);
             this.btnEditEmployee.TabIndex = 5;
             this.btnEditEmployee.Text = "Edit";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
@@ -313,43 +334,48 @@
             this.plInforContact.Controls.Add(this.plAddress);
             this.plInforContact.Controls.Add(this.plEmail);
             this.plInforContact.Controls.Add(this.plPhone);
-            this.plInforContact.Location = new System.Drawing.Point(6, 364);
+            this.plInforContact.Location = new System.Drawing.Point(8, 448);
+            this.plInforContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plInforContact.Name = "plInforContact";
-            this.plInforContact.Size = new System.Drawing.Size(401, 210);
+            this.plInforContact.Size = new System.Drawing.Size(535, 258);
             this.plInforContact.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cmbCinema);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(4, 171);
+            this.panel1.Location = new System.Drawing.Point(5, 210);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 36);
+            this.panel1.Size = new System.Drawing.Size(521, 44);
             this.panel1.TabIndex = 3;
             // 
             // cmbCinema
             // 
             this.cmbCinema.FormattingEnabled = true;
-            this.cmbCinema.Location = new System.Drawing.Point(137, 7);
+            this.cmbCinema.Location = new System.Drawing.Point(183, 9);
+            this.cmbCinema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCinema.Name = "cmbCinema";
-            this.cmbCinema.Size = new System.Drawing.Size(233, 21);
+            this.cmbCinema.Size = new System.Drawing.Size(309, 24);
             this.cmbCinema.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 15);
+            this.label9.Location = new System.Drawing.Point(16, 18);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.Size = new System.Drawing.Size(38, 17);
             this.label9.TabIndex = 1;
             this.label9.Text = "Rạp:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 12);
+            this.label8.Location = new System.Drawing.Point(16, 15);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(60, 17);
             this.label8.TabIndex = 3;
             this.label8.Text = "Contact:";
             // 
@@ -357,82 +383,92 @@
             // 
             this.plAddress.Controls.Add(this.label7);
             this.plAddress.Controls.Add(this.txtAddressEmployee);
-            this.plAddress.Location = new System.Drawing.Point(4, 133);
+            this.plAddress.Location = new System.Drawing.Point(5, 164);
+            this.plAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plAddress.Name = "plAddress";
-            this.plAddress.Size = new System.Drawing.Size(391, 36);
+            this.plAddress.Size = new System.Drawing.Size(521, 44);
             this.plAddress.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 15);
+            this.label7.Location = new System.Drawing.Point(16, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(55, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Địa chỉ:";
             // 
             // txtAddressEmployee
             // 
-            this.txtAddressEmployee.Location = new System.Drawing.Point(138, 8);
+            this.txtAddressEmployee.Location = new System.Drawing.Point(184, 10);
+            this.txtAddressEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddressEmployee.Name = "txtAddressEmployee";
-            this.txtAddressEmployee.Size = new System.Drawing.Size(243, 20);
+            this.txtAddressEmployee.Size = new System.Drawing.Size(323, 22);
             this.txtAddressEmployee.TabIndex = 0;
             // 
             // plEmail
             // 
             this.plEmail.Controls.Add(this.label6);
             this.plEmail.Controls.Add(this.txtEmailEmployee);
-            this.plEmail.Location = new System.Drawing.Point(4, 86);
+            this.plEmail.Location = new System.Drawing.Point(5, 106);
+            this.plEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plEmail.Name = "plEmail";
-            this.plEmail.Size = new System.Drawing.Size(391, 41);
+            this.plEmail.Size = new System.Drawing.Size(521, 50);
             this.plEmail.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 21);
+            this.label6.Location = new System.Drawing.Point(15, 26);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Email:";
             // 
             // txtEmailEmployee
             // 
-            this.txtEmailEmployee.Location = new System.Drawing.Point(138, 14);
+            this.txtEmailEmployee.Location = new System.Drawing.Point(184, 17);
+            this.txtEmailEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmailEmployee.Name = "txtEmailEmployee";
-            this.txtEmailEmployee.Size = new System.Drawing.Size(243, 20);
+            this.txtEmailEmployee.Size = new System.Drawing.Size(323, 22);
             this.txtEmailEmployee.TabIndex = 0;
             // 
             // plPhone
             // 
             this.plPhone.Controls.Add(this.label5);
             this.plPhone.Controls.Add(this.txtPhoneEmployee);
-            this.plPhone.Location = new System.Drawing.Point(3, 37);
+            this.plPhone.Location = new System.Drawing.Point(4, 46);
+            this.plPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plPhone.Name = "plPhone";
-            this.plPhone.Size = new System.Drawing.Size(391, 43);
+            this.plPhone.Size = new System.Drawing.Size(521, 53);
             this.plPhone.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 21);
+            this.label5.Location = new System.Drawing.Point(15, 26);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "SĐT:";
             // 
             // txtPhoneEmployee
             // 
-            this.txtPhoneEmployee.Location = new System.Drawing.Point(138, 14);
+            this.txtPhoneEmployee.Location = new System.Drawing.Point(184, 17);
+            this.txtPhoneEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhoneEmployee.Name = "txtPhoneEmployee";
-            this.txtPhoneEmployee.Size = new System.Drawing.Size(243, 20);
+            this.txtPhoneEmployee.Size = new System.Drawing.Size(323, 22);
             this.txtPhoneEmployee.TabIndex = 0;
             // 
             // btnAddNewEmployee
             // 
-            this.btnAddNewEmployee.Location = new System.Drawing.Point(321, 7);
+            this.btnAddNewEmployee.Location = new System.Drawing.Point(428, 9);
+            this.btnAddNewEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNewEmployee.Name = "btnAddNewEmployee";
-            this.btnAddNewEmployee.Size = new System.Drawing.Size(80, 37);
+            this.btnAddNewEmployee.Size = new System.Drawing.Size(107, 46);
             this.btnAddNewEmployee.TabIndex = 3;
             this.btnAddNewEmployee.Text = "Add new employee";
             this.btnAddNewEmployee.UseVisualStyleBackColor = true;
@@ -450,16 +486,18 @@
             this.plInfor.Controls.Add(this.plType);
             this.plInfor.Controls.Add(this.plName);
             this.plInfor.Controls.Add(this.picEmployee);
-            this.plInfor.Location = new System.Drawing.Point(5, 50);
+            this.plInfor.Location = new System.Drawing.Point(7, 62);
+            this.plInfor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plInfor.Name = "plInfor";
-            this.plInfor.Size = new System.Drawing.Size(403, 308);
+            this.plInfor.Size = new System.Drawing.Size(537, 379);
             this.plInfor.TabIndex = 0;
             // 
             // btnAddImg
             // 
-            this.btnAddImg.Location = new System.Drawing.Point(41, 259);
+            this.btnAddImg.Location = new System.Drawing.Point(55, 319);
+            this.btnAddImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(80, 37);
+            this.btnAddImg.Size = new System.Drawing.Size(107, 46);
             this.btnAddImg.TabIndex = 10;
             this.btnAddImg.Text = "Thêm ảnh";
             this.btnAddImg.UseVisualStyleBackColor = true;
@@ -467,26 +505,29 @@
             // 
             // txtStateEmployee
             // 
-            this.txtStateEmployee.Location = new System.Drawing.Point(285, 272);
+            this.txtStateEmployee.Location = new System.Drawing.Point(380, 335);
+            this.txtStateEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStateEmployee.Name = "txtStateEmployee";
-            this.txtStateEmployee.Size = new System.Drawing.Size(100, 20);
+            this.txtStateEmployee.Size = new System.Drawing.Size(132, 22);
             this.txtStateEmployee.TabIndex = 9;
             // 
             // plGender
             // 
             this.plGender.Controls.Add(this.rdoMale);
             this.plGender.Controls.Add(this.rdoFemale);
-            this.plGender.Location = new System.Drawing.Point(165, 260);
+            this.plGender.Location = new System.Drawing.Point(220, 320);
+            this.plGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plGender.Name = "plGender";
-            this.plGender.Size = new System.Drawing.Size(99, 36);
+            this.plGender.Size = new System.Drawing.Size(132, 44);
             this.plGender.TabIndex = 8;
             // 
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
-            this.rdoMale.Location = new System.Drawing.Point(48, 15);
+            this.rdoMale.Location = new System.Drawing.Point(64, 18);
+            this.rdoMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(47, 17);
+            this.rdoMale.Size = new System.Drawing.Size(58, 21);
             this.rdoMale.TabIndex = 1;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Nam";
@@ -495,9 +536,10 @@
             // rdoFemale
             // 
             this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Location = new System.Drawing.Point(3, 15);
+            this.rdoFemale.Location = new System.Drawing.Point(4, 18);
+            this.rdoFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(39, 17);
+            this.rdoFemale.Size = new System.Drawing.Size(47, 21);
             this.rdoFemale.TabIndex = 0;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Nữ";
@@ -506,152 +548,170 @@
             // plID
             // 
             this.plID.Controls.Add(this.txtID);
-            this.plID.Location = new System.Drawing.Point(18, 189);
+            this.plID.Location = new System.Drawing.Point(24, 233);
+            this.plID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plID.Name = "plID";
-            this.plID.Size = new System.Drawing.Size(142, 53);
+            this.plID.Size = new System.Drawing.Size(189, 65);
             this.plID.TabIndex = 6;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(23, 21);
+            this.txtID.Location = new System.Drawing.Point(31, 26);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(93, 20);
+            this.txtID.Size = new System.Drawing.Size(123, 22);
             this.txtID.TabIndex = 0;
             // 
             // pl
             // 
             this.pl.Controls.Add(this.label4);
             this.pl.Controls.Add(this.txtSalary);
-            this.pl.Location = new System.Drawing.Point(165, 210);
+            this.pl.Location = new System.Drawing.Point(220, 258);
+            this.pl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pl.Name = "pl";
-            this.pl.Size = new System.Drawing.Size(231, 44);
+            this.pl.Size = new System.Drawing.Size(308, 54);
             this.pl.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 11);
+            this.label4.Location = new System.Drawing.Point(15, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Lương:";
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(98, 13);
+            this.txtSalary.Location = new System.Drawing.Point(131, 16);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(122, 20);
+            this.txtSalary.Size = new System.Drawing.Size(161, 22);
             this.txtSalary.TabIndex = 0;
             // 
             // plIdentify
             // 
             this.plIdentify.Controls.Add(this.label3);
             this.plIdentify.Controls.Add(this.txtIndentity);
-            this.plIdentify.Location = new System.Drawing.Point(165, 163);
+            this.plIdentify.Location = new System.Drawing.Point(220, 201);
+            this.plIdentify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plIdentify.Name = "plIdentify";
-            this.plIdentify.Size = new System.Drawing.Size(231, 44);
+            this.plIdentify.Size = new System.Drawing.Size(308, 54);
             this.plIdentify.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 11);
+            this.label3.Location = new System.Drawing.Point(15, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "CMND:";
             // 
             // txtIndentity
             // 
-            this.txtIndentity.Location = new System.Drawing.Point(98, 11);
+            this.txtIndentity.Location = new System.Drawing.Point(131, 14);
+            this.txtIndentity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIndentity.Name = "txtIndentity";
-            this.txtIndentity.Size = new System.Drawing.Size(122, 20);
+            this.txtIndentity.Size = new System.Drawing.Size(161, 22);
             this.txtIndentity.TabIndex = 0;
             // 
             // plBirthDay
             // 
             this.plBirthDay.Controls.Add(this.label2);
             this.plBirthDay.Controls.Add(this.txtBirthday);
-            this.plBirthDay.Location = new System.Drawing.Point(165, 113);
+            this.plBirthDay.Location = new System.Drawing.Point(220, 139);
+            this.plBirthDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plBirthDay.Name = "plBirthDay";
-            this.plBirthDay.Size = new System.Drawing.Size(231, 44);
+            this.plBirthDay.Size = new System.Drawing.Size(308, 54);
             this.plBirthDay.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 11);
+            this.label2.Location = new System.Drawing.Point(15, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Năm sinh:";
             // 
             // txtBirthday
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(98, 13);
+            this.txtBirthday.Location = new System.Drawing.Point(131, 16);
+            this.txtBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(122, 20);
+            this.txtBirthday.Size = new System.Drawing.Size(161, 22);
             this.txtBirthday.TabIndex = 0;
             // 
             // plType
             // 
             this.plType.Controls.Add(this.cboTypeEmployee);
             this.plType.Controls.Add(this.label1);
-            this.plType.Location = new System.Drawing.Point(165, 68);
+            this.plType.Location = new System.Drawing.Point(220, 84);
+            this.plType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plType.Name = "plType";
-            this.plType.Size = new System.Drawing.Size(231, 44);
+            this.plType.Size = new System.Drawing.Size(308, 54);
             this.plType.TabIndex = 2;
             // 
             // cboTypeEmployee
             // 
             this.cboTypeEmployee.FormattingEnabled = true;
-            this.cboTypeEmployee.Location = new System.Drawing.Point(98, 10);
+            this.cboTypeEmployee.Location = new System.Drawing.Point(131, 12);
+            this.cboTypeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTypeEmployee.Name = "cboTypeEmployee";
-            this.cboTypeEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cboTypeEmployee.Size = new System.Drawing.Size(160, 24);
             this.cboTypeEmployee.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 11);
+            this.label1.Location = new System.Drawing.Point(15, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chức vụ:";
             // 
             // plName
             // 
             this.plName.Controls.Add(this.txtNameEmployee);
-            this.plName.Location = new System.Drawing.Point(165, 18);
+            this.plName.Location = new System.Drawing.Point(220, 22);
+            this.plName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(231, 44);
+            this.plName.Size = new System.Drawing.Size(308, 54);
             this.plName.TabIndex = 1;
             // 
             // txtNameEmployee
             // 
-            this.txtNameEmployee.Location = new System.Drawing.Point(32, 13);
+            this.txtNameEmployee.Location = new System.Drawing.Point(43, 16);
+            this.txtNameEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNameEmployee.Name = "txtNameEmployee";
-            this.txtNameEmployee.Size = new System.Drawing.Size(188, 20);
+            this.txtNameEmployee.Size = new System.Drawing.Size(249, 22);
             this.txtNameEmployee.TabIndex = 0;
             // 
             // picEmployee
             // 
             this.picEmployee.BackColor = System.Drawing.SystemColors.Control;
             this.picEmployee.Image = ((System.Drawing.Image)(resources.GetObject("picEmployee.Image")));
-            this.picEmployee.Location = new System.Drawing.Point(16, 18);
+            this.picEmployee.Location = new System.Drawing.Point(21, 22);
+            this.picEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picEmployee.Name = "picEmployee";
-            this.picEmployee.Size = new System.Drawing.Size(145, 164);
+            this.picEmployee.Size = new System.Drawing.Size(193, 202);
             this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
             // fEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 664);
+            this.ClientSize = new System.Drawing.Size(1228, 817);
             this.Controls.Add(this.plMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fEmployee";
             this.Text = "fEmployee";
             this.plMain.ResumeLayout(false);

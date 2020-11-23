@@ -47,17 +47,17 @@
             this.lblStateMovie = new System.Windows.Forms.Label();
             this.rdoActiveMovie = new System.Windows.Forms.RadioButton();
             this.rdoInactiveMovie = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtLanguageMovie = new System.Windows.Forms.TextBox();
+            this.txtRunningTimeMovie = new System.Windows.Forms.TextBox();
+            this.dtmReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.btnInsertMovie = new System.Windows.Forms.Button();
             this.btnUpdateMovie = new System.Windows.Forms.Button();
             this.btnDeleteMovie = new System.Windows.Forms.Button();
             this.splcBody = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsertImage = new System.Windows.Forms.Button();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
             this.picReload = new System.Windows.Forms.PictureBox();
-            this.cboSortMovie = new System.Windows.Forms.ComboBox();
+            this.cboInfoSearchMovie = new System.Windows.Forms.ComboBox();
             this.dtgMovie = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
@@ -252,28 +252,29 @@
             this.rdoInactiveMovie.Text = "Ngừng hoạt động";
             this.rdoInactiveMovie.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtLanguageMovie
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 459);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 25);
-            this.textBox1.TabIndex = 20;
+            this.txtLanguageMovie.Location = new System.Drawing.Point(132, 459);
+            this.txtLanguageMovie.Name = "txtLanguageMovie";
+            this.txtLanguageMovie.Size = new System.Drawing.Size(216, 25);
+            this.txtLanguageMovie.TabIndex = 20;
             // 
-            // textBox2
+            // txtRunningTimeMovie
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 369);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 25);
-            this.textBox2.TabIndex = 21;
+            this.txtRunningTimeMovie.Location = new System.Drawing.Point(132, 369);
+            this.txtRunningTimeMovie.Name = "txtRunningTimeMovie";
+            this.txtRunningTimeMovie.Size = new System.Drawing.Size(216, 25);
+            this.txtRunningTimeMovie.TabIndex = 21;
             // 
-            // dateTimePicker1
+            // dtmReleaseDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(132, 415);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
-            this.dateTimePicker1.TabIndex = 22;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.dtmReleaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmReleaseDate.Location = new System.Drawing.Point(132, 415);
+            this.dtmReleaseDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtmReleaseDate.Name = "dtmReleaseDate";
+            this.dtmReleaseDate.Size = new System.Drawing.Size(215, 25);
+            this.dtmReleaseDate.TabIndex = 22;
+            this.dtmReleaseDate.Value = new System.DateTime(2020, 11, 23, 0, 0, 0, 0);
             // 
             // btnInsertMovie
             // 
@@ -323,17 +324,17 @@
             // 
             // splcBody.Panel1
             // 
-            this.splcBody.Panel1.Controls.Add(this.button1);
+            this.splcBody.Panel1.Controls.Add(this.btnInsertImage);
             this.splcBody.Panel1.Controls.Add(this.btnDeleteMovie);
             this.splcBody.Panel1.Controls.Add(this.btnInsertMovie);
             this.splcBody.Panel1.Controls.Add(this.btnUpdateMovie);
             this.splcBody.Panel1.Controls.Add(this.picImageMovie);
             this.splcBody.Panel1.Controls.Add(this.lblInfoMovie);
-            this.splcBody.Panel1.Controls.Add(this.dateTimePicker1);
+            this.splcBody.Panel1.Controls.Add(this.dtmReleaseDate);
             this.splcBody.Panel1.Controls.Add(this.lblIDMovie);
-            this.splcBody.Panel1.Controls.Add(this.textBox2);
+            this.splcBody.Panel1.Controls.Add(this.txtRunningTimeMovie);
             this.splcBody.Panel1.Controls.Add(this.lblShowIDMovie);
-            this.splcBody.Panel1.Controls.Add(this.textBox1);
+            this.splcBody.Panel1.Controls.Add(this.txtLanguageMovie);
             this.splcBody.Panel1.Controls.Add(this.lblNameMovie);
             this.splcBody.Panel1.Controls.Add(this.rdoInactiveMovie);
             this.splcBody.Panel1.Controls.Add(this.txtNameMovie);
@@ -355,18 +356,19 @@
             this.splcBody.SplitterDistance = 362;
             this.splcBody.TabIndex = 25;
             // 
-            // button1
+            // btnInsertImage
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(199, 166);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 34);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Thêm hình";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnInsertImage.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnInsertImage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInsertImage.Location = new System.Drawing.Point(199, 166);
+            this.btnInsertImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnInsertImage.Name = "btnInsertImage";
+            this.btnInsertImage.Size = new System.Drawing.Size(106, 34);
+            this.btnInsertImage.TabIndex = 25;
+            this.btnInsertImage.Text = "Thêm hình";
+            this.btnInsertImage.UseVisualStyleBackColor = false;
+            this.btnInsertImage.Click += new System.EventHandler(this.btnInsertImage_Click);
             // 
             // splctnBodyRight
             // 
@@ -380,7 +382,7 @@
             this.splctnBodyRight.Panel1.Controls.Add(this.picReload);
             this.splctnBodyRight.Panel1.Controls.Add(this.btnSearchMovie);
             this.splctnBodyRight.Panel1.Controls.Add(this.txtSearchMovie);
-            this.splctnBodyRight.Panel1.Controls.Add(this.cboSortMovie);
+            this.splctnBodyRight.Panel1.Controls.Add(this.cboInfoSearchMovie);
             // 
             // splctnBodyRight.Panel2
             // 
@@ -399,19 +401,20 @@
             this.picReload.TabIndex = 4;
             this.picReload.TabStop = false;
             // 
-            // cboSortMovie
+            // cboInfoSearchMovie
             // 
-            this.cboSortMovie.FormattingEnabled = true;
-            this.cboSortMovie.Items.AddRange(new object[] {
-            "Tất cả",
+            this.cboInfoSearchMovie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInfoSearchMovie.FormattingEnabled = true;
+            this.cboInfoSearchMovie.Items.AddRange(new object[] {
             "Tên phim",
             "Đạo diễn",
+            "Thể loại",
             "Đang hoạt động",
             "Ngừng hoạt động"});
-            this.cboSortMovie.Location = new System.Drawing.Point(13, 20);
-            this.cboSortMovie.Name = "cboSortMovie";
-            this.cboSortMovie.Size = new System.Drawing.Size(121, 25);
-            this.cboSortMovie.TabIndex = 0;
+            this.cboInfoSearchMovie.Location = new System.Drawing.Point(13, 20);
+            this.cboInfoSearchMovie.Name = "cboInfoSearchMovie";
+            this.cboInfoSearchMovie.Size = new System.Drawing.Size(121, 25);
+            this.cboInfoSearchMovie.TabIndex = 0;
             // 
             // dtgMovie
             // 
@@ -472,17 +475,17 @@
         private System.Windows.Forms.Label lblStateMovie;
         private System.Windows.Forms.RadioButton rdoActiveMovie;
         private System.Windows.Forms.RadioButton rdoInactiveMovie;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtLanguageMovie;
+        private System.Windows.Forms.TextBox txtRunningTimeMovie;
+        private System.Windows.Forms.DateTimePicker dtmReleaseDate;
         private System.Windows.Forms.Button btnInsertMovie;
         private System.Windows.Forms.Button btnUpdateMovie;
         private System.Windows.Forms.Button btnDeleteMovie;
         private System.Windows.Forms.SplitContainer splcBody;
         private System.Windows.Forms.SplitContainer splctnBodyRight;
-        private System.Windows.Forms.ComboBox cboSortMovie;
+        private System.Windows.Forms.ComboBox cboInfoSearchMovie;
         private System.Windows.Forms.DataGridView dtgMovie;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsertImage;
         private System.Windows.Forms.PictureBox picReload;
     }
 }

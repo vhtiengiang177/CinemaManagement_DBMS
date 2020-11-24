@@ -61,8 +61,14 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie }) > 0;
         }
 
+        public DataTable getMovie(string id)
+        {
+            string query = "EXEC sp_GetMovie @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
         /// <summary>
-        /// Tải tất cả dữ liệu.
+        /// Tải tất cả dữ liệu. Sử dụng View dưới dtb để hiển thị
         /// </summary>
         /// <returns></returns>
         public DataTable loadData()
@@ -72,15 +78,91 @@ namespace CinemaManagement.DAO
         }
 
         /// <summary>
-        /// Tìm kiếm phim theo tên/đạo diễn
+        /// Tìm kiếm phim theo tên
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public DataTable searchMovie(string search)
+        public DataTable searchNameMovie(string search)
         {
-            string query = "EXEC sp_SearchMovie @search";
+            string query = "EXEC sp_SearchNameMovie @search";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
         }
 
+        /// <summary>
+        /// Tìm kiếm phim theo đạo diễn
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchDirectorMovie(string search)
+        {
+            string query = "EXEC sp_SearchDirectorMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo tên thể loại
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchNameCamoMovie(string search)
+        {
+            string query = "EXEC sp_SearchNameCamoMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo thời lượng
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchRunningTimeMovie(string search)
+        {
+            string query = "EXEC sp_SearchRunningTimeMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo ngày khởi chiếu
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchReleaseDateMovie(string search)
+        {
+            string query = "EXEC sp_SearchReleaseDateMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo ngôn ngữ
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchLanguageMovie(string search)
+        {
+            string query = "EXEC sp_SearchLanguageMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo phim đang hoạt động
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchActiveStateMovie()
+        {
+            string query = "EXEC sp_SearchActiveStateMovie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        /// <summary>
+        /// Tìm kiếm phim theo phim ngưng hoạt động
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public DataTable searchInactiveMovie()
+        {
+            string query = "EXEC sp_SearchInactiveMovie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

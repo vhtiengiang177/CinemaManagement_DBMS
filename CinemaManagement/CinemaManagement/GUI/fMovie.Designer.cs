@@ -44,6 +44,8 @@
             this.lblLanguageMovie = new System.Windows.Forms.Label();
             this.txtDirectorMovie = new System.Windows.Forms.TextBox();
             this.cboCategoryMovie = new System.Windows.Forms.ComboBox();
+            this.categoryMovieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cinemaDBMSDataSet = new CinemaManagement.cinemaDBMSDataSet();
             this.lblReleaseDate = new System.Windows.Forms.Label();
             this.lblStateMovie = new System.Windows.Forms.Label();
             this.rdoActiveMovie = new System.Windows.Forms.RadioButton();
@@ -60,11 +62,14 @@
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
             this.picReload = new System.Windows.Forms.PictureBox();
             this.cboInfoSearchMovie = new System.Windows.Forms.ComboBox();
-            this.dtgMovie = new System.Windows.Forms.DataGridView();
-            this.cinemaDBMSDataSet = new CinemaManagement.cinemaDBMSDataSet();
-            this.categoryMovieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvMovie = new System.Windows.Forms.DataGridView();
             this.categoryMovieTableAdapter = new CinemaManagement.cinemaDBMSDataSetTableAdapters.CategoryMovieTableAdapter();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnInsertCategory = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
             this.splcBody.Panel1.SuspendLayout();
             this.splcBody.Panel2.SuspendLayout();
@@ -74,9 +79,8 @@
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMovie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchMovie
@@ -91,6 +95,7 @@
             this.btnSearchMovie.TabIndex = 3;
             this.btnSearchMovie.Text = "Tìm kiếm";
             this.btnSearchMovie.UseVisualStyleBackColor = false;
+            this.btnSearchMovie.Click += new System.EventHandler(this.btnSearchMovie_Click);
             // 
             // txtSearchMovie
             // 
@@ -100,6 +105,7 @@
             this.txtSearchMovie.Name = "txtSearchMovie";
             this.txtSearchMovie.Size = new System.Drawing.Size(241, 20);
             this.txtSearchMovie.TabIndex = 2;
+            this.txtSearchMovie.TextChanged += new System.EventHandler(this.txtSearchMovie_TextChanged);
             // 
             // picImageMovie
             // 
@@ -221,13 +227,24 @@
             // 
             this.cboCategoryMovie.DataSource = this.categoryMovieBindingSource;
             this.cboCategoryMovie.DisplayMember = "name_categorymovie";
+            this.cboCategoryMovie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoryMovie.FormattingEnabled = true;
             this.cboCategoryMovie.Location = new System.Drawing.Point(132, 325);
             this.cboCategoryMovie.Name = "cboCategoryMovie";
-            this.cboCategoryMovie.Size = new System.Drawing.Size(215, 21);
+            this.cboCategoryMovie.Size = new System.Drawing.Size(184, 21);
             this.cboCategoryMovie.TabIndex = 15;
             this.cboCategoryMovie.ValueMember = "id_categorymovie";
+            // 
+            // categoryMovieBindingSource
+            // 
+            this.categoryMovieBindingSource.DataMember = "CategoryMovie";
+            this.categoryMovieBindingSource.DataSource = this.cinemaDBMSDataSet;
+            // 
+            // cinemaDBMSDataSet
+            // 
+            this.cinemaDBMSDataSet.DataSetName = "cinemaDBMSDataSet";
+            this.cinemaDBMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblReleaseDate
             // 
@@ -255,11 +272,13 @@
             // 
             this.rdoActiveMovie.AutoSize = true;
             this.rdoActiveMovie.BackColor = System.Drawing.Color.Transparent;
+            this.rdoActiveMovie.Checked = true;
             this.rdoActiveMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoActiveMovie.Location = new System.Drawing.Point(132, 502);
             this.rdoActiveMovie.Name = "rdoActiveMovie";
             this.rdoActiveMovie.Size = new System.Drawing.Size(103, 17);
             this.rdoActiveMovie.TabIndex = 18;
+            this.rdoActiveMovie.TabStop = true;
             this.rdoActiveMovie.Text = "Đang hoạt động";
             this.rdoActiveMovie.UseVisualStyleBackColor = false;
             // 
@@ -329,6 +348,7 @@
             this.btnUpdateMovie.TabIndex = 23;
             this.btnUpdateMovie.Text = "Sửa";
             this.btnUpdateMovie.UseVisualStyleBackColor = false;
+            this.btnUpdateMovie.Click += new System.EventHandler(this.btnUpdateMovie_Click);
             // 
             // btnDeleteMovie
             // 
@@ -342,6 +362,7 @@
             this.btnDeleteMovie.TabIndex = 24;
             this.btnDeleteMovie.Text = "Xóa";
             this.btnDeleteMovie.UseVisualStyleBackColor = false;
+            this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteMovie_Click);
             // 
             // splcBody
             // 
@@ -353,6 +374,7 @@
             // 
             // splcBody.Panel1
             // 
+            this.splcBody.Panel1.Controls.Add(this.btnInsertCategory);
             this.splcBody.Panel1.Controls.Add(this.btnDeleteImage);
             this.splcBody.Panel1.Controls.Add(this.btnInsertImage);
             this.splcBody.Panel1.Controls.Add(this.btnDeleteMovie);
@@ -430,7 +452,7 @@
             // 
             // splctnBodyRight.Panel2
             // 
-            this.splctnBodyRight.Panel2.Controls.Add(this.dtgMovie);
+            this.splctnBodyRight.Panel2.Controls.Add(this.dgvMovie);
             this.splctnBodyRight.Size = new System.Drawing.Size(555, 603);
             this.splctnBodyRight.SplitterDistance = 61;
             this.splctnBodyRight.TabIndex = 0;
@@ -444,6 +466,7 @@
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReload.TabIndex = 4;
             this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
             // 
             // cboInfoSearchMovie
             // 
@@ -454,37 +477,52 @@
             "Tên phim",
             "Đạo diễn",
             "Thể loại",
+            "Thời lượng",
+            "Ngày khởi chiếu",
+            "Ngôn ngữ",
             "Đang hoạt động",
             "Ngừng hoạt động"});
             this.cboInfoSearchMovie.Location = new System.Drawing.Point(13, 20);
             this.cboInfoSearchMovie.Name = "cboInfoSearchMovie";
             this.cboInfoSearchMovie.Size = new System.Drawing.Size(121, 21);
             this.cboInfoSearchMovie.TabIndex = 0;
+            this.cboInfoSearchMovie.SelectedIndexChanged += new System.EventHandler(this.cboInfoSearchMovie_SelectedIndexChanged);
             // 
-            // dtgMovie
+            // dgvMovie
             // 
-            this.dtgMovie.AllowUserToAddRows = false;
-            this.dtgMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgMovie.Location = new System.Drawing.Point(0, 0);
-            this.dtgMovie.Name = "dtgMovie";
-            this.dtgMovie.ReadOnly = true;
-            this.dtgMovie.Size = new System.Drawing.Size(555, 538);
-            this.dtgMovie.TabIndex = 0;
-            // 
-            // cinemaDBMSDataSet
-            // 
-            this.cinemaDBMSDataSet.DataSetName = "cinemaDBMSDataSet";
-            this.cinemaDBMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryMovieBindingSource
-            // 
-            this.categoryMovieBindingSource.DataMember = "CategoryMovie";
-            this.categoryMovieBindingSource.DataSource = this.cinemaDBMSDataSet;
+            this.dgvMovie.AllowUserToAddRows = false;
+            this.dgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMovie.Location = new System.Drawing.Point(0, 0);
+            this.dgvMovie.Name = "dgvMovie";
+            this.dgvMovie.ReadOnly = true;
+            this.dgvMovie.Size = new System.Drawing.Size(555, 538);
+            this.dgvMovie.TabIndex = 0;
+            this.dgvMovie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovie_CellClick);
             // 
             // categoryMovieTableAdapter
             // 
             this.categoryMovieTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 300;
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // btnInsertCategory
+            // 
+            this.btnInsertCategory.Location = new System.Drawing.Point(322, 325);
+            this.btnInsertCategory.Name = "btnInsertCategory";
+            this.btnInsertCategory.Size = new System.Drawing.Size(26, 23);
+            this.btnInsertCategory.TabIndex = 27;
+            this.btnInsertCategory.Text = "+";
+            this.btnInsertCategory.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.RightToLeft = true;
             // 
             // fMovie
             // 
@@ -499,6 +537,8 @@
             this.Text = "fMovie";
             this.Load += new System.EventHandler(this.fMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();
             this.splcBody.Panel1.ResumeLayout(false);
             this.splcBody.Panel1.PerformLayout();
             this.splcBody.Panel2.ResumeLayout(false);
@@ -510,9 +550,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMovie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -545,12 +584,15 @@
         private System.Windows.Forms.SplitContainer splcBody;
         private System.Windows.Forms.SplitContainer splctnBodyRight;
         private System.Windows.Forms.ComboBox cboInfoSearchMovie;
-        private System.Windows.Forms.DataGridView dtgMovie;
+        private System.Windows.Forms.DataGridView dgvMovie;
         private System.Windows.Forms.Button btnInsertImage;
         private System.Windows.Forms.PictureBox picReload;
         private System.Windows.Forms.Button btnDeleteImage;
         private cinemaDBMSDataSet cinemaDBMSDataSet;
         private System.Windows.Forms.BindingSource categoryMovieBindingSource;
         private cinemaDBMSDataSetTableAdapters.CategoryMovieTableAdapter categoryMovieTableAdapter;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btnInsertCategory;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

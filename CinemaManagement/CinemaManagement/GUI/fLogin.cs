@@ -114,5 +114,18 @@ namespace CinemaManagement.GUI
 
         #endregion
 
+        #region CANCEL
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clearTxt();
+        }
+
+        public void clearTxt()
+        {
+            txtPassword.Clear();
+            txtUserName.Clear();
+        }
+
+        #endregion
     }
 }

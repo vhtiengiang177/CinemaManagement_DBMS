@@ -118,7 +118,7 @@
             this.plMain.Controls.Add(this.plInforMain);
             this.plMain.Location = new System.Drawing.Point(1, 3);
             this.plMain.Name = "plMain";
-            this.plMain.Size = new System.Drawing.Size(937, 642);
+            this.plMain.Size = new System.Drawing.Size(937, 606);
             this.plMain.TabIndex = 0;
             // 
             // plListMain
@@ -271,7 +271,7 @@
             this.plInforMain.Controls.Add(this.plInforContact);
             this.plInforMain.Controls.Add(this.btnAddNewEmployee);
             this.plInforMain.Controls.Add(this.plInfor);
-            this.plInforMain.Location = new System.Drawing.Point(507, 0);
+            this.plInforMain.Location = new System.Drawing.Point(507, 4);
             this.plInforMain.Name = "plInforMain";
             this.plInforMain.Size = new System.Drawing.Size(408, 588);
             this.plInforMain.TabIndex = 1;
@@ -649,7 +649,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 664);
+            this.ClientSize = new System.Drawing.Size(921, 598);
             this.Controls.Add(this.plMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "fEmployee";

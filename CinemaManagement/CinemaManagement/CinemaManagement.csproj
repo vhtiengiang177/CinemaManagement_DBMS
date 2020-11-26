@@ -100,7 +100,11 @@
     </Compile>
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\SeatDAO.cs" />
+    <Compile Include="DAO\ShowtimesDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Seat.cs" />
+    <Compile Include="DTO\Showtimes.cs" />
     <Compile Include="GUI\fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +182,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ticket1\fAddTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket1\fAddTicket.Designer.cs">
+      <DependentUpon>fAddTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket1\fMovieTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket1\fMovieTicket.Designer.cs">
+      <DependentUpon>fMovieTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket1\fSeatTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket1\fSeatTicket.Designer.cs">
+      <DependentUpon>fSeatTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket1\fShowtimesTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket1\fShowtimesTicket.Designer.cs">
+      <DependentUpon>fShowtimesTicket.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +243,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket1\fMovieTicket.resx">
+      <DependentUpon>fMovieTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket1\fSeatTicket.resx">
+      <DependentUpon>fSeatTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket1\fShowtimesTicket.resx">
+      <DependentUpon>fShowtimesTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="cinemaDBMSDataSet1.xsc">
       <DependentUpon>cinemaDBMSDataSet1.xsd</DependentUpon>

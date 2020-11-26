@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,7 @@ namespace CinemaManagement.DTO
             set { img_movie = value; }
         }
 
+
         public Movie()
         {
 
@@ -98,6 +100,19 @@ namespace CinemaManagement.DTO
             this.Id_categorymovie = id_categorymovie;
             this.State_movie = state_movie;
             this.Img_movie = img_movie;
+        }
+
+        public Movie(DataRow row)
+        {
+            this.Id_movie = row["id_movie"].ToString();
+            this.Name_movie = row["name_movie"].ToString();
+            this.Language_movie = row["language_movie"].ToString();
+            this.Director_movie = row["director_movie"].ToString();
+            this.Runningtime_movie = row["runningtime_movie"].ToString();
+            this.Releasedate_movie = Convert.ToDateTime(row["releasedate_movie"]);
+            this.Id_categorymovie = row["id_categorymovie"].ToString();
+            this.State_movie = Convert.ToByte(row["state_movie"]);
+            this.Img_movie = (byte[])row["img_movie"];
         }
     }
 }

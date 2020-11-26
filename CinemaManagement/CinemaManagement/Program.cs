@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaManagement.GUI;
+using CinemaManagement.Ticket1;
 
 namespace CinemaManagement
 {
@@ -17,7 +18,7 @@ namespace CinemaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
+            Application.Run(new fMovieTicket());
         }
     }
 }

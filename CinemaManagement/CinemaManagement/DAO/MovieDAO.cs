@@ -10,6 +10,10 @@ namespace CinemaManagement.DAO
 {
     public class MovieDAO
     {
+
+        public static int MoiveWidth = 80;
+        public static int MoiveHeight = 200;
+
         private static MovieDAO instance;
 
         public static MovieDAO Instance
@@ -83,7 +87,8 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public DataTable loadData()
         {
-            string query = "SELECT * FROM v_LoadData";
+            string query = "SELECT * FROM Movie";
+            //string query = "SELECT * FROM v_LoadData";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -174,5 +179,23 @@ namespace CinemaManagement.DAO
             string query = "EXEC sp_SearchInactiveMovie";
             return DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public List<Movie> getListMovie()
+        {
+            List<Movie> listMovie = new List<Movie>();
+
+            string query = "select * from Movie";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Movie movie = new Movie(item);
+                listMovie.Add(movie);
+            }    
+
+            return listMovie;
+        }
+
     }
 }

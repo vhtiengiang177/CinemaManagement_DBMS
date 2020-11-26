@@ -29,13 +29,23 @@ namespace CinemaManagement.DAO
         }
 
         /// <summary>
+        /// Sinh ID mới cho phim
+        /// </summary>
+        /// <returns></returns>
+        public object createIDMovie()
+        {
+            string query = "SELECT dbo.f_CreateIDMovie()";
+            return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        /// <summary>
         /// Thêm phim. 
         /// </summary>
         /// <param name="mo"></param>
         /// <returns></returns>
         public bool insertMovie(Movie mo)
         {
-            string query = "EXEC sp_InsertMovie @id_movie, @name_movie, @language_movie, @director_movie, @runningtime_movie, @releasedate_movie, @id_categorymovie, @img_movie, @state_movie";
+            string query = "EXEC sp_InsertMovie @id_movie , @name_movie , @language_movie , @director_movie , @runningtime_movie , @releasedate_movie , @id_categorymovie , @img_movie , @state_movie";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie, mo.Name_movie, mo.Language_movie, mo.Director_movie, mo.Runningtime_movie, Convert.ToDateTime(mo.Releasedate_movie), mo.Id_categorymovie, mo.Img_movie, mo.State_movie }) > 0;
         }
 
@@ -46,7 +56,7 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public bool updateMovie(Movie mo)
         {
-            string query = "EXEC sp_UpdateMovie @id_movie, @name_movie, @language_movie, @director_movie, @runningtime_movie, @releasedate_movie, @id_categorymovie, @img_movie, @state_movie";
+            string query = "EXEC sp_UpdateMovie @id_movie , @name_movie , @language_movie , @director_movie , @runningtime_movie , @releasedate_movie , @id_categorymovie , @img_movie , @state_movie";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie, mo.Name_movie, mo.Language_movie, mo.Director_movie, mo.Runningtime_movie, Convert.ToDateTime(mo.Releasedate_movie), mo.Id_categorymovie, mo.Img_movie, mo.State_movie }) > 0;
         }
 
@@ -55,10 +65,10 @@ namespace CinemaManagement.DAO
         /// </summary>
         /// <param name="mo"></param>
         /// <returns></returns>
-        public bool deleteMovie(Movie mo)
+        public bool deleteMovie(string id_movie)
         {
             string query = "EXEC sp_DeleteMovie @id_movie";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mo.Id_movie }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_movie }) > 0;
         }
 
         public DataTable getMovie(string id)

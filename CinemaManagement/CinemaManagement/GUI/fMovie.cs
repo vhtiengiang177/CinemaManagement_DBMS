@@ -32,24 +32,15 @@ namespace CinemaManagement.GUI
             // TODO: This line of code loads data into the 'cinemaDBMSDataSet.CategoryMovie' table. You can move, or remove it, as needed.
             // Kết nối Combo Box thể loại dưới dtb
             this.categoryMovieTableAdapter.Fill(this.cinemaDBMSDataSet.CategoryMovie);
-
-            // ToolTip
-            toolTip.SetToolTip(txtNameMovie, "Điền tên phim. Lưu ý: Không đặt trùng tên phim đã có.");
-            toolTip.SetToolTip(txtDirectorMovie, "Điền tên đạo diễn của phim.");
-            toolTip.SetToolTip(cboCategoryMovie, "Chọn thể loại của phim.");
-            toolTip.SetToolTip(txtRunningTimeMovie, "Điền thời lượng phim (đơn vị: phút).");
-            toolTip.SetToolTip(dtmReleaseDate, "Chọn ngày khởi chiếu phim.");
-            toolTip.SetToolTip(txtLanguageMovie, "Điền ngôn ngữ của phim.");
-            toolTip.SetToolTip(txtSearchMovie, "Điền thông tin của phim cần tìm theo ô chọn bên trái. (Ví dụ: ô bên trái chọn Tên phim thì tìm kiếm thông tin theo tên phim.");
-            this.toolTip.SetToolTip(picReload, "Tải lại danh sách.");
         }
 
         // Tải lại toàn bộ dữ liệu
         public void loadData()
         {
             this.dgvMovie.DataSource = MovieDAO.Instance.loadData();
+            this.txtSearchMovie.Text = "";
             this.picImageMovie.Image = null;
-            this.lblShowIDMovie.Text = ""; // CHƯA SINH MÃ PHIM TỰ ĐỘNG !!!!
+            this.lblShowIDMovie.Text = MovieDAO.Instance.createIDMovie().ToString(); 
             this.txtNameMovie.Text = "";
             this.txtDirectorMovie.Text = "";
             this.cboCategoryMovie.ValueMember[0].ToString();
@@ -63,6 +54,8 @@ namespace CinemaManagement.GUI
             this.rdoActiveMovie.Enabled = false;
             this.rdoInactiveMovie.Enabled = false;
 
+            // Cho phép thêm phim
+            this.btnInsertMovie.Enabled = true;
             // Không cho sử dụng 2 nút Sửa, Xóa vì chưa chọn phim
             this.btnUpdateMovie.Enabled = false;
             this.btnDeleteMovie.Enabled = false;
@@ -127,6 +120,7 @@ namespace CinemaManagement.GUI
             arrImage = null;
         }
 
+        // Xử lý lỗi đầu vào
         private bool inputValidate()
         {
             int errorCount = 0;
@@ -178,30 +172,25 @@ namespace CinemaManagement.GUI
         {
             if(inputValidate())
             {
-                MessageBox.Show("Thành công");
+                mo = new Movie(this.lblShowIDMovie.Text.ToString(),
+                     this.txtNameMovie.Text.ToString(),
+                     this.txtLanguageMovie.Text.ToString(),
+                     this.txtDirectorMovie.Text.ToString(),
+                     this.txtRunningTimeMovie.Text.ToString(),
+                     Convert.ToDateTime(this.dtmReleaseDate.Value),
+                     this.cboCategoryMovie.SelectedValue.ToString(),
+                     1,
+                     arrImage);
+                try
+                {
+                    MovieDAO.Instance.insertMovie(mo);
+                    loadData();
+                }
+                catch
+                {
+                    MessageBox.Show("Thêm không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Lỗi");
-            }
-            //mo = new Movie(this.lblShowIDMovie.Text.ToString(),
-            //                     this.txtNameMovie.Text.ToString(),
-            //                     this.txtLanguageMovie.Text.ToString(),
-            //                     this.txtDirectorMovie.Text.ToString(),
-            //                     this.txtRunningTimeMovie.Text.ToString(),
-            //                     Convert.ToDateTime(this.dtmReleaseDate.Value),
-            //                     this.cboCategoryMovie.SelectedValue.ToString(),
-            //                     1,
-            //                     arrImage);
-            //try
-            //{
-            //    MovieDAO.Instance.insertMovie(mo);
-            //    loadData();
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Thêm không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
 
 
@@ -226,7 +215,9 @@ namespace CinemaManagement.GUI
             this.txtRunningTimeMovie.Text = dtGetMovie.Rows[0][4].ToString();
             this.dtmReleaseDate.Value = Convert.ToDateTime(dtGetMovie.Rows[0][5].ToString());
             this.cboCategoryMovie.SelectedValue = dtGetMovie.Rows[0][6].ToString();
-            if (dtGetMovie.Rows[0][8].ToString() == "1")
+
+            // Kiểm tra state của phim
+            if (dtGetMovie.Rows[0][8].ToString() == "True")
             {
                 rdoActiveMovie.Checked = true;
             }
@@ -249,78 +240,52 @@ namespace CinemaManagement.GUI
         // Sửa phim
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            mo = new Movie(this.lblShowIDMovie.Text.ToString(),
+            if(inputValidate())
+            {
+                byte stateM;
+                if(rdoActiveMovie.Checked == true)
+                {
+                    stateM = 1;
+                }
+                else
+                {
+                    stateM = 0;
+                }
+                mo = new Movie(this.lblShowIDMovie.Text.ToString(),
                                  this.txtNameMovie.Text.ToString(),
                                  this.txtLanguageMovie.Text.ToString(),
                                  this.txtDirectorMovie.Text.ToString(),
                                  this.txtRunningTimeMovie.Text.ToString(),
                                  Convert.ToDateTime(this.dtmReleaseDate.Value),
                                  this.cboCategoryMovie.SelectedValue.ToString(),
-                                 1,
+                                 stateM,
                                  arrImage);
-            try
-            {
-                MovieDAO.Instance.updateMovie(mo);
-                loadData();
-            }
-            catch
-            {
-                MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    MovieDAO.Instance.updateMovie(mo);
+                    loadData();
+                }
+                catch
+                {
+                    MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         // Xóa phim
         private void btnDeleteMovie_Click(object sender, EventArgs e)
         {
-            mo = new Movie(this.lblShowIDMovie.Text.ToString(),
-                                 this.txtNameMovie.Text.ToString(),
-                                 this.txtLanguageMovie.Text.ToString(),
-                                 this.txtDirectorMovie.Text.ToString(),
-                                 this.txtRunningTimeMovie.Text.ToString(),
-                                 Convert.ToDateTime(this.dtmReleaseDate.Value),
-                                 this.cboCategoryMovie.SelectedValue.ToString(),
-                                 1,
-                                 arrImage);
-            try
+            if(inputValidate())
             {
-                MovieDAO.Instance.deleteMovie(mo);
-            }
-            catch
-            {
-                MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Tìm kiếm phim 
-        private void btnSearchMovie_Click(object sender, EventArgs e)
-        {
-            if(txtSearchMovie.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập vào ô tìm kiếm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if(cboInfoSearchMovie.SelectedIndex == 0) // Tên phim
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchNameMovie(txtSearchMovie.Text.Trim());
-            }
-            else if(cboInfoSearchMovie.SelectedIndex == 1) // Đạo diễn
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchDirectorMovie(txtSearchMovie.Text.Trim());
-            }
-            else if (cboInfoSearchMovie.SelectedIndex == 2) // Thể loại
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchNameCamoMovie(txtSearchMovie.Text.Trim());
-            }
-            else if (cboInfoSearchMovie.SelectedIndex == 3) // Thời lượng
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchRunningTimeMovie(txtSearchMovie.Text.Trim());
-            }
-            else if (cboInfoSearchMovie.SelectedIndex == 4) // Ngày khởi chiếu
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchReleaseDateMovie(txtSearchMovie.Text.Trim());
-            }
-            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngôn ngữ
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchLanguageMovie(txtSearchMovie.Text.Trim());
+                try
+                {
+                    MovieDAO.Instance.deleteMovie(this.lblShowIDMovie.Text.ToString());
+                    loadData();
+                }
+                catch
+                {
+                    MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -342,18 +307,52 @@ namespace CinemaManagement.GUI
             else
             {
                 this.txtSearchMovie.Enabled = true;
+                this.dgvMovie.DataSource = MovieDAO.Instance.loadData(); // Hiển thị lại ds đầy đủ các phim
             }
         }
 
-        // Khi thay đổi chữ trong ô tìm kiếm
+        // Khi thay đổi chữ trong ô tìm kiếm thì tìm luôn
         private void txtSearchMovie_TextChanged(object sender, EventArgs e)
         {
             if(txtSearchMovie.Text == "")
             {
+                this.dgvMovie.DataSource = MovieDAO.Instance.loadData(); // Hiển thị lại ds đầy đủ các phim
+            }
+            if (cboInfoSearchMovie.SelectedIndex == 0) // Tên phim
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchNameMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 1) // Đạo diễn
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchDirectorMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 2) // Thể loại
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchNameCamoMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 3) // Thời lượng
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchRunningTimeMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 4) // Ngày khởi chiếu
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchReleaseDateMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngôn ngữ
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchLanguageMovie(txtSearchMovie.Text.Trim());
+            }
+        }
+
+        // Mở form thể loại để thêm thể loại mới. 
+        private void btnInsertCategory_Click(object sender, EventArgs e)
+        {
+            fCategoryMovie fCamo = new fCategoryMovie();
+            fCamo.ShowDialog();
+            if(fCamo.Disposing)
+            {
                 loadData();
             }
         }
-       
-        
     }
 }

@@ -27,19 +27,12 @@ namespace CinemaManagement.GUI
             cboInfoSearchMovie.SelectedItem = "Tên phim";
         }
 
-        private void fMovie_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cinemaDBMSDataSet.CategoryMovie' table. You can move, or remove it, as needed.
-            // Kết nối Combo Box thể loại dưới dtb
-            this.categoryMovieTableAdapter.Fill(this.cinemaDBMSDataSet.CategoryMovie);
-        }
-
         // Tải lại toàn bộ dữ liệu
         public void loadData()
         {
             this.dgvMovie.DataSource = MovieDAO.Instance.loadData();
             this.txtSearchMovie.Text = "";
-            this.picImageMovie.Image = null;
+            this.picImageMovie.Image = this.picImageMovie.InitialImage;
             this.lblShowIDMovie.Text = MovieDAO.Instance.createIDMovie().ToString(); 
             this.txtNameMovie.Text = "";
             this.txtDirectorMovie.Text = "";
@@ -59,6 +52,10 @@ namespace CinemaManagement.GUI
             // Không cho sử dụng 2 nút Sửa, Xóa vì chưa chọn phim
             this.btnUpdateMovie.Enabled = false;
             this.btnDeleteMovie.Enabled = false;
+
+            // TODO: This line of code loads data into the 'cinemaDBMSDataSet.CategoryMovie' table. You can move, or remove it, as needed.
+            // Kết nối Combo Box thể loại dưới dtb
+            this.categoryMovieTableAdapter.Fill(this.cinemaDBMSDataSet.CategoryMovie);
         }
 
         // Nhấn vào nút reload lại form. (tải lại danh sách)
@@ -116,8 +113,8 @@ namespace CinemaManagement.GUI
         // Xóa hình phim
         private void btnDeleteImage_Click(object sender, EventArgs e)
         {
-            this.picImageMovie.Image = null;
-            arrImage = null;
+            this.picImageMovie.Image = this.picImageMovie.InitialImage;
+            imageToByteArray(this.picImageMovie.Image);
         }
 
         // Xử lý lỗi đầu vào
@@ -192,7 +189,6 @@ namespace CinemaManagement.GUI
                 }
             }
         }
-
 
         // Chọn thông tin phim của 1 hàng, hiển thị bên chỉnh sửa - xóa
         private void dgvMovie_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -275,31 +271,28 @@ namespace CinemaManagement.GUI
         // Xóa phim
         private void btnDeleteMovie_Click(object sender, EventArgs e)
         {
-            if(inputValidate())
+            try
             {
-                try
-                {
-                    MovieDAO.Instance.deleteMovie(this.lblShowIDMovie.Text.ToString());
-                    loadData();
-                }
-                catch
-                {
-                    MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MovieDAO.Instance.deleteMovie(this.lblShowIDMovie.Text.ToString());
+                loadData();
+            }
+            catch
+            {
+                MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         // Khi chọn vào cbo tìm kiếm theo loại, kiểm tra xem có chọn đang hoạt động hay ngưng hoạt động không
         private void cboInfoSearchMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboInfoSearchMovie.SelectedIndex == 6 || cboInfoSearchMovie.SelectedIndex == 7)
+            if(cboInfoSearchMovie.SelectedIndex == 7 || cboInfoSearchMovie.SelectedIndex == 8)
             {
                 this.txtSearchMovie.Enabled = false; // Không cho tìm kiếm bằng txt nữa vì đã chọn rõ trạng thái rồi
-                if (cboInfoSearchMovie.SelectedIndex == 6) // Đang hoạt động
+                if (cboInfoSearchMovie.SelectedIndex == 7) // Đang hoạt động
                 {
                     dgvMovie.DataSource = MovieDAO.Instance.searchActiveStateMovie();
                 }
-                else if (cboInfoSearchMovie.SelectedIndex == 7) // Ngưng hoạt động
+                else if (cboInfoSearchMovie.SelectedIndex == 8) // Ngưng hoạt động
                 {
                     dgvMovie.DataSource = MovieDAO.Instance.searchInactiveMovie();
                 }
@@ -318,27 +311,31 @@ namespace CinemaManagement.GUI
             {
                 this.dgvMovie.DataSource = MovieDAO.Instance.loadData(); // Hiển thị lại ds đầy đủ các phim
             }
-            if (cboInfoSearchMovie.SelectedIndex == 0) // Tên phim
+            else if (cboInfoSearchMovie.SelectedIndex == 0) // ID
+            {
+                dgvMovie.DataSource = MovieDAO.Instance.searchIDMovie(txtSearchMovie.Text.Trim());
+            }
+            else if (cboInfoSearchMovie.SelectedIndex == 1) // Tên phim
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchNameMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 1) // Đạo diễn
+            else if (cboInfoSearchMovie.SelectedIndex == 2) // Đạo diễn
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchDirectorMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 2) // Thể loại
+            else if (cboInfoSearchMovie.SelectedIndex == 3) // Thể loại
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchNameCamoMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 3) // Thời lượng
+            else if (cboInfoSearchMovie.SelectedIndex == 4) // Thời lượng
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchRunningTimeMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 4) // Ngày khởi chiếu
+            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngày khởi chiếu
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchReleaseDateMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngôn ngữ
+            else if (cboInfoSearchMovie.SelectedIndex == 6) // Ngôn ngữ
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchLanguageMovie(txtSearchMovie.Text.Trim());
             }
@@ -349,7 +346,7 @@ namespace CinemaManagement.GUI
         {
             fCategoryMovie fCamo = new fCategoryMovie();
             fCamo.ShowDialog();
-            if(fCamo.Disposing)
+            if(fCamo.close == true)
             {
                 loadData();
             }

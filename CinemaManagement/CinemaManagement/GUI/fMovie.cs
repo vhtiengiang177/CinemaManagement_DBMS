@@ -129,17 +129,42 @@ namespace CinemaManagement.GUI
 
         private bool inputValidate()
         {
-            var boxes = this.Controls.OfType<TextBox>();
             int errorCount = 0;
-            foreach(var box in boxes)
+            if(txtNameMovie.Text.Trim().Length <= 0)
             {
-                if ("txtNameMovie,txtLanguageMovie,txtDirectorMovie,txtRunningTimeMovie".Contains(box.Name) && string.IsNullOrEmpty(box.Text))
-                {
-                    errorProvider.SetError(box, "Không được để trống trường này.");
-                    errorCount++;
-                }
-                else
-                    errorProvider.SetError(box, "");
+                errorProvider.SetError(this.txtNameMovie, "Không để trống trường này.");
+                errorCount += 1;
+            }
+            else
+            {
+                errorProvider.SetError(this.txtNameMovie, null);
+            }
+            if (txtDirectorMovie.Text.Trim().Length <= 0)
+            {
+                errorProvider.SetError(this.txtDirectorMovie, "Không để trống trường này.");
+                errorCount += 1;
+            }
+            else
+            {
+                errorProvider.SetError(this.txtDirectorMovie, null);
+            }
+            if (txtLanguageMovie.Text.Trim().Length <= 0)
+            {
+                errorProvider.SetError(this.txtLanguageMovie, "Không để trống trường này.");
+                errorCount += 1;
+            }
+            else
+            {
+                errorProvider.SetError(this.txtLanguageMovie, null);
+            }
+            if (txtRunningTimeMovie.Text.Trim().Length <= 0)
+            {
+                errorProvider.SetError(this.txtRunningTimeMovie, "Không để trống trường này.");
+                errorCount += 1;
+            }
+            else
+            {
+                errorProvider.SetError(this.txtRunningTimeMovie, null);
             }
             if (errorCount == 0)
             {
@@ -328,10 +353,7 @@ namespace CinemaManagement.GUI
                 loadData();
             }
         }
-
-        // Ghi chú
-        //Tìm kiếm chưa được, chỉ tìm được các từ trong giữa 2 từ đầu cuối
-        //Kiểm lỗi thêm chưa thành công.
+       
         
     }
 }

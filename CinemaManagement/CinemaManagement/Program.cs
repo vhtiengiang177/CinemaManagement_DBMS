@@ -17,7 +17,7 @@ namespace CinemaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMovie());
+            Application.Run(new fMain());
         }
     }
 }

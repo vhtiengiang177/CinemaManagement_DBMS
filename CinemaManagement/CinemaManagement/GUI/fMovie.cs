@@ -195,15 +195,17 @@ namespace CinemaManagement.GUI
         {
             DataTable dtGetMovie = new DataTable();
             dtGetMovie = MovieDAO.Instance.getMovie(dgvMovie.CurrentRow.Cells[0].Value.ToString());
-            if (dtGetMovie.Rows[0][7] is null || dtGetMovie.Rows[0][7] == DBNull.Value)
-            {
-                picImageMovie.Image = null;
-            }
-            else
-            {
-                arrImage = (byte[])dtGetMovie.Rows[0][7];
-                this.picImageMovie.Image = byteArrayToImage(arrImage);
-            }
+            // Kiểm tra ảnh có null không. 
+            //if (dtGetMovie.Rows[0][7] is null || dtGetMovie.Rows[0][7] == DBNull.Value)
+            //{
+            //    picImageMovie.Image = null;
+            //}
+            //else
+            //{
+            arrImage = (byte[])dtGetMovie.Rows[0][7];
+            this.picImageMovie.Image = byteArrayToImage(arrImage);
+            //}
+
             this.lblShowIDMovie.Text = dtGetMovie.Rows[0][0].ToString();
             this.txtNameMovie.Text = dtGetMovie.Rows[0][1].ToString();
             this.txtLanguageMovie.Text = dtGetMovie.Rows[0][2].ToString();

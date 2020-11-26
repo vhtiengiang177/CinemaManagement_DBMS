@@ -158,6 +158,24 @@
     <Compile Include="GUI\fPromotion.Designer.cs">
       <DependentUpon>fPromotion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowMovie_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowMovie_Order.Designer.cs">
+      <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fShowtime_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowtime_Order.Designer.cs">
+      <DependentUpon>fShowtime_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ucMovie_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucMovie_Order.Designer.cs">
+      <DependentUpon>ucMovie_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\fCustomer.resx">
@@ -183,6 +201,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fPromotion.resx">
       <DependentUpon>fPromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowMovie_Order.resx">
+      <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowtime_Order.resx">
+      <DependentUpon>fShowtime_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucMovie_Order.resx">
+      <DependentUpon>ucMovie_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

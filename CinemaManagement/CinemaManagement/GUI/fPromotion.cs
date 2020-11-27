@@ -22,8 +22,7 @@ namespace CinemaManagement.GUI
         {
             InitializeComponent();
             resetdgvPromotion();
-            toolTip_start.SetToolTip(txtDateStart, "Nhập mm/dd/yyyy");
-            toolTip_start.SetToolTip(txtDateEnd, "Nhập mm/dd/yyyy");
+            
         }
 
         #region Load  và Reset dữ liệu
@@ -54,8 +53,6 @@ namespace CinemaManagement.GUI
             LoadPromotion();
             txtIDPromotion.ResetText();
             txtNamePromotion.ResetText();
-            txtDateStart.ResetText();
-            txtDateEnd.ResetText();
             txtObjectPromotion.ResetText();
             txtValuePromotion.ResetText();
             txtSearchPromotion.ResetText();
@@ -84,10 +81,10 @@ namespace CinemaManagement.GUI
             dgvPromotion.Rows[r].Cells[0].Value.ToString();
             this.txtNamePromotion.Text =
             dgvPromotion.Rows[r].Cells[1].Value.ToString();
-            this.txtDateStart.Text =
-            dgvPromotion.Rows[r].Cells[2].Value.ToString();         
-            this.txtDateEnd.Text =
-            dgvPromotion.Rows[r].Cells[3].Value.ToString();
+            this.dtmStart.Value =
+            Convert.ToDateTime(dgvPromotion.Rows[r].Cells[2].Value.ToString());         
+            this.dtmEnd.Value =
+            Convert.ToDateTime(dgvPromotion.Rows[r].Cells[3].Value.ToString());
             this.txtObjectPromotion.Text=
             dgvPromotion.Rows[r].Cells[4].Value.ToString();
             this.txtValuePromotion.Text =
@@ -105,7 +102,7 @@ namespace CinemaManagement.GUI
            
             // Thêm dữ liệu          
                 
-                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" || txtDateStart.Text.Trim() == "" || txtDateEnd.Text.Trim() == "" || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
+                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == ""   || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
                 {
                     MessageBox.Show("Phải nhập đầy đủ thông tin");
                 }
@@ -115,8 +112,8 @@ namespace CinemaManagement.GUI
                     f = PromotionDAO.Intance.AddPromotion(
                    this.txtIDPromotion.Text.ToString(),
                    this.txtNamePromotion.Text.ToString(),
-                   this.txtDateStart.Text.ToString(),
-                   this.txtDateEnd.Text.ToString(),
+                    this.dtmStart.Value.ToString(),
+                    this.dtmEnd.Value.ToString(),
                    this.txtObjectPromotion.Text.ToString(),
                    Convert.ToDouble(this.txtValuePromotion.Text.ToString()));
 
@@ -155,7 +152,7 @@ namespace CinemaManagement.GUI
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
-            if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" || txtDateStart.Text.Trim() == "" || txtDateEnd.Text.Trim() == "" || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
+            if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" ||  txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
             {
                 MessageBox.Show("Phải chọn thông tin để sửa");
             }
@@ -167,8 +164,8 @@ namespace CinemaManagement.GUI
                 f = PromotionDAO.Intance.UpdatePromotion(
                    this.txtIDPromotion.Text.ToString(),
                    this.txtNamePromotion.Text.ToString(),
-                   this.txtDateStart.Text.ToString(),
-                   this.txtDateEnd.Text.ToString(),
+                    this.dtmStart.Value.ToString(),
+                    this.dtmEnd.Value.ToString(),
                    this.txtObjectPromotion.Text.ToString(),
                    Convert.ToDouble(this.txtValuePromotion.Text.ToString()));
                 if (f)
@@ -197,7 +194,7 @@ namespace CinemaManagement.GUI
             try
             {
 
-                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" || txtDateStart.Text.Trim() == "" || txtDateEnd.Text.Trim() == "" || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
+                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" ||   txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
                 {
                     MessageBox.Show("Phải chọn thông tin để xóa");
                 }
@@ -288,5 +285,20 @@ namespace CinemaManagement.GUI
         }
 
         #endregion
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNamePromotion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

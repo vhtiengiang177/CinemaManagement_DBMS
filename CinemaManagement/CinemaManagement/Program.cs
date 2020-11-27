@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaManagement.GUI;
+using CinemaManagement.Ticket1;
 
 namespace CinemaManagement
 {

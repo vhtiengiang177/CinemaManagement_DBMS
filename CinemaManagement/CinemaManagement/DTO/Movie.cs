@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace CinemaManagement.DTO
         private string runningtime_movie;
         private DateTime releasedate_movie;
         private string language_movie;
-        private string state_movie;
-        private MemoryStream img_movie;
+        private Byte state_movie;
+        private byte[] img_movie;
 
         // Mã phim
         public string Id_movie
@@ -69,20 +70,26 @@ namespace CinemaManagement.DTO
         }
 
         // Trạng thái 1 - hoạt động, 0 - ngừng hoạt động
-        public string State_movie
+        public Byte State_movie
         {
             get { return state_movie; }
             set { state_movie = value; }
         }
 
         // Poster phim 
-        public MemoryStream Img_movie
+        public byte[] Img_movie
         {
             get { return img_movie; }
             set { img_movie = value; }
         }
 
-        public Movie(string id_movie, string name_movie, string language_movie, string director_movie, string runningtime_movie, DateTime releasedate_movie, string id_categorymovie, MemoryStream img_movie)
+
+        public Movie()
+        {
+
+        }
+
+        public Movie(string id_movie, string name_movie, string language_movie, string director_movie, string runningtime_movie, DateTime releasedate_movie, string id_categorymovie, Byte state_movie, byte[] img_movie)
         {
             this.Id_movie = id_movie;
             this.Name_movie = name_movie;
@@ -91,7 +98,21 @@ namespace CinemaManagement.DTO
             this.Runningtime_movie = runningtime_movie;
             this.Releasedate_movie = releasedate_movie;
             this.Id_categorymovie = id_categorymovie;
+            this.State_movie = state_movie;
             this.Img_movie = img_movie;
+        }
+
+        public Movie(DataRow row)
+        {
+            this.Id_movie = row["id_movie"].ToString();
+            this.Name_movie = row["name_movie"].ToString();
+            this.Language_movie = row["language_movie"].ToString();
+            this.Director_movie = row["director_movie"].ToString();
+            this.Runningtime_movie = row["runningtime_movie"].ToString();
+            this.Releasedate_movie = Convert.ToDateTime(row["releasedate_movie"]);
+            this.Id_categorymovie = row["id_categorymovie"].ToString();
+            this.State_movie = Convert.ToByte(row["state_movie"]);
+            this.Img_movie = (byte[])row["img_movie"];
         }
     }
 }

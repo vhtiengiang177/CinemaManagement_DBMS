@@ -185,7 +185,5 @@ namespace CinemaManagement.GUI
             fShowtime_Order fShowtime = new fShowtime_Order(Id_movie);
             fShowtime.ShowDialog();
         }
-
-      
     }
 }

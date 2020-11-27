@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCategoryMovie));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splctnBody = new System.Windows.Forms.SplitContainer();
             this.btnDeleteCategoryMovie = new System.Windows.Forms.Button();
             this.btnInsertCategoryMovie = new System.Windows.Forms.Button();
@@ -40,9 +43,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
             this.picReload = new System.Windows.Forms.PictureBox();
-            this.btnSearchCategoryMovie = new System.Windows.Forms.Button();
             this.txtSearchCategoryMovie = new System.Windows.Forms.TextBox();
-            this.dtgCategoryMovie = new System.Windows.Forms.DataGridView();
+            this.dgvCategoryMovie = new System.Windows.Forms.DataGridView();
+            this.cboInfoSearchCaMo = new System.Windows.Forms.ComboBox();
+            this.lblSearchFor = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splctnBody)).BeginInit();
             this.splctnBody.Panel1.SuspendLayout();
             this.splctnBody.Panel2.SuspendLayout();
@@ -52,7 +58,8 @@
             this.splctnBodyRight.Panel2.SuspendLayout();
             this.splctnBodyRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // splctnBody
@@ -60,7 +67,7 @@
             this.splctnBody.BackColor = System.Drawing.Color.Transparent;
             this.splctnBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splctnBody.Location = new System.Drawing.Point(0, 0);
-            this.splctnBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splctnBody.Margin = new System.Windows.Forms.Padding(2);
             this.splctnBody.Name = "splctnBody";
             // 
             // splctnBody.Panel1
@@ -77,8 +84,8 @@
             // splctnBody.Panel2
             // 
             this.splctnBody.Panel2.Controls.Add(this.splctnBodyRight);
-            this.splctnBody.Size = new System.Drawing.Size(584, 291);
-            this.splctnBody.SplitterDistance = 267;
+            this.splctnBody.Size = new System.Drawing.Size(680, 330);
+            this.splctnBody.SplitterDistance = 270;
             this.splctnBody.SplitterWidth = 3;
             this.splctnBody.TabIndex = 0;
             // 
@@ -94,6 +101,7 @@
             this.btnDeleteCategoryMovie.TabIndex = 27;
             this.btnDeleteCategoryMovie.Text = "Xóa";
             this.btnDeleteCategoryMovie.UseVisualStyleBackColor = false;
+            this.btnDeleteCategoryMovie.Click += new System.EventHandler(this.btnDeleteCategoryMovie_Click);
             // 
             // btnInsertCategoryMovie
             // 
@@ -107,6 +115,7 @@
             this.btnInsertCategoryMovie.TabIndex = 25;
             this.btnInsertCategoryMovie.Text = "Thêm";
             this.btnInsertCategoryMovie.UseVisualStyleBackColor = false;
+            this.btnInsertCategoryMovie.Click += new System.EventHandler(this.btnInsertCategoryMovie_Click);
             // 
             // btnUpdateCategoryMovie
             // 
@@ -120,12 +129,13 @@
             this.btnUpdateCategoryMovie.TabIndex = 26;
             this.btnUpdateCategoryMovie.Text = "Sửa";
             this.btnUpdateCategoryMovie.UseVisualStyleBackColor = false;
+            this.btnUpdateCategoryMovie.Click += new System.EventHandler(this.btnUpdateCategoryMovie_Click);
             // 
             // txtNameCategoryMovie
             // 
             this.txtNameCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameCategoryMovie.Location = new System.Drawing.Point(80, 80);
-            this.txtNameCategoryMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameCategoryMovie.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameCategoryMovie.Name = "txtNameCategoryMovie";
             this.txtNameCategoryMovie.Size = new System.Drawing.Size(163, 20);
             this.txtNameCategoryMovie.TabIndex = 4;
@@ -178,77 +188,115 @@
             // 
             this.splctnBodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splctnBodyRight.Location = new System.Drawing.Point(0, 0);
-            this.splctnBodyRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splctnBodyRight.Margin = new System.Windows.Forms.Padding(2);
             this.splctnBodyRight.Name = "splctnBodyRight";
             this.splctnBodyRight.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splctnBodyRight.Panel1
             // 
+            this.splctnBodyRight.Panel1.Controls.Add(this.lblSearchFor);
+            this.splctnBodyRight.Panel1.Controls.Add(this.cboInfoSearchCaMo);
             this.splctnBodyRight.Panel1.Controls.Add(this.picReload);
-            this.splctnBodyRight.Panel1.Controls.Add(this.btnSearchCategoryMovie);
             this.splctnBodyRight.Panel1.Controls.Add(this.txtSearchCategoryMovie);
             // 
             // splctnBodyRight.Panel2
             // 
-            this.splctnBodyRight.Panel2.Controls.Add(this.dtgCategoryMovie);
-            this.splctnBodyRight.Size = new System.Drawing.Size(314, 291);
-            this.splctnBodyRight.SplitterDistance = 42;
+            this.splctnBodyRight.Panel2.Controls.Add(this.dgvCategoryMovie);
+            this.splctnBodyRight.Size = new System.Drawing.Size(407, 330);
+            this.splctnBodyRight.SplitterDistance = 47;
             this.splctnBodyRight.SplitterWidth = 3;
             this.splctnBodyRight.TabIndex = 0;
             // 
             // picReload
             // 
             this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(278, 5);
-            this.picReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picReload.Location = new System.Drawing.Point(369, 9);
+            this.picReload.Margin = new System.Windows.Forms.Padding(2);
             this.picReload.Name = "picReload";
             this.picReload.Size = new System.Drawing.Size(27, 25);
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReload.TabIndex = 28;
             this.picReload.TabStop = false;
-            // 
-            // btnSearchCategoryMovie
-            // 
-            this.btnSearchCategoryMovie.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSearchCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCategoryMovie.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSearchCategoryMovie.Location = new System.Drawing.Point(194, 6);
-            this.btnSearchCategoryMovie.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnSearchCategoryMovie.Name = "btnSearchCategoryMovie";
-            this.btnSearchCategoryMovie.Size = new System.Drawing.Size(51, 15);
-            this.btnSearchCategoryMovie.TabIndex = 6;
-            this.btnSearchCategoryMovie.Text = "Tìm kiếm";
-            this.btnSearchCategoryMovie.UseVisualStyleBackColor = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
             // 
             // txtSearchCategoryMovie
             // 
             this.txtSearchCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategoryMovie.Location = new System.Drawing.Point(8, 11);
+            this.txtSearchCategoryMovie.Location = new System.Drawing.Point(170, 13);
             this.txtSearchCategoryMovie.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSearchCategoryMovie.Name = "txtSearchCategoryMovie";
             this.txtSearchCategoryMovie.Size = new System.Drawing.Size(182, 20);
             this.txtSearchCategoryMovie.TabIndex = 5;
+            this.txtSearchCategoryMovie.TextChanged += new System.EventHandler(this.txtSearchCategoryMovie_TextChanged);
             // 
-            // dtgCategoryMovie
+            // dgvCategoryMovie
             // 
-            this.dtgCategoryMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoryMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgCategoryMovie.Location = new System.Drawing.Point(0, 0);
-            this.dtgCategoryMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dtgCategoryMovie.Name = "dtgCategoryMovie";
-            this.dtgCategoryMovie.Size = new System.Drawing.Size(314, 246);
-            this.dtgCategoryMovie.TabIndex = 0;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategoryMovie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvCategoryMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategoryMovie.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvCategoryMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCategoryMovie.Location = new System.Drawing.Point(0, 0);
+            this.dgvCategoryMovie.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCategoryMovie.Name = "dgvCategoryMovie";
+            this.dgvCategoryMovie.Size = new System.Drawing.Size(407, 280);
+            this.dgvCategoryMovie.TabIndex = 0;
+            this.dgvCategoryMovie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoryMovie_CellClick);
+            // 
+            // cboInfoSearchCaMo
+            // 
+            this.cboInfoSearchCaMo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInfoSearchCaMo.FormattingEnabled = true;
+            this.cboInfoSearchCaMo.Items.AddRange(new object[] {
+            "Mã thể loại",
+            "Tên thể loại"});
+            this.cboInfoSearchCaMo.Location = new System.Drawing.Point(81, 13);
+            this.cboInfoSearchCaMo.Name = "cboInfoSearchCaMo";
+            this.cboInfoSearchCaMo.Size = new System.Drawing.Size(84, 21);
+            this.cboInfoSearchCaMo.TabIndex = 29;
+            // 
+            // lblSearchFor
+            // 
+            this.lblSearchFor.AutoSize = true;
+            this.lblSearchFor.Location = new System.Drawing.Point(4, 16);
+            this.lblSearchFor.Name = "lblSearchFor";
+            this.lblSearchFor.Size = new System.Drawing.Size(73, 13);
+            this.lblSearchFor.TabIndex = 30;
+            this.lblSearchFor.Text = "Tìm kiếm theo";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 200;
             // 
             // fCategoryMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 291);
+            this.ClientSize = new System.Drawing.Size(680, 330);
             this.Controls.Add(this.splctnBody);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "fCategoryMovie";
             this.Text = "Thể loại phim";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fCategoryMovie_FormClosing);
             this.splctnBody.Panel1.ResumeLayout(false);
             this.splctnBody.Panel1.PerformLayout();
             this.splctnBody.Panel2.ResumeLayout(false);
@@ -260,7 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splctnBodyRight)).EndInit();
             this.splctnBodyRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategoryMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,9 +326,12 @@
         private System.Windows.Forms.Button btnInsertCategoryMovie;
         private System.Windows.Forms.Button btnUpdateCategoryMovie;
         private System.Windows.Forms.SplitContainer splctnBodyRight;
-        private System.Windows.Forms.DataGridView dtgCategoryMovie;
-        private System.Windows.Forms.Button btnSearchCategoryMovie;
+        private System.Windows.Forms.DataGridView dgvCategoryMovie;
         private System.Windows.Forms.TextBox txtSearchCategoryMovie;
         private System.Windows.Forms.PictureBox picReload;
+        private System.Windows.Forms.Label lblSearchFor;
+        private System.Windows.Forms.ComboBox cboInfoSearchCaMo;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

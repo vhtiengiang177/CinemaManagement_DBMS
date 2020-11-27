@@ -24,5 +24,11 @@ namespace CinemaManagement.DTO
             get { return name_categorymovie; }
             set { name_categorymovie = value; }
         }
+
+        public CategoryMovie(string id_categorymovie, string name_categorymovie)
+        {
+            this.Id_categorymovie = id_categorymovie;
+            this.Name_categorymovie = name_categorymovie;
+        }
     }
 }

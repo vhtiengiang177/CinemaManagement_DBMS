@@ -60,13 +60,13 @@
             this.btnDeleteImage = new System.Windows.Forms.Button();
             this.btnInsertImage = new System.Windows.Forms.Button();
             this.splctnBodyRight = new System.Windows.Forms.SplitContainer();
+            this.lblSearchFor = new System.Windows.Forms.Label();
             this.picReload = new System.Windows.Forms.PictureBox();
             this.cboInfoSearchMovie = new System.Windows.Forms.ComboBox();
             this.dgvMovie = new System.Windows.Forms.DataGridView();
             this.categoryMovieTableAdapter = new CinemaManagement.cinemaDBMSDataSetTableAdapters.CategoryMovieTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblSearchFor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
@@ -98,6 +98,8 @@
             // 
             this.picImageMovie.BackColor = System.Drawing.Color.Transparent;
             this.picImageMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImageMovie.Image = ((System.Drawing.Image)(resources.GetObject("picImageMovie.Image")));
+            this.picImageMovie.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImageMovie.InitialImage")));
             this.picImageMovie.Location = new System.Drawing.Point(57, 34);
             this.picImageMovie.Name = "picImageMovie";
             this.picImageMovie.Size = new System.Drawing.Size(133, 167);
@@ -463,6 +465,15 @@
             this.splctnBodyRight.SplitterDistance = 61;
             this.splctnBodyRight.TabIndex = 0;
             // 
+            // lblSearchFor
+            // 
+            this.lblSearchFor.AutoSize = true;
+            this.lblSearchFor.Location = new System.Drawing.Point(3, 23);
+            this.lblSearchFor.Name = "lblSearchFor";
+            this.lblSearchFor.Size = new System.Drawing.Size(73, 13);
+            this.lblSearchFor.TabIndex = 5;
+            this.lblSearchFor.Text = "Tìm kiếm theo";
+            // 
             // picReload
             // 
             this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
@@ -481,6 +492,7 @@
             this.cboInfoSearchMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboInfoSearchMovie.FormattingEnabled = true;
             this.cboInfoSearchMovie.Items.AddRange(new object[] {
+            "Mã phim",
             "Tên phim",
             "Đạo diễn",
             "Thể loại",
@@ -514,22 +526,12 @@
             // 
             // toolTip
             // 
-            this.toolTip.AutomaticDelay = 300;
-            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.AutomaticDelay = 200;
             // 
             // errorProvider
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
-            // 
-            // lblSearchFor
-            // 
-            this.lblSearchFor.AutoSize = true;
-            this.lblSearchFor.Location = new System.Drawing.Point(3, 23);
-            this.lblSearchFor.Name = "lblSearchFor";
-            this.lblSearchFor.Size = new System.Drawing.Size(73, 13);
-            this.lblSearchFor.TabIndex = 5;
-            this.lblSearchFor.Text = "Tìm kiếm theo";
             // 
             // fMovie
             // 
@@ -541,8 +543,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fMovie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMovie";
-            this.Load += new System.EventHandler(this.fMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();

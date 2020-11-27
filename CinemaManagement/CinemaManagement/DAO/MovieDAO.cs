@@ -10,10 +10,6 @@ namespace CinemaManagement.DAO
 {
     public class MovieDAO
     {
-
-        public static int MoiveWidth = 80;
-        public static int MoiveHeight = 200;
-
         private static MovieDAO instance;
 
         public static MovieDAO Instance
@@ -33,6 +29,16 @@ namespace CinemaManagement.DAO
         }
 
         /// <summary>
+        /// Tải tất cả dữ liệu. Sử dụng View dưới dtb để hiển thị
+        /// </summary>
+        /// <returns></returns>
+        public DataTable loadData()
+        {
+            string query = "SELECT * FROM v_LoadDataMovie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        /// <summary>
         /// Sinh ID mới cho phim
         /// </summary>
         /// <returns></returns>
@@ -40,6 +46,17 @@ namespace CinemaManagement.DAO
         {
             string query = "SELECT dbo.f_CreateIDMovie()";
             return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        /// <summary>
+        /// Lấy thông tin 1 phim
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DataTable getMovie(string id)
+        {
+            string query = "EXEC sp_GetMovie @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
         /// <summary>
@@ -75,21 +92,15 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_movie }) > 0;
         }
 
-        public DataTable getMovie(string id)
-        {
-            string query = "EXEC sp_GetMovie @id";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
-        }
-
         /// <summary>
-        /// Tải tất cả dữ liệu. Sử dụng View dưới dtb để hiển thị
+        /// Tìm kiếm phim theo ID
         /// </summary>
+        /// <param name="search"></param>
         /// <returns></returns>
-        public DataTable loadData()
+        public DataTable searchIDMovie(string search)
         {
-            string query = "SELECT * FROM Movie";
-            //string query = "SELECT * FROM v_LoadData";
-            return DataProvider.Instance.ExecuteQuery(query);
+            string query = "EXEC sp_SearchIDMovie @search";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
         }
 
         /// <summary>
@@ -179,23 +190,5 @@ namespace CinemaManagement.DAO
             string query = "EXEC sp_SearchInactiveMovie";
             return DataProvider.Instance.ExecuteQuery(query);
         }
-
-        public List<Movie> getListMovie()
-        {
-            List<Movie> listMovie = new List<Movie>();
-
-            string query = "select * from Movie";
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
-            foreach (DataRow item in data.Rows)
-            {
-                Movie movie = new Movie(item);
-                listMovie.Add(movie);
-            }    
-
-            return listMovie;
-        }
-
     }
 }

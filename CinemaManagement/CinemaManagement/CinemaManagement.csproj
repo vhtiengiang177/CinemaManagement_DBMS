@@ -103,11 +103,11 @@
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShowtimesDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
-    <Compile Include="fShifWorkEmployee.cs">
+    <Compile Include="GUI\fShiftWorkEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fShifWorkEmployee.Designer.cs">
-      <DependentUpon>fShifWorkEmployee.cs</DependentUpon>
+    <Compile Include="GUI\fShiftWorkEmployee.Designer.cs">
+      <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Showtimes.cs" />
@@ -212,14 +212,8 @@
     <Compile Include="Ticket1\fShowtimesTicket.Designer.cs">
       <DependentUpon>fShowtimesTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucShifWork.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucShifWork.Designer.cs">
-      <DependentUpon>ucShifWork.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="fShifWorkEmployee.resx">
-      <DependentUpon>fShifWorkEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\fShiftWorkEmployee.resx">
+      <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
@@ -279,9 +273,6 @@
     <None Include="cinemaDBMSDataSet1.xss">
       <DependentUpon>cinemaDBMSDataSet1.xsd</DependentUpon>
     </None>
-    <EmbeddedResource Include="ucShifWork.resx">
-      <DependentUpon>ucShifWork.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

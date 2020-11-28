@@ -172,10 +172,16 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idEmployee,  month, year , idShift }) > 0;
         }
 
-        public object selectWeekOnMonth(int month, int indexWeek)
+        public object selectWeekOnMonth(int month, int  year, int indexWeek)
         {
-            string query = "";
-            return DataProvider.Instance.ExecuteScalar(query, new object[] {month, indexWeek });
+            string query = "select dbo.fun_selectDayOfIndexWeek( @month , @year , @indexWeek )";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] {month, year, indexWeek });
+        }
+
+        public object selectDateEndWeek(DateTime date, int indexDay)
+        {
+            string query = "select dbo.fun_findDate( @date  , @indexDay )";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] { date, indexDay });
         }
     }
 }

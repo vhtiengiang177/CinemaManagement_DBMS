@@ -66,41 +66,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.chkFull = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.rdoEverning = new System.Windows.Forms.RadioButton();
-            this.rdoMorning = new System.Windows.Forms.RadioButton();
             this.txtMonDay = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
             this.btnChangeWeek = new System.Windows.Forms.Button();
             this.plInfoOne = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -113,6 +88,32 @@
             this.txtSaDay = new System.Windows.Forms.TextBox();
             this.txtSunDay = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.chkFull = new System.Windows.Forms.CheckBox();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.radioButton17 = new System.Windows.Forms.RadioButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton18 = new System.Windows.Forms.RadioButton();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton19 = new System.Windows.Forms.RadioButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton20 = new System.Windows.Forms.RadioButton();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton21 = new System.Windows.Forms.RadioButton();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -128,21 +129,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.plInfoOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMain
@@ -315,6 +316,7 @@
             // 
             // plChooseShif
             // 
+            this.plChooseShif.Controls.Add(this.chkFull);
             this.plChooseShif.Controls.Add(this.button1);
             this.plChooseShif.Controls.Add(this.panel17);
             this.plChooseShif.Controls.Add(this.label3);
@@ -325,7 +327,7 @@
             this.plChooseShif.Controls.Add(this.flowLayoutPanel2);
             this.plChooseShif.Controls.Add(this.btnChangeWeek);
             this.plChooseShif.Controls.Add(this.plInfoOne);
-            this.plChooseShif.Location = new System.Drawing.Point(6, 342);
+            this.plChooseShif.Location = new System.Drawing.Point(-5, 342);
             this.plChooseShif.Name = "plChooseShif";
             this.plChooseShif.Size = new System.Drawing.Size(914, 279);
             this.plChooseShif.TabIndex = 1;
@@ -471,7 +473,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(363, 192);
+            this.label3.Location = new System.Drawing.Point(352, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(10, 13);
             this.label3.TabIndex = 6;
@@ -479,7 +481,7 @@
             // 
             // txtLastDate
             // 
-            this.txtLastDate.Location = new System.Drawing.Point(377, 189);
+            this.txtLastDate.Location = new System.Drawing.Point(366, 189);
             this.txtLastDate.Name = "txtLastDate";
             this.txtLastDate.ReadOnly = true;
             this.txtLastDate.Size = new System.Drawing.Size(72, 20);
@@ -487,7 +489,7 @@
             // 
             // txtFirstDate
             // 
-            this.txtFirstDate.Location = new System.Drawing.Point(287, 189);
+            this.txtFirstDate.Location = new System.Drawing.Point(276, 189);
             this.txtFirstDate.Name = "txtFirstDate";
             this.txtFirstDate.ReadOnly = true;
             this.txtFirstDate.Size = new System.Drawing.Size(72, 20);
@@ -495,7 +497,7 @@
             // 
             // nudWeekSelected
             // 
-            this.nudWeekSelected.Location = new System.Drawing.Point(410, 146);
+            this.nudWeekSelected.Location = new System.Drawing.Point(399, 146);
             this.nudWeekSelected.Maximum = new decimal(new int[] {
             4,
             0,
@@ -514,11 +516,12 @@
             0,
             0,
             0});
+            this.nudWeekSelected.ValueChanged += new System.EventHandler(this.nudWeekSelected_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(290, 148);
+            this.label2.Location = new System.Drawing.Point(279, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 2;
@@ -533,61 +536,19 @@
             this.flowLayoutPanel2.Controls.Add(this.panel11);
             this.flowLayoutPanel2.Controls.Add(this.panel13);
             this.flowLayoutPanel2.Controls.Add(this.panel15);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(460, 108);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(444, 108);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 143);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(466, 143);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.chkFull);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.txtMonDay);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(55, 130);
+            this.panel3.Size = new System.Drawing.Size(58, 130);
             this.panel3.TabIndex = 9;
-            // 
-            // chkFull
-            // 
-            this.chkFull.AutoSize = true;
-            this.chkFull.Location = new System.Drawing.Point(8, 109);
-            this.chkFull.Name = "chkFull";
-            this.chkFull.Size = new System.Drawing.Size(45, 17);
-            this.chkFull.TabIndex = 5;
-            this.chkFull.Text = "Full ";
-            this.chkFull.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.rdoEverning);
-            this.panel4.Controls.Add(this.rdoMorning);
-            this.panel4.Location = new System.Drawing.Point(-1, 41);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(57, 52);
-            this.panel4.TabIndex = 4;
-            // 
-            // rdoEverning
-            // 
-            this.rdoEverning.AutoSize = true;
-            this.rdoEverning.Location = new System.Drawing.Point(5, 26);
-            this.rdoEverning.Name = "rdoEverning";
-            this.rdoEverning.Size = new System.Drawing.Size(40, 17);
-            this.rdoEverning.TabIndex = 1;
-            this.rdoEverning.TabStop = true;
-            this.rdoEverning.Text = "Tối";
-            this.rdoEverning.UseVisualStyleBackColor = true;
-            // 
-            // rdoMorning
-            // 
-            this.rdoMorning.AutoSize = true;
-            this.rdoMorning.Location = new System.Drawing.Point(5, 3);
-            this.rdoMorning.Name = "rdoMorning";
-            this.rdoMorning.Size = new System.Drawing.Size(50, 17);
-            this.rdoMorning.TabIndex = 0;
-            this.rdoMorning.TabStop = true;
-            this.rdoMorning.Text = "Sáng";
-            this.rdoMorning.UseVisualStyleBackColor = true;
             // 
             // txtMonDay
             // 
@@ -605,82 +566,30 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.txtTueDay);
-            this.panel5.Controls.Add(this.checkBox1);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(64, 3);
+            this.panel5.Controls.Add(this.txtTueDay);
+            this.panel5.Location = new System.Drawing.Point(67, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(55, 130);
+            this.panel5.Size = new System.Drawing.Size(62, 130);
             this.panel5.TabIndex = 10;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 109);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(45, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Full ";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Controls.Add(this.radioButton2);
-            this.panel6.Location = new System.Drawing.Point(-1, 41);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(57, 52);
-            this.panel6.TabIndex = 4;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(5, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(40, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tối";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(5, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sáng";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.txtWedDay);
-            this.panel9.Controls.Add(this.checkBox3);
             this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(125, 3);
+            this.panel9.Location = new System.Drawing.Point(135, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(55, 130);
+            this.panel9.Size = new System.Drawing.Size(62, 130);
             this.panel9.TabIndex = 12;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(8, 109);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(45, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Full ";
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.radioButton13);
             this.panel10.Controls.Add(this.radioButton5);
             this.panel10.Controls.Add(this.radioButton6);
-            this.panel10.Location = new System.Drawing.Point(-1, 41);
+            this.panel10.Location = new System.Drawing.Point(2, 44);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(57, 52);
+            this.panel10.Size = new System.Drawing.Size(57, 85);
             this.panel10.TabIndex = 4;
             // 
             // radioButton5
@@ -707,207 +616,39 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txtThurDay);
-            this.panel7.Controls.Add(this.checkBox2);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(186, 3);
+            this.panel7.Controls.Add(this.txtThurDay);
+            this.panel7.Location = new System.Drawing.Point(203, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(55, 130);
+            this.panel7.Size = new System.Drawing.Size(60, 130);
             this.panel7.TabIndex = 11;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 109);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(45, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Full ";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.radioButton3);
-            this.panel8.Controls.Add(this.radioButton4);
-            this.panel8.Location = new System.Drawing.Point(-1, 41);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(57, 52);
-            this.panel8.TabIndex = 4;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(5, 26);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(40, 17);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Tối";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(5, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(50, 17);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Sáng";
-            this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.txtFriDay);
-            this.panel11.Controls.Add(this.checkBox4);
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(247, 3);
+            this.panel11.Controls.Add(this.txtFriDay);
+            this.panel11.Location = new System.Drawing.Point(269, 3);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(55, 130);
+            this.panel11.Size = new System.Drawing.Size(62, 130);
             this.panel11.TabIndex = 13;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(8, 109);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(45, 17);
-            this.checkBox4.TabIndex = 5;
-            this.checkBox4.Text = "Full ";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.radioButton7);
-            this.panel12.Controls.Add(this.radioButton8);
-            this.panel12.Location = new System.Drawing.Point(-1, 41);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(57, 52);
-            this.panel12.TabIndex = 4;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(5, 26);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(40, 17);
-            this.radioButton7.TabIndex = 1;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Tối";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(5, 3);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(50, 17);
-            this.radioButton8.TabIndex = 0;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Sáng";
-            this.radioButton8.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.txtSaDay);
-            this.panel13.Controls.Add(this.checkBox5);
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Location = new System.Drawing.Point(308, 3);
+            this.panel13.Controls.Add(this.txtSaDay);
+            this.panel13.Location = new System.Drawing.Point(337, 3);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(55, 130);
+            this.panel13.Size = new System.Drawing.Size(59, 130);
             this.panel13.TabIndex = 14;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(8, 109);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(45, 17);
-            this.checkBox5.TabIndex = 5;
-            this.checkBox5.Text = "Full ";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.radioButton9);
-            this.panel14.Controls.Add(this.radioButton10);
-            this.panel14.Location = new System.Drawing.Point(-1, 41);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(57, 52);
-            this.panel14.TabIndex = 4;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(5, 26);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(40, 17);
-            this.radioButton9.TabIndex = 1;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Tối";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(5, 3);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(50, 17);
-            this.radioButton10.TabIndex = 0;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Sáng";
-            this.radioButton10.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.txtSunDay);
-            this.panel15.Controls.Add(this.checkBox6);
             this.panel15.Controls.Add(this.panel16);
-            this.panel15.Location = new System.Drawing.Point(369, 3);
+            this.panel15.Controls.Add(this.txtSunDay);
+            this.panel15.Location = new System.Drawing.Point(402, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(55, 130);
+            this.panel15.Size = new System.Drawing.Size(61, 130);
             this.panel15.TabIndex = 14;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(8, 109);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(45, 17);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Full ";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.radioButton11);
-            this.panel16.Controls.Add(this.radioButton12);
-            this.panel16.Location = new System.Drawing.Point(-1, 41);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(57, 52);
-            this.panel16.TabIndex = 4;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(5, 26);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(40, 17);
-            this.radioButton11.TabIndex = 1;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Tối";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(5, 3);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(50, 17);
-            this.radioButton12.TabIndex = 0;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Sáng";
-            this.radioButton12.UseVisualStyleBackColor = true;
             // 
             // btnChangeWeek
             // 
@@ -1039,12 +780,291 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(286, 108);
+            this.button1.Location = new System.Drawing.Point(275, 108);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 19);
+            this.button1.Size = new System.Drawing.Size(163, 32);
             this.button1.TabIndex = 16;
             this.button1.Text = "Đăng kí làm việc theo tuần:";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // chkFull
+            // 
+            this.chkFull.AutoSize = true;
+            this.chkFull.Location = new System.Drawing.Point(393, 224);
+            this.chkFull.Name = "chkFull";
+            this.chkFull.Size = new System.Drawing.Size(45, 17);
+            this.chkFull.TabIndex = 17;
+            this.chkFull.Text = "Full ";
+            this.chkFull.UseVisualStyleBackColor = true;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(4, 49);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(41, 17);
+            this.radioButton13.TabIndex = 2;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "Full";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.radioButton1);
+            this.panel4.Controls.Add(this.radioButton2);
+            this.panel4.Controls.Add(this.radioButton14);
+            this.panel4.Location = new System.Drawing.Point(0, 44);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(57, 85);
+            this.panel4.TabIndex = 5;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(4, 49);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(41, 17);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Full";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(5, 26);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(40, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Tối";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.Location = new System.Drawing.Point(5, 3);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(50, 17);
+            this.radioButton14.TabIndex = 0;
+            this.radioButton14.TabStop = true;
+            this.radioButton14.Text = "Sáng";
+            this.radioButton14.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.radioButton15);
+            this.panel6.Controls.Add(this.radioButton16);
+            this.panel6.Controls.Add(this.radioButton17);
+            this.panel6.Location = new System.Drawing.Point(2, 44);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(57, 85);
+            this.panel6.TabIndex = 7;
+            // 
+            // radioButton15
+            // 
+            this.radioButton15.AutoSize = true;
+            this.radioButton15.Location = new System.Drawing.Point(4, 49);
+            this.radioButton15.Name = "radioButton15";
+            this.radioButton15.Size = new System.Drawing.Size(41, 17);
+            this.radioButton15.TabIndex = 2;
+            this.radioButton15.TabStop = true;
+            this.radioButton15.Text = "Full";
+            this.radioButton15.UseVisualStyleBackColor = true;
+            // 
+            // radioButton16
+            // 
+            this.radioButton16.AutoSize = true;
+            this.radioButton16.Location = new System.Drawing.Point(5, 26);
+            this.radioButton16.Name = "radioButton16";
+            this.radioButton16.Size = new System.Drawing.Size(40, 17);
+            this.radioButton16.TabIndex = 1;
+            this.radioButton16.TabStop = true;
+            this.radioButton16.Text = "Tối";
+            this.radioButton16.UseVisualStyleBackColor = true;
+            // 
+            // radioButton17
+            // 
+            this.radioButton17.AutoSize = true;
+            this.radioButton17.Location = new System.Drawing.Point(5, 3);
+            this.radioButton17.Name = "radioButton17";
+            this.radioButton17.Size = new System.Drawing.Size(50, 17);
+            this.radioButton17.TabIndex = 0;
+            this.radioButton17.TabStop = true;
+            this.radioButton17.Text = "Sáng";
+            this.radioButton17.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.radioButton3);
+            this.panel8.Controls.Add(this.radioButton4);
+            this.panel8.Controls.Add(this.radioButton18);
+            this.panel8.Location = new System.Drawing.Point(2, 44);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(57, 85);
+            this.panel8.TabIndex = 7;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(4, 49);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(41, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Full";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(5, 26);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(40, 17);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Tối";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton18
+            // 
+            this.radioButton18.AutoSize = true;
+            this.radioButton18.Location = new System.Drawing.Point(5, 3);
+            this.radioButton18.Name = "radioButton18";
+            this.radioButton18.Size = new System.Drawing.Size(50, 17);
+            this.radioButton18.TabIndex = 0;
+            this.radioButton18.TabStop = true;
+            this.radioButton18.Text = "Sáng";
+            this.radioButton18.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.radioButton7);
+            this.panel12.Controls.Add(this.radioButton8);
+            this.panel12.Controls.Add(this.radioButton19);
+            this.panel12.Location = new System.Drawing.Point(3, 44);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(57, 85);
+            this.panel12.TabIndex = 7;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(4, 49);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(41, 17);
+            this.radioButton7.TabIndex = 2;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Full";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(5, 26);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(40, 17);
+            this.radioButton8.TabIndex = 1;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Tối";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton19
+            // 
+            this.radioButton19.AutoSize = true;
+            this.radioButton19.Location = new System.Drawing.Point(5, 3);
+            this.radioButton19.Name = "radioButton19";
+            this.radioButton19.Size = new System.Drawing.Size(50, 17);
+            this.radioButton19.TabIndex = 0;
+            this.radioButton19.TabStop = true;
+            this.radioButton19.Text = "Sáng";
+            this.radioButton19.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.radioButton9);
+            this.panel14.Controls.Add(this.radioButton10);
+            this.panel14.Controls.Add(this.radioButton20);
+            this.panel14.Location = new System.Drawing.Point(2, 44);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(57, 85);
+            this.panel14.TabIndex = 7;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(4, 49);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(41, 17);
+            this.radioButton9.TabIndex = 2;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Full";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(5, 26);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(40, 17);
+            this.radioButton10.TabIndex = 1;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Tối";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton20
+            // 
+            this.radioButton20.AutoSize = true;
+            this.radioButton20.Location = new System.Drawing.Point(5, 3);
+            this.radioButton20.Name = "radioButton20";
+            this.radioButton20.Size = new System.Drawing.Size(50, 17);
+            this.radioButton20.TabIndex = 0;
+            this.radioButton20.TabStop = true;
+            this.radioButton20.Text = "Sáng";
+            this.radioButton20.UseVisualStyleBackColor = true;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.radioButton11);
+            this.panel16.Controls.Add(this.radioButton12);
+            this.panel16.Controls.Add(this.radioButton21);
+            this.panel16.Location = new System.Drawing.Point(1, 44);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(57, 85);
+            this.panel16.TabIndex = 7;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(4, 49);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(41, 17);
+            this.radioButton11.TabIndex = 2;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Full";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(5, 26);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(40, 17);
+            this.radioButton12.TabIndex = 1;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "Tối";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton21
+            // 
+            this.radioButton21.AutoSize = true;
+            this.radioButton21.Location = new System.Drawing.Point(5, 3);
+            this.radioButton21.Name = "radioButton21";
+            this.radioButton21.Size = new System.Drawing.Size(50, 17);
+            this.radioButton21.TabIndex = 0;
+            this.radioButton21.TabStop = true;
+            this.radioButton21.Text = "Sáng";
+            this.radioButton21.UseVisualStyleBackColor = true;
             // 
             // fShifWorkEmployee
             // 
@@ -1077,35 +1097,35 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.plInfoOne.ResumeLayout(false);
             this.plInfoOne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1125,41 +1145,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox chkFull;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RadioButton rdoEverning;
-        private System.Windows.Forms.RadioButton rdoMorning;
         private System.Windows.Forms.TextBox txtMonDay;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLastDate;
@@ -1196,5 +1191,31 @@
         private System.Windows.Forms.TextBox txtSaDay;
         private System.Windows.Forms.TextBox txtSunDay;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chkFull;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RadioButton radioButton15;
+        private System.Windows.Forms.RadioButton radioButton16;
+        private System.Windows.Forms.RadioButton radioButton17;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton19;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton20;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton21;
     }
 }

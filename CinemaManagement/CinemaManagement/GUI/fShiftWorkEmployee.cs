@@ -178,5 +178,15 @@ namespace CinemaManagement
                 idShift = "sw03";
             changeShiftOfMonth(idShift);
         }
+
+        private void nudWeekSelected_ValueChanged(object sender, EventArgs e)
+        {
+
+            int month = Int32.Parse(cboMonth.SelectedItem.ToString().Trim());
+            int year = Int32.Parse(cboYear.SelectedItem.ToString().Trim());
+            DateTime fisrtDay = ((DateTime)EmployeeDAO.Instance.selectWeekOnMonth(month, year, Int32.Parse(nudWeekSelected.Value.ToString())));
+            txtFirstDate.Text =fisrtDay.Date.ToString();
+            txtLastDate.Text = ((DateTime)EmployeeDAO.Instance.selectDateEndWeek(fisrtDay, 6)).Date.ToString();
+        }
     }
 }

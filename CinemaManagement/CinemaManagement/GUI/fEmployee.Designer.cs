@@ -242,6 +242,7 @@
             this.btnSearchEmployee.TabIndex = 2;
             this.btnSearchEmployee.Text = "Tìm kiếm";
             this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
             // 
             // txtSearchEmployee
             // 

@@ -32,15 +32,37 @@
             this.plMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.plSearch = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboType = new System.Windows.Forms.ComboBox();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.cboTypeSearchEmployee = new System.Windows.Forms.ComboBox();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.btnSearchType = new System.Windows.Forms.Button();
+            this.cboSortTypeEmployee = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.plChooseShif = new System.Windows.Forms.Panel();
-            this.plInfoOne = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnChangeMonth = new System.Windows.Forms.Button();
+            this.rdoFullMonth = new System.Windows.Forms.RadioButton();
+            this.rdoEveningMonth = new System.Windows.Forms.RadioButton();
+            this.rdoMoringMonth = new System.Windows.Forms.RadioButton();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.cboMonth = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtLastDate = new System.Windows.Forms.TextBox();
+            this.txtFirstDate = new System.Windows.Forms.TextBox();
+            this.nudWeekSelected = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkFull = new System.Windows.Forms.CheckBox();
@@ -84,34 +106,25 @@
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudWeekSelected = new System.Windows.Forms.NumericUpDown();
-            this.txtFirstDate = new System.Windows.Forms.TextBox();
-            this.txtLastDate = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboYear = new System.Windows.Forms.ComboBox();
-            this.cboMonth = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
             this.btnChangeWeek = new System.Windows.Forms.Button();
-            this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.plInfoOne = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.rdoMoringMonth = new System.Windows.Forms.RadioButton();
-            this.rdoEveningMonth = new System.Windows.Forms.RadioButton();
-            this.rdoFullMonth = new System.Windows.Forms.RadioButton();
-            this.btnChangeMonth = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.picEmployee = new System.Windows.Forms.PictureBox();
+            this.btnLoadData = new System.Windows.Forms.Button();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.plSearch.SuspendLayout();
+            this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             this.plChooseShif.SuspendLayout();
-            this.plInfoOne.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -127,10 +140,7 @@
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).BeginInit();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
+            this.plInfoOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,51 +164,114 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLoadData);
+            this.panel1.Controls.Add(this.plSearch);
+            this.panel1.Controls.Add(this.panel20);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cboType);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(916, 80);
             this.panel1.TabIndex = 0;
             // 
+            // plSearch
+            // 
+            this.plSearch.Controls.Add(this.label1);
+            this.plSearch.Controls.Add(this.btnSearchEmployee);
+            this.plSearch.Controls.Add(this.txtSearchEmployee);
+            this.plSearch.Controls.Add(this.cboTypeSearchEmployee);
+            this.plSearch.Location = new System.Drawing.Point(127, 6);
+            this.plSearch.Name = "plSearch";
+            this.plSearch.Size = new System.Drawing.Size(467, 68);
+            this.plSearch.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Xếp ca làm cho một nhân viên:";
+            // 
+            // btnSearchEmployee
+            // 
+            this.btnSearchEmployee.Location = new System.Drawing.Point(399, 32);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(64, 29);
+            this.btnSearchEmployee.TabIndex = 2;
+            this.btnSearchEmployee.Text = "Tìm kiếm";
+            this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
+            // 
+            // txtSearchEmployee
+            // 
+            this.txtSearchEmployee.Location = new System.Drawing.Point(129, 37);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(256, 20);
+            this.txtSearchEmployee.TabIndex = 1;
+            // 
+            // cboTypeSearchEmployee
+            // 
+            this.cboTypeSearchEmployee.FormattingEnabled = true;
+            this.cboTypeSearchEmployee.Items.AddRange(new object[] {
+            "Mã nhân viên",
+            "Số điện thoại",
+            "Tên nhân viên",
+            "CMND"});
+            this.cboTypeSearchEmployee.Location = new System.Drawing.Point(5, 36);
+            this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
+            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
+            this.cboTypeSearchEmployee.TabIndex = 0;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.btnSearchType);
+            this.panel20.Controls.Add(this.cboSortTypeEmployee);
+            this.panel20.Controls.Add(this.label6);
+            this.panel20.Location = new System.Drawing.Point(601, 8);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(226, 62);
+            this.panel20.TabIndex = 5;
+            // 
+            // btnSearchType
+            // 
+            this.btnSearchType.Location = new System.Drawing.Point(167, 35);
+            this.btnSearchType.Name = "btnSearchType";
+            this.btnSearchType.Size = new System.Drawing.Size(53, 24);
+            this.btnSearchType.TabIndex = 6;
+            this.btnSearchType.Text = "Tìm kiếm";
+            this.btnSearchType.UseVisualStyleBackColor = true;
+            // 
+            // cboSortTypeEmployee
+            // 
+            this.cboSortTypeEmployee.FormattingEnabled = true;
+            this.cboSortTypeEmployee.Location = new System.Drawing.Point(3, 35);
+            this.cboSortTypeEmployee.Name = "cboSortTypeEmployee";
+            this.cboSortTypeEmployee.Size = new System.Drawing.Size(120, 21);
+            this.cboSortTypeEmployee.TabIndex = 5;
+            this.cboSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cboSortTypeEmployee_SelectedValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(158, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Xếp ca làm cho một phòng ban:";
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkRed;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(876, 6);
+            this.btnExit.Location = new System.Drawing.Point(883, -3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(37, 23);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(290, 47);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(284, 20);
-            this.txtSearch.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Chức vụ: ";
-            // 
-            // cboType
-            // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(156, 46);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 21);
-            this.cboType.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -223,8 +296,9 @@
             this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListEmployee.Location = new System.Drawing.Point(3, 3);
             this.dgvListEmployee.Name = "dgvListEmployee";
-            this.dgvListEmployee.Size = new System.Drawing.Size(910, 239);
+            this.dgvListEmployee.Size = new System.Drawing.Size(898, 239);
             this.dgvListEmployee.TabIndex = 0;
+            this.dgvListEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellClick);
             // 
             // plChooseShif
             // 
@@ -242,15 +316,196 @@
             this.plChooseShif.Size = new System.Drawing.Size(914, 279);
             this.plChooseShif.TabIndex = 1;
             // 
-            // plInfoOne
+            // panel17
             // 
-            this.plInfoOne.Controls.Add(this.txtName);
-            this.plInfoOne.Controls.Add(this.txtID);
-            this.plInfoOne.Controls.Add(this.picEmployee);
-            this.plInfoOne.Location = new System.Drawing.Point(14, 11);
-            this.plInfoOne.Name = "plInfoOne";
-            this.plInfoOne.Size = new System.Drawing.Size(259, 253);
-            this.plInfoOne.TabIndex = 0;
+            this.panel17.Controls.Add(this.panel19);
+            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Location = new System.Drawing.Point(279, 9);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(631, 93);
+            this.panel17.TabIndex = 7;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.label7);
+            this.panel19.Controls.Add(this.btnChangeMonth);
+            this.panel19.Controls.Add(this.rdoFullMonth);
+            this.panel19.Controls.Add(this.rdoEveningMonth);
+            this.panel19.Controls.Add(this.rdoMoringMonth);
+            this.panel19.Location = new System.Drawing.Point(131, 3);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(497, 82);
+            this.panel19.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Xếp ca làm cho cả một tháng:";
+            // 
+            // btnChangeMonth
+            // 
+            this.btnChangeMonth.Location = new System.Drawing.Point(409, 47);
+            this.btnChangeMonth.Name = "btnChangeMonth";
+            this.btnChangeMonth.Size = new System.Drawing.Size(75, 23);
+            this.btnChangeMonth.TabIndex = 16;
+            this.btnChangeMonth.Text = "Thay đổi";
+            this.btnChangeMonth.UseVisualStyleBackColor = true;
+            // 
+            // rdoFullMonth
+            // 
+            this.rdoFullMonth.AutoSize = true;
+            this.rdoFullMonth.Location = new System.Drawing.Point(267, 53);
+            this.rdoFullMonth.Name = "rdoFullMonth";
+            this.rdoFullMonth.Size = new System.Drawing.Size(56, 17);
+            this.rdoFullMonth.TabIndex = 2;
+            this.rdoFullMonth.TabStop = true;
+            this.rdoFullMonth.Text = "Full ca";
+            this.rdoFullMonth.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningMonth
+            // 
+            this.rdoEveningMonth.AutoSize = true;
+            this.rdoEveningMonth.Location = new System.Drawing.Point(143, 53);
+            this.rdoEveningMonth.Name = "rdoEveningMonth";
+            this.rdoEveningMonth.Size = new System.Drawing.Size(94, 17);
+            this.rdoEveningMonth.TabIndex = 1;
+            this.rdoEveningMonth.TabStop = true;
+            this.rdoEveningMonth.Text = "Ca tối 15 - 22h";
+            this.rdoEveningMonth.UseVisualStyleBackColor = true;
+            // 
+            // rdoMoringMonth
+            // 
+            this.rdoMoringMonth.AutoSize = true;
+            this.rdoMoringMonth.Location = new System.Drawing.Point(11, 53);
+            this.rdoMoringMonth.Name = "rdoMoringMonth";
+            this.rdoMoringMonth.Size = new System.Drawing.Size(100, 17);
+            this.rdoMoringMonth.TabIndex = 0;
+            this.rdoMoringMonth.TabStop = true;
+            this.rdoMoringMonth.Text = "Ca sáng 8h-15h";
+            this.rdoMoringMonth.UseVisualStyleBackColor = true;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label5);
+            this.panel18.Controls.Add(this.cboYear);
+            this.panel18.Controls.Add(this.cboMonth);
+            this.panel18.Controls.Add(this.label4);
+            this.panel18.Location = new System.Drawing.Point(9, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(107, 81);
+            this.panel18.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Tháng:";
+            // 
+            // cboYear
+            // 
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Items.AddRange(new object[] {
+            "2020",
+            "2021",
+            "2022",
+            "2023"});
+            this.cboYear.Location = new System.Drawing.Point(41, 8);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(52, 21);
+            this.cboYear.TabIndex = 6;
+            // 
+            // cboMonth
+            // 
+            this.cboMonth.FormattingEnabled = true;
+            this.cboMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cboMonth.Location = new System.Drawing.Point(59, 35);
+            this.cboMonth.Name = "cboMonth";
+            this.cboMonth.Size = new System.Drawing.Size(34, 21);
+            this.cboMonth.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Năm:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(363, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "-";
+            // 
+            // txtLastDate
+            // 
+            this.txtLastDate.Location = new System.Drawing.Point(377, 174);
+            this.txtLastDate.Name = "txtLastDate";
+            this.txtLastDate.ReadOnly = true;
+            this.txtLastDate.Size = new System.Drawing.Size(72, 20);
+            this.txtLastDate.TabIndex = 5;
+            // 
+            // txtFirstDate
+            // 
+            this.txtFirstDate.Location = new System.Drawing.Point(287, 174);
+            this.txtFirstDate.Name = "txtFirstDate";
+            this.txtFirstDate.ReadOnly = true;
+            this.txtFirstDate.Size = new System.Drawing.Size(72, 20);
+            this.txtFirstDate.TabIndex = 4;
+            // 
+            // nudWeekSelected
+            // 
+            this.nudWeekSelected.Location = new System.Drawing.Point(410, 131);
+            this.nudWeekSelected.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.nudWeekSelected.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudWeekSelected.Name = "nudWeekSelected";
+            this.nudWeekSelected.Size = new System.Drawing.Size(39, 20);
+            this.nudWeekSelected.TabIndex = 3;
+            this.nudWeekSelected.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(290, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Lịch làm việc trong tuần:";
             // 
             // flowLayoutPanel2
             // 
@@ -672,143 +927,6 @@
             this.textBox6.Size = new System.Drawing.Size(31, 20);
             this.textBox6.TabIndex = 3;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(290, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Lịch làm việc trong tuần:";
-            // 
-            // nudWeekSelected
-            // 
-            this.nudWeekSelected.Location = new System.Drawing.Point(410, 131);
-            this.nudWeekSelected.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.nudWeekSelected.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudWeekSelected.Name = "nudWeekSelected";
-            this.nudWeekSelected.Size = new System.Drawing.Size(39, 20);
-            this.nudWeekSelected.TabIndex = 3;
-            this.nudWeekSelected.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // txtFirstDate
-            // 
-            this.txtFirstDate.Location = new System.Drawing.Point(287, 174);
-            this.txtFirstDate.Name = "txtFirstDate";
-            this.txtFirstDate.Size = new System.Drawing.Size(72, 20);
-            this.txtFirstDate.TabIndex = 4;
-            // 
-            // txtLastDate
-            // 
-            this.txtLastDate.Location = new System.Drawing.Point(377, 174);
-            this.txtLastDate.Name = "txtLastDate";
-            this.txtLastDate.Size = new System.Drawing.Size(72, 20);
-            this.txtLastDate.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(363, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "-";
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.panel19);
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Location = new System.Drawing.Point(279, 9);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(619, 93);
-            this.panel17.TabIndex = 7;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.label5);
-            this.panel18.Controls.Add(this.cboYear);
-            this.panel18.Controls.Add(this.cboMonth);
-            this.panel18.Controls.Add(this.label4);
-            this.panel18.Location = new System.Drawing.Point(9, 3);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(107, 81);
-            this.panel18.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Tháng:";
-            // 
-            // cboYear
-            // 
-            this.cboYear.FormattingEnabled = true;
-            this.cboYear.Items.AddRange(new object[] {
-            "2020",
-            "2021",
-            "2022",
-            "2023"});
-            this.cboYear.Location = new System.Drawing.Point(41, 8);
-            this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(52, 21);
-            this.cboYear.TabIndex = 6;
-            // 
-            // cboMonth
-            // 
-            this.cboMonth.FormattingEnabled = true;
-            this.cboMonth.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cboMonth.Location = new System.Drawing.Point(59, 35);
-            this.cboMonth.Name = "cboMonth";
-            this.cboMonth.Size = new System.Drawing.Size(34, 21);
-            this.cboMonth.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Năm:";
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.btnChangeMonth);
-            this.panel19.Controls.Add(this.rdoFullMonth);
-            this.panel19.Controls.Add(this.rdoEveningMonth);
-            this.panel19.Controls.Add(this.rdoMoringMonth);
-            this.panel19.Location = new System.Drawing.Point(122, 2);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(494, 82);
-            this.panel19.TabIndex = 1;
-            // 
             // btnChangeWeek
             // 
             this.btnChangeWeek.Location = new System.Drawing.Point(823, 253);
@@ -818,6 +936,32 @@
             this.btnChangeWeek.Text = "Thay đổi";
             this.btnChangeWeek.UseVisualStyleBackColor = true;
             // 
+            // plInfoOne
+            // 
+            this.plInfoOne.Controls.Add(this.txtName);
+            this.plInfoOne.Controls.Add(this.txtID);
+            this.plInfoOne.Controls.Add(this.picEmployee);
+            this.plInfoOne.Location = new System.Drawing.Point(14, 11);
+            this.plInfoOne.Name = "plInfoOne";
+            this.plInfoOne.Size = new System.Drawing.Size(259, 253);
+            this.plInfoOne.TabIndex = 0;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(42, 187);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(161, 20);
+            this.txtName.TabIndex = 2;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(139, 50);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 1;
+            // 
             // picEmployee
             // 
             this.picEmployee.Location = new System.Drawing.Point(3, 3);
@@ -826,64 +970,18 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // txtID
+            // btnLoadData
             // 
-            this.txtID.Location = new System.Drawing.Point(139, 50);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 1;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(42, 187);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(161, 20);
-            this.txtName.TabIndex = 2;
-            // 
-            // rdoMoringMonth
-            // 
-            this.rdoMoringMonth.AutoSize = true;
-            this.rdoMoringMonth.Location = new System.Drawing.Point(15, 13);
-            this.rdoMoringMonth.Name = "rdoMoringMonth";
-            this.rdoMoringMonth.Size = new System.Drawing.Size(100, 17);
-            this.rdoMoringMonth.TabIndex = 0;
-            this.rdoMoringMonth.TabStop = true;
-            this.rdoMoringMonth.Text = "Ca sáng 8h-15h";
-            this.rdoMoringMonth.UseVisualStyleBackColor = true;
-            // 
-            // rdoEveningMonth
-            // 
-            this.rdoEveningMonth.AutoSize = true;
-            this.rdoEveningMonth.Location = new System.Drawing.Point(147, 13);
-            this.rdoEveningMonth.Name = "rdoEveningMonth";
-            this.rdoEveningMonth.Size = new System.Drawing.Size(94, 17);
-            this.rdoEveningMonth.TabIndex = 1;
-            this.rdoEveningMonth.TabStop = true;
-            this.rdoEveningMonth.Text = "Ca tối 15 - 22h";
-            this.rdoEveningMonth.UseVisualStyleBackColor = true;
-            // 
-            // rdoFullMonth
-            // 
-            this.rdoFullMonth.AutoSize = true;
-            this.rdoFullMonth.Location = new System.Drawing.Point(271, 13);
-            this.rdoFullMonth.Name = "rdoFullMonth";
-            this.rdoFullMonth.Size = new System.Drawing.Size(56, 17);
-            this.rdoFullMonth.TabIndex = 2;
-            this.rdoFullMonth.TabStop = true;
-            this.rdoFullMonth.Text = "Full ca";
-            this.rdoFullMonth.UseVisualStyleBackColor = true;
-            // 
-            // btnChangeMonth
-            // 
-            this.btnChangeMonth.Location = new System.Drawing.Point(416, 59);
-            this.btnChangeMonth.Name = "btnChangeMonth";
-            this.btnChangeMonth.Size = new System.Drawing.Size(75, 23);
-            this.btnChangeMonth.TabIndex = 16;
-            this.btnChangeMonth.Text = "Thay đổi";
-            this.btnChangeMonth.UseVisualStyleBackColor = true;
+            this.btnLoadData.Location = new System.Drawing.Point(838, 44);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadData.TabIndex = 7;
+            this.btnLoadData.Text = "Load data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
             // 
             // fShifWorkEmployee
             // 
+            this.AcceptButton = this.btnSearchEmployee;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 637);
@@ -894,14 +992,21 @@
             this.plMain.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.plSearch.ResumeLayout(false);
+            this.plSearch.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).EndInit();
             this.plChooseShif.ResumeLayout(false);
             this.plChooseShif.PerformLayout();
-            this.plInfoOne.ResumeLayout(false);
-            this.plInfoOne.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -931,12 +1036,8 @@
             this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).EndInit();
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
+            this.plInfoOne.ResumeLayout(false);
+            this.plInfoOne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
             this.ResumeLayout(false);
 
@@ -949,9 +1050,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboType;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvListEmployee;
@@ -1019,5 +1117,16 @@
         private System.Windows.Forms.RadioButton rdoFullMonth;
         private System.Windows.Forms.RadioButton rdoEveningMonth;
         private System.Windows.Forms.RadioButton rdoMoringMonth;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel plSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSearchEmployee;
+        private System.Windows.Forms.TextBox txtSearchEmployee;
+        private System.Windows.Forms.ComboBox cboTypeSearchEmployee;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnSearchType;
+        private System.Windows.Forms.ComboBox cboSortTypeEmployee;
+        private System.Windows.Forms.Button btnLoadData;
     }
 }

@@ -337,6 +337,10 @@ namespace CinemaManagement.GUI
 
         #endregion
 
+        private void btnSearchEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

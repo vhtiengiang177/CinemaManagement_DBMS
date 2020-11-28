@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.plQRcode.SuspendLayout();
@@ -135,6 +136,7 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSignIn
             // 
@@ -148,6 +150,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.checkBox1);
             this.panel7.Controls.Add(this.txtPassword);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Location = new System.Drawing.Point(0, 55);
@@ -159,7 +162,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(72, 16);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(197, 20);
+            this.txtPassword.Size = new System.Drawing.Size(160, 20);
             this.txtPassword.TabIndex = 1;
             // 
             // label2
@@ -213,8 +216,18 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Đăng nhập";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(254, 18);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // fLogin
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 267);
@@ -257,5 +270,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

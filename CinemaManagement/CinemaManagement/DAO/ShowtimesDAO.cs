@@ -4,17 +4,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CinemaManagement.DTO;
 
 
 namespace CinemaManagement.DAO
 {
     class ShowtimesDAO
     {
-        private static ShowtimesDAO intance;
-        public static ShowtimesDAO Intance
+        private static ShowtimesDAO instance;
+        public static ShowtimesDAO Instance
         {
-            get { if (intance == null) intance = new ShowtimesDAO(); return ShowtimesDAO.intance; }
-            private set { ShowtimesDAO.intance = value; }
+            get { if (instance == null) instance = new ShowtimesDAO(); return ShowtimesDAO.instance; }
+            private set { ShowtimesDAO.instance = value; }
         }
 
         private ShowtimesDAO() { }
@@ -61,38 +62,6 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { idcategory });
         }
 
-    }
-}
-using CinemaManagement.DTO;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaManagement.DAO
-{
-    public class ShowtimesDAO
-    {
-        private static ShowtimesDAO instance;
-
-        public static ShowtimesDAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new ShowtimesDAO();
-                return instance;
-            }
-            set { instance = value; }
-        }
-
-        private ShowtimesDAO()
-        {
-
-        }
-
         public List<Showtimes> getListShowtimesByIdMovie(string idMovie)
         {
             List<Showtimes> listShowtimes = new List<Showtimes>();
@@ -101,14 +70,12 @@ namespace CinemaManagement.DAO
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie });
 
-            foreach(DataRow item in data.Rows)
+            foreach (DataRow item in data.Rows)
             {
                 Showtimes st = new Showtimes(item);
                 listShowtimes.Add(st);
             }
             return listShowtimes;
         }
-
-
     }
 }

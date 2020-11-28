@@ -103,6 +103,12 @@
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShowtimesDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
+    <Compile Include="GUI\fAddShowtimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fAddShowtimes.Designer.cs">
+      <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShiftWorkEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,12 @@
     <Compile Include="GUI\fShowMovie_Order.Designer.cs">
       <DependentUpon>fShowMovie_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowTime.Designer.cs">
+      <DependentUpon>fShowTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShowtime_Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,9 @@
     <Compile Include="Ticket1\fShowtimesTicket.Designer.cs">
       <DependentUpon>fShowtimesTicket.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\fAddShowtimes.resx">
+      <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShiftWorkEmployee.resx">
       <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowMovie_Order.resx">
       <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowTime.resx">
+      <DependentUpon>fShowTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowtime_Order.resx">
       <DependentUpon>fShowtime_Order.cs</DependentUpon>

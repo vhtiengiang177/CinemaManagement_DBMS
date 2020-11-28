@@ -180,5 +180,10 @@ namespace CinemaManagement.GUI
         }
 
         #endregion
+
+        private void fAddEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

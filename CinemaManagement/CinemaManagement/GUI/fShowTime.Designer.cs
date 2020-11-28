@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fShowTime));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picReloadShowtimes = new System.Windows.Forms.PictureBox();
             this.cboSearchST = new System.Windows.Forms.ComboBox();
@@ -45,6 +44,7 @@
             this.dtmDateShow = new System.Windows.Forms.DateTimePicker();
             this.cboRoom = new System.Windows.Forms.ComboBox();
             this.cboNameMovie = new System.Windows.Forms.ComboBox();
+            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboShiftShow = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,8 +58,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.iconClose = new System.Windows.Forms.PictureBox();
-            this.cinemaDBMSDataSet1 = new CinemaManagement.cinemaDBMSDataSet1();
-            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cinemaDBMSDataSet = new CinemaManagement.cinemaDBMSDataSet();
             this.cinemaDBMSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
@@ -67,11 +65,10 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowtimes)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +87,6 @@
             // picReloadShowtimes
             // 
             this.picReloadShowtimes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReloadShowtimes.Image = ((System.Drawing.Image)(resources.GetObject("picReloadShowtimes.Image")));
             this.picReloadShowtimes.Location = new System.Drawing.Point(655, 33);
             this.picReloadShowtimes.Name = "picReloadShowtimes";
             this.picReloadShowtimes.Size = new System.Drawing.Size(37, 30);
@@ -225,6 +221,10 @@
             this.cboNameMovie.TabIndex = 14;
             this.cboNameMovie.ValueMember = "id_movie";
             // 
+            // movieBindingSource
+            // 
+            this.movieBindingSource.DataMember = "Movie";
+            // 
             // cboShiftShow
             // 
             this.cboShiftShow.FormattingEnabled = true;
@@ -336,7 +336,6 @@
             // 
             // iconClose
             // 
-            this.iconClose.Image = ((System.Drawing.Image)(resources.GetObject("iconClose.Image")));
             this.iconClose.Location = new System.Drawing.Point(1042, 30);
             this.iconClose.Name = "iconClose";
             this.iconClose.Size = new System.Drawing.Size(82, 63);
@@ -344,16 +343,6 @@
             this.iconClose.TabIndex = 5;
             this.iconClose.TabStop = false;
             this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
-            // 
-            // cinemaDBMSDataSet1
-            // 
-            this.cinemaDBMSDataSet1.DataSetName = "cinemaDBMSDataSet1";
-            this.cinemaDBMSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // movieBindingSource
-            // 
-            this.movieBindingSource.DataMember = "Movie";
-            this.movieBindingSource.DataSource = this.cinemaDBMSDataSet1;
             // 
             // cinemaDBMSDataSet
             // 
@@ -378,6 +367,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowTime";
             this.Text = "fShowTime";
+            this.Load += new System.EventHandler(this.fShowTime_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReloadShowtimes)).EndInit();
@@ -385,12 +375,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowtimes)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -428,7 +417,7 @@
         private System.Windows.Forms.PictureBox picReloadShowtimes;
         private System.Windows.Forms.PictureBox iconClose;
         private System.Windows.Forms.BindingSource movieBindingSource;
-        private cinemaDBMSDataSet1 cinemaDBMSDataSet1;
+       // private cinemaDBMSDataSet1 cinemaDBMSDataSet1;
         private cinemaDBMSDataSet cinemaDBMSDataSet;
         private System.Windows.Forms.BindingSource cinemaDBMSDataSetBindingSource;
     }

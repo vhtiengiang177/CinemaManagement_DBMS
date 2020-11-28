@@ -29,7 +29,7 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                dgvShowtimes.DataSource = ShowtimesDAO.Intance.loadData();
+                dgvShowtimes.DataSource = ShowtimesDAO.Instance.loadData();
             }
             catch (Exception)
             {
@@ -82,7 +82,7 @@ namespace CinemaManagement.GUI
             this.cboShiftShow.Text =
             dgvShowtimes.Rows[r].Cells[3].Value.ToString();
 
-            MessageBox.Show(cboNameMovie.SelectedValue.ToString());
+          //  MessageBox.Show(cboNameMovie.SelectedValue.ToString());
         }
 
 
@@ -99,7 +99,7 @@ namespace CinemaManagement.GUI
             {
                 if (cboSearchST.SelectedIndex == 0) //Tìm theo tên phim
                 {
-                    dgvShowtimes.DataSource = ShowtimesDAO.Intance.SearchShowtimes_namemovie(txtSearch.Text.ToString().Trim());
+                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.SearchShowtimes_namemovie(txtSearch.Text.ToString().Trim());
                 }
 
             }
@@ -142,6 +142,11 @@ namespace CinemaManagement.GUI
         }
 
         private void dgvShowtimes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fShowTime_Load(object sender, EventArgs e)
         {
 
         }

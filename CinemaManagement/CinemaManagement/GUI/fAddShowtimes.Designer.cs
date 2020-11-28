@@ -74,7 +74,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.cboRoom = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.movieTableAdapter = new CinemaManagement.cinemaDBMSDataSet1TableAdapters.MovieTableAdapter();
+        //    this.movieTableAdapter = new CinemaManagement.cinemaDBMSDataSet1TableAdapters.MovieTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -515,7 +515,7 @@
             // 
             // movieTableAdapter
             // 
-            this.movieTableAdapter.ClearBeforeFill = true;
+        //    this.movieTableAdapter.ClearBeforeFill = true;
             // 
             // fAddShowtimes
             // 
@@ -595,6 +595,6 @@
         private System.Windows.Forms.Button btnCheckShift;
         private System.Windows.Forms.Button btnCheckCategoryMovie;
         private System.Windows.Forms.Button button3;
-        private cinemaDBMSDataSet1TableAdapters.MovieTableAdapter movieTableAdapter;
+//        private cinemaDBMSDataSet1TableAdapters.MovieTableAdapter movieTableAdapter;
     }
 }

@@ -140,7 +140,7 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public DataTable search_NameEmployee(string name)
         {
-            string query = "exec sp_search_IdentityCard_Employee @identityCard ";
+            string query = "exec sp_search_name_Employee @name ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
         }
 
@@ -164,6 +164,18 @@ namespace CinemaManagement.DAO
         {
             string query = "select dbo.fun_create_newID_Employee()";
             return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        public bool createShiftOfMonth(string idEmployee, int month, int year, string idShift)
+        {
+            string query = "exec sp_createShiftAllMonth @id , @month , @year ,  @idShift ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idEmployee,  month, year , idShift }) > 0;
+        }
+
+        public object selectWeekOnMonth(int month, int indexWeek)
+        {
+            string query = "";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] {month, indexWeek });
         }
     }
 }

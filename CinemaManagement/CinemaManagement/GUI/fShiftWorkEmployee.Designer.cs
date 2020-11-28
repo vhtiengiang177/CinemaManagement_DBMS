@@ -32,6 +32,7 @@
             this.plMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoadData = new System.Windows.Forms.Button();
             this.plSearch = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
@@ -69,49 +70,49 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.rdoEverning = new System.Windows.Forms.RadioButton();
             this.rdoMorning = new System.Windows.Forms.RadioButton();
-            this.txtDay = new System.Windows.Forms.TextBox();
+            this.txtMonDay = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnChangeWeek = new System.Windows.Forms.Button();
             this.plInfoOne = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.btnLoadData = new System.Windows.Forms.Button();
+            this.txtTueDay = new System.Windows.Forms.TextBox();
+            this.txtWedDay = new System.Windows.Forms.TextBox();
+            this.txtThurDay = new System.Windows.Forms.TextBox();
+            this.txtFriDay = new System.Windows.Forms.TextBox();
+            this.txtSaDay = new System.Windows.Forms.TextBox();
+            this.txtSunDay = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,6 +175,16 @@
             this.panel1.Size = new System.Drawing.Size(916, 80);
             this.panel1.TabIndex = 0;
             // 
+            // btnLoadData
+            // 
+            this.btnLoadData.Location = new System.Drawing.Point(838, 44);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadData.TabIndex = 7;
+            this.btnLoadData.Text = "Load data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
+            // 
             // plSearch
             // 
             this.plSearch.Controls.Add(this.label1);
@@ -223,6 +234,7 @@
             this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
             this.cboTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
             this.cboTypeSearchEmployee.TabIndex = 0;
+            this.cboTypeSearchEmployee.SelectedIndexChanged += new System.EventHandler(this.cboTypeSearchEmployee_SelectedIndexChanged);
             // 
             // panel20
             // 
@@ -242,6 +254,7 @@
             this.btnSearchType.TabIndex = 6;
             this.btnSearchType.Text = "Tìm kiếm";
             this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
             // 
             // cboSortTypeEmployee
             // 
@@ -302,6 +315,7 @@
             // 
             // plChooseShif
             // 
+            this.plChooseShif.Controls.Add(this.button1);
             this.plChooseShif.Controls.Add(this.panel17);
             this.plChooseShif.Controls.Add(this.label3);
             this.plChooseShif.Controls.Add(this.txtLastDate);
@@ -354,6 +368,7 @@
             this.btnChangeMonth.TabIndex = 16;
             this.btnChangeMonth.Text = "Thay đổi";
             this.btnChangeMonth.UseVisualStyleBackColor = true;
+            this.btnChangeMonth.Click += new System.EventHandler(this.btnChangeMonth_Click);
             // 
             // rdoFullMonth
             // 
@@ -420,6 +435,7 @@
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(52, 21);
             this.cboYear.TabIndex = 6;
+            this.cboYear.Text = "2020";
             // 
             // cboMonth
             // 
@@ -441,6 +457,7 @@
             this.cboMonth.Name = "cboMonth";
             this.cboMonth.Size = new System.Drawing.Size(34, 21);
             this.cboMonth.TabIndex = 5;
+            this.cboMonth.Text = "1";
             // 
             // label4
             // 
@@ -454,7 +471,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(363, 177);
+            this.label3.Location = new System.Drawing.Point(363, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(10, 13);
             this.label3.TabIndex = 6;
@@ -462,7 +479,7 @@
             // 
             // txtLastDate
             // 
-            this.txtLastDate.Location = new System.Drawing.Point(377, 174);
+            this.txtLastDate.Location = new System.Drawing.Point(377, 189);
             this.txtLastDate.Name = "txtLastDate";
             this.txtLastDate.ReadOnly = true;
             this.txtLastDate.Size = new System.Drawing.Size(72, 20);
@@ -470,7 +487,7 @@
             // 
             // txtFirstDate
             // 
-            this.txtFirstDate.Location = new System.Drawing.Point(287, 174);
+            this.txtFirstDate.Location = new System.Drawing.Point(287, 189);
             this.txtFirstDate.Name = "txtFirstDate";
             this.txtFirstDate.ReadOnly = true;
             this.txtFirstDate.Size = new System.Drawing.Size(72, 20);
@@ -478,7 +495,7 @@
             // 
             // nudWeekSelected
             // 
-            this.nudWeekSelected.Location = new System.Drawing.Point(410, 131);
+            this.nudWeekSelected.Location = new System.Drawing.Point(410, 146);
             this.nudWeekSelected.Maximum = new decimal(new int[] {
             4,
             0,
@@ -501,7 +518,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(290, 133);
+            this.label2.Location = new System.Drawing.Point(290, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 2;
@@ -525,7 +542,7 @@
             // 
             this.panel3.Controls.Add(this.chkFull);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.txtDay);
+            this.panel3.Controls.Add(this.txtMonDay);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(55, 130);
@@ -572,18 +589,25 @@
             this.rdoMorning.Text = "Sáng";
             this.rdoMorning.UseVisualStyleBackColor = true;
             // 
-            // txtDay
+            // txtMonDay
             // 
-            this.txtDay.Location = new System.Drawing.Point(13, 5);
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(31, 20);
-            this.txtDay.TabIndex = 3;
+            this.txtMonDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtMonDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMonDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtMonDay.Location = new System.Drawing.Point(8, 10);
+            this.txtMonDay.Multiline = true;
+            this.txtMonDay.Name = "txtMonDay";
+            this.txtMonDay.ReadOnly = true;
+            this.txtMonDay.Size = new System.Drawing.Size(39, 20);
+            this.txtMonDay.TabIndex = 3;
+            this.txtMonDay.Text = "Thứ 2";
+            this.txtMonDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.txtTueDay);
             this.panel5.Controls.Add(this.checkBox1);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Location = new System.Drawing.Point(64, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(55, 130);
@@ -630,18 +654,11 @@
             this.radioButton2.Text = "Sáng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(31, 20);
-            this.textBox1.TabIndex = 3;
-            // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.txtWedDay);
             this.panel9.Controls.Add(this.checkBox3);
             this.panel9.Controls.Add(this.panel10);
-            this.panel9.Controls.Add(this.textBox3);
             this.panel9.Location = new System.Drawing.Point(125, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(55, 130);
@@ -688,18 +705,11 @@
             this.radioButton6.Text = "Sáng";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(13, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(31, 20);
-            this.textBox3.TabIndex = 3;
-            // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.txtThurDay);
             this.panel7.Controls.Add(this.checkBox2);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.textBox2);
             this.panel7.Location = new System.Drawing.Point(186, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(55, 130);
@@ -746,18 +756,11 @@
             this.radioButton4.Text = "Sáng";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(13, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(31, 20);
-            this.textBox2.TabIndex = 3;
-            // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.txtFriDay);
             this.panel11.Controls.Add(this.checkBox4);
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Controls.Add(this.textBox4);
             this.panel11.Location = new System.Drawing.Point(247, 3);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(55, 130);
@@ -804,18 +807,11 @@
             this.radioButton8.Text = "Sáng";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(13, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(31, 20);
-            this.textBox4.TabIndex = 3;
-            // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.txtSaDay);
             this.panel13.Controls.Add(this.checkBox5);
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Controls.Add(this.textBox5);
             this.panel13.Location = new System.Drawing.Point(308, 3);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(55, 130);
@@ -862,18 +858,11 @@
             this.radioButton10.Text = "Sáng";
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(13, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(31, 20);
-            this.textBox5.TabIndex = 3;
-            // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.txtSunDay);
             this.panel15.Controls.Add(this.checkBox6);
             this.panel15.Controls.Add(this.panel16);
-            this.panel15.Controls.Add(this.textBox6);
             this.panel15.Location = new System.Drawing.Point(369, 3);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(55, 130);
@@ -920,13 +909,6 @@
             this.radioButton12.Text = "Sáng";
             this.radioButton12.UseVisualStyleBackColor = true;
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(13, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(31, 20);
-            this.textBox6.TabIndex = 3;
-            // 
             // btnChangeWeek
             // 
             this.btnChangeWeek.Location = new System.Drawing.Point(823, 253);
@@ -967,17 +949,102 @@
             this.picEmployee.Location = new System.Drawing.Point(3, 3);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(127, 137);
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // btnLoadData
+            // txtTueDay
             // 
-            this.btnLoadData.Location = new System.Drawing.Point(838, 44);
-            this.btnLoadData.Name = "btnLoadData";
-            this.btnLoadData.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadData.TabIndex = 7;
-            this.btnLoadData.Text = "Load data";
-            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.txtTueDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtTueDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTueDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtTueDay.Location = new System.Drawing.Point(3, 10);
+            this.txtTueDay.Multiline = true;
+            this.txtTueDay.Name = "txtTueDay";
+            this.txtTueDay.ReadOnly = true;
+            this.txtTueDay.Size = new System.Drawing.Size(39, 20);
+            this.txtTueDay.TabIndex = 6;
+            this.txtTueDay.Text = "Thứ 3";
+            this.txtTueDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtWedDay
+            // 
+            this.txtWedDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtWedDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWedDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtWedDay.Location = new System.Drawing.Point(5, 10);
+            this.txtWedDay.Multiline = true;
+            this.txtWedDay.Name = "txtWedDay";
+            this.txtWedDay.ReadOnly = true;
+            this.txtWedDay.Size = new System.Drawing.Size(39, 20);
+            this.txtWedDay.TabIndex = 6;
+            this.txtWedDay.Text = "Thứ 4";
+            this.txtWedDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtThurDay
+            // 
+            this.txtThurDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtThurDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtThurDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtThurDay.Location = new System.Drawing.Point(3, 10);
+            this.txtThurDay.Multiline = true;
+            this.txtThurDay.Name = "txtThurDay";
+            this.txtThurDay.ReadOnly = true;
+            this.txtThurDay.Size = new System.Drawing.Size(39, 20);
+            this.txtThurDay.TabIndex = 6;
+            this.txtThurDay.Text = "Thứ 5";
+            this.txtThurDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtFriDay
+            // 
+            this.txtFriDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtFriDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFriDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtFriDay.Location = new System.Drawing.Point(8, 10);
+            this.txtFriDay.Multiline = true;
+            this.txtFriDay.Name = "txtFriDay";
+            this.txtFriDay.ReadOnly = true;
+            this.txtFriDay.Size = new System.Drawing.Size(39, 20);
+            this.txtFriDay.TabIndex = 6;
+            this.txtFriDay.Text = "Thứ 6";
+            this.txtFriDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSaDay
+            // 
+            this.txtSaDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtSaDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSaDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSaDay.Location = new System.Drawing.Point(8, 10);
+            this.txtSaDay.Multiline = true;
+            this.txtSaDay.Name = "txtSaDay";
+            this.txtSaDay.ReadOnly = true;
+            this.txtSaDay.Size = new System.Drawing.Size(39, 20);
+            this.txtSaDay.TabIndex = 6;
+            this.txtSaDay.Text = "Thứ 7";
+            this.txtSaDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSunDay
+            // 
+            this.txtSunDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtSunDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSunDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSunDay.Location = new System.Drawing.Point(8, 10);
+            this.txtSunDay.Multiline = true;
+            this.txtSunDay.Name = "txtSunDay";
+            this.txtSunDay.ReadOnly = true;
+            this.txtSunDay.Size = new System.Drawing.Size(39, 20);
+            this.txtSunDay.TabIndex = 6;
+            this.txtSunDay.Text = "CN";
+            this.txtSunDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(286, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 19);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Đăng kí làm việc theo tuần:";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // fShifWorkEmployee
             // 
@@ -1062,43 +1129,37 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton rdoEverning;
         private System.Windows.Forms.RadioButton rdoMorning;
-        private System.Windows.Forms.TextBox txtDay;
+        private System.Windows.Forms.TextBox txtMonDay;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.RadioButton radioButton11;
         private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLastDate;
@@ -1128,5 +1189,12 @@
         private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.ComboBox cboSortTypeEmployee;
         private System.Windows.Forms.Button btnLoadData;
+        private System.Windows.Forms.TextBox txtTueDay;
+        private System.Windows.Forms.TextBox txtWedDay;
+        private System.Windows.Forms.TextBox txtThurDay;
+        private System.Windows.Forms.TextBox txtFriDay;
+        private System.Windows.Forms.TextBox txtSaDay;
+        private System.Windows.Forms.TextBox txtSunDay;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -102,6 +102,7 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShowtimesDAO.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Showtimes.cs" />

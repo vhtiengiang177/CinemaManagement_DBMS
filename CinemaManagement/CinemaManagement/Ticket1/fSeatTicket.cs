@@ -37,6 +37,12 @@ namespace CinemaManagement.Ticket1
                 Button btn = new Button() { Width = 50, Height = 50 };
                 btn.Tag = item;
 
+                if(SeatDAO.Instance.CheckTicket(this.Showtimes, item.Id_seat))
+                {
+                    btn.BackColor = Color.Red;
+                    btn.Enabled = false;
+                }
+
                 btn.Click += Btn_Click;
 
                 btn.Text = item.Name_seat;
@@ -47,7 +53,9 @@ namespace CinemaManagement.Ticket1
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            fAddTicket f = new fAddTicket();
+            this.Hide();
+            f.Show();
         }
     }
 }

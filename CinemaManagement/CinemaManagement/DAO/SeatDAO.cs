@@ -44,5 +44,12 @@ namespace CinemaManagement.DAO
 
             return list;
         }
+
+
+        public bool CheckTicket(Showtimes st, string id_seat)
+        {
+            string query = "select * from Ticket where Ticket.id_room = @id_room and Ticket.id_movie = @id_movie and Ticket.id_shiftshow = @id_shiftshow and Ticket.date_showtimes = @date_showtimes and Ticket.id_seat = @id_seat ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { st.Id_room, st.Id_movie, st.Id_shiftshow, st.Date_showtimes, id_seat }).Rows.Count > 0;
+        }
     }
 }

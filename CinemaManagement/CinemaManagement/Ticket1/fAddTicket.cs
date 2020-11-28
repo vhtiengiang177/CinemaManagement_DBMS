@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,13 @@ namespace CinemaManagement.Ticket1
 {
     public partial class fAddTicket : Form
     {
+
         public fAddTicket()
+        {
+            InitializeComponent();
+        }
+
+        public fAddTicket(Showtimes st, string id_seat)
         {
             InitializeComponent();
         }

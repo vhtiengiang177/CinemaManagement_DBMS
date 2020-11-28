@@ -272,6 +272,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ticket1\fAddTicket.resx">
+      <DependentUpon>fAddTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ticket1\fMovieTicket.resx">
       <DependentUpon>fMovieTicket.cs</DependentUpon>
     </EmbeddedResource>

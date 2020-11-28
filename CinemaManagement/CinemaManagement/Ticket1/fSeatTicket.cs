@@ -14,6 +14,7 @@ namespace CinemaManagement.Ticket1
 {
     public partial class fSeatTicket : Form
     {
+        private List<Seat> listSeat = new List<Seat>();
 
         private Showtimes showtimes;
         public fSeatTicket()
@@ -28,6 +29,8 @@ namespace CinemaManagement.Ticket1
             loadSeat(this.Showtimes.Id_room);
         }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
+        public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
+        
 
         void loadSeat(string id_room)
         {
@@ -36,6 +39,7 @@ namespace CinemaManagement.Ticket1
             {
                 Button btn = new Button() { Width = 50, Height = 50 };
                 btn.Tag = item;
+                btn.BackColor = Color.Gray;
 
                 if(SeatDAO.Instance.CheckTicket(this.Showtimes, item.Id_seat))
                 {
@@ -53,9 +57,48 @@ namespace CinemaManagement.Ticket1
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            fAddTicket f = new fAddTicket();
+            //Seat se = (Seat)((sender as Button).Tag);
+            //fAddTicket f = new fAddTicket(this.Showtimes, se);
+            //this.Hide();
+            //f.Show();
+
+            if((sender as Button).BackColor == Color.Gray)
+            {
+                (sender as Button).BackColor = Color.Green;
+                this.ListSeat.Add(((Seat)(sender as Button).Tag));
+            }    
+            else
+            {
+                if((sender as Button).BackColor==Color.Green)
+                {
+                    (sender as Button).BackColor = Color.Gray;
+                    this.ListSeat.Remove((Seat)(sender as Button).Tag);
+                }
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            fAddTicket f = new fAddTicket(this.Showtimes, this.ListSeat);
             this.Hide();
             f.Show();
         }
+
+
+        //void subtractSeat(string id)
+        //{
+        //    for(int i=0; i<this.ListSeat.Count; i++)
+        //    {
+        //        if(ListSeat[i].Id_seat == id)
+        //        {
+        //            this.ListSeat.Remove()
+        //            for(int j = i; j<this.ListSeat.Count; j++)
+        //            {
+        //                ListSeat[j] = ListSeat[j + 1];
+        //            }
+        //            break;
+        //        }    
+        //    }
+        //}
     }
 }

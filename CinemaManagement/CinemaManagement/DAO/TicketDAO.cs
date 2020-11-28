@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,14 @@ namespace CinemaManagement.DAO
         public void createTicket()
         {
             
+        }
+
+        public string getLastIdTicket()
+        {
+            string query = "select * from Ticket";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data.Rows[data.Rows.Count - 1][0].ToString();
         }
     }
 }

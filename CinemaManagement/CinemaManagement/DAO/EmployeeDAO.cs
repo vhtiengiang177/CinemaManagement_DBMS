@@ -132,6 +132,18 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { identityCard });
         }
 
+
+        /// <summary>
+        /// Tìm kiếm nhân viên theo tên
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public DataTable search_NameEmployee(string name)
+        {
+            string query = "exec sp_search_name_Employee @name ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+        }
+
         /// <summary>
         /// Tìm kiếm nhóm nhân viên theo loại nhân viên
         /// </summary>
@@ -152,6 +164,24 @@ namespace CinemaManagement.DAO
         {
             string query = "select dbo.fun_create_newID_Employee()";
             return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        public bool createShiftOfMonth(string idEmployee, int month, int year, string idShift)
+        {
+            string query = "exec sp_createShiftAllMonth @id , @month , @year ,  @idShift ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idEmployee,  month, year , idShift }) > 0;
+        }
+
+        public object selectWeekOnMonth(int month, int  year, int indexWeek)
+        {
+            string query = "select dbo.fun_selectDayOfIndexWeek( @month , @year , @indexWeek )";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] {month, year, indexWeek });
+        }
+
+        public object selectDateEndWeek(DateTime date, int indexDay)
+        {
+            string query = "select dbo.fun_findDate( @date  , @indexDay )";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] { date, indexDay });
         }
     }
 }

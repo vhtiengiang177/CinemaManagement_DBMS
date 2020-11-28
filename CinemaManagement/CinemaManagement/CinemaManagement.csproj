@@ -104,6 +104,18 @@
     <Compile Include="DAO\ShowtimesDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
+    <Compile Include="GUI\fAddShowtimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fAddShowtimes.Designer.cs">
+      <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fShiftWorkEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShiftWorkEmployee.Designer.cs">
+      <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Showtimes.cs" />
     <Compile Include="GUI\fCustomer.cs">
@@ -163,6 +175,30 @@
     <Compile Include="GUI\fPromotion.Designer.cs">
       <DependentUpon>fPromotion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowMovie_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowMovie_Order.Designer.cs">
+      <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fShowTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowTime.Designer.cs">
+      <DependentUpon>fShowTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fShowtime_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowtime_Order.Designer.cs">
+      <DependentUpon>fShowtime_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ucMovie_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucMovie_Order.Designer.cs">
+      <DependentUpon>ucMovie_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket1\fAddTicket.cs">
@@ -189,6 +225,12 @@
     <Compile Include="Ticket1\fShowtimesTicket.Designer.cs">
       <DependentUpon>fShowtimesTicket.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\fAddShowtimes.resx">
+      <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShiftWorkEmployee.resx">
+      <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +254,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fPromotion.resx">
       <DependentUpon>fPromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowMovie_Order.resx">
+      <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowTime.resx">
+      <DependentUpon>fShowTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowtime_Order.resx">
+      <DependentUpon>fShowtime_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucMovie_Order.resx">
+      <DependentUpon>ucMovie_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

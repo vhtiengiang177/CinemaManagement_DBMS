@@ -42,6 +42,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable showMovieActive()
+        {
+            string query = "SELECT * FROM v_ShowMovieActive";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         /// <summary>
         /// Sinh ID mới cho phim
         /// </summary>

@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace CinemaManagement.GUI
 {
-    public partial class fAddTicket : Form
+    public partial class fShowtime_Order : Form
     {
-        public fAddTicket()
+        private string sIdMovie;
+        public string idMovie
+        {
+            get { return this.sIdMovie; }
+            set { this.sIdMovie = value; }
+        }
+        public fShowtime_Order(string id_movie)
         {
             InitializeComponent();
+            this.idMovie = id_movie;
         }
     }
 }

@@ -132,6 +132,18 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { identityCard });
         }
 
+
+        /// <summary>
+        /// Tìm kiếm nhân viên theo tên
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public DataTable search_NameEmployee(string name)
+        {
+            string query = "exec sp_search_IdentityCard_Employee @identityCard ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+        }
+
         /// <summary>
         /// Tìm kiếm nhóm nhân viên theo loại nhân viên
         /// </summary>

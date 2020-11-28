@@ -19,6 +19,7 @@ namespace CinemaManagement.GUI
     public partial class fEmployee : Form
     {
         public static int cellClickIndex = 0;
+        public static int searchTypeIndex = 0;
         MemoryStream ms;
         byte[] arrImage = null;
 
@@ -271,6 +272,8 @@ namespace CinemaManagement.GUI
 
         }
 
+        
+
         #endregion
 
         #region DELETE
@@ -337,9 +340,30 @@ namespace CinemaManagement.GUI
 
         #endregion
 
+
+        public void searchEmployee(int index)
+        {
+            switch(index)
+            {
+                case 0: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_IDEmployee(txtSearchEmployee.Text.Trim()); break; }
+                case 1: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_PhoneEmployee(txtSearchEmployee.Text.Trim()); break; }
+                case 2: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_NameEmployee(txtSearchEmployee.Text.Trim()); break; }
+                case 3: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_IdentityCardEmployee(txtSearchEmployee.Text.Trim()); break; }
+
+
+
+            }
+        }
+
         private void btnSearchEmployee_Click(object sender, EventArgs e)
         {
+            searchEmployee(fEmployee.searchTypeIndex);
+        }
 
+        private void cboTypeSearchEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fEmployee.searchTypeIndex = cboTypeSearchEmployee.SelectedIndex;
+            
         }
     }
 }

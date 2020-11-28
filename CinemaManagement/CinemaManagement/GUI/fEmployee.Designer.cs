@@ -263,6 +263,7 @@
             this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
             this.cboTypeSearchEmployee.Size = new System.Drawing.Size(95, 21);
             this.cboTypeSearchEmployee.TabIndex = 0;
+            this.cboTypeSearchEmployee.SelectedIndexChanged += new System.EventHandler(this.cboTypeSearchEmployee_SelectedIndexChanged);
             // 
             // plInforMain
             // 

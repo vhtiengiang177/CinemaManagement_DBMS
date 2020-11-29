@@ -1,4 +1,5 @@
 ﻿using CinemaManagement.DAO;
+using CinemaManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,6 @@ namespace CinemaManagement.GUI
     {
         DataTable dt = new DataTable(); // Tạo kho ảo lưu trữ dl movie
         MemoryStream ms;
-        ucMovie_Order ucMovie1 = new ucMovie_Order();
 
         public fShowMovie_Order()
         {
@@ -46,15 +46,16 @@ namespace CinemaManagement.GUI
                 ucMovie.Namecamo_movie = dt.Rows[i][3].ToString();
                 ucMovie.Runningtime_movie = dt.Rows[i][4].ToString();
                 ucMovie.Img_movie = (byte[])dt.Rows[i][7];
-
+                
                 // Thêm uc vào flow layout panel
                 flpnlMovie.Controls.Add(ucMovie);
+                ucMovie.btn_Order.MouseClick += Btn_Order_MouseClick;
             }
         }
 
-        public void loadData()
+        private void Btn_Order_MouseClick(object sender, MouseEventArgs e)
         {
-            picImageMovie.Image = picImageMovie.InitialImage;
+            this.Hide();
         }
 
         /// <summary>

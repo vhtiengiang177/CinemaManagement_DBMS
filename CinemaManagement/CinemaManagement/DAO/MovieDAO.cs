@@ -59,7 +59,7 @@ namespace CinemaManagement.DAO
         }
 
         /// <summary>
-        /// Lấy thông tin 1 phim
+        /// Lấy thông tin 1 phim (phần thể loại lấy tên, không lấy id)
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

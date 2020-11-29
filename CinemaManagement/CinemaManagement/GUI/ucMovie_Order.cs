@@ -69,6 +69,13 @@ namespace CinemaManagement.GUI
             get { return img_movie; }
             set { img_movie = value;  picImageMovie.Image = byteArrayToImage(value);}
         }
+
+        // Button Đặt vé. Dùng để bắt sự kiên qua bên Form.
+        public Button btn_Order
+        {
+            get { return this.btnOrderMovie; }
+        }
+
         #endregion
 
 
@@ -182,6 +189,7 @@ namespace CinemaManagement.GUI
         // Chọn đặt vé mở sang form lịch chiếu
         private void btnOrderMovie_MouseClick(object sender, MouseEventArgs e)
         {
+            ucMovie_Order uc = new ucMovie_Order();
             fShowtime_Order fShowtime = new fShowtime_Order(Id_movie);
             fShowtime.ShowDialog();
         }

@@ -47,6 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.plChooseShif = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,54 +67,56 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rdoFullMonday = new System.Windows.Forms.RadioButton();
+            this.rdoEveningMonday = new System.Windows.Forms.RadioButton();
+            this.rdoMorningMonday = new System.Windows.Forms.RadioButton();
             this.txtMonDay = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rdoFullTus = new System.Windows.Forms.RadioButton();
+            this.rdoEveningTus = new System.Windows.Forms.RadioButton();
+            this.rdoMorningTus = new System.Windows.Forms.RadioButton();
+            this.txtTueDay = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtWedDay = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rdoFullWed = new System.Windows.Forms.RadioButton();
+            this.rdoEveningWed = new System.Windows.Forms.RadioButton();
+            this.rdoMorningWed = new System.Windows.Forms.RadioButton();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.rdoFullThur = new System.Windows.Forms.RadioButton();
+            this.rdoEveningThur = new System.Windows.Forms.RadioButton();
+            this.rdoMorningThur = new System.Windows.Forms.RadioButton();
+            this.txtThurDay = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.rdoFullFri = new System.Windows.Forms.RadioButton();
+            this.rdoEverningFri = new System.Windows.Forms.RadioButton();
+            this.rdoMorningFri = new System.Windows.Forms.RadioButton();
+            this.txtFriDay = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.rdoFullSa = new System.Windows.Forms.RadioButton();
+            this.rdoEveningSa = new System.Windows.Forms.RadioButton();
+            this.rdoMorningSa = new System.Windows.Forms.RadioButton();
+            this.txtSaDay = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.rdoFullSun = new System.Windows.Forms.RadioButton();
+            this.rdoEveningSun = new System.Windows.Forms.RadioButton();
+            this.rdoMorningSun = new System.Windows.Forms.RadioButton();
+            this.txtSunDay = new System.Windows.Forms.TextBox();
             this.btnChangeWeek = new System.Windows.Forms.Button();
             this.plInfoOne = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.txtTueDay = new System.Windows.Forms.TextBox();
-            this.txtWedDay = new System.Windows.Forms.TextBox();
-            this.txtThurDay = new System.Windows.Forms.TextBox();
-            this.txtFriDay = new System.Windows.Forms.TextBox();
-            this.txtSaDay = new System.Windows.Forms.TextBox();
-            this.txtSunDay = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.chkFull = new System.Windows.Forms.CheckBox();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton20 = new System.Windows.Forms.RadioButton();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -129,21 +132,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudWeekSelected)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.plInfoOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel16.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMain
@@ -316,7 +320,7 @@
             // 
             // plChooseShif
             // 
-            this.plChooseShif.Controls.Add(this.chkFull);
+            this.plChooseShif.Controls.Add(this.panel21);
             this.plChooseShif.Controls.Add(this.button1);
             this.plChooseShif.Controls.Add(this.panel17);
             this.plChooseShif.Controls.Add(this.label3);
@@ -331,6 +335,15 @@
             this.plChooseShif.Name = "plChooseShif";
             this.plChooseShif.Size = new System.Drawing.Size(914, 279);
             this.plChooseShif.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(275, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 32);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Đăng kí làm việc theo tuần:";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel17
             // 
@@ -550,6 +563,49 @@
             this.panel3.Size = new System.Drawing.Size(58, 130);
             this.panel3.TabIndex = 9;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.rdoFullMonday);
+            this.panel4.Controls.Add(this.rdoEveningMonday);
+            this.panel4.Controls.Add(this.rdoMorningMonday);
+            this.panel4.Location = new System.Drawing.Point(0, 44);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(57, 85);
+            this.panel4.TabIndex = 5;
+            // 
+            // rdoFullMonday
+            // 
+            this.rdoFullMonday.AutoSize = true;
+            this.rdoFullMonday.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullMonday.Name = "rdoFullMonday";
+            this.rdoFullMonday.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullMonday.TabIndex = 2;
+            this.rdoFullMonday.TabStop = true;
+            this.rdoFullMonday.Text = "Full";
+            this.rdoFullMonday.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningMonday
+            // 
+            this.rdoEveningMonday.AutoSize = true;
+            this.rdoEveningMonday.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningMonday.Name = "rdoEveningMonday";
+            this.rdoEveningMonday.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningMonday.TabIndex = 1;
+            this.rdoEveningMonday.TabStop = true;
+            this.rdoEveningMonday.Text = "Tối";
+            this.rdoEveningMonday.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningMonday
+            // 
+            this.rdoMorningMonday.AutoSize = true;
+            this.rdoMorningMonday.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningMonday.Name = "rdoMorningMonday";
+            this.rdoMorningMonday.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningMonday.TabIndex = 0;
+            this.rdoMorningMonday.TabStop = true;
+            this.rdoMorningMonday.Text = "Sáng";
+            this.rdoMorningMonday.UseVisualStyleBackColor = true;
+            // 
             // txtMonDay
             // 
             this.txtMonDay.BackColor = System.Drawing.Color.DarkRed;
@@ -573,6 +629,63 @@
             this.panel5.Size = new System.Drawing.Size(62, 130);
             this.panel5.TabIndex = 10;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.rdoFullTus);
+            this.panel6.Controls.Add(this.rdoEveningTus);
+            this.panel6.Controls.Add(this.rdoMorningTus);
+            this.panel6.Location = new System.Drawing.Point(2, 44);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(57, 85);
+            this.panel6.TabIndex = 7;
+            // 
+            // rdoFullTus
+            // 
+            this.rdoFullTus.AutoSize = true;
+            this.rdoFullTus.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullTus.Name = "rdoFullTus";
+            this.rdoFullTus.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullTus.TabIndex = 2;
+            this.rdoFullTus.TabStop = true;
+            this.rdoFullTus.Text = "Full";
+            this.rdoFullTus.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningTus
+            // 
+            this.rdoEveningTus.AutoSize = true;
+            this.rdoEveningTus.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningTus.Name = "rdoEveningTus";
+            this.rdoEveningTus.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningTus.TabIndex = 1;
+            this.rdoEveningTus.TabStop = true;
+            this.rdoEveningTus.Text = "Tối";
+            this.rdoEveningTus.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningTus
+            // 
+            this.rdoMorningTus.AutoSize = true;
+            this.rdoMorningTus.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningTus.Name = "rdoMorningTus";
+            this.rdoMorningTus.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningTus.TabIndex = 0;
+            this.rdoMorningTus.TabStop = true;
+            this.rdoMorningTus.Text = "Sáng";
+            this.rdoMorningTus.UseVisualStyleBackColor = true;
+            // 
+            // txtTueDay
+            // 
+            this.txtTueDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtTueDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTueDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtTueDay.Location = new System.Drawing.Point(3, 10);
+            this.txtTueDay.Multiline = true;
+            this.txtTueDay.Name = "txtTueDay";
+            this.txtTueDay.ReadOnly = true;
+            this.txtTueDay.Size = new System.Drawing.Size(39, 20);
+            this.txtTueDay.TabIndex = 6;
+            this.txtTueDay.Text = "Thứ 3";
+            this.txtTueDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.txtWedDay);
@@ -582,37 +695,62 @@
             this.panel9.Size = new System.Drawing.Size(62, 130);
             this.panel9.TabIndex = 12;
             // 
+            // txtWedDay
+            // 
+            this.txtWedDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtWedDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWedDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtWedDay.Location = new System.Drawing.Point(5, 10);
+            this.txtWedDay.Multiline = true;
+            this.txtWedDay.Name = "txtWedDay";
+            this.txtWedDay.ReadOnly = true;
+            this.txtWedDay.Size = new System.Drawing.Size(39, 20);
+            this.txtWedDay.TabIndex = 6;
+            this.txtWedDay.Text = "Thứ 4";
+            this.txtWedDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.radioButton13);
-            this.panel10.Controls.Add(this.radioButton5);
-            this.panel10.Controls.Add(this.radioButton6);
+            this.panel10.Controls.Add(this.rdoFullWed);
+            this.panel10.Controls.Add(this.rdoEveningWed);
+            this.panel10.Controls.Add(this.rdoMorningWed);
             this.panel10.Location = new System.Drawing.Point(2, 44);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(57, 85);
             this.panel10.TabIndex = 4;
             // 
-            // radioButton5
+            // rdoFullWed
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(5, 26);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(40, 17);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Tối";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdoFullWed.AutoSize = true;
+            this.rdoFullWed.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullWed.Name = "rdoFullWed";
+            this.rdoFullWed.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullWed.TabIndex = 2;
+            this.rdoFullWed.TabStop = true;
+            this.rdoFullWed.Text = "Full";
+            this.rdoFullWed.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdoEveningWed
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(5, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(50, 17);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Sáng";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdoEveningWed.AutoSize = true;
+            this.rdoEveningWed.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningWed.Name = "rdoEveningWed";
+            this.rdoEveningWed.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningWed.TabIndex = 1;
+            this.rdoEveningWed.TabStop = true;
+            this.rdoEveningWed.Text = "Tối";
+            this.rdoEveningWed.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningWed
+            // 
+            this.rdoMorningWed.AutoSize = true;
+            this.rdoMorningWed.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningWed.Name = "rdoMorningWed";
+            this.rdoMorningWed.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningWed.TabIndex = 0;
+            this.rdoMorningWed.TabStop = true;
+            this.rdoMorningWed.Text = "Sáng";
+            this.rdoMorningWed.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
@@ -623,6 +761,63 @@
             this.panel7.Size = new System.Drawing.Size(60, 130);
             this.panel7.TabIndex = 11;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.rdoFullThur);
+            this.panel8.Controls.Add(this.rdoEveningThur);
+            this.panel8.Controls.Add(this.rdoMorningThur);
+            this.panel8.Location = new System.Drawing.Point(2, 44);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(57, 85);
+            this.panel8.TabIndex = 7;
+            // 
+            // rdoFullThur
+            // 
+            this.rdoFullThur.AutoSize = true;
+            this.rdoFullThur.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullThur.Name = "rdoFullThur";
+            this.rdoFullThur.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullThur.TabIndex = 2;
+            this.rdoFullThur.TabStop = true;
+            this.rdoFullThur.Text = "Full";
+            this.rdoFullThur.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningThur
+            // 
+            this.rdoEveningThur.AutoSize = true;
+            this.rdoEveningThur.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningThur.Name = "rdoEveningThur";
+            this.rdoEveningThur.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningThur.TabIndex = 1;
+            this.rdoEveningThur.TabStop = true;
+            this.rdoEveningThur.Text = "Tối";
+            this.rdoEveningThur.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningThur
+            // 
+            this.rdoMorningThur.AutoSize = true;
+            this.rdoMorningThur.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningThur.Name = "rdoMorningThur";
+            this.rdoMorningThur.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningThur.TabIndex = 0;
+            this.rdoMorningThur.TabStop = true;
+            this.rdoMorningThur.Text = "Sáng";
+            this.rdoMorningThur.UseVisualStyleBackColor = true;
+            // 
+            // txtThurDay
+            // 
+            this.txtThurDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtThurDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtThurDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtThurDay.Location = new System.Drawing.Point(3, 10);
+            this.txtThurDay.Multiline = true;
+            this.txtThurDay.Name = "txtThurDay";
+            this.txtThurDay.ReadOnly = true;
+            this.txtThurDay.Size = new System.Drawing.Size(39, 20);
+            this.txtThurDay.TabIndex = 6;
+            this.txtThurDay.Text = "Thứ 5";
+            this.txtThurDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.panel12);
@@ -631,6 +826,63 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(62, 130);
             this.panel11.TabIndex = 13;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.rdoFullFri);
+            this.panel12.Controls.Add(this.rdoEverningFri);
+            this.panel12.Controls.Add(this.rdoMorningFri);
+            this.panel12.Location = new System.Drawing.Point(3, 44);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(57, 85);
+            this.panel12.TabIndex = 7;
+            // 
+            // rdoFullFri
+            // 
+            this.rdoFullFri.AutoSize = true;
+            this.rdoFullFri.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullFri.Name = "rdoFullFri";
+            this.rdoFullFri.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullFri.TabIndex = 2;
+            this.rdoFullFri.TabStop = true;
+            this.rdoFullFri.Text = "Full";
+            this.rdoFullFri.UseVisualStyleBackColor = true;
+            // 
+            // rdoEverningFri
+            // 
+            this.rdoEverningFri.AutoSize = true;
+            this.rdoEverningFri.Location = new System.Drawing.Point(5, 26);
+            this.rdoEverningFri.Name = "rdoEverningFri";
+            this.rdoEverningFri.Size = new System.Drawing.Size(40, 17);
+            this.rdoEverningFri.TabIndex = 1;
+            this.rdoEverningFri.TabStop = true;
+            this.rdoEverningFri.Text = "Tối";
+            this.rdoEverningFri.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningFri
+            // 
+            this.rdoMorningFri.AutoSize = true;
+            this.rdoMorningFri.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningFri.Name = "rdoMorningFri";
+            this.rdoMorningFri.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningFri.TabIndex = 0;
+            this.rdoMorningFri.TabStop = true;
+            this.rdoMorningFri.Text = "Sáng";
+            this.rdoMorningFri.UseVisualStyleBackColor = true;
+            // 
+            // txtFriDay
+            // 
+            this.txtFriDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtFriDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFriDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtFriDay.Location = new System.Drawing.Point(8, 10);
+            this.txtFriDay.Multiline = true;
+            this.txtFriDay.Name = "txtFriDay";
+            this.txtFriDay.ReadOnly = true;
+            this.txtFriDay.Size = new System.Drawing.Size(39, 20);
+            this.txtFriDay.TabIndex = 6;
+            this.txtFriDay.Text = "Thứ 6";
+            this.txtFriDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel13
             // 
@@ -641,6 +893,63 @@
             this.panel13.Size = new System.Drawing.Size(59, 130);
             this.panel13.TabIndex = 14;
             // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.rdoFullSa);
+            this.panel14.Controls.Add(this.rdoEveningSa);
+            this.panel14.Controls.Add(this.rdoMorningSa);
+            this.panel14.Location = new System.Drawing.Point(2, 44);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(57, 85);
+            this.panel14.TabIndex = 7;
+            // 
+            // rdoFullSa
+            // 
+            this.rdoFullSa.AutoSize = true;
+            this.rdoFullSa.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullSa.Name = "rdoFullSa";
+            this.rdoFullSa.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullSa.TabIndex = 2;
+            this.rdoFullSa.TabStop = true;
+            this.rdoFullSa.Text = "Full";
+            this.rdoFullSa.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningSa
+            // 
+            this.rdoEveningSa.AutoSize = true;
+            this.rdoEveningSa.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningSa.Name = "rdoEveningSa";
+            this.rdoEveningSa.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningSa.TabIndex = 1;
+            this.rdoEveningSa.TabStop = true;
+            this.rdoEveningSa.Text = "Tối";
+            this.rdoEveningSa.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningSa
+            // 
+            this.rdoMorningSa.AutoSize = true;
+            this.rdoMorningSa.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningSa.Name = "rdoMorningSa";
+            this.rdoMorningSa.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningSa.TabIndex = 0;
+            this.rdoMorningSa.TabStop = true;
+            this.rdoMorningSa.Text = "Sáng";
+            this.rdoMorningSa.UseVisualStyleBackColor = true;
+            // 
+            // txtSaDay
+            // 
+            this.txtSaDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtSaDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSaDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSaDay.Location = new System.Drawing.Point(8, 10);
+            this.txtSaDay.Multiline = true;
+            this.txtSaDay.Name = "txtSaDay";
+            this.txtSaDay.ReadOnly = true;
+            this.txtSaDay.Size = new System.Drawing.Size(39, 20);
+            this.txtSaDay.TabIndex = 6;
+            this.txtSaDay.Text = "Thứ 7";
+            this.txtSaDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel15
             // 
             this.panel15.Controls.Add(this.panel16);
@@ -650,6 +959,63 @@
             this.panel15.Size = new System.Drawing.Size(61, 130);
             this.panel15.TabIndex = 14;
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.rdoFullSun);
+            this.panel16.Controls.Add(this.rdoEveningSun);
+            this.panel16.Controls.Add(this.rdoMorningSun);
+            this.panel16.Location = new System.Drawing.Point(1, 44);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(57, 85);
+            this.panel16.TabIndex = 7;
+            // 
+            // rdoFullSun
+            // 
+            this.rdoFullSun.AutoSize = true;
+            this.rdoFullSun.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullSun.Name = "rdoFullSun";
+            this.rdoFullSun.Size = new System.Drawing.Size(41, 17);
+            this.rdoFullSun.TabIndex = 2;
+            this.rdoFullSun.TabStop = true;
+            this.rdoFullSun.Text = "Full";
+            this.rdoFullSun.UseVisualStyleBackColor = true;
+            // 
+            // rdoEveningSun
+            // 
+            this.rdoEveningSun.AutoSize = true;
+            this.rdoEveningSun.Location = new System.Drawing.Point(5, 26);
+            this.rdoEveningSun.Name = "rdoEveningSun";
+            this.rdoEveningSun.Size = new System.Drawing.Size(40, 17);
+            this.rdoEveningSun.TabIndex = 1;
+            this.rdoEveningSun.TabStop = true;
+            this.rdoEveningSun.Text = "Tối";
+            this.rdoEveningSun.UseVisualStyleBackColor = true;
+            // 
+            // rdoMorningSun
+            // 
+            this.rdoMorningSun.AutoSize = true;
+            this.rdoMorningSun.Location = new System.Drawing.Point(5, 3);
+            this.rdoMorningSun.Name = "rdoMorningSun";
+            this.rdoMorningSun.Size = new System.Drawing.Size(50, 17);
+            this.rdoMorningSun.TabIndex = 0;
+            this.rdoMorningSun.TabStop = true;
+            this.rdoMorningSun.Text = "Sáng";
+            this.rdoMorningSun.UseVisualStyleBackColor = true;
+            // 
+            // txtSunDay
+            // 
+            this.txtSunDay.BackColor = System.Drawing.Color.DarkRed;
+            this.txtSunDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSunDay.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSunDay.Location = new System.Drawing.Point(8, 10);
+            this.txtSunDay.Multiline = true;
+            this.txtSunDay.Name = "txtSunDay";
+            this.txtSunDay.ReadOnly = true;
+            this.txtSunDay.Size = new System.Drawing.Size(39, 20);
+            this.txtSunDay.TabIndex = 6;
+            this.txtSunDay.Text = "CN";
+            this.txtSunDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnChangeWeek
             // 
             this.btnChangeWeek.Location = new System.Drawing.Point(823, 253);
@@ -658,6 +1024,7 @@
             this.btnChangeWeek.TabIndex = 15;
             this.btnChangeWeek.Text = "Thay đổi";
             this.btnChangeWeek.UseVisualStyleBackColor = true;
+            this.btnChangeWeek.Click += new System.EventHandler(this.btnChangeWeek_Click);
             // 
             // plInfoOne
             // 
@@ -694,377 +1061,48 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // txtTueDay
+            // panel21
             // 
-            this.txtTueDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtTueDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTueDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtTueDay.Location = new System.Drawing.Point(3, 10);
-            this.txtTueDay.Multiline = true;
-            this.txtTueDay.Name = "txtTueDay";
-            this.txtTueDay.ReadOnly = true;
-            this.txtTueDay.Size = new System.Drawing.Size(39, 20);
-            this.txtTueDay.TabIndex = 6;
-            this.txtTueDay.Text = "Thứ 3";
-            this.txtTueDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtWedDay
-            // 
-            this.txtWedDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtWedDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWedDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtWedDay.Location = new System.Drawing.Point(5, 10);
-            this.txtWedDay.Multiline = true;
-            this.txtWedDay.Name = "txtWedDay";
-            this.txtWedDay.ReadOnly = true;
-            this.txtWedDay.Size = new System.Drawing.Size(39, 20);
-            this.txtWedDay.TabIndex = 6;
-            this.txtWedDay.Text = "Thứ 4";
-            this.txtWedDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtThurDay
-            // 
-            this.txtThurDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtThurDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtThurDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtThurDay.Location = new System.Drawing.Point(3, 10);
-            this.txtThurDay.Multiline = true;
-            this.txtThurDay.Name = "txtThurDay";
-            this.txtThurDay.ReadOnly = true;
-            this.txtThurDay.Size = new System.Drawing.Size(39, 20);
-            this.txtThurDay.TabIndex = 6;
-            this.txtThurDay.Text = "Thứ 5";
-            this.txtThurDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtFriDay
-            // 
-            this.txtFriDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtFriDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFriDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtFriDay.Location = new System.Drawing.Point(8, 10);
-            this.txtFriDay.Multiline = true;
-            this.txtFriDay.Name = "txtFriDay";
-            this.txtFriDay.ReadOnly = true;
-            this.txtFriDay.Size = new System.Drawing.Size(39, 20);
-            this.txtFriDay.TabIndex = 6;
-            this.txtFriDay.Text = "Thứ 6";
-            this.txtFriDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSaDay
-            // 
-            this.txtSaDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtSaDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSaDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSaDay.Location = new System.Drawing.Point(8, 10);
-            this.txtSaDay.Multiline = true;
-            this.txtSaDay.Name = "txtSaDay";
-            this.txtSaDay.ReadOnly = true;
-            this.txtSaDay.Size = new System.Drawing.Size(39, 20);
-            this.txtSaDay.TabIndex = 6;
-            this.txtSaDay.Text = "Thứ 7";
-            this.txtSaDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSunDay
-            // 
-            this.txtSunDay.BackColor = System.Drawing.Color.DarkRed;
-            this.txtSunDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSunDay.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSunDay.Location = new System.Drawing.Point(8, 10);
-            this.txtSunDay.Multiline = true;
-            this.txtSunDay.Name = "txtSunDay";
-            this.txtSunDay.ReadOnly = true;
-            this.txtSunDay.Size = new System.Drawing.Size(39, 20);
-            this.txtSunDay.TabIndex = 6;
-            this.txtSunDay.Text = "CN";
-            this.txtSunDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(275, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 32);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Đăng kí làm việc theo tuần:";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // chkFull
-            // 
-            this.chkFull.AutoSize = true;
-            this.chkFull.Location = new System.Drawing.Point(393, 224);
-            this.chkFull.Name = "chkFull";
-            this.chkFull.Size = new System.Drawing.Size(45, 17);
-            this.chkFull.TabIndex = 17;
-            this.chkFull.Text = "Full ";
-            this.chkFull.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(4, 49);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(41, 17);
-            this.radioButton13.TabIndex = 2;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Full";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.radioButton1);
-            this.panel4.Controls.Add(this.radioButton2);
-            this.panel4.Controls.Add(this.radioButton14);
-            this.panel4.Location = new System.Drawing.Point(0, 44);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(57, 85);
-            this.panel4.TabIndex = 5;
+            this.panel21.Controls.Add(this.radioButton3);
+            this.panel21.Controls.Add(this.radioButton2);
+            this.panel21.Controls.Add(this.radioButton1);
+            this.panel21.Location = new System.Drawing.Point(279, 224);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(158, 26);
+            this.panel21.TabIndex = 17;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(4, 49);
+            this.radioButton1.Location = new System.Drawing.Point(3, 6);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(41, 17);
-            this.radioButton1.TabIndex = 2;
+            this.radioButton1.Size = new System.Drawing.Size(50, 17);
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Full";
+            this.radioButton1.Text = "Sáng";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(5, 26);
+            this.radioButton2.Location = new System.Drawing.Point(59, 6);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(40, 17);
-            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tối";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
-            // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(5, 3);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(50, 17);
-            this.radioButton14.TabIndex = 0;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Sáng";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.radioButton15);
-            this.panel6.Controls.Add(this.radioButton16);
-            this.panel6.Controls.Add(this.radioButton17);
-            this.panel6.Location = new System.Drawing.Point(2, 44);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(57, 85);
-            this.panel6.TabIndex = 7;
-            // 
-            // radioButton15
-            // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.Location = new System.Drawing.Point(4, 49);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(41, 17);
-            this.radioButton15.TabIndex = 2;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "Full";
-            this.radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // radioButton16
-            // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.Location = new System.Drawing.Point(5, 26);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(40, 17);
-            this.radioButton16.TabIndex = 1;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "Tối";
-            this.radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.Location = new System.Drawing.Point(5, 3);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(50, 17);
-            this.radioButton17.TabIndex = 0;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "Sáng";
-            this.radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.radioButton3);
-            this.panel8.Controls.Add(this.radioButton4);
-            this.panel8.Controls.Add(this.radioButton18);
-            this.panel8.Location = new System.Drawing.Point(2, 44);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(57, 85);
-            this.panel8.TabIndex = 7;
-            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(4, 49);
+            this.radioButton3.Location = new System.Drawing.Point(114, 6);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(41, 17);
-            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabIndex = 3;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Full";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(5, 26);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(40, 17);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Tối";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.Location = new System.Drawing.Point(5, 3);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(50, 17);
-            this.radioButton18.TabIndex = 0;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Sáng";
-            this.radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.radioButton7);
-            this.panel12.Controls.Add(this.radioButton8);
-            this.panel12.Controls.Add(this.radioButton19);
-            this.panel12.Location = new System.Drawing.Point(3, 44);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(57, 85);
-            this.panel12.TabIndex = 7;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(4, 49);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(41, 17);
-            this.radioButton7.TabIndex = 2;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Full";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(5, 26);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(40, 17);
-            this.radioButton8.TabIndex = 1;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Tối";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton19
-            // 
-            this.radioButton19.AutoSize = true;
-            this.radioButton19.Location = new System.Drawing.Point(5, 3);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(50, 17);
-            this.radioButton19.TabIndex = 0;
-            this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "Sáng";
-            this.radioButton19.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.radioButton9);
-            this.panel14.Controls.Add(this.radioButton10);
-            this.panel14.Controls.Add(this.radioButton20);
-            this.panel14.Location = new System.Drawing.Point(2, 44);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(57, 85);
-            this.panel14.TabIndex = 7;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(4, 49);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(41, 17);
-            this.radioButton9.TabIndex = 2;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Full";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(5, 26);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(40, 17);
-            this.radioButton10.TabIndex = 1;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Tối";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton20
-            // 
-            this.radioButton20.AutoSize = true;
-            this.radioButton20.Location = new System.Drawing.Point(5, 3);
-            this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(50, 17);
-            this.radioButton20.TabIndex = 0;
-            this.radioButton20.TabStop = true;
-            this.radioButton20.Text = "Sáng";
-            this.radioButton20.UseVisualStyleBackColor = true;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.radioButton11);
-            this.panel16.Controls.Add(this.radioButton12);
-            this.panel16.Controls.Add(this.radioButton21);
-            this.panel16.Location = new System.Drawing.Point(1, 44);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(57, 85);
-            this.panel16.TabIndex = 7;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(4, 49);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(41, 17);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Full";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(5, 26);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(40, 17);
-            this.radioButton12.TabIndex = 1;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Tối";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton21
-            // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.Location = new System.Drawing.Point(5, 3);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(50, 17);
-            this.radioButton21.TabIndex = 0;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Sáng";
-            this.radioButton21.UseVisualStyleBackColor = true;
             // 
             // fShifWorkEmployee
             // 
@@ -1073,7 +1111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 637);
             this.Controls.Add(this.plMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "fShifWorkEmployee";
             this.Text = "fShifWorkEmployee";
             this.plMain.ResumeLayout(false);
@@ -1097,35 +1135,37 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.plInfoOne.ResumeLayout(false);
             this.plInfoOne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1149,8 +1189,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rdoEveningWed;
+        private System.Windows.Forms.RadioButton rdoMorningWed;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
@@ -1191,31 +1231,34 @@
         private System.Windows.Forms.TextBox txtSaDay;
         private System.Windows.Forms.TextBox txtSunDay;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox chkFull;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.RadioButton rdoFullMonday;
+        private System.Windows.Forms.RadioButton rdoEveningMonday;
+        private System.Windows.Forms.RadioButton rdoMorningMonday;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton16;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.RadioButton rdoFullTus;
+        private System.Windows.Forms.RadioButton rdoEveningTus;
+        private System.Windows.Forms.RadioButton rdoMorningTus;
+        private System.Windows.Forms.RadioButton rdoFullWed;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.RadioButton rdoFullThur;
+        private System.Windows.Forms.RadioButton rdoEveningThur;
+        private System.Windows.Forms.RadioButton rdoMorningThur;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton19;
+        private System.Windows.Forms.RadioButton rdoFullFri;
+        private System.Windows.Forms.RadioButton rdoEverningFri;
+        private System.Windows.Forms.RadioButton rdoMorningFri;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton20;
+        private System.Windows.Forms.RadioButton rdoFullSa;
+        private System.Windows.Forms.RadioButton rdoEveningSa;
+        private System.Windows.Forms.RadioButton rdoMorningSa;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton21;
+        private System.Windows.Forms.RadioButton rdoFullSun;
+        private System.Windows.Forms.RadioButton rdoEveningSun;
+        private System.Windows.Forms.RadioButton rdoMorningSun;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

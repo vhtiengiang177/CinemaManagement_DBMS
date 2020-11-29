@@ -38,10 +38,10 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) });
         }
 
-        public DataTable countShiftInDay(string number)
+        public DataTable countShiftInDay(string idShift,string date)
         {
-            string query = "SELECT *FROM dbo.fc_CountShiftShow( @idShift ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { number });
+            string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift,Convert.ToDateTime(date) });
         }
 
         public DataTable loadShiftShow()
@@ -62,11 +62,25 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { idcategory });
         }
 
+        //Thêm lịch chiếu
+        public bool addShowtimes(string date,string idRoom, string idMovie,string idShift)
+        {
+            string query = "exec sp_Showtimes_Insert  @date , @idRoom , @idMovie , @idShift ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] {  Convert.ToDateTime(date),idRoom,idMovie,idShift }) > 0;
+        }
+
+        //Kiểm tra trùng phim
+        public DataTable checkMovie(string date, string idShift ,  string idRoom)
+        {
+            string query = "select*from fc_checkMovie( @date , @idRoom , @idShift )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date), idShift, idRoom }) ;
+        }
+
         public List<Showtimes> getListShowtimesByIdMovie(string idMovie)
         {
             List<Showtimes> listShowtimes = new List<Showtimes>();
 
-            string query = "select date_showtimes, id_room, id_movie, Showtimes.id_shiftshow, starttime_shiftshow, endtime_shiftshow from Showtimes, ShiftShow where Showtimes.id_shiftshow = ShiftShow.id_shiftshow and id_movie = @id_movie ";
+            string query = "select date_showtimes, id_room, id_movie, starttime_shiftshow, endtime_shiftshow from Showtimes, ShiftShow where Showtimes.id_shiftshow = ShiftShow.id_shiftshow and id_movie = @id_movie ";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie });
 

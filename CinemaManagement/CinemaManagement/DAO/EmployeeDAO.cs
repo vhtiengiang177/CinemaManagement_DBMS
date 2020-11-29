@@ -183,5 +183,11 @@ namespace CinemaManagement.DAO
             string query = "select dbo.fun_findDate( @date  , @indexDay )";
             return DataProvider.Instance.ExecuteScalar(query, new object[] { date, indexDay });
         }
+
+        public bool createShitfOnlyOneDay(DateTime date, int indexDay, string idEmployee, string idShitf)
+        {
+            string query = "exec createShiftOfDate @date , @indexDay , @idEmployee , @idShift ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { date, indexDay, idEmployee, idShitf }) > 0;
+        }
     }
 }

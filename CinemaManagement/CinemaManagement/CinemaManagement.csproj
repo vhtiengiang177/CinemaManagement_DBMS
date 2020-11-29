@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\RoomDAO.cs" />
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShowtimesDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="GUI\ucMovie_Order.Designer.cs">
       <DependentUpon>ucMovie_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket1\fAddTicket.cs">
@@ -267,6 +269,25 @@
     <EmbeddedResource Include="GUI\ucMovie_Order.resx">
       <DependentUpon>ucMovie_Order.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.fShifWorkEmployee.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fAddEmployee.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fAddShowtimes.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fCategoryMovie.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fCustomer.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fEmployee.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fLogin.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fMain.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fMovie.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fPromotion.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fShowMovie_Order.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fShowTime.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fShowtime_Order.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.ucMovie_Order.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fAddTicket.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fMovieTicket.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fSeatTicket.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fShowtimesTicket.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -295,6 +316,10 @@
     <None Include="cinemaDBMSDataSet1.xss">
       <DependentUpon>cinemaDBMSDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="obj\Debug\CinemaManagement.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\CinemaManagement.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -319,6 +344,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\CinemaManagement.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\cinemaDBMSDataSet1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,7 @@ namespace CinemaManagement
     {
         public static int cellClickIndex = 0;
         public static int searchTypeIndex = 0;
+      
 
         MemoryStream ms;
         byte[] arrImage = null;
@@ -179,6 +182,8 @@ namespace CinemaManagement
             changeShiftOfMonth(idShift);
         }
 
+       
+
         private void nudWeekSelected_ValueChanged(object sender, EventArgs e)
         {
 
@@ -187,6 +192,181 @@ namespace CinemaManagement
             DateTime fisrtDay = ((DateTime)EmployeeDAO.Instance.selectWeekOnMonth(month, year, Int32.Parse(nudWeekSelected.Value.ToString())));
             txtFirstDate.Text =fisrtDay.Date.ToString();
             txtLastDate.Text = ((DateTime)EmployeeDAO.Instance.selectDateEndWeek(fisrtDay, 6)).Date.ToString();
+        }
+
+        public string setShiftOfMonday()
+        {
+            string idShift = "";
+            if (rdoMorningMonday.Checked)
+                idShift = "sw01";
+            if (rdoEveningMonday.Checked)
+                idShift = "sw02";
+            if (rdoFullMonday.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+
+        public string setShiftOfTus()
+        {
+            string idShift = "";
+            if (rdoMorningTus.Checked)
+                idShift = "sw01";
+            if (rdoEveningTus.Checked)
+                idShift = "sw02";
+            if (rdoFullTus.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+        public string setShiftOfWed()
+        {
+            string idShift = "";
+            if (rdoMorningWed.Checked)
+                idShift = "sw01";
+            if (rdoEveningWed.Checked)
+                idShift = "sw02";
+            if (rdoFullWed.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+        public string setShiftOfThur()
+        {
+            string idShift = "";
+            if (rdoMorningThur.Checked)
+                idShift = "sw01";
+            if (rdoEveningThur.Checked)
+                idShift = "sw02";
+            if (rdoFullThur.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+        public string setShiftOfFri()
+        {
+            string idShift = "";
+            if (rdoMorningFri.Checked)
+                idShift = "sw01";
+            if (rdoEverningFri.Checked)
+                idShift = "sw02";
+            if (rdoFullFri.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+
+        public string setShiftOfSa()
+        {
+            string idShift = "";
+            if (rdoMorningSa.Checked)
+                idShift = "sw01";
+            if (rdoEveningSa.Checked)
+                idShift = "sw02";
+            if (rdoFullSa.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+        public string setShiftOfSunDay()
+        {
+            string idShift = "";
+            if (rdoMorningSun.Checked)
+                idShift = "sw01";
+            if (rdoEveningSun.Checked)
+                idShift = "sw02";
+            if (rdoFullSun.Checked)
+                idShift = "sw03";
+            return idShift;
+        }
+        private void btnChangeWeek_Click(object sender, EventArgs e)
+        {
+            string idEmployee = txtID.Text.Trim();
+            DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
+            if (setShiftOfMonday() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 0, idEmployee, setShiftOfMonday()))
+                    {  }
+                }catch(SqlException ex)
+                {
+                    MessageBox.Show("Xếp lịch cho thứ 2 không thành công !");
+                }
+
+
+
+
+            if (setShiftOfTus() != "")
+
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 1, idEmployee, setShiftOfTus()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                    { MessageBox.Show("Xếp lịch cho thứ 3 không thành công !"); }
+                }
+           
+                
+
+            if (setShiftOfWed() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 2, idEmployee, setShiftOfWed()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Xếp lịch cho thứ 4 không thành công !"); 
+                }
+
+               
+
+            if (setShiftOfThur() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 3, idEmployee, setShiftOfThur()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                     MessageBox.Show("Xếp lịch cho thứ 5 không thành công !"); 
+                }
+           
+                
+
+            if (setShiftOfFri() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 4, idEmployee, setShiftOfFri()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Xếp lịch cho thứ 6 không thành công !");
+                }
+
+
+            if (setShiftOfSa() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 5, idEmployee, setShiftOfSa()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Xếp lịch cho thứ 7 không thành công !");
+                }
+           
+
+            if (setShiftOfSunDay() != "")
+                try
+                {
+                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 6, idEmployee, setShiftOfSa()))
+                    { }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Xếp lịch cho chủ nhật không thành công !");
+                }
+
+
+
         }
     }
 }

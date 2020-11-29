@@ -167,6 +167,7 @@
             this.btnXuatVe.TabIndex = 6;
             this.btnXuatVe.Text = "Xuất Vé";
             this.btnXuatVe.UseVisualStyleBackColor = true;
+            this.btnXuatVe.Click += new System.EventHandler(this.btnXuatVe_Click);
             // 
             // panel5
             // 

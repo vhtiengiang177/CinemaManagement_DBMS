@@ -52,16 +52,26 @@ namespace CinemaManagement.Ticket1
         string createAutoIdTicket()
         {
             string lastID = TicketDAO.Instance.getLastIdTicket();
-            MessageBox.Show(lastID);
+            //MessageBox.Show(lastID);
             int id = Convert.ToInt32(lastID[2].ToString() + lastID[3].ToString()) + 1;
             
             if(id<10)
             {
-                string newID = "0" + id.ToString();
-                MessageBox.Show("ti" + newID);
-                return "ti" + newID;
+                return "ti0" + id.ToString();
             }
             return "ti" + id.ToString();
+        }
+
+        private void btnXuatVe_Click(object sender, EventArgs e)
+        {
+            foreach(Seat item in this.Listseat)
+            {
+                if(!TicketDAO.Instance.createTicket(createAutoIdTicket(), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat))
+                {
+                    MessageBox.Show(item.Name_seat);
+                }
+                MessageBox.Show("Thanh Cong");
+            }    
         }
     }
 }

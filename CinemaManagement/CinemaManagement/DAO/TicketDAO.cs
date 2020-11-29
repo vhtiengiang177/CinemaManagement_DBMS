@@ -29,9 +29,10 @@ namespace CinemaManagement.DAO
 
         }
 
-        public void createTicket()
+        public bool createTicket(string id_ticket, string id_room, string id_movie, string id_shiftshow, DateTime date_showtimes, string id_seat)
         {
-            
+            string query = " insert into Ticket(id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee, id_promotion) values( @id_ticket , 100, 100, @id_room , @id_movie , @id_shiftshow , @date_showtimes , @id_seat , 'cu01', 'em01', null)";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat}) > 0;
         }
 
         public string getLastIdTicket()

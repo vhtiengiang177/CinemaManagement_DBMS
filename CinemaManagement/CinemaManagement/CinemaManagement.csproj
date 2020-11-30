@@ -182,6 +182,12 @@
     <Compile Include="GUI\fShowMovie_Order.Designer.cs">
       <DependentUpon>fShowMovie_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowPromotion_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowPromotion_Order.Designer.cs">
+      <DependentUpon>fShowPromotion_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShowTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowMovie_Order.resx">
       <DependentUpon>fShowMovie_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowPromotion_Order.resx">
+      <DependentUpon>fShowPromotion_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowTime.resx">
       <DependentUpon>fShowTime.cs</DependentUpon>

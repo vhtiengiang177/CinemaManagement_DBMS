@@ -45,6 +45,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.flpShiftTime = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
             this.splBody.Panel2.SuspendLayout();
@@ -173,6 +174,7 @@
             // 
             // plCinema1
             // 
+            this.plCinema1.Controls.Add(this.flpShiftTime);
             this.plCinema1.Controls.Add(this.label1);
             this.plCinema1.Location = new System.Drawing.Point(3, 123);
             this.plCinema1.Name = "plCinema1";
@@ -233,6 +235,13 @@
             this.btnNext.Text = "Tiếp";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
+            // flpShiftTime
+            // 
+            this.flpShiftTime.Location = new System.Drawing.Point(19, 37);
+            this.flpShiftTime.Name = "flpShiftTime";
+            this.flpShiftTime.Size = new System.Drawing.Size(522, 133);
+            this.flpShiftTime.TabIndex = 1;
+            // 
             // fShowtime_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +287,6 @@
         private System.Windows.Forms.Panel plCinema1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel fplShiftShow;
+        private System.Windows.Forms.FlowLayoutPanel flpShiftTime;
     }
 }

@@ -79,7 +79,11 @@ namespace CinemaManagement.GUI
         void loadDateShiftShow()
         {
             List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(Id_movie);
-
+            if (fplShiftShow.Controls.Count > 0)
+            {
+                // Xóa các control trên flow layout panel để không bị hiện lặp lại
+                fplShiftShow.Controls.Clear();
+            }
             foreach (var item in listDate)
             {
                 Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
@@ -111,7 +115,8 @@ namespace CinemaManagement.GUI
 
         public void loadShiftShow(DateTime date)
         {
-            List<Showtimes> listShiftTime = ShowTimeOrderDAO.Instance.getShiftTime(Id_movie, date);
+
+            List<Showtimes> listShiftTime = ShowTimeOrderDAO.Instance.getShiftTime(this.Id_movie, date);
             if (flpShiftTime.Controls.Count > 0)
             {
                 // Xóa các control trên flow layout panel để không bị hiện lặp lại

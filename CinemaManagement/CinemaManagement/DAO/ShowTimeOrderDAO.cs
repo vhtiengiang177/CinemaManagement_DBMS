@@ -33,7 +33,7 @@ namespace CinemaManagement.DAO
         {
             List<DateTime> listDateShiftShow = new List<DateTime>();
 
-            string query = "select date_showtimes from Showtimes where id_movie = @idMovie ";
+            string query = "select date_showtimes from Showtimes where id_movie = @Id_movie group by date_showtimes";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie});
 

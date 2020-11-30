@@ -45,5 +45,18 @@ namespace CinemaManagement.DAO
 
             return listDateShiftShow;
         }
+
+        public List<Showtimes> getShiftTime(string idMovie, DateTime date)
+        {
+            List<Showtimes> listShiftTime = new List<Showtimes>();
+            string query = "exec sp_getShiftTimeForMovie @idMovie , @date ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie, date });
+            foreach(DataRow item in data.Rows)
+            {
+                Showtimes shift = new Showtimes(item);
+                listShiftTime.Add(shift);
+            }
+            return listShiftTime;
+        }
     }
 }

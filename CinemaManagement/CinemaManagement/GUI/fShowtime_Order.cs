@@ -20,6 +20,7 @@ namespace CinemaManagement.GUI
         private Movie mo;
         MemoryStream ms;
         private string id_movie;
+        private Showtimes stSelect = new Showtimes();
         public string Id_movie
         {
             get { return this.id_movie; }
@@ -34,10 +35,13 @@ namespace CinemaManagement.GUI
             this.Id_movie = id_mo;
 
             // Ẩn các thông tin chưa được chọn, khi chọn thông tin nào thì bật lên
+            // Hiện ngày
             this.lblDate.Visible = false;
             this.lblShowDate_Showtime.Text = "";
+            // Ca chiếu
             this.lblShiftShow.Visible = false;
             this.lblShowStarttime.Text = "";
+            // Phòng
             this.lblRoom.Visible = false;
             this.lblShowNameRoom.Text = "";
             this.picImageMovie.Image = this.picImageMovie.InitialImage;
@@ -99,10 +103,50 @@ namespace CinemaManagement.GUI
 
         private void btn_Click(object sender, EventArgs e)
         {
-           
-           
+            DateTime date = Convert.ToDateTime((sender as Button).Text);
+            loadShiftShow(date);
+            this.lblDate.Visible = true;
+            this.lblShowDate_Showtime.Text = date.ToShortDateString();
         }
 
+        public void loadShiftShow(DateTime date)
+        {
+            List<Showtimes> listShiftTime = ShowTimeOrderDAO.Instance.getShiftTime(Id_movie, date);
+            if (flpShiftTime.Controls.Count > 0)
+            {
+                // Xóa các control trên flow layout panel để không bị hiện lặp lại
+                flpShiftTime.Controls.Clear();
+            }
+            foreach (Showtimes item in listShiftTime)
+            {
+                Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
+
+
+                //btn.Text = item.Name_movie;
+                btn.ForeColor = Color.Red;
+
+                btn.Font = new Font("Microsoft Sans Serif", 18);
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                btn.Text = item.Starttime_shiftshow;
+                btn.Tag = item;
+                //MessageBox.Show(btn.Tag.GetType().ToString());
+                btn.Click += btnShift_Click;
+
+                flpShiftTime.Controls.Add(btn);
+
+            }
+        }
+
+        private void btnShift_Click(object sender, EventArgs e)
+        { 
+            stSelect = (Showtimes)(sender as Button).Tag;
+            // Ca chiếu
+            this.lblShiftShow.Visible = true;
+            this.lblShowStarttime.Text = stSelect.Starttime_shiftshow;
+            // Phòng
+            this.lblRoom.Visible = true;
+            this.lblShowNameRoom.Text = "";
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {

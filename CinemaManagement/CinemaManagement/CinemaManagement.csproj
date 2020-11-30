@@ -112,6 +112,12 @@
     <Compile Include="GUI\fAddShowtimes.Designer.cs">
       <DependentUpon>fAddShowtimes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowSeat_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowSeat_Order.Designer.cs">
+      <DependentUpon>fShowSeat_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShiftWorkEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </Compile>
     <EmbeddedResource Include="GUI\fAddShowtimes.resx">
       <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowSeat_Order.resx">
+      <DependentUpon>fShowSeat_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShiftWorkEmployee.resx">
       <DependentUpon>fShiftWorkEmployee.cs</DependentUpon>

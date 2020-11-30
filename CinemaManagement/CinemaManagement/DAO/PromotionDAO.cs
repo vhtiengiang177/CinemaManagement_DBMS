@@ -9,11 +9,11 @@ namespace CinemaManagement.DAO
 {
     public class PromotionDAO
     {
-        private static PromotionDAO intance;
-        public static PromotionDAO Intance
+        private static PromotionDAO instance;
+        public static PromotionDAO Instance
         {
-            get { if (intance == null) intance = new PromotionDAO(); return PromotionDAO.intance; }
-            private set { PromotionDAO.intance = value; }
+            get { if (instance == null) instance = new PromotionDAO(); return PromotionDAO.instance; }
+            private set { PromotionDAO.instance = value; }
         }
 
         private PromotionDAO() { }
@@ -61,6 +61,22 @@ namespace CinemaManagement.DAO
             string query = "SELECT *FROM dbo.fc_SearchPromotion_value( @value ) ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDouble(value) });
         }
+
+        ///Mấy hàm dưới này của form chọn ưu đãi
+        //tìm giá tri khueysen mãi theo mã KM
+        public DataTable SearchValue_Promotion(string id)
+        {
+            string query = "select*from  dbo.fc_SearchProInOrder( @id ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
+        //Tìm khách hàng theo số điện thoại
+        public DataTable SearchCus(string id)
+        {
+            string query = "select*from  dbo.fc_SearchCus( @id ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
 
 
 

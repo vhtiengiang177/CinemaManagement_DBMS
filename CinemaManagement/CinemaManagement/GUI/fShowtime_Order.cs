@@ -19,18 +19,18 @@ namespace CinemaManagement.GUI
         Movie mo = new Movie();
         MemoryStream ms;
 
-        private string id_movie;
+        private string sId_movie;
 
-        public string Id_movie
+        public string id_movie
         {
-            get { return this.id_movie; }
-            set { this.id_movie = value; }
+            get { return this.sId_movie; }
+            set { this.sId_movie = value; }
         }
 
         public fShowtime_Order(string id_mo)
         {
             InitializeComponent();
-            this.Id_movie = id_mo;
+            this.id_movie = id_mo;
 
             // Ẩn các thông tin chưa được chọn, khi chọn thông tin nào thì bật lên
             this.lblDate.Visible = false;
@@ -39,18 +39,20 @@ namespace CinemaManagement.GUI
             this.lblShowStarttime.Text = "";
             this.lblRoom.Visible = false;
             this.lblShowNameRoom.Text = "";
-
+            this.picImageMovie.Image = this.picImageMovie.InitialImage;
             loadData();
+            loadDateShiftShow();
         }
 
         // Tải toàn bộ dữ liệu
         public void loadData()
         {
-            dt = MovieDAO.Instance.getMovie(Id_movie);
+            dt = MovieDAO.Instance.getMovie(id_movie);
             // Lấy thông tin phim
 
             this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
-            this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
+            if(dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
 
         /// <summary>
@@ -65,6 +67,38 @@ namespace CinemaManagement.GUI
             ms.Close();
             return returnImage;
         }
+
+        void loadDateShiftShow()
+        {
+            List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(id_movie);
+
+            foreach (var item in listDate)
+            {
+                Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
+
+               
+                //btn.Text = item.Name_movie;
+                btn.ForeColor = Color.Red;
+               
+                btn.Font = new Font("Microsoft Sans Serif", 18);
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                btn.Text = item.ToString();
+                btn.Tag = item;
+                //MessageBox.Show(btn.Tag.GetType().ToString());
+                btn.Click += btn_Click;
+
+                fplShiftShow.Controls.Add(btn);
+
+            }
+
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+           
+           
+        }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

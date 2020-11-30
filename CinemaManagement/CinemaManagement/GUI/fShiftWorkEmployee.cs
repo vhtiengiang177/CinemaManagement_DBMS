@@ -40,9 +40,9 @@ namespace CinemaManagement
 
         public void setDataCboTypeEmployee()
         {
-            cboTypeSearchEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
-            cboTypeSearchEmployee.ValueMember = "id_typeemployee";
-            cboTypeSearchEmployee.DisplayMember = "name_typeemployee";
+            //cboTypeSearchEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            //cboTypeSearchEmployee.ValueMember = "id_typeemployee";
+            //cboTypeSearchEmployee.DisplayMember = "name_typeemployee";
         }
 
         public void setDataCboSortTypeEmployee()
@@ -81,7 +81,7 @@ namespace CinemaManagement
             dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
             dgvListEmployee.AutoResizeColumns();
             clearValue();
-            setDataCboTypeEmployee();
+            setDataCboSortTypeEmployee();
             cboSortTypeEmployee.Enabled = false;
             dgvListEmployee_CellClick(null, null);
         }
@@ -172,14 +172,17 @@ namespace CinemaManagement
 
         private void btnChangeMonth_Click(object sender, EventArgs e)
         {
-            string idShift = "";
-            if (rdoEveningMonth.Checked)
-                idShift = "sw01";
-            if (rdoEveningMonth.Checked)
-                idShift = "sw02";
-            if (rdoFullMonth.Checked)
-                idShift = "sw03";
-            changeShiftOfMonth(idShift);
+            if(txtID.Text.Trim()!="")
+            {
+                string idShift = "";
+                if (rdoEveningMonth.Checked)
+                    idShift = "sw01";
+                if (rdoEveningMonth.Checked)
+                    idShift = "sw02";
+                if (rdoFullMonth.Checked)
+                    idShift = "sw03";
+                changeShiftOfMonth(idShift);
+            }
         }
 
        
@@ -276,97 +279,101 @@ namespace CinemaManagement
         private void btnChangeWeek_Click(object sender, EventArgs e)
         {
             string idEmployee = txtID.Text.Trim();
-            DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
-            if (setShiftOfMonday() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 0, idEmployee, setShiftOfMonday()))
-                    {  }
-                }catch(SqlException ex)
-                {
-                    MessageBox.Show("Xếp lịch cho thứ 2 không thành công !");
-                }
+           if(idEmployee != "")
+            {
+                DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
+                if (setShiftOfMonday() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 0, idEmployee, setShiftOfMonday()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho thứ 2 không thành công !");
+                    }
 
 
 
 
-            if (setShiftOfTus() != "")
+                if (setShiftOfTus() != "")
 
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 1, idEmployee, setShiftOfTus()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                    { MessageBox.Show("Xếp lịch cho thứ 3 không thành công !"); }
-                }
-           
-                
-
-            if (setShiftOfWed() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 2, idEmployee, setShiftOfWed()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Xếp lịch cho thứ 4 không thành công !"); 
-                }
-
-               
-
-            if (setShiftOfThur() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 3, idEmployee, setShiftOfThur()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                     MessageBox.Show("Xếp lịch cho thứ 5 không thành công !"); 
-                }
-           
-                
-
-            if (setShiftOfFri() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 4, idEmployee, setShiftOfFri()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Xếp lịch cho thứ 6 không thành công !");
-                }
-
-
-            if (setShiftOfSa() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 5, idEmployee, setShiftOfSa()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Xếp lịch cho thứ 7 không thành công !");
-                }
-           
-
-            if (setShiftOfSunDay() != "")
-                try
-                {
-                    if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 6, idEmployee, setShiftOfSa()))
-                    { }
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Xếp lịch cho chủ nhật không thành công !");
-                }
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 1, idEmployee, setShiftOfTus()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        { MessageBox.Show("Xếp lịch cho thứ 3 không thành công !"); }
+                    }
 
 
 
+                if (setShiftOfWed() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 2, idEmployee, setShiftOfWed()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho thứ 4 không thành công !");
+                    }
+
+
+
+                if (setShiftOfThur() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 3, idEmployee, setShiftOfThur()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho thứ 5 không thành công !");
+                    }
+
+
+
+                if (setShiftOfFri() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 4, idEmployee, setShiftOfFri()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho thứ 6 không thành công !");
+                    }
+
+
+                if (setShiftOfSa() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 5, idEmployee, setShiftOfSa()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho thứ 7 không thành công !");
+                    }
+
+
+                if (setShiftOfSunDay() != "")
+                    try
+                    {
+                        if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 6, idEmployee, setShiftOfSa()))
+                        { }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Xếp lịch cho chủ nhật không thành công !");
+                    }
+
+
+
+            }
         }
     }
 }

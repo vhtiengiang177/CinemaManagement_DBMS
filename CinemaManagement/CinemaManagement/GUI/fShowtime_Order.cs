@@ -74,7 +74,7 @@ namespace CinemaManagement.GUI
 
         void loadDateShiftShow()
         {
-            List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(id_movie);
+            List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(Id_movie);
 
             foreach (var item in listDate)
             {
@@ -110,8 +110,7 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Showtimes st = new Showtimes()
-            fSeatTicket 
+            Showtimes st = new Showtimes();
         }
     }
 }

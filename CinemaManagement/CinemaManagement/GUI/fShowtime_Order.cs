@@ -10,22 +10,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaManagement.DAO;
 using CinemaManagement.DTO;
+using CinemaManagement.Ticket1;
 
 namespace CinemaManagement.GUI
 {
     public partial class fShowtime_Order : Form
     {
         DataTable dt = new DataTable(); // Tạo kho ảo lưu trữ dl movie
-        Movie mo = new Movie();
+        private Movie mo;
         MemoryStream ms;
-
         private string id_movie;
-
         public string Id_movie
         {
             get { return this.id_movie; }
             set { this.id_movie = value; }
         }
+
+        public Movie Mo { get => mo; set => mo = value; }
 
         public fShowtime_Order(string id_mo)
         {
@@ -46,9 +47,12 @@ namespace CinemaManagement.GUI
         // Tải toàn bộ dữ liệu
         public void loadData()
         {
-            dt = MovieDAO.Instance.getMovie(Id_movie);
+            dt = MovieDAO.Instance.getMovieByID(Id_movie);
             // Lấy thông tin phim
-
+            foreach (DataRow item in dt.Rows)
+            {
+                this.Mo = new Movie(item);
+            }
             this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
             this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
@@ -68,6 +72,12 @@ namespace CinemaManagement.GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            Showtimes st = new Showtimes()
+            fSeatTicket 
         }
     }
 }

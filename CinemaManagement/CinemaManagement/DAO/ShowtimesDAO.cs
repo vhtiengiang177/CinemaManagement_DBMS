@@ -80,7 +80,7 @@ namespace CinemaManagement.DAO
         {
             List<Showtimes> listShowtimes = new List<Showtimes>();
 
-            string query = "select date_showtimes, id_room, id_movie, starttime_shiftshow, endtime_shiftshow from Showtimes, ShiftShow where Showtimes.id_shiftshow = ShiftShow.id_shiftshow and id_movie = @id_movie ";
+            string query = "select date_showtimes, id_room, id_movie, Shiftshow.id_shiftshow, starttime_shiftshow, endtime_shiftshow from Showtimes, ShiftShow where Showtimes.id_shiftshow = ShiftShow.id_shiftshow and id_movie = @id_movie ";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie });
 

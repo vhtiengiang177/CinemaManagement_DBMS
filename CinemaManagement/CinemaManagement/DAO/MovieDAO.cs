@@ -69,6 +69,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
+        public DataTable getMovieByID(string id)
+        {
+            string query = "EXEC sp_GetMovieByID @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
         /// <summary>
         /// Thêm phim. 
         /// </summary>

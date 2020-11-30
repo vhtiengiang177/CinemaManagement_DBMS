@@ -49,7 +49,7 @@ namespace CinemaManagement.DAO
 
         public DataTable LoadData()
         {
-            string query = "select * from customer";
+            string query = "select * from vLoadListCustomer";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

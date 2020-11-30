@@ -40,8 +40,9 @@ namespace CinemaManagement.GUI
             this.lblShowStarttime.Text = "";
             this.lblRoom.Visible = false;
             this.lblShowNameRoom.Text = "";
-
+            this.picImageMovie.Image = this.picImageMovie.InitialImage;
             loadData();
+            loadDateShiftShow();
         }
 
         // Tải toàn bộ dữ liệu
@@ -54,7 +55,8 @@ namespace CinemaManagement.GUI
                 this.Mo = new Movie(item);
             }
             this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
-            this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
+            if(dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
 
         /// <summary>
@@ -69,6 +71,38 @@ namespace CinemaManagement.GUI
             ms.Close();
             return returnImage;
         }
+
+        void loadDateShiftShow()
+        {
+            List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(id_movie);
+
+            foreach (var item in listDate)
+            {
+                Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
+
+               
+                //btn.Text = item.Name_movie;
+                btn.ForeColor = Color.Red;
+               
+                btn.Font = new Font("Microsoft Sans Serif", 18);
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                btn.Text = item.ToString();
+                btn.Tag = item;
+                //MessageBox.Show(btn.Tag.GetType().ToString());
+                btn.Click += btn_Click;
+
+                fplShiftShow.Controls.Add(btn);
+
+            }
+
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+           
+           
+        }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

@@ -39,14 +39,19 @@
             this.lblRoom = new System.Windows.Forms.Label();
             this.lblShiftShow = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.plCinema1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fplShiftShow = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
+            this.splBody.Panel2.SuspendLayout();
             this.splBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             this.pnlBodyLeft.SuspendLayout();
+            this.plCinema1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +62,6 @@
             // 
             this.splBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splBody.Location = new System.Drawing.Point(0, 0);
-            this.splBody.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splBody.Name = "splBody";
             // 
             // splBody.Panel1
@@ -65,9 +69,13 @@
             this.splBody.Panel1.Controls.Add(this.picImageMovie);
             this.splBody.Panel1.Controls.Add(this.lblShowNameMovie);
             this.splBody.Panel1.Controls.Add(this.pnlBodyLeft);
-            this.splBody.Size = new System.Drawing.Size(1040, 555);
-            this.splBody.SplitterDistance = 292;
-            this.splBody.SplitterWidth = 5;
+            // 
+            // splBody.Panel2
+            // 
+            this.splBody.Panel2.Controls.Add(this.plCinema1);
+            this.splBody.Panel2.Controls.Add(this.fplShiftShow);
+            this.splBody.Size = new System.Drawing.Size(780, 452);
+            this.splBody.SplitterDistance = 219;
             this.splBody.TabIndex = 1;
             // 
             // picImageMovie
@@ -76,10 +84,9 @@
             this.picImageMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picImageMovie.Image = ((System.Drawing.Image)(resources.GetObject("picImageMovie.Image")));
             this.picImageMovie.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImageMovie.InitialImage")));
-            this.picImageMovie.Location = new System.Drawing.Point(53, 12);
-            this.picImageMovie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picImageMovie.Location = new System.Drawing.Point(40, 10);
             this.picImageMovie.Name = "picImageMovie";
-            this.picImageMovie.Size = new System.Drawing.Size(177, 205);
+            this.picImageMovie.Size = new System.Drawing.Size(133, 167);
             this.picImageMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImageMovie.TabIndex = 21;
             this.picImageMovie.TabStop = false;
@@ -88,10 +95,9 @@
             // 
             this.lblShowNameMovie.BackColor = System.Drawing.Color.Transparent;
             this.lblShowNameMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowNameMovie.Location = new System.Drawing.Point(15, 224);
-            this.lblShowNameMovie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShowNameMovie.Location = new System.Drawing.Point(11, 182);
             this.lblShowNameMovie.Name = "lblShowNameMovie";
-            this.lblShowNameMovie.Size = new System.Drawing.Size(260, 49);
+            this.lblShowNameMovie.Size = new System.Drawing.Size(195, 40);
             this.lblShowNameMovie.TabIndex = 22;
             this.lblShowNameMovie.Text = "Tên-phim";
             this.lblShowNameMovie.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,76 +113,92 @@
             this.pnlBodyLeft.Controls.Add(this.lblDate);
             this.pnlBodyLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBodyLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnlBodyLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBodyLeft.Name = "pnlBodyLeft";
-            this.pnlBodyLeft.Size = new System.Drawing.Size(292, 555);
+            this.pnlBodyLeft.Size = new System.Drawing.Size(219, 452);
             this.pnlBodyLeft.TabIndex = 23;
             // 
             // lblShowNameRoom
             // 
             this.lblShowNameRoom.AutoSize = true;
-            this.lblShowNameRoom.Location = new System.Drawing.Point(116, 359);
-            this.lblShowNameRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShowNameRoom.Location = new System.Drawing.Point(87, 292);
             this.lblShowNameRoom.Name = "lblShowNameRoom";
-            this.lblShowNameRoom.Size = new System.Drawing.Size(87, 17);
+            this.lblShowNameRoom.Size = new System.Drawing.Size(66, 13);
             this.lblShowNameRoom.TabIndex = 5;
             this.lblShowNameRoom.Text = "phòng-chiếu";
             // 
             // lblShowStarttime
             // 
             this.lblShowStarttime.AutoSize = true;
-            this.lblShowStarttime.Location = new System.Drawing.Point(92, 324);
-            this.lblShowStarttime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShowStarttime.Location = new System.Drawing.Point(69, 263);
             this.lblShowStarttime.Name = "lblShowStarttime";
-            this.lblShowStarttime.Size = new System.Drawing.Size(66, 17);
+            this.lblShowStarttime.Size = new System.Drawing.Size(50, 13);
             this.lblShowStarttime.TabIndex = 4;
             this.lblShowStarttime.Text = "giờ-chiếu";
             // 
             // lblShowDate_Showtime
             // 
             this.lblShowDate_Showtime.AutoSize = true;
-            this.lblShowDate_Showtime.Location = new System.Drawing.Point(69, 288);
-            this.lblShowDate_Showtime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShowDate_Showtime.Location = new System.Drawing.Point(52, 234);
             this.lblShowDate_Showtime.Name = "lblShowDate_Showtime";
-            this.lblShowDate_Showtime.Size = new System.Drawing.Size(78, 17);
+            this.lblShowDate_Showtime.Size = new System.Drawing.Size(59, 13);
             this.lblShowDate_Showtime.TabIndex = 3;
             this.lblShowDate_Showtime.Text = "ngày-chiếu";
             // 
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(15, 359);
-            this.lblRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoom.Location = new System.Drawing.Point(11, 292);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(91, 17);
+            this.lblRoom.Size = new System.Drawing.Size(70, 13);
             this.lblRoom.TabIndex = 2;
             this.lblRoom.Text = "Phòng chiếu:";
             // 
             // lblShiftShow
             // 
             this.lblShiftShow.AutoSize = true;
-            this.lblShiftShow.Location = new System.Drawing.Point(15, 324);
-            this.lblShiftShow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftShow.Location = new System.Drawing.Point(11, 263);
             this.lblShiftShow.Name = "lblShiftShow";
-            this.lblShiftShow.Size = new System.Drawing.Size(67, 17);
+            this.lblShiftShow.Size = new System.Drawing.Size(52, 13);
             this.lblShiftShow.TabIndex = 1;
             this.lblShiftShow.Text = "Ca chiếu:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(15, 288);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Location = new System.Drawing.Point(11, 234);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(45, 17);
+            this.lblDate.Size = new System.Drawing.Size(35, 13);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "Ngày:";
+            // 
+            // plCinema1
+            // 
+            this.plCinema1.Controls.Add(this.label1);
+            this.plCinema1.Location = new System.Drawing.Point(3, 123);
+            this.plCinema1.Name = "plCinema1";
+            this.plCinema1.Size = new System.Drawing.Size(551, 183);
+            this.plCinema1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CGV Thủ Đức";
+            // 
+            // fplShiftShow
+            // 
+            this.fplShiftShow.Location = new System.Drawing.Point(3, 24);
+            this.fplShiftShow.Name = "fplShiftShow";
+            this.fplShiftShow.Size = new System.Drawing.Size(542, 83);
+            this.fplShiftShow.TabIndex = 0;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -188,17 +210,15 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnBack);
             this.splitContainer1.Panel2.Controls.Add(this.btnNext);
-            this.splitContainer1.Size = new System.Drawing.Size(1040, 615);
-            this.splitContainer1.SplitterDistance = 555;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(780, 500);
+            this.splitContainer1.SplitterDistance = 452;
             this.splitContainer1.TabIndex = 2;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(801, 11);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(601, 9);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -206,32 +226,32 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(924, 11);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Location = new System.Drawing.Point(693, 9);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(100, 28);
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "Tiếp";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // fShowtime_Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 615);
+            this.ClientSize = new System.Drawing.Size(780, 500);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fShowtime_Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fShowtime_Order";
             this.splBody.Panel1.ResumeLayout(false);
+            this.splBody.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).EndInit();
             this.splBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
             this.pnlBodyLeft.ResumeLayout(false);
             this.pnlBodyLeft.PerformLayout();
+            this.plCinema1.ResumeLayout(false);
+            this.plCinema1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -255,5 +275,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Panel plCinema1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel fplShiftShow;
     }
 }

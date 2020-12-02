@@ -30,6 +30,9 @@ namespace CinemaManagement.GUI
             try
             {
                 dgvShowtimes.DataSource = ShowtimesDAO.Instance.loadData();
+                //dgvShowtimes.Columns[0].Visible = false;
+                //dgvShowtimes.Columns[1].Visible = false;
+                //dgvShowtimes.Columns[2].Visible = false;
             }
             catch (Exception)
             {
@@ -74,13 +77,13 @@ namespace CinemaManagement.GUI
 
             // Chuyển thông tin lên panel 
             this.dtmDateShow.Value =
-            Convert.ToDateTime(dgvShowtimes.Rows[r].Cells[0].Value.ToString());
+            Convert.ToDateTime(dgvShowtimes.Rows[r].Cells[3].Value.ToString());
             this.cboRoom.Text =
-            dgvShowtimes.Rows[r].Cells[1].Value.ToString();
+            dgvShowtimes.Rows[r].Cells[4].Value.ToString();
             this.cboNameMovie.Text =
-            dgvShowtimes.Rows[r].Cells[2].Value.ToString();
+            dgvShowtimes.Rows[r].Cells[5].Value.ToString();
             this.cboShiftShow.Text =
-            dgvShowtimes.Rows[r].Cells[3].Value.ToString();
+            dgvShowtimes.Rows[r].Cells[6].Value.ToString();
 
           //  MessageBox.Show(cboNameMovie.SelectedValue.ToString());
         }
@@ -91,7 +94,11 @@ namespace CinemaManagement.GUI
 
         private void btnSearchShowtimes_Click(object sender, EventArgs e)
         {
-            if (cboSearchST.Text == "" || txtSearch.Text == "")
+            if (txtSearch.Text=="" && cboSearchST.Text != "")
+            {
+                resetdgvShowtimes();
+            }    
+            if (cboSearchST.Text == "" && txtSearch.Text == "")
             {
                 MessageBox.Show("Phải chọn thông tin tìm kiếm");
             }
@@ -141,14 +148,45 @@ namespace CinemaManagement.GUI
             frm.Show();
         }
 
-        private void dgvShowtimes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void btnDeleteSS_Click(object sender, EventArgs e)
         {
+            bool f;
+            // Thứ tự dòng hiện hành 
+            int r = dgvShowtimes.CurrentCell.RowIndex;
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp 
+            traloi = MessageBox.Show("Bạn có chắc chắn xóa lịch chiếu này không?", "Trả lời",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không? 
+            try
+            {
+                if (traloi == DialogResult.Yes)
+                {
 
-        }
+                    // Thực hiện câu lệnh SQL 
+                    f = ShowtimesDAO.Instance.DeleteSS(dtmDateShow.Value.ToString(), dgvShowtimes.Rows[r].Cells[0].Value.ToString(), dgvShowtimes.Rows[r].Cells[2].Value.ToString(), dgvShowtimes.Rows[r].Cells[1].Value.ToString());
 
-        private void fShowTime_Load(object sender, EventArgs e)
-        {
+                    if (f)
+                    {
+                        // Cập nhật lại DataGridView 
+                        resetdgvShowtimes();
 
+                        // Thông báo 
+                        MessageBox.Show("Đã xóa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!");
+                    }
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Suất chiếu này không thể hủy do đã bán vé");
+            }
+            
         }
     }
 }

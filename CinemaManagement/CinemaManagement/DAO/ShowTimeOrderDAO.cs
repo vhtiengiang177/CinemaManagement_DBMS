@@ -33,7 +33,7 @@ namespace CinemaManagement.DAO
         {
             List<DateTime> listDateShiftShow = new List<DateTime>();
 
-            string query = "select date_showtimes from Showtimes where id_movie = @idMovie ";
+            string query = "select date_showtimes from Showtimes where id_movie = @idMovie group by date_showtimes ";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMovie});
 
@@ -57,6 +57,12 @@ namespace CinemaManagement.DAO
                 listShiftTime.Add(shift);
             }
             return listShiftTime;
+        }
+
+        public object getNameRoomForShowTime(String idRoom)
+        {
+            String query = "select name_room from Room where id_room = @idRoom ";
+                return DataProvider.Instance.ExecuteScalar(query, new object[] { idRoom });
         }
     }
 }

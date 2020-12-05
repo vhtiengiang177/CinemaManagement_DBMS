@@ -45,8 +45,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnChooseMovie = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCountMovie = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboTypeMovie = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -237,8 +235,6 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Controls.Add(this.btnChooseMovie);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.txtCountMovie);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.cboTypeMovie);
             this.panel3.Controls.Add(this.label6);
@@ -258,27 +254,10 @@
             this.btnChooseMovie.UseVisualStyleBackColor = true;
             this.btnChooseMovie.Click += new System.EventHandler(this.btnChooseMovie_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(21, 104);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(166, 17);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Số lần đã xếp trong ngày";
-            // 
-            // txtCountMovie
-            // 
-            this.txtCountMovie.Location = new System.Drawing.Point(24, 124);
-            this.txtCountMovie.Name = "txtCountMovie";
-            this.txtCountMovie.ReadOnly = true;
-            this.txtCountMovie.Size = new System.Drawing.Size(100, 22);
-            this.txtCountMovie.TabIndex = 19;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 155);
+            this.label5.Location = new System.Drawing.Point(16, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 17);
             this.label5.TabIndex = 14;
@@ -287,7 +266,7 @@
             // cboTypeMovie
             // 
             this.cboTypeMovie.FormattingEnabled = true;
-            this.cboTypeMovie.Location = new System.Drawing.Point(20, 176);
+            this.cboTypeMovie.Location = new System.Drawing.Point(15, 125);
             this.cboTypeMovie.Name = "cboTypeMovie";
             this.cboTypeMovie.Size = new System.Drawing.Size(174, 24);
             this.cboTypeMovie.TabIndex = 17;
@@ -676,8 +655,6 @@
         private System.Windows.Forms.ComboBox cboMovie;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAddShowtimes;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtCountMovie;
         private System.Windows.Forms.Button btnResetInfo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtRoom;

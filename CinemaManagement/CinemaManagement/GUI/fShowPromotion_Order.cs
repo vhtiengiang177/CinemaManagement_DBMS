@@ -64,14 +64,19 @@ namespace CinemaManagement.GUI
             this.lblShowStarttime.Text = this.Showtimes.Starttime_shiftshow.ToString();
             this.lblShowNameRoom.Text = RoomDAO.Instance.getNameRoom(this.Showtimes.Id_room);
 
+
+            //label ghế
             this.lblShowNameSeat.Text = "";
             foreach(Seat item in this.ListSeat)
             {
                 lblShowNameSeat.Text += item.Name_seat.ToString() + " - ";
             }
             int temp = lblShowNameSeat.Text.Length - 3;
-            MessageBox.Show(temp.ToString());
-            lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
+            //MessageBox.Show(temp.ToString());
+            if (lblShowNameSeat.Text.Length > 5)
+            {
+                lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
+            }
         }
 
         
@@ -81,17 +86,17 @@ namespace CinemaManagement.GUI
             //ComboBoxItem item = (sender as ComboBoxItem)..Content.ToString();
             //string str = item.Content.ToString();
 
-            //string str = cboPromotion.SelectedValue.ToString();
-            //MessageBox.Show(str1);
+            string str = cboPromotion.SelectedValue.ToString();
+            MessageBox.Show(str);
 
-            //if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
-            //{
-            //    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
-            //}
-            //else
-            //{
-            //    txtValue.Text = "0";
-            //}
+            if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
+            {
+                txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
+            }
+            else
+            {
+                txtValue.Text = "0";
+            }
 
         }
 

@@ -350,8 +350,6 @@ namespace CinemaManagement.GUI
                 case 2: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_NameEmployee(txtSearchEmployee.Text.Trim()); break; }
                 case 3: { dgvListEmployee.DataSource = EmployeeDAO.Instance.search_IdentityCardEmployee(txtSearchEmployee.Text.Trim()); break; }
 
-
-
             }
         }
 

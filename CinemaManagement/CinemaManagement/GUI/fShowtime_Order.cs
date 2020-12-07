@@ -150,7 +150,7 @@ namespace CinemaManagement.GUI
             this.lblShowStarttime.Text = stSelect.Starttime_shiftshow;
             // Phòng
             this.lblRoom.Visible = true;
-            this.lblShowNameRoom.Text = "";
+            this.lblShowNameRoom.Text = (String)ShowTimeOrderDAO.Instance.getNameRoomForShowTime(stSelect.Id_room);
         }
 
         private void btnBack_Click(object sender, EventArgs e)

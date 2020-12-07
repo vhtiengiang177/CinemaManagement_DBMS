@@ -62,7 +62,7 @@ namespace CinemaManagement.GUI
 
             this.txtID.Text = dgvListEmployee.Rows[r].Cells[0].Value.ToString();
             this.txtNameEmployee.Text = dgvListEmployee.Rows[r].Cells[1].Value.ToString();
-            this.txtBirthday.Text = dgvListEmployee.Rows[r].Cells[2].Value.ToString();
+            this.txtBirthday.Text = ((DateTime)(dgvListEmployee.Rows[r].Cells[2].Value)).ToShortDateString();
             string sex = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
             if (sex == "Nữ")
             {
@@ -327,6 +327,10 @@ namespace CinemaManagement.GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             loadDataOnTextBoxInforEmployee(fEmployee.cellClickIndex);
+            btnCancel.Hide();
+            btnAddImg.Hide();
+            btnSave.Hide();
+            unenableEdit(false);
         }
         #endregion
 

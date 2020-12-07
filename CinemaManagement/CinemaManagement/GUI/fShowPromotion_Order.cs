@@ -105,7 +105,7 @@ namespace CinemaManagement.GUI
         private void cboCategorySearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = CustomerDAO.Instance.LoadData();
+            dt = CustomerDAO.Instance.loadCustomerforOrder();
             if (cboCategorySearch.SelectedIndex == 0) //Tìm theo SĐT
             {
                 

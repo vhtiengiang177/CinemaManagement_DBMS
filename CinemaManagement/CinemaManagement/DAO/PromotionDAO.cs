@@ -77,6 +77,8 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
+       
+
 
 
 

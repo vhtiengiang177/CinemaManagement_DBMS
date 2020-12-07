@@ -1,6 +1,6 @@
 ﻿using CinemaManagement.DAO;
 using CinemaManagement.DTO;
-using CinemaManagement.GUI;
+using CinemaManagement.Ticket1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,19 +11,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaManagement.Ticket1
+namespace CinemaManagement.GUI
 {
-    public partial class fSeatTicket : Form
+    public partial class fShowSeat_Order : Form
     {
         private List<Seat> listSeat = new List<Seat>();
 
         private Showtimes showtimes;
-        public fSeatTicket()
+        public fShowSeat_Order()
         {
             InitializeComponent();
         }
 
-        public fSeatTicket(Showtimes so)
+        public fShowSeat_Order(Showtimes so)
         {
             InitializeComponent();
             this.Showtimes = so;
@@ -80,7 +80,7 @@ namespace CinemaManagement.Ticket1
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
+            fAddTicket f = new fAddTicket(this.Showtimes, this.ListSeat);
             this.Hide();
             f.Show();
         }

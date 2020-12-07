@@ -3,18 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using CinemaManagement.DAO;
+using CinemaManagement.DTO;
+
 namespace CinemaManagement.GUI
 {
     public partial class fShowPromotion_Order : Form
     {
-        public fShowPromotion_Order()
+        private List<Seat> listSeat = new List<Seat>();
+
+        private Showtimes showtimes;
+
+        MemoryStream ms;
+
+        public fShowPromotion_Order(Showtimes st, List<Seat> se)
         {
             InitializeComponent();
+            this.Showtimes = st;
+            this.ListSeat = se;
+            LoadInfo();
             loadPromotion();
             //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
             txtNumTicket.Text = "1";
@@ -22,7 +35,18 @@ namespace CinemaManagement.GUI
         }
         //tổng giảm
         double sumDes = 0;
-        
+
+        public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
+        public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
+
+        //Convert image
+        public System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            ms = new MemoryStream(byteArrayIn);
+            System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
+            ms.Close();
+            return returnImage;
+        }
 
         //load chương trình khuyến mãi vào cbo
         private void loadPromotion()
@@ -34,24 +58,44 @@ namespace CinemaManagement.GUI
             cboPromotion.ValueMember= dt.Columns[0].ToString();
         }
 
+        private void LoadInfo()
+        {
+            this.lblShowDate_Showtime.Text = this.Showtimes.Date_showtimes.ToShortDateString();
+            this.lblShowStarttime.Text = this.Showtimes.Starttime_shiftshow.ToString();
+            this.lblShowNameRoom.Text = RoomDAO.Instance.getNameRoom(this.Showtimes.Id_room);
+
+            this.lblShowNameSeat.Text = "";
+            foreach(Seat item in this.ListSeat)
+            {
+                lblShowNameSeat.Text += item.Name_seat.ToString() + " - ";
+            }
+            int temp = lblShowNameSeat.Text.Length - 3;
+            MessageBox.Show(temp.ToString());
+            lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
+        }
+
         
         //Khi chọn giá trị trong cbo Mã khuyến mãi thì giá trị khuyến mãi thay đổi theo
         private void cboPromotion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string str = cboPromotion.SelectedValue.ToString();
+            //ComboBoxItem item = (sender as ComboBoxItem)..Content.ToString();
+            //string str = item.Content.ToString();
 
-            if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count>0)
-            {
-                txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
-            }    
-            else
-            {
-                txtValue.Text = "0";
-            }    
-            
+            //string str = cboPromotion.SelectedValue.ToString();
+            //MessageBox.Show(str1);
+
+            //if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
+            //{
+            //    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
+            //}
+            //else
+            //{
+            //    txtValue.Text = "0";
+            //}
+
         }
 
-        
+
         //Khi thay đổi tìm kiếm :theo SĐT hoặc theo CMND thì bảng giá trị thay đổi theo
         private void cboCategorySearch_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -33,6 +33,8 @@
             this.picImageMovie = new System.Windows.Forms.PictureBox();
             this.lblShowNameMovie = new System.Windows.Forms.Label();
             this.pnlBodyLeft = new System.Windows.Forms.Panel();
+            this.lblShowNameSeat = new System.Windows.Forms.Label();
+            this.lblSeat = new System.Windows.Forms.Label();
             this.lblShowNameRoom = new System.Windows.Forms.Label();
             this.lblShowStarttime = new System.Windows.Forms.Label();
             this.lblShowDate_Showtime = new System.Windows.Forms.Label();
@@ -69,8 +71,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.lblSeat = new System.Windows.Forms.Label();
-            this.lblShowNameSeat = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
             this.splBody.Panel2.SuspendLayout();
@@ -151,6 +152,24 @@
             this.pnlBodyLeft.Size = new System.Drawing.Size(300, 513);
             this.pnlBodyLeft.TabIndex = 23;
             // 
+            // lblShowNameSeat
+            // 
+            this.lblShowNameSeat.AutoSize = true;
+            this.lblShowNameSeat.Location = new System.Drawing.Point(69, 394);
+            this.lblShowNameSeat.Name = "lblShowNameSeat";
+            this.lblShowNameSeat.Size = new System.Drawing.Size(32, 17);
+            this.lblShowNameSeat.TabIndex = 41;
+            this.lblShowNameSeat.Text = "ghế";
+            // 
+            // lblSeat
+            // 
+            this.lblSeat.AutoSize = true;
+            this.lblSeat.Location = new System.Drawing.Point(15, 394);
+            this.lblSeat.Name = "lblSeat";
+            this.lblSeat.Size = new System.Drawing.Size(43, 17);
+            this.lblSeat.TabIndex = 41;
+            this.lblSeat.Text = "Ghế: ";
+            // 
             // lblShowNameRoom
             // 
             this.lblShowNameRoom.AutoSize = true;
@@ -213,6 +232,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.nudHSSV);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtNumTicket);
@@ -519,24 +539,17 @@
             this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Thanh toán";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // lblSeat
+            // btnReset
             // 
-            this.lblSeat.AutoSize = true;
-            this.lblSeat.Location = new System.Drawing.Point(15, 394);
-            this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(43, 17);
-            this.lblSeat.TabIndex = 41;
-            this.lblSeat.Text = "Ghế: ";
-            // 
-            // lblShowNameSeat
-            // 
-            this.lblShowNameSeat.AutoSize = true;
-            this.lblShowNameSeat.Location = new System.Drawing.Point(69, 394);
-            this.lblShowNameSeat.Name = "lblShowNameSeat";
-            this.lblShowNameSeat.Size = new System.Drawing.Size(32, 17);
-            this.lblShowNameSeat.TabIndex = 41;
-            this.lblShowNameSeat.Text = "ghế";
+            this.btnReset.Location = new System.Drawing.Point(635, 13);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 41;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // fShowPromotion_Order
             // 
@@ -611,5 +624,6 @@
         private System.Windows.Forms.NumericUpDown nudHSSV;
         private System.Windows.Forms.Label lblShowNameSeat;
         private System.Windows.Forms.Label lblSeat;
+        private System.Windows.Forms.Button btnReset;
     }
 }

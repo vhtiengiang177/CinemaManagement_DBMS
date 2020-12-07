@@ -168,5 +168,7 @@ namespace CinemaManagement.GUI
             fSeatTicket f = new fSeatTicket(this.stSelect);
             f.Show();
         }
+
+
     }
 }

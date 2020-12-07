@@ -30,6 +30,18 @@ namespace CinemaManagement.GUI
             LoadInfo();
             loadPromotion();
             //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
+            txtNumTicket.Text = se.Count.ToString(); ;
+            txtTypeCus.Text = "Chưa là thành viên";
+        }
+
+        public fShowPromotion_Order()
+        {
+            InitializeComponent();
+            //this.Showtimes = st;
+            //this.ListSeat = se;
+            //LoadInfo();
+            loadPromotion();
+            //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
             txtNumTicket.Text = "1";
             txtTypeCus.Text = "Chưa là thành viên";
         }
@@ -77,6 +89,12 @@ namespace CinemaManagement.GUI
             {
                 lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
             }
+
+            DataTable dt = MovieDAO.Instance.getMovieByID(this.Showtimes.Id_movie);
+            // Lấy thông tin phim
+            this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
+            if (dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
 
         
@@ -186,6 +204,43 @@ namespace CinemaManagement.GUI
             lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
             
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtIDcus.ResetText();
+            txtNameCus.ResetText();
+            txtPointCus.ResetText();
+            txtTypeCus.ResetText();
+            
+            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            foreach(Seat item in this.ListSeat)
+            {
+                if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Errror");
+                    return;
+                }
+            }
+            MessageBox.Show("Success");
+        }
+
+
+        string createAutoIdTicket()
+        {
+            string lastID = TicketDAO.Instance.getLastIdTicket();
+            //MessageBox.Show(lastID);
+            int id = Convert.ToInt32(lastID[2].ToString() + lastID[3].ToString()) + 1;
+
+            if (id < 10)
+            {
+                return "ti0" + id.ToString();
+            }
+            return "ti" + id.ToString();
         }
     }
 }

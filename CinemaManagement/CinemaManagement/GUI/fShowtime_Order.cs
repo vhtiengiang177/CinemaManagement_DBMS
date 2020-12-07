@@ -82,14 +82,16 @@ namespace CinemaManagement.GUI
 
             foreach (var item in listDate)
             {
-                Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
+                Button btn = new Button() { Width = 80, Height = 80 };
 
                
                 //btn.Text = item.Name_movie;
-                btn.ForeColor = Color.Red;
+                btn.ForeColor = Color.Gray;
                
-                btn.Font = new Font("Microsoft Sans Serif", 18);
+                btn.Font = new Font("Arial", 18);
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.BackColor = Color.White;
                 btn.Text = item.ToString();
                 btn.Tag = item;
                 //MessageBox.Show(btn.Tag.GetType().ToString());
@@ -119,15 +121,16 @@ namespace CinemaManagement.GUI
             }
             foreach (Showtimes item in listShiftTime)
             {
-                Button btn = new Button() { Width = MovieDAO.MoiveWidth, Height = MovieDAO.MoiveHeight };
+                Button btn = new Button() { Width =150, Height = 40 };
 
 
                 //btn.Text = item.Name_movie;
-                btn.ForeColor = Color.Red;
+                btn.ForeColor = Color.Gray;
 
                 btn.Font = new Font("Microsoft Sans Serif", 18);
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
                 btn.Text = item.Starttime_shiftshow;
+                btn.FlatStyle = FlatStyle.Flat;
                 btn.Tag = item;
                 //MessageBox.Show(btn.Tag.GetType().ToString());
                 btn.Click += btnShift_Click;

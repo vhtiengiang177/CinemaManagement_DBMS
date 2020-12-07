@@ -81,8 +81,9 @@ namespace CinemaManagement
             dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
             dgvListEmployee.AutoResizeColumns();
             clearValue();
-            setDataCboSortTypeEmployee();
             cboSortTypeEmployee.Enabled = false;
+            setDataCboSortTypeEmployee();
+            
             dgvListEmployee_CellClick(null, null);
         }
         #endregion
@@ -193,8 +194,8 @@ namespace CinemaManagement
             int month = Int32.Parse(cboMonth.SelectedItem.ToString().Trim());
             int year = Int32.Parse(cboYear.SelectedItem.ToString().Trim());
             DateTime fisrtDay = ((DateTime)EmployeeDAO.Instance.selectWeekOnMonth(month, year, Int32.Parse(nudWeekSelected.Value.ToString())));
-            txtFirstDate.Text =fisrtDay.Date.ToString();
-            txtLastDate.Text = ((DateTime)EmployeeDAO.Instance.selectDateEndWeek(fisrtDay, 6)).Date.ToString();
+            txtFirstDate.Text =fisrtDay.ToShortDateString();
+            txtLastDate.Text = ((DateTime)EmployeeDAO.Instance.selectDateEndWeek(fisrtDay, 6)).ToShortDateString();
         }
 
         public string setShiftOfMonday()
@@ -373,6 +374,61 @@ namespace CinemaManagement
 
 
 
+            }
+        }
+
+        private void btnWeek_Click(object sender, EventArgs e)
+        {
+            plFullMonth.Enabled = false;// Không  cho đăng kí theo tháng
+            plWeekFull.Enabled = true; 
+            flpWeekOne.Enabled = true;
+            int month = Int32.Parse(cboMonth.SelectedItem.ToString().Trim());
+            int year = Int32.Parse(cboYear.SelectedItem.ToString().Trim());
+            DateTime fisrtDay = ((DateTime)EmployeeDAO.Instance.selectWeekOnMonth(month, year,1));
+            txtFirstDate.Text = fisrtDay.ToShortDateString();
+            txtLastDate.Text = ((DateTime)EmployeeDAO.Instance.selectDateEndWeek(fisrtDay, 6)).ToShortDateString();
+        }
+
+        private void btnMonth_Click(object sender, EventArgs e)
+        {
+            plFullMonth.Enabled = true;
+            plWeekFull.Enabled = false; // Không  cho đăng kí theo tuần
+            flpWeekOne.Enabled = false; // Không  cho đăng kí theo tuần
+        }
+
+
+        private void btnCreateFullWeek_Click(object sender, EventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
+            String idShift = "";
+
+            if (rdoMorFullWeek.Checked)
+                idShift = "sw01";
+            if (rdoEvrFullWeek.Checked)
+                idShift = "sw02";
+            if (rdoFullFullWeek.Checked)
+                idShift = "sw03";
+            string idEmployee = txtID.Text.Trim();
+
+            if (idEmployee != "" && idShift != "")
+            {
+                try
+                {
+                    bool f = EmployeeDAO.Instance.createShitfFullWeek(date, idEmployee, idShift);
+                    if(f)
+                    {
+                        MessageBox.Show("Đã tạo ca làm việc thành công !");
+                    }   
+                    
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn thông tin người dùng !");
             }
         }
     }

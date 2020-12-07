@@ -71,5 +71,13 @@ namespace CinemaManagement.DAO
             string query = "exec sp_findCustomerById @id ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
+
+
+        //hàm này dành cho load khách hàng bên đặt vé
+        public DataTable loadCustomerforOrder()
+        {
+            string query = "select * from Customer";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

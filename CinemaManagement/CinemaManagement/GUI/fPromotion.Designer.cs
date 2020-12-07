@@ -66,14 +66,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -165,7 +167,7 @@
             "Tên chương trình",
             "Đối tượng",
             "Mức khuyến mãi"});
-            this.cboPromotion.Location = new System.Drawing.Point(845, 53);
+            this.cboPromotion.Location = new System.Drawing.Point(664, 33);
             this.cboPromotion.Name = "cboPromotion";
             this.cboPromotion.Size = new System.Drawing.Size(169, 30);
             this.cboPromotion.TabIndex = 29;
@@ -173,7 +175,7 @@
             // txtSearchPromotion
             // 
             this.txtSearchPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPromotion.Location = new System.Drawing.Point(485, 53);
+            this.txtSearchPromotion.Location = new System.Drawing.Point(304, 33);
             this.txtSearchPromotion.Name = "txtSearchPromotion";
             this.txtSearchPromotion.Size = new System.Drawing.Size(343, 29);
             this.txtSearchPromotion.TabIndex = 28;
@@ -183,7 +185,7 @@
             // 
             this.btnSearchPromotion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchPromotion.Location = new System.Drawing.Point(367, 45);
+            this.btnSearchPromotion.Location = new System.Drawing.Point(186, 25);
             this.btnSearchPromotion.Name = "btnSearchPromotion";
             this.btnSearchPromotion.Size = new System.Drawing.Size(112, 46);
             this.btnSearchPromotion.TabIndex = 27;
@@ -196,7 +198,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(209, 589);
+            this.btnDelete.Location = new System.Drawing.Point(202, 9);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 46);
             this.btnDelete.TabIndex = 25;
@@ -209,7 +211,7 @@
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Red;
-            this.btnEdit.Location = new System.Drawing.Point(109, 589);
+            this.btnEdit.Location = new System.Drawing.Point(102, 9);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(94, 46);
             this.btnEdit.TabIndex = 24;
@@ -222,7 +224,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Red;
-            this.btnAdd.Location = new System.Drawing.Point(10, 589);
+            this.btnAdd.Location = new System.Drawing.Point(3, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 46);
             this.btnAdd.TabIndex = 23;
@@ -236,7 +238,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Location = new System.Drawing.Point(983, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 36);
             this.label1.TabIndex = 22;
@@ -255,7 +257,7 @@
             this.dgvPromotion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -279,12 +281,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPromotion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPromotion.GridColor = System.Drawing.SystemColors.Window;
-            this.dgvPromotion.Location = new System.Drawing.Point(8, 13);
+            this.dgvPromotion.Location = new System.Drawing.Point(3, 13);
             this.dgvPromotion.Name = "dgvPromotion";
             this.dgvPromotion.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Blue;
@@ -297,7 +299,7 @@
             this.dgvPromotion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPromotion.RowTemplate.Height = 24;
             this.dgvPromotion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPromotion.Size = new System.Drawing.Size(850, 540);
+            this.dgvPromotion.Size = new System.Drawing.Size(855, 540);
             this.dgvPromotion.TabIndex = 21;
             this.dgvPromotion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPromotion_CellClick);
             // 
@@ -361,7 +363,7 @@
             // 
             this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(1029, 53);
+            this.picReload.Location = new System.Drawing.Point(848, 33);
             this.picReload.Name = "picReload";
             this.picReload.Size = new System.Drawing.Size(37, 30);
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -413,9 +415,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvPromotion);
-            this.panel1.Location = new System.Drawing.Point(334, 104);
+            this.panel1.Location = new System.Drawing.Point(57, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(858, 562);
+            this.panel1.Size = new System.Drawing.Size(869, 504);
             this.panel1.TabIndex = 46;
             // 
             // panel2
@@ -433,46 +435,54 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtObjectPromotion);
-            this.panel2.Location = new System.Drawing.Point(22, 131);
+            this.panel2.Location = new System.Drawing.Point(948, 88);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(274, 432);
             this.panel2.TabIndex = 22;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(127, 35);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(175, 80);
-            this.panel3.TabIndex = 48;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(89, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.cboPromotion);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.btnSearchPromotion);
+            this.panel4.Controls.Add(this.txtSearchPromotion);
+            this.panel4.Controls.Add(this.picReload);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1246, 82);
+            this.panel4.TabIndex = 49;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnDelete);
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Controls.Add(this.btnEdit);
+            this.panel3.Location = new System.Drawing.Point(936, 526);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(298, 66);
+            this.panel3.TabIndex = 50;
             // 
             // fPromotion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 678);
+            this.ClientSize = new System.Drawing.Size(1246, 624);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.picReload);
-            this.Controls.Add(this.cboPromotion);
-            this.Controls.Add(this.txtSearchPromotion);
-            this.Controls.Add(this.btnSearchPromotion);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fPromotion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -482,11 +492,11 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -523,7 +533,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

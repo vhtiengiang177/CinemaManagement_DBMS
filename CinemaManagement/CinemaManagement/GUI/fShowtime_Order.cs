@@ -144,7 +144,7 @@ namespace CinemaManagement.GUI
 
         private void btnShift_Click(object sender, EventArgs e)
         { 
-            stSelect = (Showtimes)(sender as Button).Tag;
+            this.stSelect = (Showtimes)(sender as Button).Tag;
             // Ca chiếu
             this.lblShiftShow.Visible = true;
             this.lblShowStarttime.Text = stSelect.Starttime_shiftshow;
@@ -162,7 +162,8 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Showtimes st = new Showtimes();
+            fSeatTicket f = new fSeatTicket(this.stSelect);
+            f.Show();
         }
     }
 }

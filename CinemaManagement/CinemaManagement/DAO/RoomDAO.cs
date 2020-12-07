@@ -29,5 +29,11 @@ namespace CinemaManagement.DAO
             string query = "SELECT *FROM fc_countRoomInDay( @date , @idRoom , @idShift ) ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) , idRoom , idShift}) ;
         }
+
+        public string getNameRoom(string id_room)
+        {
+            string query = "select name_room from Room where id_room = @id_room ";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] { id_room }).ToString();
+        }
     }
 }

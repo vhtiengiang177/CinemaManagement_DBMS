@@ -1,5 +1,6 @@
 ﻿using CinemaManagement.DAO;
 using CinemaManagement.DTO;
+using CinemaManagement.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,7 +80,7 @@ namespace CinemaManagement.Ticket1
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fAddTicket f = new fAddTicket(this.Showtimes, this.ListSeat);
+            fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
             this.Hide();
             f.Show();
         }

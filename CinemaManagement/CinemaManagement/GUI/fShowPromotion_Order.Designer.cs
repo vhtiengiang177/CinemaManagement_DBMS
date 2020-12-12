@@ -42,6 +42,7 @@
             this.lblShiftShow = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.nudHSSV = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNumTicket = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
             this.splBody.Panel2.SuspendLayout();
@@ -103,8 +103,8 @@
             // splBody.Panel2
             // 
             this.splBody.Panel2.Controls.Add(this.panel1);
-            this.splBody.Size = new System.Drawing.Size(1072, 513);
-            this.splBody.SplitterDistance = 300;
+            this.splBody.Size = new System.Drawing.Size(1040, 554);
+            this.splBody.SplitterDistance = 291;
             this.splBody.SplitterWidth = 5;
             this.splBody.TabIndex = 1;
             // 
@@ -149,7 +149,7 @@
             this.pnlBodyLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlBodyLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBodyLeft.Name = "pnlBodyLeft";
-            this.pnlBodyLeft.Size = new System.Drawing.Size(300, 513);
+            this.pnlBodyLeft.Size = new System.Drawing.Size(291, 554);
             this.pnlBodyLeft.TabIndex = 23;
             // 
             // lblShowNameSeat
@@ -259,8 +259,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 513);
+            this.panel1.Size = new System.Drawing.Size(744, 554);
             this.panel1.TabIndex = 0;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(635, 13);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 41;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // nudHSSV
             // 
@@ -515,8 +525,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnBack);
             this.splitContainer1.Panel2.Controls.Add(this.btnDone);
-            this.splitContainer1.Size = new System.Drawing.Size(1072, 569);
-            this.splitContainer1.SplitterDistance = 513;
+            this.splitContainer1.Size = new System.Drawing.Size(1040, 615);
+            this.splitContainer1.SplitterDistance = 554;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -541,21 +551,11 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(635, 13);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 41;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // fShowPromotion_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 569);
+            this.ClientSize = new System.Drawing.Size(1040, 615);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowPromotion_Order";

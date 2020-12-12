@@ -41,6 +41,8 @@ namespace CinemaManagement.GUI
                 Button btn = new Button() { Width = 50, Height = 50 };
                 btn.Tag = item;
                 btn.BackColor = Color.Gray;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
 
                 if(SeatDAO.Instance.CheckTicket(this.Showtimes, item.Id_seat))
                 {
@@ -80,7 +82,7 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fAddTicket f = new fAddTicket(this.Showtimes, this.ListSeat);
+            fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
             this.Hide();
             f.Show();
         }

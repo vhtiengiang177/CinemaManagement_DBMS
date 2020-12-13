@@ -146,14 +146,34 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                if (EmployeeDAO.Instance.insertEmployee(createEmp()))
+                int err = 0;
+                if(EmployeeDAO.Instance.search_IdentityCardEmployee(txtIndentity.Text) != null)
                 {
-                    MessageBox.Show("Đã thêm thành công !");
-
-                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
-                    clearValue();
-
+                    txtIndentity.Text = "CMND đã tồn tại !";
+                    err = err + 1;
                 }
+
+                if (EmployeeDAO.Instance.search_PhoneEmployee(txtPhoneEmployee.Text) != null)
+                {
+                    txtIndentity.Text = "SĐT đã tồn tại !";
+                    err = err + 1;
+                }
+
+                if (EmployeeDAO.Instance.search_EmailEmployee(txtEmailEmployee.Text) != null)
+                {
+                    txtEmailEmployee.Text = "Email đã tồn tại !";
+                    err = err + 1;
+                }
+                
+                if(err == 0)
+                    if (EmployeeDAO.Instance.insertEmployee(createEmp()))
+                    {
+                        MessageBox.Show("Đã thêm thành công !");
+
+                        fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
+                        clearValue();
+
+                    }
 
             }
             catch (SqlException ex)

@@ -132,6 +132,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { identityCard });
         }
 
+        public DataTable search_EmailEmployee(string email)
+        {
+            string query = "select * from Employee where email_employee  = @email ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { email });
+        }
+
 
         /// <summary>
         /// Tìm kiếm nhân viên theo tên

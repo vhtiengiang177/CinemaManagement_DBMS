@@ -83,8 +83,13 @@ namespace CinemaManagement.GUI
         private void btnNext_Click(object sender, EventArgs e)
         {
             fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
-            this.Hide();
+            //this.Hide();
             f.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
 
 

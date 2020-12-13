@@ -35,6 +35,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee, id_promotion}) > 0;
         }
 
+        public bool createTicketWithoutPromotion(string id_ticket, int cost_ticket, int totalcost_ticket, string id_room, string id_movie, string id_shiftshow, DateTime date_showtimes, string id_seat, string id_customer, string id_employee)
+        {
+            string query = " exec sp_InsertTicket_Without_Promotion @id_ticket , @cost_ticket , @totalcost_ticket , @id_room , @id_movie , @id_shiftshow , @date_showtimes , @id_seat , @id_customer , @id_employee  ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee }) > 0;
+        }
+
         public string getLastIdTicket()
         {
             string query = "select * from Ticket";

@@ -71,7 +71,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudPromotion = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).BeginInit();
             this.SuspendLayout();
             // 
             // splBody
@@ -235,7 +235,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.nudPromotion);
             this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.nudHSSV);
             this.panel1.Controls.Add(this.label10);
@@ -534,6 +534,7 @@
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnDone
             // 
@@ -546,12 +547,12 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // numericUpDown1
+            // nudPromotion
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(288, 89);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 42;
+            this.nudPromotion.Location = new System.Drawing.Point(288, 89);
+            this.nudPromotion.Name = "nudPromotion";
+            this.nudPromotion.Size = new System.Drawing.Size(120, 22);
+            this.nudPromotion.TabIndex = 42;
             // 
             // label11
             // 
@@ -588,7 +589,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,6 +638,6 @@
         private System.Windows.Forms.Label lblSeat;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudPromotion;
     }
 }

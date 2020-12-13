@@ -22,6 +22,8 @@ namespace CinemaManagement.GUI
 
         MemoryStream ms;
 
+
+        List<String> listPromotion = new List<String>();
         public fShowPromotion_Order(Showtimes st, List<Seat> se)
         {
             InitializeComponent();
@@ -111,7 +113,6 @@ namespace CinemaManagement.GUI
 
 
                 string str = cboPromotion.SelectedValue.ToString();
-                MessageBox.Show(str);
 
                 if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
                 {
@@ -221,19 +222,64 @@ namespace CinemaManagement.GUI
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            loadListPromotion();
             //int total_cost = int.Parse(Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes))
-            foreach(Seat item in this.ListSeat)
+            for(int i =0; i < this.ListSeat.Count; i++)
             {
-                if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
+                string id_ticket = createAutoIdTicket();
+                string id_seat = this.ListSeat[i].Id_seat;
+                string id_promotion = this.listPromotion[i];
+                double valuePromotion = 0;
+                if (id_promotion != "null")
                 {
-                    MessageBox.Show("Errror");
-                    return;
+                    valuePromotion = Convert.ToDouble(PromotionDAO.Instance.SearchValue_Promotion(id_promotion).Rows[0][0]);
+
+                    int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
+                    if (!TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, null, null, this.listPromotion[i]))
+                    {
+                        MessageBox.Show("Error");
+                        return;
+                    }
                 }
-            }
-            MessageBox.Show("Success");
+                else
+                {
+
+                    int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
+                    if (!TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, this.txtIDcus.Text, "em01"))
+                    {
+                        MessageBox.Show("Error");
+                        return;
+                    }
+                }
+                MessageBox.Show("Success");
+            }    
+            //foreach(Seat item in this.ListSeat)
+            //{
+            //    if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
+            //    {
+            //        MessageBox.Show("Errror");
+            //        return;
+            //    }
+            //}
+            //MessageBox.Show("Success");
         }
 
-
+        void loadListPromotion()
+        {
+            this.listPromotion = new List<string>();
+            for (int i = 0; i < nudHSSV.Value; i++)
+            {
+                this.listPromotion.Add("pr02");
+            }
+            for (int j = 0; j < nudPromotion.Value; j++)
+            {
+                this.listPromotion.Add(cboPromotion.SelectedValue.ToString());
+            }
+            for (int k = 0; k < (this.listSeat.Count - nudHSSV.Value - nudPromotion.Value); k++)
+            {
+                this.listPromotion.Add("null");
+            }
+        }
         string createAutoIdTicket()
         {
             string lastID = TicketDAO.Instance.getLastIdTicket();
@@ -253,6 +299,11 @@ namespace CinemaManagement.GUI
             {
                 txtValue.Text = "0";
             }    
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

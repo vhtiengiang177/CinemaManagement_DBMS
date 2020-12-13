@@ -169,6 +169,18 @@ namespace CinemaManagement.GUI
             f.Show();
         }
 
+<<<<<<< HEAD
+        private void picImageMovie_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnExitShowTimeOrder_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+=======
+
+>>>>>>> b4183d7e756664a910294d6c40288372efefe17b
     }
 }

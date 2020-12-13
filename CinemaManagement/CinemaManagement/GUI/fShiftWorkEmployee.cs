@@ -29,6 +29,15 @@ namespace CinemaManagement
             loadData();
         }
 
+        public fShifWorkEmployee(String id, String name)
+        {
+            InitializeComponent();
+            loadData();
+            lbID.Text = id;
+            lbName.Text = name;
+           
+        }
+
         #region Close
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -78,9 +87,12 @@ namespace CinemaManagement
 
         public void loadData()
         {
+            plWeekFull.Enabled = false; // Không  cho đăng kí theo tuần
+            flpWeekOne.Enabled = false; // Không  cho đăng kí theo tuần
+
             dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
             dgvListEmployee.AutoResizeColumns();
-            clearValue();
+           
             cboSortTypeEmployee.Enabled = false;
             setDataCboSortTypeEmployee();
             
@@ -99,8 +111,8 @@ namespace CinemaManagement
 
         public void loadDataOnTextBoxInforEmployee(int row)
         {
-            this.txtID.Text = dgvListEmployee.Rows[row].Cells[0].Value.ToString();
-            this.txtName.Text = dgvListEmployee.Rows[row].Cells[1].Value.ToString();
+            this.lbID.Text = dgvListEmployee.Rows[row].Cells[0].Value.ToString();
+            this.lbName.Text = dgvListEmployee.Rows[row].Cells[1].Value.ToString();
             if (dgvListEmployee.Rows[row].Cells[11].Value != DBNull.Value)
             {
                 this.picEmployee.Image = (System.Drawing.Image)
@@ -126,8 +138,8 @@ namespace CinemaManagement
 
         void clearValue()
         {
-            txtID.Clear();
-            txtName.Clear();
+            lbID.Text = "";
+            lbName.Text = "";
         }
 
         public void searchEmployee(int index)
@@ -156,12 +168,13 @@ namespace CinemaManagement
         private void btnLoadData_Click(object sender, EventArgs e)
         {
             loadData();
-            
+            clearValue();
+
         }
 
         public void changeShiftOfMonth(string idShift)
         {
-            string id = txtID.Text.Trim();
+            string id = lbID.Text.Trim();
             
             int month = Int32.Parse(cboMonth.SelectedItem.ToString().Trim());
             int year = Int32.Parse(cboYear.SelectedItem.ToString().Trim());
@@ -173,12 +186,12 @@ namespace CinemaManagement
 
         private void btnChangeMonth_Click(object sender, EventArgs e)
         {
-            if(txtID.Text.Trim()!="")
+            if(lbID.Text.Trim()!="")
             {
                 string idShift = "";
                 if (rdoEveningMonth.Checked)
                     idShift = "sw01";
-                if (rdoEveningMonth.Checked)
+                if (rdoMoringMonth.Checked)
                     idShift = "sw02";
                 if (rdoFullMonth.Checked)
                     idShift = "sw03";
@@ -279,7 +292,7 @@ namespace CinemaManagement
         }
         private void btnChangeWeek_Click(object sender, EventArgs e)
         {
-            string idEmployee = txtID.Text.Trim();
+            string idEmployee = lbID.Text.Trim();
            if(idEmployee != "")
             {
                 DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
@@ -408,7 +421,7 @@ namespace CinemaManagement
                 idShift = "sw02";
             if (rdoFullFullWeek.Checked)
                 idShift = "sw03";
-            string idEmployee = txtID.Text.Trim();
+            string idEmployee = lbID.Text.Trim();
 
             if (idEmployee != "" && idShift != "")
             {

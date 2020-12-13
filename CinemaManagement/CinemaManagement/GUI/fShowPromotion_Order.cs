@@ -30,6 +30,20 @@ namespace CinemaManagement.GUI
             LoadInfo();
             loadPromotion();
             //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
+            txtNumTicket.Text = se.Count.ToString(); ;
+            txtTypeCus.Text = "Chưa là thành viên";
+            cboCategorySearch.SelectedIndex = 0;
+            cboPromotion.SelectedItem = null;
+        }
+
+        public fShowPromotion_Order()
+        {
+            InitializeComponent();
+            //this.Showtimes = st;
+            //this.ListSeat = se;
+            //LoadInfo();
+            loadPromotion();
+            //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
             txtNumTicket.Text = "1";
             txtTypeCus.Text = "Chưa là thành viên";
         }
@@ -64,14 +78,25 @@ namespace CinemaManagement.GUI
             this.lblShowStarttime.Text = this.Showtimes.Starttime_shiftshow.ToString();
             this.lblShowNameRoom.Text = RoomDAO.Instance.getNameRoom(this.Showtimes.Id_room);
 
+
+            //label ghế
             this.lblShowNameSeat.Text = "";
             foreach(Seat item in this.ListSeat)
             {
                 lblShowNameSeat.Text += item.Name_seat.ToString() + " - ";
             }
             int temp = lblShowNameSeat.Text.Length - 3;
-            MessageBox.Show(temp.ToString());
-            lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
+            //MessageBox.Show(temp.ToString());
+            if (lblShowNameSeat.Text.Length > 5)
+            {
+                lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
+            }
+
+            DataTable dt = MovieDAO.Instance.getMovieByID(this.Showtimes.Id_movie);
+            // Lấy thông tin phim
+            this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
+            if (dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
 
         
@@ -81,17 +106,18 @@ namespace CinemaManagement.GUI
             //ComboBoxItem item = (sender as ComboBoxItem)..Content.ToString();
             //string str = item.Content.ToString();
 
-            //string str = cboPromotion.SelectedValue.ToString();
-            //MessageBox.Show(str1);
+            if (cboPromotion.SelectedItem != null)
+            {
 
-            //if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
-            //{
-            //    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
-            //}
-            //else
-            //{
-            //    txtValue.Text = "0";
-            //}
+
+                string str = cboPromotion.SelectedValue.ToString();
+                MessageBox.Show(str);
+
+                if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
+                {
+                    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
+                }
+            }  
 
         }
 
@@ -100,7 +126,7 @@ namespace CinemaManagement.GUI
         private void cboCategorySearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = CustomerDAO.Instance.LoadData();
+            dt = CustomerDAO.Instance.loadCustomerforOrder();
             if (cboCategorySearch.SelectedIndex == 0) //Tìm theo SĐT
             {
                 
@@ -162,10 +188,10 @@ namespace CinemaManagement.GUI
         private void btnCal_Click(object sender, EventArgs e)
         {
             
-            if (cbcheckpoint.Checked==true)
-            {
-                sumDes += Convert.ToInt32(txtPointCus.Text)*1000;
-            }
+            //if (cbcheckpoint.Checked==true)
+            //{
+            //    sumDes += Convert.ToInt32(txtPointCus.Text)*1000;
+            //}
             if (nudHSSV.Value != 0)
             {
                 sumDes += 20000* Convert.ToInt32(nudHSSV.Value);
@@ -181,6 +207,52 @@ namespace CinemaManagement.GUI
             lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
             
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtIDcus.ResetText();
+            txtNameCus.ResetText();
+            txtPointCus.ResetText();
+            txtTypeCus.ResetText();
+            
+            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            //int total_cost = int.Parse(Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes))
+            foreach(Seat item in this.ListSeat)
+            {
+                if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Errror");
+                    return;
+                }
+            }
+            MessageBox.Show("Success");
+        }
+
+
+        string createAutoIdTicket()
+        {
+            string lastID = TicketDAO.Instance.getLastIdTicket();
+            //MessageBox.Show(lastID);
+            int id = Convert.ToInt32(lastID[2].ToString() + lastID[3].ToString()) + 1;
+
+            if (id < 10)
+            {
+                return "ti0" + id.ToString();
+            }
+            return "ti" + id.ToString();
+        }
+
+        private void cboPromotion_TextChanged(object sender, EventArgs e)
+        {
+            if(cboPromotion.Text ==  "")
+            {
+                txtValue.Text = "0";
+            }    
         }
     }
 }

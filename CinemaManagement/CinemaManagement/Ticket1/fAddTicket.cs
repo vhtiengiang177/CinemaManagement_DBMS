@@ -64,14 +64,14 @@ namespace CinemaManagement.Ticket1
 
         private void btnXuatVe_Click(object sender, EventArgs e)
         {
-            foreach(Seat item in this.Listseat)
-            {
-                if(!TicketDAO.Instance.createTicket(createAutoIdTicket(), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat))
-                {
-                    MessageBox.Show(item.Name_seat);
-                }
-                MessageBox.Show("Thanh Cong");
-            }    
+            //foreach(Seat item in this.Listseat)
+            //{
+            //    if(!TicketDAO.Instance.createTicket(createAutoIdTicket(), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat))
+            //    {
+            //        MessageBox.Show(item.Name_seat);
+            //    }
+            //    MessageBox.Show("Thanh Cong");
+            //}    
         }
     }
 }

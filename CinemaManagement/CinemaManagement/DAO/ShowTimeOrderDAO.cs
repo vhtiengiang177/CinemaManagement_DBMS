@@ -29,6 +29,7 @@ namespace CinemaManagement.DAO
 
         }
 
+
         public List<DateTime> getDateShiftShow(string idMovie)
         {
             List<DateTime> listDateShiftShow = new List<DateTime>();

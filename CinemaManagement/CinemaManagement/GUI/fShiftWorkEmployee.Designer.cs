@@ -32,6 +32,7 @@
             this.plMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.plSearch = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -119,10 +120,12 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbID = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.plSearch.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,7 +155,6 @@
             this.panel22.SuspendLayout();
             this.plInfoOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // plMain
@@ -184,6 +186,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(916, 80);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(97, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 48;
+            this.pictureBox1.TabStop = false;
             // 
             // btnLoadData
             // 
@@ -695,7 +707,7 @@
             // 
             this.rdoFullMonday.AutoSize = true;
             this.rdoFullMonday.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFullMonday.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullMonday.Location = new System.Drawing.Point(5, 49);
             this.rdoFullMonday.Name = "rdoFullMonday";
             this.rdoFullMonday.Size = new System.Drawing.Size(44, 18);
             this.rdoFullMonday.TabIndex = 2;
@@ -766,7 +778,7 @@
             // 
             this.rdoFullTus.AutoSize = true;
             this.rdoFullTus.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFullTus.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullTus.Location = new System.Drawing.Point(5, 49);
             this.rdoFullTus.Name = "rdoFullTus";
             this.rdoFullTus.Size = new System.Drawing.Size(44, 18);
             this.rdoFullTus.TabIndex = 2;
@@ -851,7 +863,7 @@
             // 
             this.rdoFullWed.AutoSize = true;
             this.rdoFullWed.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFullWed.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullWed.Location = new System.Drawing.Point(5, 49);
             this.rdoFullWed.Name = "rdoFullWed";
             this.rdoFullWed.Size = new System.Drawing.Size(44, 18);
             this.rdoFullWed.TabIndex = 2;
@@ -906,7 +918,7 @@
             // rdoFullThur
             // 
             this.rdoFullThur.AutoSize = true;
-            this.rdoFullThur.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullThur.Location = new System.Drawing.Point(5, 49);
             this.rdoFullThur.Name = "rdoFullThur";
             this.rdoFullThur.Size = new System.Drawing.Size(44, 18);
             this.rdoFullThur.TabIndex = 2;
@@ -974,7 +986,7 @@
             // rdoFullFri
             // 
             this.rdoFullFri.AutoSize = true;
-            this.rdoFullFri.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullFri.Location = new System.Drawing.Point(6, 49);
             this.rdoFullFri.Name = "rdoFullFri";
             this.rdoFullFri.Size = new System.Drawing.Size(44, 18);
             this.rdoFullFri.TabIndex = 2;
@@ -1042,7 +1054,7 @@
             // rdoFullSa
             // 
             this.rdoFullSa.AutoSize = true;
-            this.rdoFullSa.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullSa.Location = new System.Drawing.Point(5, 49);
             this.rdoFullSa.Name = "rdoFullSa";
             this.rdoFullSa.Size = new System.Drawing.Size(44, 18);
             this.rdoFullSa.TabIndex = 2;
@@ -1111,7 +1123,7 @@
             // 
             this.rdoFullSun.AutoSize = true;
             this.rdoFullSun.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFullSun.Location = new System.Drawing.Point(4, 49);
+            this.rdoFullSun.Location = new System.Drawing.Point(6, 49);
             this.rdoFullSun.Name = "rdoFullSun";
             this.rdoFullSun.Size = new System.Drawing.Size(44, 18);
             this.rdoFullSun.TabIndex = 2;
@@ -1182,6 +1194,8 @@
             // plInfoOne
             // 
             this.plInfoOne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plInfoOne.Controls.Add(this.lbName);
+            this.plInfoOne.Controls.Add(this.lbID);
             this.plInfoOne.Controls.Add(this.txtName);
             this.plInfoOne.Controls.Add(this.txtID);
             this.plInfoOne.Controls.Add(this.picEmployee);
@@ -1194,7 +1208,7 @@
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Info;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Location = new System.Drawing.Point(42, 187);
+            this.txtName.Location = new System.Drawing.Point(42, 195);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(161, 13);
@@ -1217,19 +1231,31 @@
             this.picEmployee.Location = new System.Drawing.Point(3, 3);
             this.picEmployee.Name = "picEmployee";
             this.picEmployee.Size = new System.Drawing.Size(127, 137);
-            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // pictureBox1
+            // lbID
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbID.Location = new System.Drawing.Point(139, 67);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(100, 33);
+            this.lbID.TabIndex = 3;
+            this.lbID.Text = "label7";
+            this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbName
+            // 
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbName.Location = new System.Drawing.Point(3, 153);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(251, 33);
+            this.lbName.TabIndex = 4;
+            this.lbName.Text = "label8";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fShifWorkEmployee
             // 
@@ -1239,12 +1265,13 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(937, 637);
             this.Controls.Add(this.plMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fShifWorkEmployee";
             this.Text = "fShifWorkEmployee";
             this.plMain.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.plSearch.ResumeLayout(false);
             this.plSearch.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -1295,7 +1322,6 @@
             this.plInfoOne.ResumeLayout(false);
             this.plInfoOne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1393,5 +1419,7 @@
         private System.Windows.Forms.RadioButton rdoEvrFullWeek;
         private System.Windows.Forms.RadioButton rdoMorFullWeek;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbID;
     }
 }

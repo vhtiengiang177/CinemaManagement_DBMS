@@ -195,5 +195,12 @@ namespace CinemaManagement.DAO
             string query = "exec sp_createShiftFullWeek @date , @idEmployee , @idShift ";
             return  DataProvider.Instance.ExecuteNonQuery(query, new object[] { date, idEmployee , idShitf}) > 0;
         }
+
+        public bool updatePassLogin(string username, string pass, string newPass)
+        {
+            string query = " exec sp_updatePass @username ,  @pass , @newPass ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, pass, newPass}) > 0;
+           
+        }
     }
 }

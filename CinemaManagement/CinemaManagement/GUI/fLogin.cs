@@ -37,7 +37,7 @@ namespace CinemaManagement.GUI
         public fLogin()
         {
             InitializeComponent();
-          
+            //ckbHidePass.CheckState != CheckState.Checked;
         }
 
         #region CHECK LOGIN
@@ -69,13 +69,11 @@ namespace CinemaManagement.GUI
         }
 
 
-        public bool isLogin()
+        public string isLogin()
         {
-            string temp = "";
-            temp = (string)LoginDAO.Instance.isLogin(userName, passWord);
-            if (temp != "" || temp != null)
-                return true;
-            return false;
+            string id = "";
+            id = (string)LoginDAO.Instance.isLogin(userName, passWord);
+            return id;
         }
 
         #endregion
@@ -100,14 +98,22 @@ namespace CinemaManagement.GUI
         {
             if(checkInfoLogin() == 2)
             {
-                if(isLogin())
+                string id = isLogin();
+                if (id != null && id != "" )
                 {
                     int type = getTypeEmployee();
+                    this.Hide();
+                    fMain f = new fMain(id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                    f.ShowDialog();
+                    this.Show();
+                    txtPassword.Clear();
+                    txtUserName.Clear();
+                   
                     // Đăng nhập thành công, set quyền truy cập
                 }
                 else
                 {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !", "Thông báo", (MessageBoxButtons)MessageBoxIcon.Error);
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !", "Thông báo");
                 }
             }
         }
@@ -127,5 +133,17 @@ namespace CinemaManagement.GUI
         }
 
         #endregion
+
+        private void ckbHidePass_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ckbHidePass_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (ckbHidePass.CheckState != CheckState.Checked)
+                txtPassword.UseSystemPasswordChar = false;
+            else txtPassword.UseSystemPasswordChar = true;
+        }
     }
 }

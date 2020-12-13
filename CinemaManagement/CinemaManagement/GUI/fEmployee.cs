@@ -367,6 +367,16 @@ namespace CinemaManagement.GUI
             fEmployee.searchTypeIndex = cboTypeSearchEmployee.SelectedIndex;
             
         }
+
+        private void btnChangeShift_Click(object sender, EventArgs e)
+        {
+            if(txtID.Text != null && txtID.Text != "")
+            {
+                fShifWorkEmployee f = new fShifWorkEmployee(txtID.Text.Trim(), txtNameEmployee.Text.Trim());
+                f.ShowDialog();
+
+            }    
+        }
     }
 }
 

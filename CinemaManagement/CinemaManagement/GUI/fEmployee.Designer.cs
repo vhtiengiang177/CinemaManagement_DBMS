@@ -46,14 +46,22 @@
             this.txtSearchEmployee = new System.Windows.Forms.TextBox();
             this.cboTypeSearchEmployee = new System.Windows.Forms.ComboBox();
             this.plInforMain = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEditEmployee = new System.Windows.Forms.Button();
             this.plInforContact = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbCinema = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.plAddress = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAddressEmployee = new System.Windows.Forms.TextBox();
@@ -65,6 +73,9 @@
             this.txtPhoneEmployee = new System.Windows.Forms.TextBox();
             this.btnAddNewEmployee = new System.Windows.Forms.Button();
             this.plInfor = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnAddImg = new System.Windows.Forms.Button();
             this.txtStateEmployee = new System.Windows.Forms.TextBox();
             this.plGender = new System.Windows.Forms.Panel();
@@ -82,23 +93,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.cboTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnChangeShift = new System.Windows.Forms.Button();
             this.plMain.SuspendLayout();
             this.plListMain.SuspendLayout();
             this.plControl.SuspendLayout();
@@ -109,6 +110,7 @@
             this.plSearch.SuspendLayout();
             this.plInforMain.SuspendLayout();
             this.plInforContact.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.plAddress.SuspendLayout();
             this.plEmail.SuspendLayout();
@@ -122,7 +124,6 @@
             this.plType.SuspendLayout();
             this.plName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMain
@@ -325,6 +326,44 @@
             this.plInforMain.Size = new System.Drawing.Size(408, 633);
             this.plInforMain.TabIndex = 1;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
+            this.panel4.Location = new System.Drawing.Point(4, -3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 633);
+            this.panel4.TabIndex = 1;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.Snow;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Location = new System.Drawing.Point(6, 624);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(402, 10);
+            this.textBox10.TabIndex = 15;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.Snow;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Location = new System.Drawing.Point(5, 383);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(402, 10);
+            this.textBox9.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Snow;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Location = new System.Drawing.Point(10, 621);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(388, 2);
+            this.textBox4.TabIndex = 7;
+            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Salmon;
@@ -385,6 +424,56 @@
             this.plInforContact.Size = new System.Drawing.Size(401, 226);
             this.plInforContact.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(134)))), ((int)(((byte)(128)))));
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(4, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(388, 35);
+            this.panel3.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Info;
+            this.label8.Location = new System.Drawing.Point(8, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 15);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Contact:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Snow;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(4, 180);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(388, 2);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Snow;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(4, 135);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(388, 2);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Snow;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(7, 83);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(388, 2);
+            this.textBox1.TabIndex = 4;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cmbCinema);
@@ -413,17 +502,6 @@
             this.label9.Size = new System.Drawing.Size(33, 15);
             this.label9.TabIndex = 1;
             this.label9.Text = "Rạp:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Info;
-            this.label8.Location = new System.Drawing.Point(8, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 15);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Contact:";
             // 
             // plAddress
             // 
@@ -526,6 +604,7 @@
             // 
             // plInfor
             // 
+            this.plInfor.Controls.Add(this.btnChangeShift);
             this.plInfor.Controls.Add(this.textBox7);
             this.plInfor.Controls.Add(this.textBox6);
             this.plInfor.Controls.Add(this.textBox5);
@@ -543,6 +622,36 @@
             this.plInfor.Name = "plInfor";
             this.plInfor.Size = new System.Drawing.Size(403, 332);
             this.plInfor.TabIndex = 0;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.Snow;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Location = new System.Drawing.Point(166, 273);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(229, 10);
+            this.textBox7.TabIndex = 13;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Snow;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Location = new System.Drawing.Point(165, 172);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(229, 10);
+            this.textBox6.TabIndex = 12;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Snow;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Location = new System.Drawing.Point(168, 224);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(229, 10);
+            this.textBox5.TabIndex = 11;
             // 
             // btnAddImg
             // 
@@ -708,6 +817,16 @@
             this.plType.Size = new System.Drawing.Size(231, 47);
             this.plType.TabIndex = 2;
             // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.Snow;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Location = new System.Drawing.Point(2, 34);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(229, 10);
+            this.textBox8.TabIndex = 14;
+            // 
             // cboTypeEmployee
             // 
             this.cboTypeEmployee.BackColor = System.Drawing.Color.MistyRose;
@@ -740,9 +859,10 @@
             // txtNameEmployee
             // 
             this.txtNameEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNameEmployee.Location = new System.Drawing.Point(32, 14);
+            this.txtNameEmployee.Location = new System.Drawing.Point(33, 13);
+            this.txtNameEmployee.Multiline = true;
             this.txtNameEmployee.Name = "txtNameEmployee";
-            this.txtNameEmployee.Size = new System.Drawing.Size(188, 14);
+            this.txtNameEmployee.Size = new System.Drawing.Size(188, 31);
             this.txtNameEmployee.TabIndex = 0;
             // 
             // picEmployee
@@ -758,122 +878,20 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // textBox1
+            // btnChangeShift
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Snow;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(7, 83);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 2);
-            this.textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Snow;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(4, 135);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(388, 2);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Snow;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(4, 180);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(388, 2);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Snow;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(10, 621);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(388, 2);
-            this.textBox4.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(134)))), ((int)(((byte)(128)))));
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(4, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(388, 35);
-            this.panel3.TabIndex = 7;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.Snow;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(168, 224);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(229, 10);
-            this.textBox5.TabIndex = 11;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.Snow;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(165, 172);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(229, 10);
-            this.textBox6.TabIndex = 12;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.Snow;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(166, 273);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(229, 10);
-            this.textBox7.TabIndex = 13;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.Snow;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(2, 34);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(229, 10);
-            this.textBox8.TabIndex = 14;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.Snow;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(5, 383);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(402, 10);
-            this.textBox9.TabIndex = 14;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.Snow;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Location = new System.Drawing.Point(6, 624);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(402, 10);
-            this.textBox10.TabIndex = 15;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Location = new System.Drawing.Point(4, -3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 633);
-            this.panel4.TabIndex = 1;
+            this.btnChangeShift.BackColor = System.Drawing.Color.Salmon;
+            this.btnChangeShift.FlatAppearance.BorderSize = 0;
+            this.btnChangeShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeShift.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeShift.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChangeShift.Location = new System.Drawing.Point(20, 305);
+            this.btnChangeShift.Name = "btnChangeShift";
+            this.btnChangeShift.Size = new System.Drawing.Size(140, 23);
+            this.btnChangeShift.TabIndex = 14;
+            this.btnChangeShift.Text = "Xếp ca ";
+            this.btnChangeShift.UseVisualStyleBackColor = false;
+            this.btnChangeShift.Click += new System.EventHandler(this.btnChangeShift_Click);
             // 
             // fEmployee
             // 
@@ -900,6 +918,8 @@
             this.plInforMain.PerformLayout();
             this.plInforContact.ResumeLayout(false);
             this.plInforContact.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.plAddress.ResumeLayout(false);
@@ -925,8 +945,6 @@
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1003,5 +1021,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnChangeShift;
     }
 }

@@ -305,5 +305,15 @@ namespace CinemaManagement.GUI
         {
             this.Hide();
         }
+
+        private void nudPromotion_ValueChanged(object sender, EventArgs e)
+        {
+            this.nudHSSV.Maximum = this.ListSeat.Count - this.nudPromotion.Value;
+        }
+
+        private void nudHSSV_ValueChanged(object sender, EventArgs e)
+        {
+            this.nudPromotion.Maximum = this.ListSeat.Count - this.nudHSSV.Value;
+        }
     }
 }

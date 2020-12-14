@@ -42,6 +42,8 @@
             this.lblShiftShow = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudPromotion = new System.Windows.Forms.NumericUpDown();
             this.btnReset = new System.Windows.Forms.Button();
             this.nudHSSV = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.nudPromotion = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
             this.splBody.Panel2.SuspendLayout();
@@ -80,13 +80,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             this.pnlBodyLeft.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSSV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).BeginInit();
             this.SuspendLayout();
             // 
             // splBody
@@ -265,6 +265,23 @@
             this.panel1.Size = new System.Drawing.Size(744, 554);
             this.panel1.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(155, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Số lượng";
+            // 
+            // nudPromotion
+            // 
+            this.nudPromotion.Location = new System.Drawing.Point(288, 89);
+            this.nudPromotion.Name = "nudPromotion";
+            this.nudPromotion.Size = new System.Drawing.Size(120, 22);
+            this.nudPromotion.TabIndex = 42;
+            this.nudPromotion.ValueChanged += new System.EventHandler(this.nudPromotion_ValueChanged);
+            // 
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(635, 13);
@@ -281,6 +298,7 @@
             this.nudHSSV.Name = "nudHSSV";
             this.nudHSSV.Size = new System.Drawing.Size(76, 22);
             this.nudHSSV.TabIndex = 40;
+            this.nudHSSV.ValueChanged += new System.EventHandler(this.nudHSSV_ValueChanged);
             // 
             // label10
             // 
@@ -547,22 +565,6 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // nudPromotion
-            // 
-            this.nudPromotion.Location = new System.Drawing.Point(288, 89);
-            this.nudPromotion.Name = "nudPromotion";
-            this.nudPromotion.Size = new System.Drawing.Size(120, 22);
-            this.nudPromotion.TabIndex = 42;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(155, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Số lượng";
-            // 
             // fShowPromotion_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -582,6 +584,7 @@
             this.pnlBodyLeft.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSSV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -589,7 +592,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).EndInit();
             this.ResumeLayout(false);
 
         }

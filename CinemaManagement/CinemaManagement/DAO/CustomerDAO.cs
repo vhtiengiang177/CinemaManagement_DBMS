@@ -55,7 +55,7 @@ namespace CinemaManagement.DAO
 
         public DataTable SearchCustomer(string search)
         {
-            string query = "select * from fu_SearchCustomer('% @search %')";
+            string query = "select * from fu_SearchCustomer( @search )";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
         }
         

@@ -15,9 +15,10 @@ using CinemaManagement.DAO;
 
 namespace CinemaManagement.GUI
 {
+
     public partial class fAddEmployee : Form
     {
-
+        string MessErr = "";
         MemoryStream ms;
         byte[] arrImage = null;
         public static string idNew;
@@ -140,20 +141,96 @@ namespace CinemaManagement.GUI
             }
         }
 
+        public void RemovetxtIndentity(object sender, EventArgs e)
+        {
+            if (txtIndentity.Text.Contains("đã tồn tại"))
+            {
+                txtIndentity.Clear();
+            }
+        }
 
+        public void RemovetxtPhone(object sender, EventArgs e)
+        {
+            if (txtPhoneEmployee.Text.Contains("đã tồn tại"))
+            {
+                txtPhoneEmployee.Clear();
+            }
+        }
+
+        public void RemovetxtEmail(object sender, EventArgs e)
+        {
+            if (txtEmailEmployee.Text.Contains("đã tồn tại"))
+            {
+                txtEmailEmployee.Clear();
+            }
+        }
+
+        public void RemovetxtName(object sender, EventArgs e)
+        {
+            if (txtNameEmployee.Text.Contains("không được để trống"))
+            {
+                txtNameEmployee.Clear();
+            }
+        }
+
+        public void RemovetxtSalary(object sender, EventArgs e)
+        {
+            if (txtSalary.Text.Contains("không được để trống"))
+            {
+                txtSalary.Clear();
+            }
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EmployeeDAO.Instance.insertEmployee(createEmp()))
+                int err = 0;
+                if(EmployeeDAO.Instance.search_IdentityCardEmployee(txtIndentity.Text) != null)
                 {
-                    MessageBox.Show("Đã thêm thành công !");
-
-                    fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
-                    clearValue();
-
+                    txtIndentity.Text = "CMND đã tồn tại !";
+                    
+                    err = err + 1;
+                    txtIndentity.GotFocus += RemovetxtIndentity;
                 }
+
+                if (EmployeeDAO.Instance.search_PhoneEmployee(txtPhoneEmployee.Text) != null)
+                {
+                    txtPhoneEmployee.Text = "SĐT đã tồn tại !";
+                    err = err + 1;
+                    txtPhoneEmployee.GotFocus += RemovetxtPhone;
+                }
+
+                if (EmployeeDAO.Instance.search_EmailEmployee(txtEmailEmployee.Text) != null)
+                {
+                    txtEmailEmployee.Text = "Email đã tồn tại !";
+                    err = err + 1;
+                    txtEmailEmployee.GotFocus += RemovetxtEmail;
+                }
+
+                if(txtNameEmployee.Text == "")
+                {
+                    txtNameEmployee.Text = "Tên nhân viên không được để trống !";
+                    err = err + 1;
+                    txtNameEmployee.GotFocus += RemovetxtName;
+                }
+
+                if (txtSalary.Text == "")
+                {
+                    txtSalary.Text = "Lương nhân viên không được để trống !";
+                    err = err + 1;
+                    txtSalary.GotFocus += RemovetxtSalary;
+                }
+
+                if (err == 0)
+                    if (EmployeeDAO.Instance.insertEmployee(createEmp()))
+                    {
+                        MessageBox.Show("Đã thêm thành công !");
+
+                        fAddEmployee.idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
+                        clearValue();
+
+                    }
 
             }
             catch (SqlException ex)

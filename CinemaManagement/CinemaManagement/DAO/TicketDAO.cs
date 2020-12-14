@@ -29,10 +29,16 @@ namespace CinemaManagement.DAO
 
         }
 
-        public bool createTicket(string id_ticket, string id_room, string id_movie, string id_shiftshow, DateTime date_showtimes, string id_seat)
+        public bool createTicket(string id_ticket, int cost_ticket, int totalcost_ticket, string id_room, string id_movie, string id_shiftshow, DateTime date_showtimes, string id_seat, string id_customer, string id_employee, string id_promotion)
         {
-            string query = " insert into Ticket(id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee, id_promotion) values( @id_ticket , 100, 100, @id_room , @id_movie , @id_shiftshow , @date_showtimes , @id_seat , 'cu01', 'em01', null)";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat}) > 0;
+            string query = " exec sp_InsertTicket @id_ticket , @cost_ticket , @totalcost_ticket , @id_room , @id_movie , @id_shiftshow , @date_showtimes , @id_seat , @id_customer , @id_employee , @id_promotion ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee, id_promotion}) > 0;
+        }
+
+        public bool createTicketWithoutPromotion(string id_ticket, int cost_ticket, int totalcost_ticket, string id_room, string id_movie, string id_shiftshow, DateTime date_showtimes, string id_seat, string id_customer, string id_employee)
+        {
+            string query = " exec sp_InsertTicket_Without_Promotion @id_ticket , @cost_ticket , @totalcost_ticket , @id_room , @id_movie , @id_shiftshow , @date_showtimes , @id_seat , @id_customer , @id_employee  ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id_ticket, cost_ticket, totalcost_ticket, id_room, id_movie, id_shiftshow, date_showtimes, id_seat, id_customer, id_employee }) > 0;
         }
 
         public string getLastIdTicket()
@@ -42,5 +48,6 @@ namespace CinemaManagement.DAO
 
             return data.Rows[data.Rows.Count - 1][0].ToString();
         }
+
     }
 }

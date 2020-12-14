@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace CinemaManagement.GUI
 {
     public partial class fShowSeat_Order : Form
     {
+        DataTable dt = new DataTable();
+
+        MemoryStream ms;
+        private Movie mo;
+
         private List<Seat> listSeat = new List<Seat>();
 
         private Showtimes showtimes;
@@ -28,10 +34,36 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             this.Showtimes = so;
             loadSeat(this.Showtimes.Id_room);
+            loadMovie();
+           
         }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
         public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
-        
+        public Movie Mo { get => mo; set => mo = value; }
+
+        public void loadMovie()
+        {
+            dt = MovieDAO.Instance.getMovieByID(this.Showtimes.Id_movie);
+            // Lấy thông tin phim
+            foreach (DataRow item in dt.Rows)
+            {
+                this.Mo = new Movie(item);
+            }
+            this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
+            if (dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
+            this.lblShowDate_Showtime.Text = this.Showtimes.Date_showtimes.ToShortDateString();
+            this.lblShowStarttime.Text = this.Showtimes.Starttime_shiftshow;
+            this.lblShowNameRoom.Text = (String)ShowTimeOrderDAO.Instance.getNameRoomForShowTime(this.Showtimes.Id_room);
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            ms.Close();
+            return returnImage;
+        }
 
         void loadSeat(string id_room)
         {
@@ -41,6 +73,8 @@ namespace CinemaManagement.GUI
                 Button btn = new Button() { Width = 50, Height = 50 };
                 btn.Tag = item;
                 btn.BackColor = Color.Gray;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
 
                 if(SeatDAO.Instance.CheckTicket(this.Showtimes, item.Id_seat))
                 {
@@ -80,10 +114,18 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fAddTicket f = new fAddTicket(this.Showtimes, this.ListSeat);
-            this.Hide();
+            fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
+            //this.Hide();
             f.Show();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+ 
+
 
 
         //void subtractSeat(string id)

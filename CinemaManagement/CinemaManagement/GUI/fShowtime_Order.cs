@@ -165,8 +165,19 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fSeatTicket f = new fSeatTicket(this.stSelect);
+            fShowSeat_Order f = new fShowSeat_Order(this.stSelect);
             f.Show();
         }
+
+        private void picImageMovie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExitShowTimeOrder_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

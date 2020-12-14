@@ -33,6 +33,8 @@
             this.picImageMovie = new System.Windows.Forms.PictureBox();
             this.lblShowNameMovie = new System.Windows.Forms.Label();
             this.pnlBodyLeft = new System.Windows.Forms.Panel();
+            this.lblShowNameSeat = new System.Windows.Forms.Label();
+            this.lblSeat = new System.Windows.Forms.Label();
             this.lblShowNameRoom = new System.Windows.Forms.Label();
             this.lblShowStarttime = new System.Windows.Forms.Label();
             this.lblShowDate_Showtime = new System.Windows.Forms.Label();
@@ -40,6 +42,9 @@
             this.lblShiftShow = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudPromotion = new System.Windows.Forms.NumericUpDown();
+            this.btnReset = new System.Windows.Forms.Button();
             this.nudHSSV = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNumTicket = new System.Windows.Forms.TextBox();
@@ -51,13 +56,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtValue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnCal = new System.Windows.Forms.Button();
             this.txtIDcus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNameCus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboCategorySearch = new System.Windows.Forms.ComboBox();
-            this.cbcheckpoint = new System.Windows.Forms.CheckBox();
             this.txtTypeCus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointCus = new System.Windows.Forms.TextBox();
@@ -69,8 +72,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.lblSeat = new System.Windows.Forms.Label();
-            this.lblShowNameSeat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splBody)).BeginInit();
             this.splBody.Panel1.SuspendLayout();
             this.splBody.Panel2.SuspendLayout();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             this.pnlBodyLeft.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSSV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -102,8 +104,8 @@
             // splBody.Panel2
             // 
             this.splBody.Panel2.Controls.Add(this.panel1);
-            this.splBody.Size = new System.Drawing.Size(1072, 513);
-            this.splBody.SplitterDistance = 300;
+            this.splBody.Size = new System.Drawing.Size(1040, 554);
+            this.splBody.SplitterDistance = 291;
             this.splBody.SplitterWidth = 5;
             this.splBody.TabIndex = 1;
             // 
@@ -148,8 +150,26 @@
             this.pnlBodyLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlBodyLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBodyLeft.Name = "pnlBodyLeft";
-            this.pnlBodyLeft.Size = new System.Drawing.Size(300, 513);
+            this.pnlBodyLeft.Size = new System.Drawing.Size(291, 554);
             this.pnlBodyLeft.TabIndex = 23;
+            // 
+            // lblShowNameSeat
+            // 
+            this.lblShowNameSeat.AutoSize = true;
+            this.lblShowNameSeat.Location = new System.Drawing.Point(69, 394);
+            this.lblShowNameSeat.Name = "lblShowNameSeat";
+            this.lblShowNameSeat.Size = new System.Drawing.Size(32, 17);
+            this.lblShowNameSeat.TabIndex = 41;
+            this.lblShowNameSeat.Text = "ghế";
+            // 
+            // lblSeat
+            // 
+            this.lblSeat.AutoSize = true;
+            this.lblSeat.Location = new System.Drawing.Point(15, 394);
+            this.lblSeat.Name = "lblSeat";
+            this.lblSeat.Size = new System.Drawing.Size(43, 17);
+            this.lblSeat.TabIndex = 41;
+            this.lblSeat.Text = "Ghế: ";
             // 
             // lblShowNameRoom
             // 
@@ -213,6 +233,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.nudPromotion);
+            this.panel1.Controls.Add(this.btnReset);
             this.panel1.Controls.Add(this.nudHSSV);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtNumTicket);
@@ -221,13 +244,11 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtValue);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnCal);
             this.panel1.Controls.Add(this.txtIDcus);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtNameCus);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cboCategorySearch);
-            this.panel1.Controls.Add(this.cbcheckpoint);
             this.panel1.Controls.Add(this.txtTypeCus);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPointCus);
@@ -239,8 +260,35 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 513);
+            this.panel1.Size = new System.Drawing.Size(744, 554);
             this.panel1.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(155, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Số lượng";
+            // 
+            // nudPromotion
+            // 
+            this.nudPromotion.Location = new System.Drawing.Point(288, 89);
+            this.nudPromotion.Name = "nudPromotion";
+            this.nudPromotion.Size = new System.Drawing.Size(120, 22);
+            this.nudPromotion.TabIndex = 42;
+            this.nudPromotion.ValueChanged += new System.EventHandler(this.nudPromotion_ValueChanged);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(635, 13);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 41;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // nudHSSV
             // 
@@ -248,6 +296,7 @@
             this.nudHSSV.Name = "nudHSSV";
             this.nudHSSV.Size = new System.Drawing.Size(76, 22);
             this.nudHSSV.TabIndex = 40;
+            this.nudHSSV.ValueChanged += new System.EventHandler(this.nudHSSV_ValueChanged);
             // 
             // label10
             // 
@@ -324,7 +373,7 @@
             // 
             // txtValue
             // 
-            this.txtValue.Location = new System.Drawing.Point(572, 78);
+            this.txtValue.Location = new System.Drawing.Point(572, 89);
             this.txtValue.Name = "txtValue";
             this.txtValue.ReadOnly = true;
             this.txtValue.Size = new System.Drawing.Size(112, 22);
@@ -333,21 +382,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(432, 78);
+            this.label7.Location = new System.Drawing.Point(432, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Giá trị khuyến mãi";
-            // 
-            // btnCal
-            // 
-            this.btnCal.Location = new System.Drawing.Point(235, 344);
-            this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(110, 33);
-            this.btnCal.TabIndex = 19;
-            this.btnCal.Text = "Xác nhận";
-            this.btnCal.UseVisualStyleBackColor = true;
-            this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
             // 
             // txtIDcus
             // 
@@ -385,6 +424,7 @@
             // 
             // cboCategorySearch
             // 
+            this.cboCategorySearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategorySearch.FormattingEnabled = true;
             this.cboCategorySearch.Items.AddRange(new object[] {
             "Số điện thoại",
@@ -394,16 +434,6 @@
             this.cboCategorySearch.Size = new System.Drawing.Size(155, 24);
             this.cboCategorySearch.TabIndex = 14;
             this.cboCategorySearch.SelectedIndexChanged += new System.EventHandler(this.cboCategorySearch_SelectedIndexChanged);
-            // 
-            // cbcheckpoint
-            // 
-            this.cbcheckpoint.AutoSize = true;
-            this.cbcheckpoint.Location = new System.Drawing.Point(319, 270);
-            this.cbcheckpoint.Name = "cbcheckpoint";
-            this.cbcheckpoint.Size = new System.Drawing.Size(85, 21);
-            this.cbcheckpoint.TabIndex = 11;
-            this.cbcheckpoint.Text = "Đổi điểm";
-            this.cbcheckpoint.UseVisualStyleBackColor = true;
             // 
             // txtTypeCus
             // 
@@ -464,16 +494,17 @@
             this.cboPromotion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPromotion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPromotion.FormattingEnabled = true;
-            this.cboPromotion.Location = new System.Drawing.Point(158, 75);
+            this.cboPromotion.Location = new System.Drawing.Point(158, 59);
             this.cboPromotion.Name = "cboPromotion";
             this.cboPromotion.Size = new System.Drawing.Size(250, 24);
             this.cboPromotion.TabIndex = 1;
             this.cboPromotion.SelectedIndexChanged += new System.EventHandler(this.cboPromotion_SelectedIndexChanged);
+            this.cboPromotion.TextChanged += new System.EventHandler(this.cboPromotion_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 75);
+            this.label1.Location = new System.Drawing.Point(39, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 0;
@@ -495,8 +526,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnBack);
             this.splitContainer1.Panel2.Controls.Add(this.btnDone);
-            this.splitContainer1.Size = new System.Drawing.Size(1072, 569);
-            this.splitContainer1.SplitterDistance = 513;
+            this.splitContainer1.Size = new System.Drawing.Size(1040, 615);
+            this.splitContainer1.SplitterDistance = 554;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -509,6 +540,7 @@
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnDone
             // 
@@ -519,30 +551,13 @@
             this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Thanh toán";
             this.btnDone.UseVisualStyleBackColor = true;
-            // 
-            // lblSeat
-            // 
-            this.lblSeat.AutoSize = true;
-            this.lblSeat.Location = new System.Drawing.Point(15, 394);
-            this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(43, 17);
-            this.lblSeat.TabIndex = 41;
-            this.lblSeat.Text = "Ghế: ";
-            // 
-            // lblShowNameSeat
-            // 
-            this.lblShowNameSeat.AutoSize = true;
-            this.lblShowNameSeat.Location = new System.Drawing.Point(69, 394);
-            this.lblShowNameSeat.Name = "lblShowNameSeat";
-            this.lblShowNameSeat.Size = new System.Drawing.Size(32, 17);
-            this.lblShowNameSeat.TabIndex = 41;
-            this.lblShowNameSeat.Text = "ghế";
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // fShowPromotion_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 569);
+            this.ClientSize = new System.Drawing.Size(1040, 615);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowPromotion_Order";
@@ -557,6 +572,7 @@
             this.pnlBodyLeft.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPromotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHSSV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -593,13 +609,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnCal;
         private System.Windows.Forms.TextBox txtIDcus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNameCus;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboCategorySearch;
-        private System.Windows.Forms.CheckBox cbcheckpoint;
         private System.Windows.Forms.TextBox txtTypeCus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPointCus;
@@ -611,5 +625,8 @@
         private System.Windows.Forms.NumericUpDown nudHSSV;
         private System.Windows.Forms.Label lblShowNameSeat;
         private System.Windows.Forms.Label lblSeat;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudPromotion;
     }
 }

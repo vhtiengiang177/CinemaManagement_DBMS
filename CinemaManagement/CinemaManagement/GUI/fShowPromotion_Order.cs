@@ -22,6 +22,8 @@ namespace CinemaManagement.GUI
 
         MemoryStream ms;
 
+
+        List<String> listPromotion = new List<String>();
         public fShowPromotion_Order(Showtimes st, List<Seat> se)
         {
             InitializeComponent();
@@ -30,11 +32,28 @@ namespace CinemaManagement.GUI
             LoadInfo();
             loadPromotion();
             //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
+            txtNumTicket.Text = se.Count.ToString(); ;
+            txtTypeCus.Text = "Chưa là thành viên";
+            cboCategorySearch.SelectedIndex = 0;
+            cboPromotion.SelectedItem = null;
+            CalcMoney();
+        }
+
+        public fShowPromotion_Order()
+        {
+            InitializeComponent();
+            //this.Showtimes = st;
+            //this.ListSeat = se;
+            //LoadInfo();
+            loadPromotion();
+            //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
             txtNumTicket.Text = "1";
             txtTypeCus.Text = "Chưa là thành viên";
         }
         //tổng giảm
-        double sumDes = 0;
+        int sumDes = 0;
+
+        int sum = 0;
 
         public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
@@ -73,10 +92,16 @@ namespace CinemaManagement.GUI
             }
             int temp = lblShowNameSeat.Text.Length - 3;
             //MessageBox.Show(temp.ToString());
-            if (lblShowNameSeat.Text.Length > 5)
+            if (lblShowNameSeat.Text.Length > 4)
             {
                 lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
             }
+
+            DataTable dt = MovieDAO.Instance.getMovieByID(this.Showtimes.Id_movie);
+            // Lấy thông tin phim
+            this.lblShowNameMovie.Text = dt.Rows[0][1].ToString();
+            if (dt.Rows[0][7] != DBNull.Value)
+                this.picImageMovie.Image = byteArrayToImage((byte[])dt.Rows[0][7]);
         }
 
         
@@ -86,17 +111,17 @@ namespace CinemaManagement.GUI
             //ComboBoxItem item = (sender as ComboBoxItem)..Content.ToString();
             //string str = item.Content.ToString();
 
-            string str = cboPromotion.SelectedValue.ToString();
-            MessageBox.Show(str);
+            if (cboPromotion.SelectedItem != null)
+            {
 
-            if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
-            {
-                txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
-            }
-            else
-            {
-                txtValue.Text = "0";
-            }
+
+                string str = cboPromotion.SelectedValue.ToString();
+
+                if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
+                {
+                    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
+                }
+            }  
 
         }
 
@@ -166,26 +191,160 @@ namespace CinemaManagement.GUI
         //KHi chọn btn Tính toán thì sẽ tính đc tổng giảm trên vé
         private void btnCal_Click(object sender, EventArgs e)
         {
-            
-            if (cbcheckpoint.Checked==true)
-            {
-                sumDes += Convert.ToInt32(txtPointCus.Text)*1000;
-            }
+
+            //if (cbcheckpoint.Checked==true)
+            //{
+            //    sumDes += Convert.ToInt32(txtPointCus.Text)*1000;
+            //}
+
+
+            sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
+
             if (nudHSSV.Value != 0)
             {
-                sumDes += 20000* Convert.ToInt32(nudHSSV.Value);
+                sumDes += Convert.ToInt32(nudHSSV.Value) * 18000;
             }
             if (txtValue.Text!="0")
             {
-                sumDes += Convert.ToDouble(txtValue.Text) * 90000;
+                sumDes += Convert.ToInt32(txtValue.Text) * 90000;
             }
 
-            double sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
             lbThanhTien.Text = "Thành tiền: " + sum.ToString() + " VNĐ ";
             lbTongGiam.Text = "Tổng giảm: " + sumDes.ToString() + " VNĐ";
             lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
             
 
+        }
+
+        void CalcMoney()
+        {
+            sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
+            double txtval = 0;
+            if (txtValue.Text != "0")
+            {
+                txtval = Convert.ToDouble(txtValue.Text);
+            }
+
+            sumDes = Convert.ToInt32(nudHSSV.Value) * 18000 + Convert.ToInt32(nudPromotion.Value) * Convert.ToInt32(90000 * txtval);
+
+            
+
+            lbThanhTien.Text = "Thành tiền: " + sum.ToString() + " VNĐ ";
+            lbTongGiam.Text = "Tổng giảm: " + sumDes.ToString() + " VNĐ";
+            lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtIDcus.ResetText();
+            txtNameCus.ResetText();
+            txtPointCus.ResetText();
+            txtTypeCus.ResetText();
+            
+            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            loadListPromotion();
+            //int total_cost = int.Parse(Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes))
+            for(int i =0; i < this.ListSeat.Count; i++)
+            {
+                string id_ticket = createAutoIdTicket();
+                string id_seat = this.ListSeat[i].Id_seat;
+                string id_promotion = this.listPromotion[i];
+                string id_customer = "cu00";
+                if(txtIDcus.Text != "")
+                {
+                    id_customer = this.txtIDcus.Text;
+                }
+                double valuePromotion = 0;
+                if (id_promotion != "null")
+                {
+                    valuePromotion = Convert.ToDouble(PromotionDAO.Instance.SearchValue_Promotion(id_promotion).Rows[0][0]);
+
+                    int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
+                    if (!TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer , "em01" , this.listPromotion[i]))
+                    {
+                        MessageBox.Show("Error");
+                        return;
+                    }
+                }
+                else
+                {
+
+                    int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
+                    if (!TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, "em01"))
+                    {
+                        MessageBox.Show("Error");
+                        return;
+                    }
+                }
+                MessageBox.Show("Success");
+            }    
+            //foreach(Seat item in this.ListSeat)
+            //{
+            //    if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
+            //    {
+            //        MessageBox.Show("Errror");
+            //        return;
+            //    }
+            //}
+            //MessageBox.Show("Success");
+        }
+
+        void loadListPromotion()
+        {
+            this.listPromotion = new List<string>();
+            for (int i = 0; i < nudHSSV.Value; i++)
+            {
+                this.listPromotion.Add("pr02");
+            }
+            for (int j = 0; j < nudPromotion.Value; j++)
+            {
+                this.listPromotion.Add(cboPromotion.SelectedValue.ToString());
+            }
+            for (int k = 0; k < (this.listSeat.Count - nudHSSV.Value - nudPromotion.Value); k++)
+            {
+                this.listPromotion.Add("null");
+            }
+        }
+        string createAutoIdTicket()
+        {
+            string lastID = TicketDAO.Instance.getLastIdTicket();
+            //MessageBox.Show(lastID);
+            int id = Convert.ToInt32(lastID[2].ToString() + lastID[3].ToString()) + 1;
+
+            if (id < 10)
+            {
+                return "ti0" + id.ToString();
+            }
+            return "ti" + id.ToString();
+        }
+
+        private void cboPromotion_TextChanged(object sender, EventArgs e)
+        {
+            if(cboPromotion.Text ==  "")
+            {
+                txtValue.Text = "0";
+            }    
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void nudPromotion_ValueChanged(object sender, EventArgs e)
+        {
+            this.nudHSSV.Maximum = this.ListSeat.Count - this.nudPromotion.Value;
+            CalcMoney();
+        }
+
+        private void nudHSSV_ValueChanged(object sender, EventArgs e)
+        {
+            this.nudPromotion.Maximum = this.ListSeat.Count - this.nudHSSV.Value;
+            CalcMoney();
         }
     }
 }

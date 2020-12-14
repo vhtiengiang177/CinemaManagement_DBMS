@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(55, 39);
+            this.panel1.Location = new System.Drawing.Point(43, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 213);
             this.panel1.TabIndex = 0;
@@ -175,9 +175,9 @@
             this.panel2.Controls.Add(this.cboShift);
             this.panel2.Controls.Add(this.txtCountShift);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(434, 38);
+            this.panel2.Location = new System.Drawing.Point(408, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 214);
+            this.panel2.Size = new System.Drawing.Size(273, 214);
             this.panel2.TabIndex = 1;
             // 
             // btnChooseShift
@@ -347,6 +347,7 @@
             this.btnResetInfo.TabIndex = 28;
             this.btnResetInfo.Text = "Hủy lịch chiếu";
             this.btnResetInfo.UseVisualStyleBackColor = true;
+            this.btnResetInfo.Click += new System.EventHandler(this.btnResetInfo_Click);
             // 
             // label14
             // 

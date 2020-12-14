@@ -36,6 +36,7 @@ namespace CinemaManagement.GUI
             txtTypeCus.Text = "Chưa là thành viên";
             cboCategorySearch.SelectedIndex = 0;
             cboPromotion.SelectedItem = null;
+            CalcMoney();
         }
 
         public fShowPromotion_Order()
@@ -50,7 +51,9 @@ namespace CinemaManagement.GUI
             txtTypeCus.Text = "Chưa là thành viên";
         }
         //tổng giảm
-        double sumDes = 0;
+        int sumDes = 0;
+
+        int sum = 0;
 
         public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
@@ -188,26 +191,47 @@ namespace CinemaManagement.GUI
         //KHi chọn btn Tính toán thì sẽ tính đc tổng giảm trên vé
         private void btnCal_Click(object sender, EventArgs e)
         {
-            
+
             //if (cbcheckpoint.Checked==true)
             //{
             //    sumDes += Convert.ToInt32(txtPointCus.Text)*1000;
             //}
+
+
+            sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
+
             if (nudHSSV.Value != 0)
             {
-                sumDes += 20000* Convert.ToInt32(nudHSSV.Value);
+                sumDes += Convert.ToInt32(nudHSSV.Value) * 18000;
             }
             if (txtValue.Text!="0")
             {
-                sumDes += Convert.ToDouble(txtValue.Text) * 90000;
+                sumDes += Convert.ToInt32(txtValue.Text) * 90000;
             }
 
-            double sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
             lbThanhTien.Text = "Thành tiền: " + sum.ToString() + " VNĐ ";
             lbTongGiam.Text = "Tổng giảm: " + sumDes.ToString() + " VNĐ";
             lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
             
 
+        }
+
+        void CalcMoney()
+        {
+            sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
+            double txtval = 0;
+            if (txtValue.Text != "0")
+            {
+                txtval = Convert.ToDouble(txtValue.Text);
+            }
+
+            sumDes = Convert.ToInt32(nudHSSV.Value) * 18000 + Convert.ToInt32(nudPromotion.Value) * Convert.ToInt32(90000 * txtval);
+
+            
+
+            lbThanhTien.Text = "Thành tiền: " + sum.ToString() + " VNĐ ";
+            lbTongGiam.Text = "Tổng giảm: " + sumDes.ToString() + " VNĐ";
+            lbTongTra.Text = "Tổng trả: " + (sum - sumDes).ToString() + " VNĐ";
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -314,11 +338,13 @@ namespace CinemaManagement.GUI
         private void nudPromotion_ValueChanged(object sender, EventArgs e)
         {
             this.nudHSSV.Maximum = this.ListSeat.Count - this.nudPromotion.Value;
+            CalcMoney();
         }
 
         private void nudHSSV_ValueChanged(object sender, EventArgs e)
         {
             this.nudPromotion.Maximum = this.ListSeat.Count - this.nudHSSV.Value;
+            CalcMoney();
         }
     }
 }

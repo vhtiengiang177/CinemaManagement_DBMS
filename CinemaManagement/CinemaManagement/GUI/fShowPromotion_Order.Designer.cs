@@ -56,7 +56,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtValue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnCal = new System.Windows.Forms.Button();
             this.txtIDcus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNameCus = new System.Windows.Forms.TextBox();
@@ -245,7 +244,6 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtValue);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnCal);
             this.panel1.Controls.Add(this.txtIDcus);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtNameCus);
@@ -389,16 +387,6 @@
             this.label7.Size = new System.Drawing.Size(122, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Giá trị khuyến mãi";
-            // 
-            // btnCal
-            // 
-            this.btnCal.Location = new System.Drawing.Point(235, 344);
-            this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(110, 33);
-            this.btnCal.TabIndex = 19;
-            this.btnCal.Text = "Xác nhận";
-            this.btnCal.UseVisualStyleBackColor = true;
-            this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
             // 
             // txtIDcus
             // 
@@ -621,7 +609,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnCal;
         private System.Windows.Forms.TextBox txtIDcus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNameCus;

@@ -322,7 +322,9 @@ namespace CinemaManagement.GUI
             }
         }
 
-       
+        private void btnResetInfo_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

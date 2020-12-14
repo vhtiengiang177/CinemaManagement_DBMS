@@ -89,7 +89,7 @@ namespace CinemaManagement.GUI
             }
             int temp = lblShowNameSeat.Text.Length - 3;
             //MessageBox.Show(temp.ToString());
-            if (lblShowNameSeat.Text.Length > 5)
+            if (lblShowNameSeat.Text.Length > 4)
             {
                 lblShowNameSeat.Text = lblShowNameSeat.Text.Remove(temp, 3);
             }
@@ -229,13 +229,18 @@ namespace CinemaManagement.GUI
                 string id_ticket = createAutoIdTicket();
                 string id_seat = this.ListSeat[i].Id_seat;
                 string id_promotion = this.listPromotion[i];
+                string id_customer = "cu00";
+                if(txtIDcus.Text != "")
+                {
+                    id_customer = this.txtIDcus.Text;
+                }
                 double valuePromotion = 0;
                 if (id_promotion != "null")
                 {
                     valuePromotion = Convert.ToDouble(PromotionDAO.Instance.SearchValue_Promotion(id_promotion).Rows[0][0]);
 
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
-                    if (!TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, null, null, this.listPromotion[i]))
+                    if (!TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer , "em01" , this.listPromotion[i]))
                     {
                         MessageBox.Show("Error");
                         return;
@@ -245,7 +250,7 @@ namespace CinemaManagement.GUI
                 {
 
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
-                    if (!TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, this.txtIDcus.Text, "em01"))
+                    if (!TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, "em01"))
                     {
                         MessageBox.Show("Error");
                         return;

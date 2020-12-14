@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fShowSeat_Order));
             this.flpSeatTicket = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNext = new System.Windows.Forms.Button();
             this.pnlBodyLeft = new System.Windows.Forms.Panel();
+            this.picImageMovie = new System.Windows.Forms.PictureBox();
             this.lblShowNameRoom = new System.Windows.Forms.Label();
             this.lblShowNameMovie = new System.Windows.Forms.Label();
             this.lblShowStarttime = new System.Windows.Forms.Label();
@@ -46,8 +47,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlBodyLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -59,20 +62,11 @@
             this.flpSeatTicket.Size = new System.Drawing.Size(505, 335);
             this.flpSeatTicket.TabIndex = 0;
             // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(903, 526);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // pnlBodyLeft
             // 
             this.pnlBodyLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.pnlBodyLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBodyLeft.Controls.Add(this.picImageMovie);
             this.pnlBodyLeft.Controls.Add(this.lblShowNameRoom);
             this.pnlBodyLeft.Controls.Add(this.lblShowNameMovie);
             this.pnlBodyLeft.Controls.Add(this.lblShowStarttime);
@@ -86,6 +80,20 @@
             this.pnlBodyLeft.Name = "pnlBodyLeft";
             this.pnlBodyLeft.Size = new System.Drawing.Size(292, 555);
             this.pnlBodyLeft.TabIndex = 24;
+            // 
+            // picImageMovie
+            // 
+            this.picImageMovie.BackColor = System.Drawing.Color.Maroon;
+            this.picImageMovie.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picImageMovie.ErrorImage")));
+            this.picImageMovie.Image = ((System.Drawing.Image)(resources.GetObject("picImageMovie.Image")));
+            this.picImageMovie.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImageMovie.InitialImage")));
+            this.picImageMovie.Location = new System.Drawing.Point(40, 25);
+            this.picImageMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picImageMovie.Name = "picImageMovie";
+            this.picImageMovie.Size = new System.Drawing.Size(133, 167);
+            this.picImageMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImageMovie.TabIndex = 30;
+            this.picImageMovie.TabStop = false;
             // 
             // lblShowNameRoom
             // 
@@ -236,14 +244,36 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Đã chọn";
             // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Maroon;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNext.Location = new System.Drawing.Point(875, 472);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(139, 36);
+            this.btnNext.TabIndex = 29;
+            this.btnNext.Text = "Tiếp";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(757, 528);
+            this.btnBack.BackColor = System.Drawing.Color.Maroon;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(703, 472);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 28;
+            this.btnBack.Size = new System.Drawing.Size(139, 36);
+            this.btnBack.TabIndex = 30;
             this.btnBack.Text = "Quay lại";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // fShowSeat_Order
@@ -252,11 +282,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 615);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBodyLeft);
-            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.flpSeatTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowSeat_Order";
@@ -264,6 +294,7 @@
             this.Text = "fSeatTicket";
             this.pnlBodyLeft.ResumeLayout(false);
             this.pnlBodyLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -275,7 +306,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flpSeatTicket;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel pnlBodyLeft;
         private System.Windows.Forms.Label lblShowNameRoom;
         private System.Windows.Forms.Label lblShowNameMovie;
@@ -292,6 +322,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox picImageMovie;
+        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;
     }
 }

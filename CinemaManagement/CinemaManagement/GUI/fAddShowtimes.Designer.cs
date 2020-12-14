@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(43, 38);
+            this.panel1.Location = new System.Drawing.Point(16, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(269, 173);
             this.panel1.TabIndex = 0;
@@ -106,7 +106,7 @@
             // btnChooseDay
             // 
             this.btnChooseDay.Location = new System.Drawing.Point(200, 27);
-            this.btnChooseDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChooseDay.Margin = new System.Windows.Forms.Padding(2);
             this.btnChooseDay.Name = "btnChooseDay";
             this.btnChooseDay.Size = new System.Drawing.Size(56, 23);
             this.btnChooseDay.TabIndex = 38;
@@ -119,7 +119,7 @@
             this.dtmChooseDay.CustomFormat = "mm/dd/yyyy";
             this.dtmChooseDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtmChooseDay.Location = new System.Drawing.Point(30, 31);
-            this.dtmChooseDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmChooseDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtmChooseDay.Name = "dtmChooseDay";
             this.dtmChooseDay.Size = new System.Drawing.Size(151, 20);
             this.dtmChooseDay.TabIndex = 13;
@@ -128,7 +128,7 @@
             // txtCountMovieInDay
             // 
             this.txtCountMovieInDay.Location = new System.Drawing.Point(28, 102);
-            this.txtCountMovieInDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCountMovieInDay.Margin = new System.Windows.Forms.Padding(2);
             this.txtCountMovieInDay.Name = "txtCountMovieInDay";
             this.txtCountMovieInDay.ReadOnly = true;
             this.txtCountMovieInDay.Size = new System.Drawing.Size(76, 20);
@@ -137,7 +137,7 @@
             // txtShiftEmpty
             // 
             this.txtShiftEmpty.Location = new System.Drawing.Point(27, 141);
-            this.txtShiftEmpty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShiftEmpty.Margin = new System.Windows.Forms.Padding(2);
             this.txtShiftEmpty.Name = "txtShiftEmpty";
             this.txtShiftEmpty.ReadOnly = true;
             this.txtShiftEmpty.Size = new System.Drawing.Size(76, 20);
@@ -182,15 +182,15 @@
             this.panel2.Controls.Add(this.cboShift);
             this.panel2.Controls.Add(this.txtCountShift);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(408, 38);
+            this.panel2.Location = new System.Drawing.Point(291, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 214);
+            this.panel2.Size = new System.Drawing.Size(187, 171);
             this.panel2.TabIndex = 1;
             // 
             // btnChooseShift
             // 
             this.btnChooseShift.Location = new System.Drawing.Point(127, 28);
-            this.btnChooseShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChooseShift.Margin = new System.Windows.Forms.Padding(2);
             this.btnChooseShift.Name = "btnChooseShift";
             this.btnChooseShift.Size = new System.Drawing.Size(56, 23);
             this.btnChooseShift.TabIndex = 37;
@@ -218,7 +218,7 @@
             "1pm-3pm",
             "3pm-5pm"});
             this.cboShift.Location = new System.Drawing.Point(18, 30);
-            this.cboShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboShift.Margin = new System.Windows.Forms.Padding(2);
             this.cboShift.Name = "cboShift";
             this.cboShift.Size = new System.Drawing.Size(92, 21);
             this.cboShift.TabIndex = 20;
@@ -227,7 +227,7 @@
             // txtCountShift
             // 
             this.txtCountShift.Location = new System.Drawing.Point(18, 103);
-            this.txtCountShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCountShift.Margin = new System.Windows.Forms.Padding(2);
             this.txtCountShift.Name = "txtCountShift";
             this.txtCountShift.ReadOnly = true;
             this.txtCountShift.Size = new System.Drawing.Size(76, 20);
@@ -252,15 +252,15 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.cboMovie);
             this.panel3.Location = new System.Drawing.Point(695, 31);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(223, 174);
+            this.panel3.Size = new System.Drawing.Size(223, 172);
             this.panel3.TabIndex = 2;
             // 
             // btnChooseMovie
             // 
             this.btnChooseMovie.Location = new System.Drawing.Point(151, 25);
-            this.btnChooseMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChooseMovie.Margin = new System.Windows.Forms.Padding(2);
             this.btnChooseMovie.Name = "btnChooseMovie";
             this.btnChooseMovie.Size = new System.Drawing.Size(56, 23);
             this.btnChooseMovie.TabIndex = 38;
@@ -282,7 +282,7 @@
             // 
             this.cboTypeMovie.FormattingEnabled = true;
             this.cboTypeMovie.Location = new System.Drawing.Point(11, 102);
-            this.cboTypeMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboTypeMovie.Margin = new System.Windows.Forms.Padding(2);
             this.cboTypeMovie.Name = "cboTypeMovie";
             this.cboTypeMovie.Size = new System.Drawing.Size(132, 21);
             this.cboTypeMovie.TabIndex = 17;
@@ -303,7 +303,7 @@
             // 
             this.cboMovie.FormattingEnabled = true;
             this.cboMovie.Location = new System.Drawing.Point(14, 25);
-            this.cboMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMovie.Margin = new System.Windows.Forms.Padding(2);
             this.cboMovie.Name = "cboMovie";
             this.cboMovie.Size = new System.Drawing.Size(126, 21);
             this.cboMovie.TabIndex = 18;
@@ -313,7 +313,7 @@
             // 
             this.iconClose.Image = ((System.Drawing.Image)(resources.GetObject("iconClose.Image")));
             this.iconClose.Location = new System.Drawing.Point(985, 10);
-            this.iconClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconClose.Margin = new System.Windows.Forms.Padding(2);
             this.iconClose.Name = "iconClose";
             this.iconClose.Size = new System.Drawing.Size(36, 34);
             this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +336,7 @@
             this.panel4.Controls.Add(this.txtShift);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(416, 278);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(482, 157);
             this.panel4.TabIndex = 3;
@@ -346,7 +346,7 @@
             this.dtmDay.CustomFormat = "mm/dd/yyyy";
             this.dtmDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtmDay.Location = new System.Drawing.Point(21, 54);
-            this.dtmDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtmDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtmDay.Name = "dtmDay";
             this.dtmDay.Size = new System.Drawing.Size(84, 20);
             this.dtmDay.TabIndex = 39;
@@ -354,7 +354,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(282, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 28);
             this.button2.TabIndex = 29;
@@ -364,7 +364,7 @@
             // btnResetInfo
             // 
             this.btnResetInfo.Location = new System.Drawing.Point(153, 98);
-            this.btnResetInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetInfo.Name = "btnResetInfo";
             this.btnResetInfo.Size = new System.Drawing.Size(111, 28);
             this.btnResetInfo.TabIndex = 28;
@@ -385,7 +385,7 @@
             // txtRoom
             // 
             this.txtRoom.Location = new System.Drawing.Point(248, 54);
-            this.txtRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRoom.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.ReadOnly = true;
             this.txtRoom.Size = new System.Drawing.Size(90, 20);
@@ -404,7 +404,7 @@
             // btnAddShowtimes
             // 
             this.btnAddShowtimes.Location = new System.Drawing.Point(21, 98);
-            this.btnAddShowtimes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddShowtimes.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddShowtimes.Name = "btnAddShowtimes";
             this.btnAddShowtimes.Size = new System.Drawing.Size(111, 28);
             this.btnAddShowtimes.TabIndex = 4;
@@ -415,7 +415,7 @@
             // txtMovie
             // 
             this.txtMovie.Location = new System.Drawing.Point(352, 54);
-            this.txtMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMovie.Margin = new System.Windows.Forms.Padding(2);
             this.txtMovie.Name = "txtMovie";
             this.txtMovie.ReadOnly = true;
             this.txtMovie.Size = new System.Drawing.Size(91, 20);
@@ -434,7 +434,7 @@
             // txtShift
             // 
             this.txtShift.Location = new System.Drawing.Point(126, 54);
-            this.txtShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShift.Margin = new System.Windows.Forms.Padding(2);
             this.txtShift.Name = "txtShift";
             this.txtShift.ReadOnly = true;
             this.txtShift.Size = new System.Drawing.Size(93, 20);
@@ -459,15 +459,15 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.cboRoom);
             this.panel5.Location = new System.Drawing.Point(484, 31);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(203, 174);
+            this.panel5.Size = new System.Drawing.Size(203, 172);
             this.panel5.TabIndex = 4;
             // 
             // btnChoosrRoom
             // 
             this.btnChoosrRoom.Location = new System.Drawing.Point(134, 27);
-            this.btnChoosrRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChoosrRoom.Margin = new System.Windows.Forms.Padding(2);
             this.btnChoosrRoom.Name = "btnChoosrRoom";
             this.btnChoosrRoom.Size = new System.Drawing.Size(56, 23);
             this.btnChoosrRoom.TabIndex = 36;
@@ -478,7 +478,7 @@
             // txtCountRoom
             // 
             this.txtCountRoom.Location = new System.Drawing.Point(17, 101);
-            this.txtCountRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCountRoom.Margin = new System.Windows.Forms.Padding(2);
             this.txtCountRoom.Name = "txtCountRoom";
             this.txtCountRoom.ReadOnly = true;
             this.txtCountRoom.Size = new System.Drawing.Size(90, 20);
@@ -514,7 +514,7 @@
             "1pm-3pm",
             "3pm-5pm"});
             this.cboRoom.Location = new System.Drawing.Point(16, 30);
-            this.cboRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboRoom.Margin = new System.Windows.Forms.Padding(2);
             this.cboRoom.Name = "cboRoom";
             this.cboRoom.Size = new System.Drawing.Size(92, 21);
             this.cboRoom.TabIndex = 34;
@@ -544,7 +544,7 @@
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Location = new System.Drawing.Point(17, 234);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(367, 280);
             this.panel6.TabIndex = 6;
@@ -662,7 +662,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAddShowtimes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddShowtimes";

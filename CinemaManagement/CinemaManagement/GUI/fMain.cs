@@ -43,5 +43,55 @@ namespace CinemaManagement.GUI
             f.ShowDialog();
             this.Show();
         }
+
+        private void trpEmployeeManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fEmployee());
+        }
+
+        private Form fActive = null;
+        private void openAchildForm(Form childForm)
+        {
+            if (fActive != null)
+                fActive.Close();
+            fActive = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            plOpenChildForm.Controls.Add(childForm);
+            plOpenChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void trpCustomerManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fCustomer());
+        }
+
+        private void trpHome_Order_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fShowMovie_Order());
+        }
+
+        private void trpPromotionManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fPromotion());
+        }
+
+        private void trpFilmManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fMovie());
+        }
+
+        private void trpFilmCategoryManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fCategoryMovie());
+        }
+
+        private void trpShowTimeManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fMain());
+        }
     }
 }

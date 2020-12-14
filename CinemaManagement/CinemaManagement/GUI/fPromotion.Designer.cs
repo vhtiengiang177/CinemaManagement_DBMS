@@ -69,6 +69,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -85,7 +87,7 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(29, 353);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 23);
+            this.label7.Size = new System.Drawing.Size(128, 18);
             this.label7.TabIndex = 41;
             this.label7.Text = "Mức khuyến mãi";
             // 
@@ -94,7 +96,7 @@
             this.txtValuePromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValuePromotion.Location = new System.Drawing.Point(29, 379);
             this.txtValuePromotion.Name = "txtValuePromotion";
-            this.txtValuePromotion.Size = new System.Drawing.Size(215, 29);
+            this.txtValuePromotion.Size = new System.Drawing.Size(215, 25);
             this.txtValuePromotion.TabIndex = 40;
             // 
             // label6
@@ -104,7 +106,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(29, 286);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 23);
+            this.label6.Size = new System.Drawing.Size(81, 18);
             this.label6.TabIndex = 39;
             this.label6.Text = "Đối tượng";
             // 
@@ -113,7 +115,7 @@
             this.txtObjectPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObjectPromotion.Location = new System.Drawing.Point(29, 312);
             this.txtObjectPromotion.Name = "txtObjectPromotion";
-            this.txtObjectPromotion.Size = new System.Drawing.Size(215, 29);
+            this.txtObjectPromotion.Size = new System.Drawing.Size(215, 25);
             this.txtObjectPromotion.TabIndex = 38;
             // 
             // label3
@@ -123,7 +125,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(25, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 23);
+            this.label3.Size = new System.Drawing.Size(133, 18);
             this.label3.TabIndex = 33;
             this.label3.Text = "Tên chương trình";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -133,7 +135,7 @@
             this.txtNamePromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamePromotion.Location = new System.Drawing.Point(29, 105);
             this.txtNamePromotion.Name = "txtNamePromotion";
-            this.txtNamePromotion.Size = new System.Drawing.Size(215, 29);
+            this.txtNamePromotion.Size = new System.Drawing.Size(215, 25);
             this.txtNamePromotion.TabIndex = 32;
             this.txtNamePromotion.TextChanged += new System.EventHandler(this.txtNamePromotion_TextChanged);
             // 
@@ -144,7 +146,7 @@
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(29, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 23);
+            this.label2.Size = new System.Drawing.Size(119, 18);
             this.label2.TabIndex = 31;
             this.label2.Text = "Mã khuyến mãi";
             // 
@@ -153,7 +155,7 @@
             this.txtIDPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDPromotion.Location = new System.Drawing.Point(29, 38);
             this.txtIDPromotion.Name = "txtIDPromotion";
-            this.txtIDPromotion.Size = new System.Drawing.Size(215, 29);
+            this.txtIDPromotion.Size = new System.Drawing.Size(215, 25);
             this.txtIDPromotion.TabIndex = 30;
             // 
             // cboPromotion
@@ -167,30 +169,34 @@
             "Tên chương trình",
             "Đối tượng",
             "Mức khuyến mãi"});
-            this.cboPromotion.Location = new System.Drawing.Point(664, 33);
+            this.cboPromotion.Location = new System.Drawing.Point(107, 33);
             this.cboPromotion.Name = "cboPromotion";
-            this.cboPromotion.Size = new System.Drawing.Size(169, 30);
+            this.cboPromotion.Size = new System.Drawing.Size(138, 25);
             this.cboPromotion.TabIndex = 29;
             // 
             // txtSearchPromotion
             // 
             this.txtSearchPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPromotion.Location = new System.Drawing.Point(304, 33);
+            this.txtSearchPromotion.Location = new System.Drawing.Point(251, 33);
             this.txtSearchPromotion.Name = "txtSearchPromotion";
-            this.txtSearchPromotion.Size = new System.Drawing.Size(343, 29);
+            this.txtSearchPromotion.Size = new System.Drawing.Size(316, 25);
             this.txtSearchPromotion.TabIndex = 28;
             this.txtSearchPromotion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchPromotion_KeyDown);
             // 
             // btnSearchPromotion
             // 
+            this.btnSearchPromotion.BackColor = System.Drawing.Color.Teal;
             this.btnSearchPromotion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchPromotion.FlatAppearance.BorderSize = 0;
+            this.btnSearchPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchPromotion.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchPromotion.Location = new System.Drawing.Point(186, 25);
+            this.btnSearchPromotion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearchPromotion.Location = new System.Drawing.Point(573, 27);
             this.btnSearchPromotion.Name = "btnSearchPromotion";
-            this.btnSearchPromotion.Size = new System.Drawing.Size(112, 46);
+            this.btnSearchPromotion.Size = new System.Drawing.Size(112, 34);
             this.btnSearchPromotion.TabIndex = 27;
             this.btnSearchPromotion.Text = "Tìm kiếm";
-            this.btnSearchPromotion.UseVisualStyleBackColor = true;
+            this.btnSearchPromotion.UseVisualStyleBackColor = false;
             this.btnSearchPromotion.Click += new System.EventHandler(this.btnSearchPromotion_Click);
             // 
             // btnDelete
@@ -235,12 +241,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(983, 35);
+            this.label1.ForeColor = System.Drawing.Color.Tomato;
+            this.label1.Location = new System.Drawing.Point(749, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 36);
+            this.label1.Size = new System.Drawing.Size(133, 29);
             this.label1.TabIndex = 22;
             this.label1.Text = "Promotion";
             // 
@@ -299,7 +305,7 @@
             this.dgvPromotion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPromotion.RowTemplate.Height = 24;
             this.dgvPromotion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPromotion.Size = new System.Drawing.Size(855, 540);
+            this.dgvPromotion.Size = new System.Drawing.Size(652, 480);
             this.dgvPromotion.TabIndex = 21;
             this.dgvPromotion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPromotion_CellClick);
             // 
@@ -363,7 +369,7 @@
             // 
             this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(848, 33);
+            this.picReload.Location = new System.Drawing.Point(696, 28);
             this.picReload.Name = "picReload";
             this.picReload.Size = new System.Drawing.Size(37, 30);
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -377,7 +383,7 @@
             this.dtmStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtmStart.Location = new System.Drawing.Point(29, 171);
             this.dtmStart.Name = "dtmStart";
-            this.dtmStart.Size = new System.Drawing.Size(211, 29);
+            this.dtmStart.Size = new System.Drawing.Size(211, 25);
             this.dtmStart.TabIndex = 44;
             this.dtmStart.Value = new System.DateTime(2020, 11, 23, 0, 0, 0, 0);
             // 
@@ -387,7 +393,7 @@
             this.dtmEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtmEnd.Location = new System.Drawing.Point(29, 247);
             this.dtmEnd.Name = "dtmEnd";
-            this.dtmEnd.Size = new System.Drawing.Size(211, 29);
+            this.dtmEnd.Size = new System.Drawing.Size(211, 25);
             this.dtmEnd.TabIndex = 45;
             // 
             // label5
@@ -397,7 +403,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(29, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 23);
+            this.label5.Size = new System.Drawing.Size(140, 18);
             this.label5.TabIndex = 37;
             this.label5.Text = "Thời gian kết thúc";
             // 
@@ -408,16 +414,16 @@
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(29, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 23);
+            this.label4.Size = new System.Drawing.Size(135, 18);
             this.label4.TabIndex = 35;
             this.label4.Text = "Thời gian bắt đầu";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvPromotion);
-            this.panel1.Location = new System.Drawing.Point(57, 88);
+            this.panel1.Location = new System.Drawing.Point(0, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 504);
+            this.panel1.Size = new System.Drawing.Size(658, 504);
             this.panel1.TabIndex = 46;
             // 
             // panel2
@@ -435,15 +441,15 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtObjectPromotion);
-            this.panel2.Location = new System.Drawing.Point(948, 88);
+            this.panel2.Location = new System.Drawing.Point(664, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 432);
+            this.panel2.Size = new System.Drawing.Size(257, 432);
             this.panel2.TabIndex = 22;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -458,10 +464,10 @@
             this.panel4.Controls.Add(this.btnSearchPromotion);
             this.panel4.Controls.Add(this.txtSearchPromotion);
             this.panel4.Controls.Add(this.picReload);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1246, 82);
+            this.panel4.Size = new System.Drawing.Size(921, 95);
             this.panel4.TabIndex = 49;
             // 
             // panel3
@@ -474,11 +480,22 @@
             this.panel3.Size = new System.Drawing.Size(298, 66);
             this.panel3.TabIndex = 50;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(917, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // fPromotion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 624);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(922, 624);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -496,6 +513,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,5 +554,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

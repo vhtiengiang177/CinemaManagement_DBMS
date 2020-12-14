@@ -41,7 +41,6 @@
             // 
             // flpnlMovie
             // 
-            this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
             this.flpnlMovie.Name = "flpnlMovie";
             this.flpnlMovie.Size = new System.Drawing.Size(780, 466);
@@ -62,13 +61,12 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flpnlMovie);
             this.splitContainer1.Size = new System.Drawing.Size(780, 500);
-            this.splitContainer1.SplitterDistance = 30;
+            this.splitContainer1.SplitterDistance = 29;
             this.splitContainer1.TabIndex = 1;
             // 
             // pnlTitle
             // 
             this.pnlTitle.Controls.Add(this.lblOrder);
-            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(780, 30);
@@ -91,7 +89,7 @@
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowMovie_Order";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fShowMovie_Order";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

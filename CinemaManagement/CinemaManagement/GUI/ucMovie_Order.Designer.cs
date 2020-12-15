@@ -58,6 +58,7 @@
             // 
             this.lblDirectorMovie.AutoSize = true;
             this.lblDirectorMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDirectorMovie.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblDirectorMovie.Location = new System.Drawing.Point(157, 75);
             this.lblDirectorMovie.Name = "lblDirectorMovie";
             this.lblDirectorMovie.Size = new System.Drawing.Size(60, 15);
@@ -70,6 +71,7 @@
             // 
             this.lblRunningTime.AutoSize = true;
             this.lblRunningTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRunningTime.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblRunningTime.Location = new System.Drawing.Point(157, 100);
             this.lblRunningTime.Name = "lblRunningTime";
             this.lblRunningTime.Size = new System.Drawing.Size(68, 15);
@@ -82,6 +84,7 @@
             // 
             this.lblShowDirectorMovie.AutoSize = true;
             this.lblShowDirectorMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowDirectorMovie.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblShowDirectorMovie.Location = new System.Drawing.Point(226, 75);
             this.lblShowDirectorMovie.Name = "lblShowDirectorMovie";
             this.lblShowDirectorMovie.Size = new System.Drawing.Size(56, 15);
@@ -94,6 +97,7 @@
             // 
             this.lblShowRunningTime.AutoSize = true;
             this.lblShowRunningTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowRunningTime.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblShowRunningTime.Location = new System.Drawing.Point(239, 100);
             this.lblShowRunningTime.Name = "lblShowRunningTime";
             this.lblShowRunningTime.Size = new System.Drawing.Size(62, 15);
@@ -106,6 +110,7 @@
             // 
             this.lblCategoryMovie.AutoSize = true;
             this.lblCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryMovie.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblCategoryMovie.Location = new System.Drawing.Point(157, 129);
             this.lblCategoryMovie.Name = "lblCategoryMovie";
             this.lblCategoryMovie.Size = new System.Drawing.Size(54, 15);
@@ -117,6 +122,7 @@
             // lblShowNameMovie
             // 
             this.lblShowNameMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNameMovie.ForeColor = System.Drawing.SystemColors.Window;
             this.lblShowNameMovie.Location = new System.Drawing.Point(157, 12);
             this.lblShowNameMovie.Name = "lblShowNameMovie";
             this.lblShowNameMovie.Size = new System.Drawing.Size(198, 52);
@@ -130,6 +136,7 @@
             // 
             this.lblShowNameCategory.AutoSize = true;
             this.lblShowNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNameCategory.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.lblShowNameCategory.Location = new System.Drawing.Point(226, 129);
             this.lblShowNameCategory.Name = "lblShowNameCategory";
             this.lblShowNameCategory.Size = new System.Drawing.Size(48, 15);
@@ -140,13 +147,17 @@
             // 
             // btnOrderMovie
             // 
+            this.btnOrderMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(17)))), ((int)(((byte)(34)))));
+            this.btnOrderMovie.FlatAppearance.BorderSize = 0;
+            this.btnOrderMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderMovie.ForeColor = System.Drawing.SystemColors.Info;
             this.btnOrderMovie.Location = new System.Drawing.Point(261, 159);
             this.btnOrderMovie.Name = "btnOrderMovie";
             this.btnOrderMovie.Size = new System.Drawing.Size(91, 37);
             this.btnOrderMovie.TabIndex = 7;
             this.btnOrderMovie.Text = "Đặt vé";
-            this.btnOrderMovie.UseVisualStyleBackColor = true;
+            this.btnOrderMovie.UseVisualStyleBackColor = false;
             this.btnOrderMovie.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOrderMovie_MouseClick);
             this.btnOrderMovie.MouseLeave += new System.EventHandler(this.btnOrderMovie_MouseLeave);
             this.btnOrderMovie.MouseHover += new System.EventHandler(this.btnOrderMovie_MouseHover);
@@ -155,6 +166,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnOrderMovie);
             this.Controls.Add(this.lblShowNameCategory);
             this.Controls.Add(this.lblCategoryMovie);
@@ -166,7 +179,7 @@
             this.Controls.Add(this.picImageMovie);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucMovie_Order";
-            this.Size = new System.Drawing.Size(367, 211);
+            this.Size = new System.Drawing.Size(365, 209);
             this.MouseLeave += new System.EventHandler(this.ucMovie_Order_MouseLeave);
             this.MouseHover += new System.EventHandler(this.ucMovie_Order_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();

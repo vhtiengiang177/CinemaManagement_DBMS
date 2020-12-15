@@ -67,7 +67,11 @@ namespace CinemaManagement.GUI
         public byte[] Img_movie
         {
             get { return img_movie; }
-            set { img_movie = value;  picImageMovie.Image = byteArrayToImage(value);}
+            set { img_movie = value;
+                if (value != null)
+                    picImageMovie.Image = byteArrayToImage(value);
+                else picImageMovie.Image = picImageMovie.InitialImage;
+            }
         }
 
         // Button Đặt vé. Dùng để bắt sự kiên qua bên Form.

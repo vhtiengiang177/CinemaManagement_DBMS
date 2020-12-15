@@ -244,7 +244,7 @@
             this.lblReleaseDate.AutoSize = true;
             this.lblReleaseDate.BackColor = System.Drawing.Color.Transparent;
             this.lblReleaseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseDate.Location = new System.Drawing.Point(3, 421);
+            this.lblReleaseDate.Location = new System.Drawing.Point(22, 421);
             this.lblReleaseDate.Name = "lblReleaseDate";
             this.lblReleaseDate.Size = new System.Drawing.Size(87, 13);
             this.lblReleaseDate.TabIndex = 16;
@@ -401,8 +401,8 @@
             // 
             this.splcBody.Panel2.AccessibleName = "";
             this.splcBody.Panel2.Controls.Add(this.splctnBodyRight);
-            this.splcBody.Size = new System.Drawing.Size(921, 603);
-            this.splcBody.SplitterDistance = 362;
+            this.splcBody.Size = new System.Drawing.Size(938, 603);
+            this.splcBody.SplitterDistance = 368;
             this.splcBody.TabIndex = 25;
             // 
             // btnInsertCategory
@@ -461,7 +461,7 @@
             // splctnBodyRight.Panel2
             // 
             this.splctnBodyRight.Panel2.Controls.Add(this.dgvMovie);
-            this.splctnBodyRight.Size = new System.Drawing.Size(555, 603);
+            this.splctnBodyRight.Size = new System.Drawing.Size(566, 603);
             this.splctnBodyRight.SplitterDistance = 61;
             this.splctnBodyRight.TabIndex = 0;
             // 
@@ -516,7 +516,7 @@
             this.dgvMovie.Location = new System.Drawing.Point(0, 0);
             this.dgvMovie.Name = "dgvMovie";
             this.dgvMovie.ReadOnly = true;
-            this.dgvMovie.Size = new System.Drawing.Size(555, 538);
+            this.dgvMovie.Size = new System.Drawing.Size(566, 538);
             this.dgvMovie.TabIndex = 0;
             this.dgvMovie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovie_CellClick);
             // 
@@ -537,7 +537,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 603);
+            this.ClientSize = new System.Drawing.Size(938, 603);
             this.Controls.Add(this.splcBody);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -106,6 +106,7 @@
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShowTimeOrderDAO.cs" />
     <Compile Include="DAO\ShowtimesDAO.cs" />
+    <Compile Include="DAO\StatisticDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="GUI\fChangeAccount.cs">
@@ -215,6 +216,12 @@
     <Compile Include="GUI\fShowtime_Order.Designer.cs">
       <DependentUpon>fShowtime_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fStatistic.Designer.cs">
+      <DependentUpon>fStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ucMovie_Order.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -295,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowtime_Order.resx">
       <DependentUpon>fShowtime_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fStatistic.resx">
+      <DependentUpon>fStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucMovie_Order.resx">
       <DependentUpon>ucMovie_Order.cs</DependentUpon>

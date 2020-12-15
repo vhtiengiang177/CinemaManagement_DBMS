@@ -45,7 +45,11 @@ namespace CinemaManagement.GUI
                 ucMovie.Director_movie = dt.Rows[i][2].ToString();
                 ucMovie.Namecamo_movie = dt.Rows[i][3].ToString();
                 ucMovie.Runningtime_movie = dt.Rows[i][4].ToString();
-                ucMovie.Img_movie = (byte[])dt.Rows[i][7];
+
+                // Nếu image null
+                if (dt.Rows[i][7] == DBNull.Value)
+                    ucMovie.Img_movie = null;
+                else ucMovie.Img_movie = (byte[])dt.Rows[i][7];
                 
                 // Thêm uc vào flow layout panel
                 flpnlMovie.Controls.Add(ucMovie);

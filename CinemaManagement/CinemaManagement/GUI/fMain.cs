@@ -19,6 +19,7 @@ namespace CinemaManagement.GUI
         public fMain()
         {
             InitializeComponent();
+            openAchildForm(new fShowMovie_Order());
         }
 
         public fMain(string idEmp, string username, string pass)
@@ -34,7 +35,7 @@ namespace CinemaManagement.GUI
                 picEmployeeMain.Image =BSImage.convertToImage((byte[])dtEmp.Rows[0][11]);
             else
                 picEmployeeMain.Image = picEmployeeMain.ErrorImage;
-
+            openAchildForm(new fShowMovie_Order());
         }
 
         private void lbChangeAccount_Click(object sender, EventArgs e)
@@ -91,7 +92,12 @@ namespace CinemaManagement.GUI
 
         private void trpShowTimeManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fMain());
+            openAchildForm(new fShowTime());
+        }
+
+        private void trpSatis_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fStatistic());
         }
     }
 }

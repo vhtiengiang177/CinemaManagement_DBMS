@@ -41,7 +41,7 @@
             // 
             // flpnlMovie
             // 
-            this.flpnlMovie.BackColor = System.Drawing.SystemColors.Desktop;
+            this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
@@ -69,7 +69,7 @@
             // 
             // pnlTitle
             // 
-            this.pnlTitle.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pnlTitle.Controls.Add(this.lblOrder);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(938, 583);
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));

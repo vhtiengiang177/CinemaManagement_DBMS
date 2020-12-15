@@ -137,6 +137,7 @@
             this.trpSatis.Name = "trpSatis";
             this.trpSatis.Size = new System.Drawing.Size(78, 23);
             this.trpSatis.Text = "Thống kê";
+            this.trpSatis.Click += new System.EventHandler(this.trpSatis_Click);
             // 
             // plOpenChildForm
             // 

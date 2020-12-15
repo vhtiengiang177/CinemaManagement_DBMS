@@ -44,7 +44,6 @@
             // picImageMovie
             // 
             this.picImageMovie.BackColor = System.Drawing.Color.Transparent;
-            this.picImageMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picImageMovie.Image = ((System.Drawing.Image)(resources.GetObject("picImageMovie.Image")));
             this.picImageMovie.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImageMovie.InitialImage")));
             this.picImageMovie.Location = new System.Drawing.Point(12, 12);
@@ -149,6 +148,8 @@
             // 
             this.btnOrderMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(17)))), ((int)(((byte)(34)))));
             this.btnOrderMovie.FlatAppearance.BorderSize = 0;
+            this.btnOrderMovie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
+            this.btnOrderMovie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
             this.btnOrderMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderMovie.ForeColor = System.Drawing.SystemColors.Info;

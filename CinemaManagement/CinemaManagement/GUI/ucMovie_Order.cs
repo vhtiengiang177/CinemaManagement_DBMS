@@ -132,47 +132,47 @@ namespace CinemaManagement.GUI
 
         private void lblShowRunningTime_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowNameMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowNameCategory_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowDirectorMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblRunningTime_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblDirectorMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblCategoryMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void btnOrderMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void ucMovie_Order_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
         #endregion
 

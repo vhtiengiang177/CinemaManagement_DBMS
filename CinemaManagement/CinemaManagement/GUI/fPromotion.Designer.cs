@@ -69,6 +69,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -183,6 +185,7 @@
             // 
             // btnSearchPromotion
             // 
+            this.btnSearchPromotion.BackColor = System.Drawing.Color.Teal;
             this.btnSearchPromotion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchPromotion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchPromotion.ForeColor = System.Drawing.Color.Black;
@@ -191,7 +194,7 @@
             this.btnSearchPromotion.Size = new System.Drawing.Size(96, 37);
             this.btnSearchPromotion.TabIndex = 27;
             this.btnSearchPromotion.Text = "Tìm kiếm";
-            this.btnSearchPromotion.UseVisualStyleBackColor = true;
+            this.btnSearchPromotion.UseVisualStyleBackColor = false;
             this.btnSearchPromotion.Click += new System.EventHandler(this.btnSearchPromotion_Click);
             // 
             // btnDelete
@@ -236,12 +239,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(816, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 36);
+            this.label1.Size = new System.Drawing.Size(133, 29);
             this.label1.TabIndex = 22;
             this.label1.Text = "Promotion";
             // 
@@ -472,9 +475,19 @@
             this.panel3.Size = new System.Drawing.Size(275, 66);
             this.panel3.TabIndex = 50;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(917, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // fPromotion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 563);
             this.Controls.Add(this.label1);
@@ -497,6 +510,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,5 +552,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

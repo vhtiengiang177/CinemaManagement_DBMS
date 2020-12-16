@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -130,7 +131,7 @@ namespace CinemaManagement.DTO
         {
             this.Id_employee = id;
 
-            this.name_employee = name;
+            this.Name_employee = name;
             this.Birthday_employee = birthDay;
             this.Sex_employeeloyee = gender;
             this.Identitycard_employee = identity;
@@ -151,7 +152,7 @@ namespace CinemaManagement.DTO
         public Employee(string id, string name, DateTime birthDay, string gender, string identity, string phone, string email, string address, double salary, string idType, string idCinema, byte[] img, string qr, Byte state)
         {
             this.Id_employee = id;
-            this.name_employee = name;
+            this.Name_employee = name;
             this.Birthday_employee = birthDay;
             this.Sex_employeeloyee = gender;
             this.Identitycard_employee = identity;
@@ -166,5 +167,7 @@ namespace CinemaManagement.DTO
             this.State_employee = state;
          
         }
+
+
     }
 }

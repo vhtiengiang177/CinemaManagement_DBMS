@@ -20,6 +20,9 @@ namespace CinemaManagement.GUI
 
         private Showtimes showtimes;
 
+        private Employee employee;
+
+
         MemoryStream ms;
 
         public static string idEmployee = "em01";
@@ -74,6 +77,7 @@ namespace CinemaManagement.GUI
 
         public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
+        public Employee Employee { get => employee; set => employee = value; }
 
         //Convert image
         public System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
@@ -303,6 +307,7 @@ namespace CinemaManagement.GUI
                     }
                 }
             }
+            //Environment.Exit(1);
         }
 
         void loadListPromotion()

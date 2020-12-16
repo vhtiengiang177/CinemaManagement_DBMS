@@ -16,6 +16,7 @@ namespace CinemaManagement.GUI
     {
         private Showtimes showtime;
         private Seat seat;
+        public static string idEmployee;
 
         public Showtimes Showtime { get => showtime; set => showtime = value; }
         public Seat Seat { get => seat; set => seat = value; }
@@ -45,6 +46,7 @@ namespace CinemaManagement.GUI
 
             InitializeComponent();
             LoadInit();
+            fShowTicket.idEmployee = idEmp;
             this.Showtime = st;
             this.Seat = se;
             string nameMovie = MovieDAO.Instance.getMovieByID(this.Showtime.Id_movie).Rows[0][1].ToString();
@@ -78,6 +80,7 @@ namespace CinemaManagement.GUI
 
             InitializeComponent();
             LoadInit();
+            fShowTicket.idEmployee = idEmp;
             this.Showtime = st;
             this.Seat = se;
             string nameMovie = MovieDAO.Instance.getMovieByID(this.Showtime.Id_movie).Rows[0][1].ToString();
@@ -104,6 +107,8 @@ namespace CinemaManagement.GUI
             this.lbSeat.Text = "";
             this.lbStarttime.Text = "";
             this.lbTotalcost.Text = "";
+            this.lbIdEmp.Text = "";
+            this.lbNameEmpl.Text = "";
         }
 
         void LoadData(string cinema, string date, string movie, string starttime, string endtime, string room, string seat, string customer, string cost, string promotion, string discount, string totalcost)
@@ -120,6 +125,8 @@ namespace CinemaManagement.GUI
             this.lbPromotion.Text = promotion;
             this.lbDiscount.Text = discount;
             this.lbTotalcost.Text = totalcost;
+            this.lbIdEmp.Text = idEmployee;
+            this.lbIdEmp.Text =(string)EmployeeDAO.Instance.getNameById(idEmployee);
         }
 
 

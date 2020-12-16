@@ -208,5 +208,11 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, pass, newPass}) > 0;
            
         }
+
+        public object getNameById(string id)
+        {
+            string query = "select name_employee from Employee where id_employee = @id ";
+            return DataProvider.Instance.ExecuteScalar(query , new object[] { id });
+        }
     }
 }

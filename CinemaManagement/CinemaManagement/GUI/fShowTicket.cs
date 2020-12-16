@@ -126,7 +126,7 @@ namespace CinemaManagement.GUI
             this.lbDiscount.Text = discount;
             this.lbTotalcost.Text = totalcost;
             this.lbIdEmp.Text = idEmployee;
-            this.lbIdEmp.Text =(string)EmployeeDAO.Instance.getNameById(idEmployee);
+            this.lbNameEmpl.Text =(string)EmployeeDAO.Instance.getNameById(idEmployee);
         }
 
 

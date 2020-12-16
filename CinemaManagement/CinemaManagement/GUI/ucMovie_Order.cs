@@ -97,47 +97,47 @@ namespace CinemaManagement.GUI
 
         private void lblShowRunningTime_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblShowNameMovie_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblShowNameCategory_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblShowDirectorMovie_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblRunningTime_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblDirectorMovie_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblCategoryMovie_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void btnOrderMovie_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void ucMovie_Order_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.MistyRose;
+            this.BackColor = Color.FromArgb(128,128,128);
         }
 
         private void lblShowRunningTime_MouseLeave(object sender, EventArgs e)

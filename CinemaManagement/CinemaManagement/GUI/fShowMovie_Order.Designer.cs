@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flpnlMovie = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblOrder = new System.Windows.Forms.Label();
+            this.flpnlMovie = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flpnlMovie
-            // 
-            this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
-            this.flpnlMovie.Name = "flpnlMovie";
-            this.flpnlMovie.Size = new System.Drawing.Size(938, 546);
-            this.flpnlMovie.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -89,6 +79,15 @@
             this.lblOrder.TabIndex = 0;
             this.lblOrder.Text = "ĐẶT VÉ";
             // 
+            // flpnlMovie
+            // 
+            this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.flpnlMovie.Location = new System.Drawing.Point(53, 44);
+            this.flpnlMovie.Name = "flpnlMovie";
+            this.flpnlMovie.Size = new System.Drawing.Size(836, 461);
+            this.flpnlMovie.TabIndex = 0;
+            // 
             // fShowMovie_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,9 +111,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flpnlMovie;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Label lblOrder;
+        private System.Windows.Forms.FlowLayoutPanel flpnlMovie;
     }
 }

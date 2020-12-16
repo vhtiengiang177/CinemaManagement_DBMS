@@ -52,7 +52,8 @@ namespace CinemaManagement.GUI
 
         private void trpEmployeeManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fEmployee());
+            if(typeEmp != 1)
+                openAchildForm(new fEmployee());
         }
 
         private Form fActive = null;
@@ -72,45 +73,50 @@ namespace CinemaManagement.GUI
 
         private void trpCustomerManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fCustomer());
+            if(typeEmp == 1 || typeEmp == 4)
+                 openAchildForm(new fCustomer(typeEmp));
         }
 
         private void trpHome_Order_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
-            //fActive = new fShowMovie_Order(typeEmp, idEmployeeMain);
-            //plOpenChildForm.Controls.Add(fActive);
+            openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));         
         }
 
         private void trpPromotionManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fPromotion());
+            if(typeEmp == 4 || typeEmp == 2)
+                openAchildForm(new fPromotion());
         }
 
         private void trpFilmManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fMovie());
+            if (typeEmp != 1)
+                openAchildForm(new fMovie());
            
         }
 
         private void trpFilmCategoryManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fCategoryMovie());
+            if (typeEmp != 1)
+                openAchildForm(new fCategoryMovie());
         }
 
         private void trpShowTimeManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fShowTime());
+            if (typeEmp != 1)
+                openAchildForm(new fShowTime());
         }
 
         private void trpSatis_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fStatistic());
+            if(typeEmp == 4)
+                openAchildForm(new fStatistic());
         }
 
         private void trgCinemaManager_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fCinema());
+            if (typeEmp == 4 || typeEmp == 3)
+                openAchildForm(new fCinema());
         }
     }
 }

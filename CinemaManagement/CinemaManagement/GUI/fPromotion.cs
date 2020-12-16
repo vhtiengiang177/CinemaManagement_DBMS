@@ -218,7 +218,7 @@ namespace CinemaManagement.GUI
                     {
 
                         // Thực hiện câu lệnh SQL 
-                        bool f = PromotionDAO.Instance.DeletePromotion(id/*txt_IDPromotion.Text.Trim()*/);
+                        bool f = PromotionDAO.Instance.DeletePromotion(id);
                         if (f)
                         {
                             // Cập nhật lại DataGridView 

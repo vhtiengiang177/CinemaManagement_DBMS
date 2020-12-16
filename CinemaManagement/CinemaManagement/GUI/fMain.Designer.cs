@@ -46,6 +46,8 @@
             this.lbIdEmployeeMain = new System.Windows.Forms.Label();
             this.lbChangeAccount = new System.Windows.Forms.Label();
             this.picEmployeeMain = new System.Windows.Forms.PictureBox();
+            this.trgEmpManager = new System.Windows.Forms.ToolStripMenuItem();
+            this.trgShiftManager = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployeeMain)).BeginInit();
@@ -81,11 +83,13 @@
             // 
             // trpEmployeeManager
             // 
+            this.trpEmployeeManager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trgEmpManager,
+            this.trgShiftManager});
             this.trpEmployeeManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpEmployeeManager.Name = "trpEmployeeManager";
             this.trpEmployeeManager.Size = new System.Drawing.Size(133, 23);
             this.trpEmployeeManager.Text = "Quản lý nhân viên";
-            this.trpEmployeeManager.Click += new System.EventHandler(this.trpEmployeeManager_Click);
             // 
             // trpCustomerManager
             // 
@@ -221,6 +225,20 @@
             this.picEmployeeMain.TabIndex = 0;
             this.picEmployeeMain.TabStop = false;
             // 
+            // trgEmpManager
+            // 
+            this.trgEmpManager.Name = "trgEmpManager";
+            this.trgEmpManager.Size = new System.Drawing.Size(190, 24);
+            this.trgEmpManager.Text = "Quản lý nhân viên";
+            this.trgEmpManager.Click += new System.EventHandler(this.trgEmpManager_Click);
+            // 
+            // trgShiftManager
+            // 
+            this.trgShiftManager.Name = "trgShiftManager";
+            this.trgShiftManager.Size = new System.Drawing.Size(190, 24);
+            this.trgShiftManager.Text = "Xếp ca làm việc";
+            this.trgShiftManager.Click += new System.EventHandler(this.trgShiftManager_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +282,8 @@
         private System.Windows.Forms.ToolStripMenuItem trpPromotionManager;
         private System.Windows.Forms.ToolStripMenuItem trpSatis;
         private System.Windows.Forms.ToolStripMenuItem trgCinemaManager;
+        private System.Windows.Forms.ToolStripMenuItem trgEmpManager;
+        private System.Windows.Forms.ToolStripMenuItem trgShiftManager;
     }
 }
 

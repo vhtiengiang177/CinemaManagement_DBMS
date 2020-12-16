@@ -52,8 +52,7 @@ namespace CinemaManagement.GUI
 
         private void trpEmployeeManager_Click(object sender, EventArgs e)
         {
-            if(typeEmp != 1)
-                openAchildForm(new fEmployee());
+            
         }
 
         private Form fActive = null;
@@ -84,7 +83,7 @@ namespace CinemaManagement.GUI
 
         private void trpPromotionManager_Click(object sender, EventArgs e)
         {
-            if(typeEmp == 4 || typeEmp == 2)
+            if(typeEmp == 4)
                 openAchildForm(new fPromotion());
         }
 
@@ -117,6 +116,18 @@ namespace CinemaManagement.GUI
         {
             if (typeEmp == 4 || typeEmp == 3)
                 openAchildForm(new fCinema());
+        }
+
+        private void trgEmpManager_Click(object sender, EventArgs e)
+        {
+            if (typeEmp != 1 && typeEmp != 2)
+                openAchildForm(new fEmployee());
+        }
+
+        private void trgShiftManager_Click(object sender, EventArgs e)
+        {
+            if (typeEmp != 1 && typeEmp != 2)
+                openAchildForm(new fShifWorkEmployee());
         }
     }
 }

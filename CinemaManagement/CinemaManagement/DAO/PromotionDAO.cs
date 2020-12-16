@@ -78,7 +78,11 @@ namespace CinemaManagement.DAO
         }
 
        
-
+        public string getNamePromotion(string id)
+        {
+            string query = "select name_promotion from Promotion where id_promotion = @id ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString();
+        }
 
 
 

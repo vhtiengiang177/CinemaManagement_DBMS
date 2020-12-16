@@ -20,6 +20,8 @@ namespace CinemaManagement.GUI
 
         MemoryStream ms;
         private Movie mo;
+        public static string idEmployee;
+        public static int typeEmployee;
 
         private List<Seat> listSeat = new List<Seat>();
 
@@ -27,6 +29,13 @@ namespace CinemaManagement.GUI
         public fShowSeat_Order()
         {
             InitializeComponent();
+        }
+
+        public fShowSeat_Order(int type, string idEmp)
+        {
+            InitializeComponent();
+            fShowSeat_Order.idEmployee = idEmp;
+            fShowSeat_Order.typeEmployee = type;
         }
 
         public fShowSeat_Order(Showtimes so)

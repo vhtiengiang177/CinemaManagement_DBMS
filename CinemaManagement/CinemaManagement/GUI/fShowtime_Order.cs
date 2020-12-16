@@ -21,6 +21,9 @@ namespace CinemaManagement.GUI
         MemoryStream ms;
         private string id_movie;
         private Showtimes stSelect = new Showtimes();
+        public static string idEmployee;
+        public static int typeEmployee;
+
         public string Id_movie
         {
             get { return this.id_movie; }
@@ -32,6 +35,31 @@ namespace CinemaManagement.GUI
         public fShowtime_Order(string id_mo)
         {
             InitializeComponent();
+            this.Id_movie = id_mo;
+
+            // Ẩn các thông tin chưa được chọn, khi chọn thông tin nào thì bật lên
+            // Hiện ngày
+            this.lblDate.Visible = false;
+            this.lblShowDate_Showtime.Text = "";
+            // Ca chiếu
+            this.lblShiftShow.Visible = false;
+            this.lblShowStarttime.Text = "";
+            // Phòng
+            this.lblRoom.Visible = false;
+            this.lblShowNameRoom.Text = "";
+            this.picImageMovie.Image = this.picImageMovie.InitialImage;
+            loadData();
+            loadDateShiftShow();
+        }
+
+
+        public fShowtime_Order(string id_mo, int type, string idEmp)
+        {
+            InitializeComponent();
+
+            fShowtime_Order.idEmployee = idEmp;
+            fShowtime_Order.typeEmployee = type;
+
             this.Id_movie = id_mo;
 
             // Ẩn các thông tin chưa được chọn, khi chọn thông tin nào thì bật lên

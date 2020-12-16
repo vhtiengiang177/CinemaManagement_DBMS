@@ -77,7 +77,7 @@ namespace CinemaManagement.GUI
 
         private void trpHome_Order_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fShowMovie_Order());
+            openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
         }
 
         private void trpPromotionManager_Click(object sender, EventArgs e)

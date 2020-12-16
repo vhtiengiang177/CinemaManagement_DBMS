@@ -78,6 +78,8 @@ namespace CinemaManagement.GUI
         private void trpHome_Order_Click(object sender, EventArgs e)
         {
             openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
+            //fActive = new fShowMovie_Order(typeEmp, idEmployeeMain);
+            //plOpenChildForm.Controls.Add(fActive);
         }
 
         private void trpPromotionManager_Click(object sender, EventArgs e)
@@ -88,6 +90,7 @@ namespace CinemaManagement.GUI
         private void trpFilmManager_Click(object sender, EventArgs e)
         {
             openAchildForm(new fMovie());
+           
         }
 
         private void trpFilmCategoryManager_Click(object sender, EventArgs e)
@@ -103,6 +106,11 @@ namespace CinemaManagement.GUI
         private void trpSatis_Click(object sender, EventArgs e)
         {
             openAchildForm(new fStatistic());
+        }
+
+        private void trgCinemaManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fCinema());
         }
     }
 }

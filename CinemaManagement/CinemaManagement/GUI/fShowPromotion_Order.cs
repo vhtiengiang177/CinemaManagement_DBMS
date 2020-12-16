@@ -138,9 +138,9 @@ namespace CinemaManagement.GUI
 
                 string str = cboPromotion.SelectedValue.ToString();
 
-                if (PromotionDAO.Instance.SearchValue_Promotion(str).Rows.Count > 0)
+                if (PromotionDAO.Instance.searchValuePromotion(str).Rows.Count > 0)
                 {
-                    txtValue.Text = PromotionDAO.Instance.SearchValue_Promotion(str).Rows[0][0].ToString();
+                    txtValue.Text = PromotionDAO.Instance.searchValuePromotion(str).Rows[0][0].ToString();
                 }
             }  
 
@@ -172,7 +172,7 @@ namespace CinemaManagement.GUI
         private void cboCus_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = PromotionDAO.Instance.SearchCus(cboCus.SelectedValue.ToString());
+            dt = PromotionDAO.Instance.searchCus(cboCus.SelectedValue.ToString());
             if (dt.Rows.Count>0)
             {
                 txtIDcus.Text = dt.Rows[0][0].ToString();
@@ -287,7 +287,7 @@ namespace CinemaManagement.GUI
                 double valuePromotion = 0;
                 if (id_promotion != "null")
                 {
-                    valuePromotion = Convert.ToDouble(PromotionDAO.Instance.SearchValue_Promotion(id_promotion).Rows[0][0]);
+                    valuePromotion = Convert.ToDouble(PromotionDAO.Instance.searchValuePromotion(id_promotion).Rows[0][0]);
 
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
                     if (TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, idEmployee, this.listPromotion[i]))

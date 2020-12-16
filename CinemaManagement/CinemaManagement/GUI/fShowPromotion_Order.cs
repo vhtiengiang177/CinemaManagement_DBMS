@@ -292,7 +292,7 @@ namespace CinemaManagement.GUI
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
                     if (TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, idEmployee, this.listPromotion[i]))
                     {
-                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], id_customer, id_promotion, "90000", (valuePromotion * 90000).ToString(), total_cost.ToString());
+                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], idEmployee, id_customer, id_promotion, "90000", (valuePromotion * 90000).ToString(), total_cost.ToString());
                         f.ShowDialog();
                     }
                 }
@@ -302,7 +302,7 @@ namespace CinemaManagement.GUI
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
                     if (TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, idEmployee))
                     {
-                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], idEmployee, id_customer, "90000", total_cost.ToString());
+                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], idEmployee,  id_customer, "90000", total_cost.ToString());
                         f.ShowDialog();
                     }
                 }

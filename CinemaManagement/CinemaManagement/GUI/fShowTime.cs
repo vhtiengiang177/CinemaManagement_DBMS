@@ -29,7 +29,7 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                dgvShowtimes.DataSource = ShowtimesDAO.Instance.loadData();
+                dgvShowtimes.DataSource = ShowtimesDAO.Instance.loadShowtimes();
                 //dgvShowtimes.Columns[0].Visible = false;
                 //dgvShowtimes.Columns[1].Visible = false;
                 //dgvShowtimes.Columns[2].Visible = false;
@@ -106,7 +106,7 @@ namespace CinemaManagement.GUI
             {
                 if (cboSearchST.SelectedIndex == 0) //Tìm theo tên phim
                 {
-                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.SearchShowtimes_namemovie(txtSearch.Text.ToString().Trim());
+                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.searchShowtimesbyNameMovie(txtSearch.Text.ToString().Trim());
                 }
 
             }
@@ -166,7 +166,7 @@ namespace CinemaManagement.GUI
                 {
 
                     // Thực hiện câu lệnh SQL 
-                    f = ShowtimesDAO.Instance.DeleteSS(dtmDateShow.Value.ToString(), dgvShowtimes.Rows[r].Cells[0].Value.ToString(), dgvShowtimes.Rows[r].Cells[2].Value.ToString(), dgvShowtimes.Rows[r].Cells[1].Value.ToString());
+                    f = ShowtimesDAO.Instance.deleteShowtimes(dtmDateShow.Value.ToString(), dgvShowtimes.Rows[r].Cells[0].Value.ToString(), dgvShowtimes.Rows[r].Cells[2].Value.ToString(), dgvShowtimes.Rows[r].Cells[1].Value.ToString());
 
                     if (f)
                     {

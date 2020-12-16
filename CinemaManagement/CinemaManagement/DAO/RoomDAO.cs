@@ -20,10 +20,16 @@ namespace CinemaManagement.DAO
 
         public DataTable loadData()
         {
-            string query = "SELECT * FROM dbo.Room";
+            string query = "SELECT * FROM dbo.Room where id_cinema= @";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable loadRoomOnCinema(string id)
+        {
+            string query = "select*from fc_chooseRoomOnCinema( @id )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+        //select*from fc_chooseRoomOnCinema('ci01')
         public DataTable countRoomInDay(string date,string idRoom,string idShift)
         {
             string query = "SELECT *FROM fc_countRoomInDay( @date , @idRoom , @idShift ) ";

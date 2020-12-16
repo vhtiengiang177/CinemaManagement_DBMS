@@ -24,22 +24,51 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable countMovie()
+        {
+            string query = "select*from Movie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public DataTable loadAll()
         {
-            string query = "select*from fc_countTopmovieAll()";
+            string query = "select*from fc_CalTotalAll()";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
         public DataTable loadInMonth(int month)
         {
-            string query = "select*from fc_countTopmovie( @num )";
+            string query = "select*from fc_CalTotalInMonth( @num )";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { month });
         }
 
-        public int deleteData()
+        public int deleteTicket()
         {
-            string query = "delete from dbo.Showtimes ";
+            string query = "delete from dbo.Ticket";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public int deleteShowtimes()
+        {
+            string query = "delete from dbo.Showtimes";
+            return DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+
+        public DataTable loadOnCinema(string id)
+        {
+            string query = "select*from fc_countTotalOnCinemaAllMonth( @id )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
+
+        public DataTable loadOnCinemaInMonth(int num,string id)
+        {
+            string query = "select*from fc_countTotalOnCinemaInMonth( @num , @id )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { num,id });
+        }
+
+
+
     }
 }

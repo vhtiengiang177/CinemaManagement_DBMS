@@ -21,38 +21,28 @@ namespace CinemaManagement.DAO
         private ShowtimesDAO() { }
 
         //lấy ds lịch chiếu
-        public DataTable loadData()
+        public DataTable loadShowtimes()
         {
-            string query = "SELECT * FROM dbo.fc_loadshowtimes()";
+            string query = "SELECT * FROM dbo.fc_loadShowtimes()";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        //public DataTable loaddata()
-        //{
-        //    string query = "SELECT * FROM dbo.ShowtimesView";
-        //    return DataProvider.Instance.ExecuteQuery(query);
-        //}
 
         //tìm lịch chiếu theo tên phim
-        public DataTable SearchShowtimes_namemovie(string name)
+        public DataTable searchShowtimesbyNameMovie(string name)
         {
-            string query = "SELECT *FROM fc_SearchShowtimes_movie1( @movie ) ";
+            string query = "SELECT *FROM fc_searchShowtimesbyNameMovie( @movie ) ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
         }
 
-        //đếm số lượng lich phim dã chiếu trong ngày đc chọn
-        public DataTable countMovieInDay(string date)
-        {
-            string query = "SELECT*FROM dbo.fc_Count_MovieInDay( @date ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) });
-        }
+        
 
         //đém số lượng ca chiếu đã đc chọn trong ngày
-        public DataTable countShiftInDay(string idShift,string date)
-        {
-            string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift,Convert.ToDateTime(date) });
-        }
+        //public DataTable countShiftInDay(string idShift,string date)
+        //{
+        //    string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date ) ";
+        //    return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift,Convert.ToDateTime(date) });
+        //}
 
         //lấy ds ca chiếu
         public DataTable loadShiftShow()
@@ -78,7 +68,7 @@ namespace CinemaManagement.DAO
         //Thêm lịch chiếu
         public bool addShowtimes(string date,string idRoom, string idMovie,string idShift)
         {
-            string query = "exec sp_Showtimes_Insert  @date , @idRoom , @idMovie , @idShift ";
+            string query = "exec sp_insertShowtimes  @date , @idRoom , @idMovie , @idShift ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] {  Convert.ToDateTime(date),idRoom,idMovie,idShift }) > 0;
         }
 
@@ -96,12 +86,25 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date), idShift, idMovie });
         }
 
-        public bool DeleteSS(string date, string idss,string idroom,string idmovie)
+        public bool deleteShowtimes(string date, string idss,string idroom,string idmovie)
         {
-            string query = "exec sp_deleteSS @date , @idshift , @idroom , @idmovie ";
+            string query = "exec sp_deleteShowtimes @date , @idshift , @idroom , @idmovie ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { Convert.ToDateTime(date), idss, idroom,idmovie }) > 0;
         }
-    
+
+        //đếm số lượng lich phim dã chiếu trong ngày đc chọn
+        public DataTable countMovieInDay(string date)
+        {
+            string query = "SELECT*FROM dbo.fc_Count_MovieInDay( @date ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) });
+        }
+
+        //đém số lượng ca chiếu đã đc chọn trong ngày
+        public DataTable countShiftInDay(string idShift, string date)
+        {
+            string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift, Convert.ToDateTime(date) });
+        }
 
         public List<Showtimes> getListShowtimesByIdMovie(string idMovie)
         {

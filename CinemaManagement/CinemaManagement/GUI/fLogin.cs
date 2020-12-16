@@ -96,14 +96,18 @@ namespace CinemaManagement.GUI
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+
             if(checkInfoLogin() == 2)
             {
+                DataProvider.username = this.userName;
+                DataProvider.pass = this.passWord;
+
                 string id = isLogin();
                 if (id != null && id != "" )
                 {
                     int type = getTypeEmployee();
                     this.Hide();
-                    fMain f = new fMain(id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                    fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
                     f.ShowDialog();
                     this.Show();
                     txtPassword.Clear();

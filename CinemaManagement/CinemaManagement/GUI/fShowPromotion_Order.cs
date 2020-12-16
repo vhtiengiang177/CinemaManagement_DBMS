@@ -22,6 +22,8 @@ namespace CinemaManagement.GUI
 
         MemoryStream ms;
 
+        public static string idEmployee;
+        public static int typeEmployee;
 
         List<String> listPromotion = new List<String>();
         public fShowPromotion_Order(Showtimes st, List<Seat> se)
@@ -42,6 +44,21 @@ namespace CinemaManagement.GUI
         public fShowPromotion_Order()
         {
             InitializeComponent();
+            //this.Showtimes = st;
+            //this.ListSeat = se;
+            //LoadInfo();
+            loadPromotion();
+            //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
+            txtNumTicket.Text = "1";
+            txtTypeCus.Text = "Chưa là thành viên";
+        }
+
+        public fShowPromotion_Order(int type, string idEmp)
+        {
+
+            InitializeComponent();
+            fShowPromotion_Order.idEmployee = idEmp;
+            fShowPromotion_Order.typeEmployee = type;
             //this.Showtimes = st;
             //this.ListSeat = se;
             //LoadInfo();
@@ -277,7 +294,7 @@ namespace CinemaManagement.GUI
                 }
                 else
                 {
-
+                    
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
                     if (TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, "em01"))
                     {

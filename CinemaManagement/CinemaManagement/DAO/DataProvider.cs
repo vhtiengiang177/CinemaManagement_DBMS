@@ -23,8 +23,11 @@ namespace CinemaManagement.DAO
  
         }
 
-        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS;Integrated Security=True";
+        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS5;Integrated Security=True";
 
+        public static string username = "";
+        public static string pass = "";
+        //private string connectionString = @"Data Source=192.168.0.150,1433;Initial Catalog=cinemaDBMS;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass ;
         /// <summary>
         /// Execute query trả về table. Dùng cho DataSoure của DataGridView.
         /// </summary>

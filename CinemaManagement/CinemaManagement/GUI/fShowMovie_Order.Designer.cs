@@ -41,10 +41,12 @@
             // 
             // flpnlMovie
             // 
+            this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
             this.flpnlMovie.Name = "flpnlMovie";
-            this.flpnlMovie.Size = new System.Drawing.Size(780, 466);
+            this.flpnlMovie.Size = new System.Drawing.Size(938, 546);
             this.flpnlMovie.TabIndex = 0;
             // 
             // splitContainer1
@@ -61,25 +63,29 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flpnlMovie);
-            this.splitContainer1.Size = new System.Drawing.Size(780, 500);
-            this.splitContainer1.SplitterDistance = 30;
+            this.splitContainer1.Size = new System.Drawing.Size(938, 583);
+            this.splitContainer1.SplitterDistance = 33;
             this.splitContainer1.TabIndex = 1;
             // 
             // pnlTitle
             // 
+            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pnlTitle.Controls.Add(this.lblOrder);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(780, 30);
+            this.pnlTitle.Size = new System.Drawing.Size(938, 33);
             this.pnlTitle.TabIndex = 0;
             // 
             // lblOrder
             // 
             this.lblOrder.AutoSize = true;
-            this.lblOrder.Location = new System.Drawing.Point(341, 8);
+            this.lblOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblOrder.Location = new System.Drawing.Point(415, 9);
             this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(46, 13);
+            this.lblOrder.Size = new System.Drawing.Size(52, 13);
             this.lblOrder.TabIndex = 0;
             this.lblOrder.Text = "ĐẶT VÉ";
             // 
@@ -87,11 +93,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 500);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.ClientSize = new System.Drawing.Size(938, 583);
             this.Controls.Add(this.splitContainer1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fShowMovie_Order";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fShowMovie_Order";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

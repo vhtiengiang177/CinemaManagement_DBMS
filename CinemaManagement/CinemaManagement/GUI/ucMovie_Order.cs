@@ -15,8 +15,18 @@ namespace CinemaManagement.GUI
     {
         MemoryStream ms;
 
+        public static string idEmployee;
+        public static int typeEmployee;
+
         public ucMovie_Order()
         {
+            InitializeComponent();
+        }
+
+        public ucMovie_Order(int type, string idEmp)
+        {
+            ucMovie_Order.idEmployee = idEmp;
+            ucMovie_Order.typeEmployee = type;
             InitializeComponent();
         }
 
@@ -67,7 +77,11 @@ namespace CinemaManagement.GUI
         public byte[] Img_movie
         {
             get { return img_movie; }
-            set { img_movie = value;  picImageMovie.Image = byteArrayToImage(value);}
+            set { img_movie = value;
+                if (value != null)
+                    picImageMovie.Image = byteArrayToImage(value);
+                else picImageMovie.Image = picImageMovie.InitialImage;
+            }
         }
 
         // Button Đặt vé. Dùng để bắt sự kiên qua bên Form.
@@ -128,47 +142,47 @@ namespace CinemaManagement.GUI
 
         private void lblShowRunningTime_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowNameMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowNameCategory_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblShowDirectorMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblRunningTime_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblDirectorMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void lblCategoryMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void btnOrderMovie_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         private void ucMovie_Order_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(20, 20, 20);
         }
         #endregion
 
@@ -189,8 +203,8 @@ namespace CinemaManagement.GUI
         // Chọn đặt vé mở sang form lịch chiếu
         private void btnOrderMovie_MouseClick(object sender, MouseEventArgs e)
         {
-            ucMovie_Order uc = new ucMovie_Order();
-            fShowtime_Order fShowtime = new fShowtime_Order(Id_movie);
+            ucMovie_Order ucMovie = new ucMovie_Order(typeEmployee, idEmployee);
+            fShowtime_Order fShowtime = new fShowtime_Order(Id_movie, typeEmployee, idEmployee);
             fShowtime.ShowDialog();
         }
     }

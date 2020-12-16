@@ -19,10 +19,24 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             addShiftInDay();
             addCategoryMovie();
-            addRoom();
+            
             reset();
-            
-            
+            chooseCinema();
+            //cboCinema.SelectedItem = null;
+
+
+
+
+
+        }
+
+        public void chooseCinema()
+        {
+            DataTable cm = new DataTable();
+            cm = CinemaDAO.Instance.loadCinema();
+            cboCinema.DataSource = cm;
+            cboCinema.ValueMember = cm.Columns[0].ToString();
+            cboCinema.DisplayMember = cm.Columns[1].ToString();
         }
 
         /// <summary>
@@ -167,11 +181,7 @@ namespace CinemaManagement.GUI
 
         private void addRoom()
         {
-            DataTable dt = new DataTable();
-            dt = RoomDAO.Instance.loadData();
-            cboRoom.DataSource = dt;
-            cboRoom.DisplayMember = dt.Columns[1].ToString();
-            cboRoom.ValueMember = dt.Columns[0].ToString();
+            
 
         }
 
@@ -325,6 +335,15 @@ namespace CinemaManagement.GUI
         private void btnResetInfo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboCinema_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = RoomDAO.Instance.loadRoomOnCinema(cboCinema.SelectedValue.ToString());
+            cboRoom.DataSource = dt;
+            cboRoom.DisplayMember = dt.Columns[1].ToString();
+            cboRoom.ValueMember = dt.Columns[0].ToString();
         }
     }
 }

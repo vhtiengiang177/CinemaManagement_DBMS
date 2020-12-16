@@ -109,7 +109,7 @@ namespace CinemaManagement.GUI
                 else
                 {
                     // Lệnh Insert 
-                    f = PromotionDAO.Instance.AddPromotion(
+                    f = PromotionDAO.Instance.addPromotion(
                    this.txtIDPromotion.Text.ToString(),
                    this.txtNamePromotion.Text.ToString(),
                     this.dtmStart.Value.ToString(),
@@ -161,7 +161,7 @@ namespace CinemaManagement.GUI
 
 
                 // Gọi method UpdatePromotion  và thực hiện lệnh
-                f = PromotionDAO.Instance.UpdatePromotion(
+                f = PromotionDAO.Instance.updatePromotion(
                    this.txtIDPromotion.Text.ToString(),
                    this.txtNamePromotion.Text.ToString(),
                     this.dtmStart.Value.ToString(),
@@ -218,7 +218,7 @@ namespace CinemaManagement.GUI
                     {
 
                         // Thực hiện câu lệnh SQL 
-                        bool f = PromotionDAO.Instance.DeletePromotion(id);
+                        bool f = PromotionDAO.Instance.deletePromotion(id);
                         if (f)
                         {
                             // Cập nhật lại DataGridView 
@@ -259,15 +259,15 @@ namespace CinemaManagement.GUI
             {
                 if (cboPromotion.SelectedIndex==0) //Tìm theo tên chương trình
                 {
-                    dgvPromotion.DataSource = PromotionDAO.Instance.SearchPromotion_name(txtSearchPromotion.Text.ToString().Trim());
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyname(txtSearchPromotion.Text.ToString().Trim());
                 }
                 if (cboPromotion.SelectedIndex == 1) //Tìm theo đối tượng
                 {
-                    dgvPromotion.DataSource = PromotionDAO.Instance.SearchPromotion_object(txtSearchPromotion.Text.ToString());
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyobject(txtSearchPromotion.Text.ToString());
                 }
                 if (cboPromotion.SelectedIndex == 2) //Tìm theo mức khuyến mãi
                 {
-                    dgvPromotion.DataSource = PromotionDAO.Instance.SearchPromotion_value(txtSearchPromotion.Text.ToString());
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyvalue(txtSearchPromotion.Text.ToString());
                 }
             }    
         }
@@ -286,19 +286,10 @@ namespace CinemaManagement.GUI
 
         #endregion
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+        
 
-        }
+        
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNamePromotion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

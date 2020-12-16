@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cinemaDBMSDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CinemaDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />
@@ -120,6 +121,12 @@
     </Compile>
     <Compile Include="GUI\fAddShowtimes.Designer.cs">
       <DependentUpon>fAddShowtimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fCinema.Designer.cs">
+      <DependentUpon>fCinema.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\fShowSeat_Order.cs">
       <SubType>Form</SubType>
@@ -204,6 +211,12 @@
     <Compile Include="GUI\fShowPromotion_Order.Designer.cs">
       <DependentUpon>fShowPromotion_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fShowTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fShowTicket.Designer.cs">
+      <DependentUpon>fShowTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShowTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +274,9 @@
     <EmbeddedResource Include="GUI\fAddShowtimes.resx">
       <DependentUpon>fAddShowtimes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fCinema.resx">
+      <DependentUpon>fCinema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowSeat_Order.resx">
       <DependentUpon>fShowSeat_Order.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowPromotion_Order.resx">
       <DependentUpon>fShowPromotion_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fShowTicket.resx">
+      <DependentUpon>fShowTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowTime.resx">
       <DependentUpon>fShowTime.cs</DependentUpon>

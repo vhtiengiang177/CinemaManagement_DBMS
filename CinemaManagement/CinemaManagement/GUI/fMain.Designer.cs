@@ -45,6 +45,7 @@
             this.lbIdEmployeeMain = new System.Windows.Forms.Label();
             this.lbChangeAccount = new System.Windows.Forms.Label();
             this.picEmployeeMain = new System.Windows.Forms.PictureBox();
+            this.trgCinemaManager = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployeeMain)).BeginInit();
@@ -61,7 +62,8 @@
             this.trpCustomerManager,
             this.quảnLýPhimToolStripMenuItem,
             this.trpPromotionManager,
-            this.trpSatis});
+            this.trpSatis,
+            this.trgCinemaManager});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1489, 31);
@@ -216,6 +218,14 @@
             this.picEmployeeMain.TabIndex = 0;
             this.picEmployeeMain.TabStop = false;
             // 
+            // trgCinemaManager
+            // 
+            this.trgCinemaManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trgCinemaManager.Name = "trgCinemaManager";
+            this.trgCinemaManager.Size = new System.Drawing.Size(93, 23);
+            this.trgCinemaManager.Text = "Quản lý rạp";
+            this.trgCinemaManager.Click += new System.EventHandler(this.trgCinemaManager_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +268,7 @@
         private System.Windows.Forms.ToolStripMenuItem trpShowTimeManager;
         private System.Windows.Forms.ToolStripMenuItem trpPromotionManager;
         private System.Windows.Forms.ToolStripMenuItem trpSatis;
+        private System.Windows.Forms.ToolStripMenuItem trgCinemaManager;
     }
 }
 

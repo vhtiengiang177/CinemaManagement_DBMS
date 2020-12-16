@@ -15,8 +15,18 @@ namespace CinemaManagement.GUI
     {
         MemoryStream ms;
 
+        public static string idEmployee;
+        public static int typeEmployee;
+
         public ucMovie_Order()
         {
+            InitializeComponent();
+        }
+
+        public ucMovie_Order(int type, string idEmp)
+        {
+            ucMovie_Order.idEmployee = idEmp;
+            ucMovie_Order.typeEmployee = type;
             InitializeComponent();
         }
 
@@ -193,8 +203,8 @@ namespace CinemaManagement.GUI
         // Chọn đặt vé mở sang form lịch chiếu
         private void btnOrderMovie_MouseClick(object sender, MouseEventArgs e)
         {
-            ucMovie_Order uc = new ucMovie_Order();
-            fShowtime_Order fShowtime = new fShowtime_Order(Id_movie);
+            ucMovie_Order ucMovie = new ucMovie_Order(typeEmployee, idEmployee);
+            fShowtime_Order fShowtime = new fShowtime_Order(Id_movie, typeEmployee, idEmployee);
             fShowtime.ShowDialog();
         }
     }

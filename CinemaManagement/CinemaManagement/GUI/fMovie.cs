@@ -258,15 +258,18 @@ namespace CinemaManagement.GUI
                                  this.cboCategoryMovie.SelectedValue.ToString(),
                                  stateM,
                                  arrImage);
-                try
-                {
-                    MovieDAO.Instance.updateMovie(mo);
-                    loadData();
-                }
-                catch
-                {
-                    MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
+
+                MovieDAO.Instance.updateMovie(mo);
+                loadData();
+                //try
+                //{
+                   
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
 

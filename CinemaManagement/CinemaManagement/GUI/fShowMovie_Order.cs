@@ -18,12 +18,22 @@ namespace CinemaManagement.GUI
         DataTable dt = new DataTable(); // Tạo kho ảo lưu trữ dl movie
         MemoryStream ms;
 
+        public static string idEmployee;
+        public static int typeEmployee;
         public fShowMovie_Order()
         {
             InitializeComponent();
             showMovie();
         }
 
+        public fShowMovie_Order(int type, string idEmp)
+        {
+            fShowMovie_Order.idEmployee = idEmp;
+            fShowMovie_Order.typeEmployee = type;
+
+            InitializeComponent();
+            showMovie();
+        }
 
         // Hiển thị phim theo danh sách dạng lưới
         public void showMovie()
@@ -37,7 +47,7 @@ namespace CinemaManagement.GUI
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 // Khởi tạo 1 uc
-                ucMovie_Order ucMovie = new ucMovie_Order();
+                ucMovie_Order ucMovie = new ucMovie_Order(typeEmployee, idEmployee);
 
                 // Lấy mã phim
                 ucMovie.Id_movie = dt.Rows[i][0].ToString();

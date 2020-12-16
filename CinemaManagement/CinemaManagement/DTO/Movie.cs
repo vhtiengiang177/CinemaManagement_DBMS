@@ -112,7 +112,9 @@ namespace CinemaManagement.DTO
             this.Releasedate_movie = Convert.ToDateTime(row["releasedate_movie"]);
             this.Id_categorymovie = row["id_categorymovie"].ToString();
             this.State_movie = Convert.ToByte(row["state_movie"]);
-            this.Img_movie = (byte[])row["img_movie"];
+            if (row["img_movie"] == DBNull.Value)
+                this.Img_movie = null;
+            else this.Img_movie = (byte[])row["img_movie"];
         }
     }
 }

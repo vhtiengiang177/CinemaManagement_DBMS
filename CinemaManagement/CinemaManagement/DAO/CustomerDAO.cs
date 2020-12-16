@@ -73,6 +73,13 @@ namespace CinemaManagement.DAO
         }
 
 
+        public string getNameCustomerByID(string id)
+        {
+            string query = "select lname_customer, fname_customer from customer where id_customer = @id ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString() + DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][1].ToString();
+        }
+
+
         //hàm này dành cho load khách hàng bên đặt vé
         public DataTable loadCustomerforOrder()
         {

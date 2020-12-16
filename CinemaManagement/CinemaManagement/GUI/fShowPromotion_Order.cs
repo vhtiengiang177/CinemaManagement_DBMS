@@ -20,8 +20,13 @@ namespace CinemaManagement.GUI
 
         private Showtimes showtimes;
 
+        private Employee employee;
+
+
         MemoryStream ms;
 
+        public static string idEmployee = "em01";
+        public static int typeEmployee;
 
         List<String> listPromotion = new List<String>();
         public fShowPromotion_Order(Showtimes st, List<Seat> se)
@@ -50,6 +55,21 @@ namespace CinemaManagement.GUI
             txtNumTicket.Text = "1";
             txtTypeCus.Text = "Chưa là thành viên";
         }
+
+        public fShowPromotion_Order(int type, string idEmp)
+        {
+
+            InitializeComponent();
+            fShowPromotion_Order.idEmployee = idEmp;
+            fShowPromotion_Order.typeEmployee = type;
+            //this.Showtimes = st;
+            //this.ListSeat = se;
+            //LoadInfo();
+            loadPromotion();
+            //Vé mua măc định là 1, nếu chọn nhiều vé thì đặt biến thêm vô
+            txtNumTicket.Text = "1";
+            txtTypeCus.Text = "Chưa là thành viên";
+        }
         //tổng giảm
         int sumDes = 0;
 
@@ -57,6 +77,7 @@ namespace CinemaManagement.GUI
 
         public List<Seat> ListSeat { get => listSeat; set => listSeat = value; }
         public Showtimes Showtimes { get => showtimes; set => showtimes = value; }
+        public Employee Employee { get => employee; set => employee = value; }
 
         //Convert image
         public System.Drawing.Image byteArrayToImage(byte[] byteArrayIn)
@@ -247,14 +268,19 @@ namespace CinemaManagement.GUI
         private void btnDone_Click(object sender, EventArgs e)
         {
             loadListPromotion();
-            //int total_cost = int.Parse(Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes))
-            for(int i =0; i < this.ListSeat.Count; i++)
+
+            loadTicket();
+        }
+
+        void loadTicket()
+        {
+            for (int i = 0; i < this.ListSeat.Count; i++)
             {
                 string id_ticket = createAutoIdTicket();
                 string id_seat = this.ListSeat[i].Id_seat;
                 string id_promotion = this.listPromotion[i];
                 string id_customer = "cu00";
-                if(txtIDcus.Text != "")
+                if (txtIDcus.Text != "")
                 {
                     id_customer = this.txtIDcus.Text;
                 }
@@ -264,33 +290,24 @@ namespace CinemaManagement.GUI
                     valuePromotion = Convert.ToDouble(PromotionDAO.Instance.searchValuePromotion(id_promotion).Rows[0][0]);
 
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
-                    if (!TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer , "em01" , this.listPromotion[i]))
+                    if (TicketDAO.Instance.createTicket(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, idEmployee, this.listPromotion[i]))
                     {
-                        MessageBox.Show("Error");
-                        return;
+                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], idEmployee, id_customer, id_promotion, "90000", (valuePromotion * 90000).ToString(), total_cost.ToString());
+                        f.ShowDialog();
                     }
                 }
                 else
                 {
-
+                    
                     int total_cost = Convert.ToInt32(90000 * (1 - valuePromotion));
-                    if (!TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, "em01"))
+                    if (TicketDAO.Instance.createTicketWithoutPromotion(id_ticket, 90000, total_cost, this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, this.ListSeat[i].Id_seat, id_customer, idEmployee))
                     {
-                        MessageBox.Show("Error");
-                        return;
+                        fShowTicket f = new fShowTicket(this.Showtimes, this.ListSeat[i], idEmployee,  id_customer, "90000", total_cost.ToString());
+                        f.ShowDialog();
                     }
                 }
-                MessageBox.Show("Success");
-            }    
-            //foreach(Seat item in this.ListSeat)
-            //{
-            //    if (!TicketDAO.Instance.createTicket(createAutoIdTicket(), 90000, Convert.ToInt32(Convert.ToInt32(txtNumTicket.Text) * 90000 - this.sumDes), this.Showtimes.Id_room, this.Showtimes.Id_movie, this.Showtimes.Id_shiftshow, this.Showtimes.Date_showtimes, item.Id_seat, this.txtIDcus.Text, "em01", this.cboPromotion.SelectedValue.ToString()))
-            //    {
-            //        MessageBox.Show("Errror");
-            //        return;
-            //    }
-            //}
-            //MessageBox.Show("Success");
+            }
+            //Environment.Exit(1);
         }
 
         void loadListPromotion()

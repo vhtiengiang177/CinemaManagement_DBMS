@@ -16,25 +16,30 @@ namespace CinemaManagement.GUI
         public static string idEmployeeMain;
         public static string userNameEmployeeMain;
         public static string passEmployeeMain;
+        public static int typeEmp;
         public fMain()
         {
             InitializeComponent();
             openAchildForm(new fShowMovie_Order());
         }
 
-        public fMain(string idEmp, string username, string pass)
+        public fMain(int type, string idEmp, string username, string pass)
         {
             InitializeComponent();
             fMain.idEmployeeMain = idEmp;
             fMain.userNameEmployeeMain = username;
             fMain.passEmployeeMain = pass;
+            fMain.typeEmp = type;
+
             DataTable dtEmp = EmployeeDAO.Instance.search_IDEmployee(fMain.idEmployeeMain);
             lbIdEmployeeMain.Text = dtEmp.Rows[0][0].ToString();
             lbNameEmployeeMain.Text = dtEmp.Rows[0][1].ToString();
+
             if (dtEmp.Rows[0][11] != DBNull.Value)
                 picEmployeeMain.Image =BSImage.convertToImage((byte[])dtEmp.Rows[0][11]);
             else
                 picEmployeeMain.Image = picEmployeeMain.ErrorImage;
+
             openAchildForm(new fShowMovie_Order());
         }
 
@@ -72,7 +77,9 @@ namespace CinemaManagement.GUI
 
         private void trpHome_Order_Click(object sender, EventArgs e)
         {
-            openAchildForm(new fShowMovie_Order());
+            openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
+            //fActive = new fShowMovie_Order(typeEmp, idEmployeeMain);
+            //plOpenChildForm.Controls.Add(fActive);
         }
 
         private void trpPromotionManager_Click(object sender, EventArgs e)
@@ -83,6 +90,7 @@ namespace CinemaManagement.GUI
         private void trpFilmManager_Click(object sender, EventArgs e)
         {
             openAchildForm(new fMovie());
+           
         }
 
         private void trpFilmCategoryManager_Click(object sender, EventArgs e)
@@ -98,6 +106,11 @@ namespace CinemaManagement.GUI
         private void trpSatis_Click(object sender, EventArgs e)
         {
             openAchildForm(new fStatistic());
+        }
+
+        private void trgCinemaManager_Click(object sender, EventArgs e)
+        {
+            openAchildForm(new fCinema());
         }
     }
 }

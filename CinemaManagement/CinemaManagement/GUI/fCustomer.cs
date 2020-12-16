@@ -14,10 +14,23 @@ namespace CinemaManagement.GUI
 {
     public partial class fCustomer : Form
     {
+        public static int typeEmployee;
         Customer customer = new Customer();
         public fCustomer()
         {
             InitializeComponent();
+            loadData();
+            fillCboTypeCustomer();
+        }
+
+        public fCustomer(int type)
+        {
+            InitializeComponent();
+            fCustomer.typeEmployee = type;
+
+            if (type == 1)
+                btnDelete.Hide();
+
             loadData();
             fillCboTypeCustomer();
         }

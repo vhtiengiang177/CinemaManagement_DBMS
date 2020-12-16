@@ -36,6 +36,22 @@ namespace CinemaManagement.GUI
             LoadData("CGV Thủ Đức", this.Showtime.Date_showtimes.ToShortDateString(), nameMovie, this.Showtime.Starttime_shiftshow, this.Showtime.Endtime_shiftshow, nameRoom, this.Seat.Name_seat, nameCustomer, cost, promotionShow, discount, totalcost);
         }
 
+        public fShowTicket(Showtimes st, Seat se, string idEmp, string cu, string promotion, string cost, string discount, string totalcost)
+        {
+
+            InitializeComponent();
+            LoadInit();
+            this.Showtime = st;
+            this.Seat = se;
+            string nameMovie = MovieDAO.Instance.getMovieByID(this.Showtime.Id_movie).Rows[0][1].ToString();
+            string nameRoom = RoomDAO.Instance.getNameRoom(this.Showtime.Id_room).ToString();
+            string nameCustomer = CustomerDAO.Instance.getNameCustomerByID(cu);
+            string promotionShow = "";
+            if (promotion != "null")
+                promotionShow = PromotionDAO.Instance.getNamePromotion(promotion);
+            LoadData("CGV Thủ Đức", this.Showtime.Date_showtimes.ToShortDateString(), nameMovie, this.Showtime.Starttime_shiftshow, this.Showtime.Endtime_shiftshow, nameRoom, this.Seat.Name_seat, nameCustomer, cost, promotionShow, discount, totalcost);
+        }
+
         public fShowTicket(Showtimes st, Seat se, string cu, string cost, string totalcost)
         {
 

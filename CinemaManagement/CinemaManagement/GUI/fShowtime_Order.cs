@@ -114,7 +114,7 @@ namespace CinemaManagement.GUI
             }
             foreach (var item in listDate)
             {
-                Button btn = new Button() { Width = 80, Height = 80 };
+                Button btn = new Button() { Width = 100, Height = 100 };
 
                
                 //btn.Text = item.Name_movie;
@@ -124,7 +124,7 @@ namespace CinemaManagement.GUI
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.BackColor = Color.White;
-                btn.Text = item.ToString();
+                btn.Text = item.ToShortDateString();
                 btn.Tag = item;
                 //MessageBox.Show(btn.Tag.GetType().ToString());
                 btn.Click += btn_Click;
@@ -154,7 +154,7 @@ namespace CinemaManagement.GUI
             }
             foreach (Showtimes item in listShiftTime)
             {
-                Button btn = new Button() { Width =150, Height = 40 };
+                Button btn = new Button() { Width =150, Height = 80 };
 
 
                 //btn.Text = item.Name_movie;
@@ -206,6 +206,5 @@ namespace CinemaManagement.GUI
         {
             this.Close();
         }
-
     }
 }

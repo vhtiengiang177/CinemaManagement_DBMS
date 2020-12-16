@@ -50,8 +50,12 @@ namespace CinemaManagement.GUI
             this.Showtime = st;
             this.Seat = se;
             string nameMovie = MovieDAO.Instance.getMovieByID(this.Showtime.Id_movie).Rows[0][1].ToString();
-            string nameRoom = RoomDAO.Instance.getNameRoom(this.Showtime.Id_room).ToString();
-            string nameCustomer = CustomerDAO.Instance.getNameCustomerByID(cu);
+            string nameRoom = RoomDAO.Instance.getNameRoom(this.Showtime.Id_room).ToString(); 
+            string nameCustomer = "";
+            if (cu != "cu00")
+            {
+                nameCustomer = CustomerDAO.Instance.getNameCustomerByID(cu);
+            }
             string promotionShow = "";
             if (promotion != "null")
                 promotionShow = PromotionDAO.Instance.getNamePromotion(promotion);
@@ -126,7 +130,7 @@ namespace CinemaManagement.GUI
             this.lbDiscount.Text = discount;
             this.lbTotalcost.Text = totalcost;
             this.lbIdEmp.Text = idEmployee;
-            this.lbIdEmp.Text =(string)EmployeeDAO.Instance.getNameById(idEmployee);
+            this.lbNameEmpl.Text =(string)EmployeeDAO.Instance.getNameById(idEmployee);
         }
 
 

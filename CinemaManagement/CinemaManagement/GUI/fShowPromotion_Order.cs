@@ -241,7 +241,7 @@ namespace CinemaManagement.GUI
         {
             sum = Convert.ToInt32(txtNumTicket.Text) * 90000;
             double txtval = 0;
-            if (txtValue.Text != "0")
+            if (txtValue.Text != "0" || txtValue.Text !="")
             {
                 txtval = Convert.ToDouble(txtValue.Text);
             }

@@ -23,7 +23,7 @@ namespace CinemaManagement.DAO
  
         }
 
-        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS;Integrated Security=True";
+        private string connectionString = @"Data Source=localhost;Initial Catalog=cinemaDBMS5;Integrated Security=True";
 
         public static string username = "";
         public static string pass = "";

@@ -32,29 +32,29 @@
             this.dgvListCustomer = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtIdCustomer = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtLNameCustomer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtAddressCustomer = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtEmailCustomer = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.cboTypeCustomer = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.dpkBirthDateCustomer = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -76,6 +76,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.txtPointCustomer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCustomer)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,7 +100,7 @@
             // 
             this.dgvListCustomer.AllowUserToAddRows = false;
             this.dgvListCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListCustomer.Location = new System.Drawing.Point(438, 65);
+            this.dgvListCustomer.Location = new System.Drawing.Point(439, 104);
             this.dgvListCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListCustomer.Name = "dgvListCustomer";
             this.dgvListCustomer.ReadOnly = true;
@@ -134,6 +135,14 @@
             this.panel14.Size = new System.Drawing.Size(134, 32);
             this.panel14.TabIndex = 18;
             // 
+            // txtIdCustomer
+            // 
+            this.txtIdCustomer.Location = new System.Drawing.Point(25, 6);
+            this.txtIdCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdCustomer.Name = "txtIdCustomer";
+            this.txtIdCustomer.Size = new System.Drawing.Size(97, 20);
+            this.txtIdCustomer.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -147,14 +156,6 @@
             this.label1.Text = "ID: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtIdCustomer
-            // 
-            this.txtIdCustomer.Location = new System.Drawing.Point(25, 6);
-            this.txtIdCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdCustomer.Name = "txtIdCustomer";
-            this.txtIdCustomer.Size = new System.Drawing.Size(97, 20);
-            this.txtIdCustomer.TabIndex = 1;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtLNameCustomer);
@@ -164,6 +165,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(217, 28);
             this.panel2.TabIndex = 19;
+            // 
+            // txtLNameCustomer
+            // 
+            this.txtLNameCustomer.Location = new System.Drawing.Point(98, 3);
+            this.txtLNameCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLNameCustomer.Name = "txtLNameCustomer";
+            this.txtLNameCustomer.Size = new System.Drawing.Size(117, 20);
+            this.txtLNameCustomer.TabIndex = 1;
             // 
             // label2
             // 
@@ -178,14 +187,6 @@
             this.label2.Text = "Họ và tên đệm: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtLNameCustomer
-            // 
-            this.txtLNameCustomer.Location = new System.Drawing.Point(98, 3);
-            this.txtLNameCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLNameCustomer.Name = "txtLNameCustomer";
-            this.txtLNameCustomer.Size = new System.Drawing.Size(117, 20);
-            this.txtLNameCustomer.TabIndex = 1;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.txtAddressCustomer);
@@ -195,6 +196,14 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(218, 34);
             this.panel4.TabIndex = 23;
+            // 
+            // txtAddressCustomer
+            // 
+            this.txtAddressCustomer.Location = new System.Drawing.Point(62, 7);
+            this.txtAddressCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddressCustomer.Name = "txtAddressCustomer";
+            this.txtAddressCustomer.Size = new System.Drawing.Size(154, 20);
+            this.txtAddressCustomer.TabIndex = 1;
             // 
             // label4
             // 
@@ -209,14 +218,6 @@
             this.label4.Text = "Địa chỉ: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAddressCustomer
-            // 
-            this.txtAddressCustomer.Location = new System.Drawing.Point(62, 7);
-            this.txtAddressCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddressCustomer.Name = "txtAddressCustomer";
-            this.txtAddressCustomer.Size = new System.Drawing.Size(154, 20);
-            this.txtAddressCustomer.TabIndex = 1;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.txtEmailCustomer);
@@ -226,6 +227,14 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(218, 31);
             this.panel5.TabIndex = 25;
+            // 
+            // txtEmailCustomer
+            // 
+            this.txtEmailCustomer.Location = new System.Drawing.Point(62, 3);
+            this.txtEmailCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmailCustomer.Name = "txtEmailCustomer";
+            this.txtEmailCustomer.Size = new System.Drawing.Size(154, 20);
+            this.txtEmailCustomer.TabIndex = 1;
             // 
             // label5
             // 
@@ -240,14 +249,6 @@
             this.label5.Text = "Email: ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtEmailCustomer
-            // 
-            this.txtEmailCustomer.Location = new System.Drawing.Point(62, 3);
-            this.txtEmailCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEmailCustomer.Name = "txtEmailCustomer";
-            this.txtEmailCustomer.Size = new System.Drawing.Size(154, 20);
-            this.txtEmailCustomer.TabIndex = 1;
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.cboTypeCustomer);
@@ -257,6 +258,15 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(217, 37);
             this.panel7.TabIndex = 27;
+            // 
+            // cboTypeCustomer
+            // 
+            this.cboTypeCustomer.FormattingEnabled = true;
+            this.cboTypeCustomer.Location = new System.Drawing.Point(99, 7);
+            this.cboTypeCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.cboTypeCustomer.Name = "cboTypeCustomer";
+            this.cboTypeCustomer.Size = new System.Drawing.Size(116, 21);
+            this.cboTypeCustomer.TabIndex = 1;
             // 
             // label7
             // 
@@ -271,15 +281,6 @@
             this.label7.Text = "Loại thành viên: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cboTypeCustomer
-            // 
-            this.cboTypeCustomer.FormattingEnabled = true;
-            this.cboTypeCustomer.Location = new System.Drawing.Point(99, 7);
-            this.cboTypeCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.cboTypeCustomer.Name = "cboTypeCustomer";
-            this.cboTypeCustomer.Size = new System.Drawing.Size(116, 21);
-            this.cboTypeCustomer.TabIndex = 1;
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.dpkBirthDateCustomer);
@@ -289,6 +290,14 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(217, 40);
             this.panel8.TabIndex = 28;
+            // 
+            // dpkBirthDateCustomer
+            // 
+            this.dpkBirthDateCustomer.Location = new System.Drawing.Point(65, 4);
+            this.dpkBirthDateCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.dpkBirthDateCustomer.Name = "dpkBirthDateCustomer";
+            this.dpkBirthDateCustomer.Size = new System.Drawing.Size(150, 20);
+            this.dpkBirthDateCustomer.TabIndex = 14;
             // 
             // label8
             // 
@@ -302,14 +311,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Ngày sinh: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dpkBirthDateCustomer
-            // 
-            this.dpkBirthDateCustomer.Location = new System.Drawing.Point(65, 4);
-            this.dpkBirthDateCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.dpkBirthDateCustomer.Name = "dpkBirthDateCustomer";
-            this.dpkBirthDateCustomer.Size = new System.Drawing.Size(150, 20);
-            this.dpkBirthDateCustomer.TabIndex = 14;
             // 
             // btnDelete
             // 
@@ -352,6 +353,28 @@
             this.panel13.Size = new System.Drawing.Size(433, 50);
             this.panel13.TabIndex = 32;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(3, 17);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Search:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(56, 14);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(288, 24);
+            this.txtSearch.TabIndex = 13;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DarkRed;
@@ -366,28 +389,6 @@
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(56, 14);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(288, 24);
-            this.txtSearch.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(3, 17);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Search:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -414,7 +415,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(-2, 68);
+            this.panel1.Location = new System.Drawing.Point(-1, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(441, 470);
             this.panel1.TabIndex = 12;
@@ -618,12 +619,24 @@
             this.label6.Text = "Điểm tích lũy: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label14.Location = new System.Drawing.Point(339, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(177, 29);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "CINEMA BYTG";
+            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(905, 644);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvListCustomer);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -662,6 +675,7 @@
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -713,5 +727,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox txtPointCustomer;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
     }
 }

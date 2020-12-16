@@ -18,8 +18,8 @@ namespace CinemaManagement.GUI
         public fCustomer()
         {
             InitializeComponent();
-            //loadData();
-            //fillCboTypeCustomer();
+            loadData();
+            fillCboTypeCustomer();
         }
 
         void loadCustomer()

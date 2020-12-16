@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCinema));
             this.dgvCinema = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,12 +51,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.picReload = new System.Windows.Forms.PictureBox();
@@ -69,139 +69,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvCinema.Location = new System.Drawing.Point(12, 156);
+            this.dgvCinema.Location = new System.Drawing.Point(9, 127);
+            this.dgvCinema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCinema.Name = "dgvCinema";
             this.dgvCinema.RowHeadersWidth = 51;
             this.dgvCinema.RowTemplate.Height = 24;
-            this.dgvCinema.Size = new System.Drawing.Size(620, 249);
+            this.dgvCinema.Size = new System.Drawing.Size(465, 202);
             this.dgvCinema.TabIndex = 0;
             this.dgvCinema.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCinema_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(668, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã rạp";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(770, 156);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(148, 22);
-            this.txtID.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(668, 193);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tên rạp";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(668, 222);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Địa chỉ";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(770, 222);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(148, 22);
-            this.txtAddress.TabIndex = 6;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(770, 193);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(148, 22);
-            this.txtName.TabIndex = 7;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(651, 368);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(740, 368);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 10;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(833, 368);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(770, 259);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(148, 22);
-            this.txtCity.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(664, 259);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Thành phố";
-            // 
-            // txtStt
-            // 
-            this.txtStt.Location = new System.Drawing.Point(770, 315);
-            this.txtStt.Name = "txtStt";
-            this.txtStt.Size = new System.Drawing.Size(148, 22);
-            this.txtStt.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(664, 320);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Trạng thái";
-            // 
-            // txtNum
-            // 
-            this.txtNum.Location = new System.Drawing.Point(770, 287);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(148, 22);
-            this.txtNum.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(664, 292);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 17);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Số điện thoại";
             // 
             // Column1
             // 
@@ -245,20 +120,163 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(501, 129);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Mã rạp";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(578, 127);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(112, 20);
+            this.txtID.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(501, 157);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tên rạp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(501, 180);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Địa chỉ";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(578, 180);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(112, 20);
+            this.txtAddress.TabIndex = 6;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(578, 157);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(112, 20);
+            this.txtName.TabIndex = 7;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(488, 299);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 19);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(555, 299);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(56, 19);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(625, 299);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(56, 19);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(578, 210);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(112, 20);
+            this.txtCity.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(498, 210);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Thành phố";
+            // 
+            // txtStt
+            // 
+            this.txtStt.Location = new System.Drawing.Point(578, 256);
+            this.txtStt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStt.Name = "txtStt";
+            this.txtStt.Size = new System.Drawing.Size(112, 20);
+            this.txtStt.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(498, 260);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Trạng thái";
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(578, 233);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(112, 20);
+            this.txtNum.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(498, 237);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Số điện thoại";
+            // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(292, 112);
+            this.txtSearch.Location = new System.Drawing.Point(219, 91);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(202, 22);
+            this.txtSearch.Size = new System.Drawing.Size(152, 20);
             this.txtSearch.TabIndex = 19;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 117);
+            this.label7.Location = new System.Drawing.Point(44, 95);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 17);
+            this.label7.Size = new System.Drawing.Size(165, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nhập tên rạp hoặc tên thành phố";
             // 
@@ -266,9 +284,10 @@
             // 
             this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(521, 112);
+            this.picReload.Location = new System.Drawing.Point(391, 91);
+            this.picReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picReload.Name = "picReload";
-            this.picReload.Size = new System.Drawing.Size(37, 30);
+            this.picReload.Size = new System.Drawing.Size(28, 24);
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picReload.TabIndex = 44;
             this.picReload.TabStop = false;
@@ -276,9 +295,9 @@
             // 
             // fCinema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 553);
+            this.ClientSize = new System.Drawing.Size(905, 644);
             this.Controls.Add(this.picReload);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label7);
@@ -298,6 +317,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCinema);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fCinema";
             this.Text = "fCinema";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCinema)).EndInit();

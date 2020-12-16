@@ -23,7 +23,7 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             fillChartAll();
             load();
-            cboCinema.SelectedItem = null;
+            this.cboCinema.SelectedItem = null;
         }
 
 

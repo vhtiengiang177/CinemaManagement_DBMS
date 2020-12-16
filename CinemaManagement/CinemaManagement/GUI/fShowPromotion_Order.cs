@@ -363,5 +363,10 @@ namespace CinemaManagement.GUI
             this.nudPromotion.Maximum = this.ListSeat.Count - this.nudHSSV.Value;
             CalcMoney();
         }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

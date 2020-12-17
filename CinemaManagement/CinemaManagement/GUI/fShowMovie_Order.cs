@@ -69,7 +69,7 @@ namespace CinemaManagement.GUI
 
         private void Btn_Order_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Hide();
+            //this.Hide();
         }
 
         /// <summary>

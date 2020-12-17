@@ -77,7 +77,7 @@ namespace CinemaManagement.GUI
 
         private void trpCustomerManager_Click(object sender, EventArgs e)
         {
-            if(typeEmp == 1 || typeEmp == 4)
+            if(typeEmp != 2)
                  openAchildForm(new fCustomer(typeEmp));
         }
 

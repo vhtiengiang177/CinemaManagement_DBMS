@@ -18,6 +18,7 @@ namespace CinemaManagement.GUI
 {
     public partial class fEmployee : Form
     {
+        public static int typeEmployee;
         public static int cellClickIndex = 0;
         public static int searchTypeIndex = 0;
         MemoryStream ms;
@@ -25,6 +26,19 @@ namespace CinemaManagement.GUI
 
         public fEmployee()
         {
+            InitializeComponent();
+            loadData();
+            btnCancel.Hide();
+            btnAddImg.Hide();
+            btnSave.Hide();
+            unenableEdit(false);
+            setArrayByteImage();
+            this.txtID.Enabled = false;
+        }
+
+        public fEmployee(int type)
+        {
+            fEmployee.typeEmployee = type;
             InitializeComponent();
             loadData();
             btnCancel.Hide();

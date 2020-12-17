@@ -45,7 +45,7 @@ namespace CinemaManagement.GUI
         #region SET DATA
         public void setDataCmbTypeEmployee()
         {
-            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeForAddEmployee();
             cboTypeEmployee.ValueMember = "id_typeemployee";
             cboTypeEmployee.DisplayMember = "name_typeemployee";
         }

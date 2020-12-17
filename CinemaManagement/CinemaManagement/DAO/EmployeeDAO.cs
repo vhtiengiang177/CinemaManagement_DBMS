@@ -34,6 +34,15 @@ namespace CinemaManagement.DAO
         }
 
 
+
+
+        public DataTable loadDataForCinemaCurrent(string idCinema)
+        {
+            string query = "exec sp_showEmployeeForCinemaCurrent @id_cinema ";
+            return DataProvider.Instance.ExecuteQuery(query , new object[] { idCinema });
+        }
+
+
         /// <summary>
         /// Chỉnh sửa thông tin nhân viên
         /// </summary>
@@ -81,7 +90,7 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public DataTable getDataTypeEmployee()
         {
-            string query = "select * from TypeEmployee";
+            string query = "select * from TypeEmployee where id_typeemployee not like 'tyem04' ";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -91,6 +100,11 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable getDataTypeForAddEmployeeOfCinemaAcurrent()
+        {
+            string query = "select * from TypeEmployee where id_typeemployee not like 'tyem04' and id_typeemployee not like 'tyem03' ";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
 
         /// <summary>
         /// Lấy dữ liệu từ table Cinema
@@ -100,6 +114,12 @@ namespace CinemaManagement.DAO
         {
             string query = "select * from Cinema";
             return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable getDataCinemaForCinemaCurrent(string idCinema)
+        {
+            string query = "select * from Cinema where id_cinema  = @idCinema ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { @idCinema });
         }
 
 
@@ -176,6 +196,13 @@ namespace CinemaManagement.DAO
         {
             string query = "select dbo.fun_create_newID_Employee()";
             return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+
+        public object getIdCinema(string idEmp)
+        {
+            string query = "select id_cinema from Employee where id_employee = @idEmp ";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] { idEmp });
         }
 
         public bool createShiftOfMonth(string idEmployee, int month, int year, string idShift)

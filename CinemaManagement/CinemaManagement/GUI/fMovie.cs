@@ -199,6 +199,7 @@ namespace CinemaManagement.GUI
             if (dtGetMovie.Rows[0][7] is null || dtGetMovie.Rows[0][7] == DBNull.Value)
             {
                 picImageMovie.Image = picImageMovie.InitialImage;
+                imageToByteArray(picImageMovie.Image);
             }
             else
             {
@@ -290,14 +291,14 @@ namespace CinemaManagement.GUI
         // Khi chọn vào cbo tìm kiếm theo loại, kiểm tra xem có chọn đang hoạt động hay ngưng hoạt động không
         private void cboInfoSearchMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboInfoSearchMovie.SelectedIndex == 7 || cboInfoSearchMovie.SelectedIndex == 8)
+            if(cboInfoSearchMovie.SelectedIndex == 6 || cboInfoSearchMovie.SelectedIndex == 7)
             {
                 this.txtSearchMovie.Enabled = false; // Không cho tìm kiếm bằng txt nữa vì đã chọn rõ trạng thái rồi
-                if (cboInfoSearchMovie.SelectedIndex == 7) // Đang hoạt động
+                if (cboInfoSearchMovie.SelectedIndex == 6) // Đang hoạt động
                 {
                     dgvMovie.DataSource = MovieDAO.Instance.searchActiveStateMovie();
                 }
-                else if (cboInfoSearchMovie.SelectedIndex == 8) // Ngưng hoạt động
+                else if (cboInfoSearchMovie.SelectedIndex == 7) // Ngưng hoạt động
                 {
                     dgvMovie.DataSource = MovieDAO.Instance.searchInactiveMovie();
                 }
@@ -336,11 +337,7 @@ namespace CinemaManagement.GUI
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchRunningTimeMovie(txtSearchMovie.Text.Trim());
             }
-            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngày khởi chiếu
-            {
-                dgvMovie.DataSource = MovieDAO.Instance.searchReleaseDateMovie(txtSearchMovie.Text.Trim());
-            }
-            else if (cboInfoSearchMovie.SelectedIndex == 6) // Ngôn ngữ
+            else if (cboInfoSearchMovie.SelectedIndex == 5) // Ngôn ngữ
             {
                 dgvMovie.DataSource = MovieDAO.Instance.searchLanguageMovie(txtSearchMovie.Text.Trim());
             }

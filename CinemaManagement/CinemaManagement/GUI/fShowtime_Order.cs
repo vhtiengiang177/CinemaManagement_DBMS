@@ -187,9 +187,6 @@ namespace CinemaManagement.GUI
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            //this.Dispose();
-            //fShowMovie_Order fMo = new fShowMovie_Order();
-            //fMo.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)

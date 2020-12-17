@@ -85,6 +85,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable getDataTypeForAddEmployee()
+        {
+            string query = "select * from TypeEmployee where id_typeemployee not like 'tyem04' ";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
 
         /// <summary>
         /// Lấy dữ liệu từ table Cinema

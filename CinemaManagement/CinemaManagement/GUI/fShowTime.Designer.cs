@@ -62,7 +62,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.iconClose = new System.Windows.Forms.PictureBox();
+            //this.iconClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,7 +74,7 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -416,14 +416,14 @@
             // 
             // iconClose
             // 
-            this.iconClose.Location = new System.Drawing.Point(28, 37);
-            this.iconClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconClose.Name = "iconClose";
-            this.iconClose.Size = new System.Drawing.Size(83, 63);
-            this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconClose.TabIndex = 5;
-            this.iconClose.TabStop = false;
-            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
+            //this.iconClose.Location = new System.Drawing.Point(28, 37);
+            //this.iconClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            //this.iconClose.Name = "iconClose";
+            //this.iconClose.Size = new System.Drawing.Size(83, 63);
+            //this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            //this.iconClose.TabIndex = 5;
+            //this.iconClose.TabStop = false;
+            //this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
             // 
             // label6
             // 
@@ -479,7 +479,7 @@
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

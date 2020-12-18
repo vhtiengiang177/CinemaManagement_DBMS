@@ -30,7 +30,6 @@ namespace CinemaManagement.GUI
         {
             fShowMovie_Order.idEmployee = idEmp;
             fShowMovie_Order.typeEmployee = type;
-
             InitializeComponent();
             showMovie();
         }

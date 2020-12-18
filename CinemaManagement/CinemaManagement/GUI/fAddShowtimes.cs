@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace CinemaManagement.GUI
             reset();
             chooseCinema();
             //cboCinema.SelectedItem = null;
-
+            
 
 
 
@@ -70,6 +71,31 @@ namespace CinemaManagement.GUI
 
         #region CHỌN NGÀY CHIẾU
 
+        private void cboCinema_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = RoomDAO.Instance.loadRoomOnCinema(cboCinema.SelectedValue.ToString());
+            cboRoom.DataSource = dt;
+            cboRoom.DisplayMember = dt.Columns[1].ToString();
+            cboRoom.ValueMember = dt.Columns[0].ToString();
+
+            txtCountMovieInDay.ResetText();
+            txtShiftEmpty.ResetText();
+
+
+            //if (ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows.Count > 0)
+            //{
+            //    int count = Convert.ToInt32(ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows[0][0].ToString());
+            //    if (count < 3)
+            //        txtCountShift.Text = (3 - count).ToString();
+            //    else
+            //        txtCountShift.Text = "0";
+            //}
+
+            //else
+            //    txtCountShift.Text = "3";
+        }
+
         /// <summary>
         /// Hàm đếm số lịch chiếu đã được xếp trong ngày đó 
         /// </summary>
@@ -78,8 +104,8 @@ namespace CinemaManagement.GUI
         {
             
 
-            if (ShowtimesDAO.Instance.countMovieInDay(dtmChooseDay.Value.ToString()).Rows.Count > 0)
-                txtCountMovieInDay.Text = ShowtimesDAO.Instance.countMovieInDay(dtmChooseDay.Value.ToString()).Rows[0][0].ToString();
+            if (ShowtimesDAO.Instance.countMovieInDay(dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows.Count > 0)
+                txtCountMovieInDay.Text = ShowtimesDAO.Instance.countMovieInDay(dtmChooseDay.Value.ToString(),cboCinema.SelectedValue.ToString()).Rows[0][0].ToString();
             else
                 txtCountMovieInDay.Text = "0";
             return Convert.ToInt32(txtCountMovieInDay.Text.ToString());
@@ -92,19 +118,21 @@ namespace CinemaManagement.GUI
         private void dtmChooseDay_ValueChanged(object sender, EventArgs e)
         {
             countMovieInDay();
-            txtShiftEmpty.Text = (5 - countMovieInDay()).ToString();
+            txtShiftEmpty.Text = (6 - countMovieInDay()).ToString();
             btnChooseDay.Show();
         }
 
-        
-        
+
+
 
 
         /// <summary>
         /// Khi Nhấn CHỌN thì thông tin về ngày chiếu được đưa vào txtDay ở bảng hiển thị thông tin
         /// </summary>
+        bool flagDay = false;
         private void btnChooseDay_Click(object sender, EventArgs e)
         {
+            flagDay = true;
             if (txtShiftEmpty.Text == "0")
                 MessageBox.Show("Đã quá lượt thêm lịch trong ngày");
             else
@@ -142,18 +170,20 @@ namespace CinemaManagement.GUI
         /// </summary>
         private void cboShift_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chooseCinema();
+            addShiftInDay();
             btnChooseShift.Show();
-            if (ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString()).Rows.Count > 0)
-            {
-                int count = Convert.ToInt32(ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString()).Rows[0][0].ToString());
-                if (count < 3)
-                    txtCountShift.Text = (3 - count).ToString();
-                else
-                    txtCountShift.Text = "0";
-            }
+            //if (ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows.Count > 0)
+            //{
+            //    int count = Convert.ToInt32(ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows[0][0].ToString());
+            //    if (count < 3)
+            //        txtCountShift.Text = (3 - count).ToString();
+            //    else
+            //        txtCountShift.Text = "0";
+            //}
 
-            else
-                txtCountShift.Text = "3";
+            //else
+            //    txtCountShift.Text = "3";
         }
 
 
@@ -210,7 +240,7 @@ namespace CinemaManagement.GUI
             DataTable dts = new DataTable();
             dts = ShowtimesDAO.Instance.checkMovie(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboRoom.SelectedValue.ToString());
             if (dts.Rows.Count > 0)
-                MessageBox.Show("Phòng này đã có lịch vào khung giờ bạn chọn! Vui lòng thay đổi các thông tin phía trước!");
+                MessageBox.Show("Phòng này đã có lịch vào khung giờ bạn chọn! Vui lòng thay đổi phòng!");
             //txtCountMovie.Text = dts.Rows[0][0].ToString();
             //else txtCountMovie.Text = "0";
 
@@ -302,33 +332,43 @@ namespace CinemaManagement.GUI
 
         private void btnAddShowtimes_Click(object sender, EventArgs e)
         {
-            bool f;
-            if (dtmDay.Text.Trim() == " " || txtRoom.Text.Trim() == "" || txtShift.Text.Trim() == "" || txtMovie.Text.Trim() == "")
+            try
             {
-                MessageBox.Show("Phải chọn đầy đủ thông tin");
-            }
-            else
-            {
-                
-                // Lệnh Insert 
-                f = ShowtimesDAO.Instance.addShowtimes(
-                this.dtmDay.Value.ToString(),
-                this.cboRoom.SelectedValue.ToString(),
-                this.cboMovie.SelectedValue.ToString(),
-                this.cboShift.SelectedValue.ToString() );
 
-                if (f)
+            
+            
+                bool f;
+                if (dtmDay.Text.Trim() == " " || txtRoom.Text.Trim() == "" || txtShift.Text.Trim() == "" || txtMovie.Text.Trim() == "" || flagDay==false)
                 {
-                    // Load lại dữ liệu trên DataGridView 
-                    reset();
-
-                    // Thông báo 
-                    MessageBox.Show("Đã thêm xong!");             
+                    MessageBox.Show("Phải chọn đầy đủ thông tin");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm chưa xong!");
+                
+                    // Lệnh Insert 
+                    f = ShowtimesDAO.Instance.addShowtimes(
+                    this.dtmDay.Value.ToString(),
+                    this.cboRoom.SelectedValue.ToString(),
+                    this.cboMovie.SelectedValue.ToString(),
+                    this.cboShift.SelectedValue.ToString() );
+
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        reset();
+
+                        // Thông báo 
+                        MessageBox.Show("Đã thêm xong!");             
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm chưa xong!");
+                    }
                 }
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
@@ -337,13 +377,6 @@ namespace CinemaManagement.GUI
 
         }
 
-        private void cboCinema_SelectedValueChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = RoomDAO.Instance.loadRoomOnCinema(cboCinema.SelectedValue.ToString());
-            cboRoom.DataSource = dt;
-            cboRoom.DisplayMember = dt.Columns[1].ToString();
-            cboRoom.ValueMember = dt.Columns[0].ToString();
-        }
+       
     }
 }

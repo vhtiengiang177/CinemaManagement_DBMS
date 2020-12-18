@@ -62,6 +62,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.iconClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +74,7 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +122,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(201, 20);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // panel2
@@ -241,6 +244,7 @@
             // 
             // dtmDateShow
             // 
+            this.dtmDateShow.Enabled = false;
             this.dtmDateShow.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtmDateShow.Location = new System.Drawing.Point(3, 32);
             this.dtmDateShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -260,6 +264,7 @@
             // 
             // cboRoom
             // 
+            this.cboRoom.Enabled = false;
             this.cboRoom.FormattingEnabled = true;
             this.cboRoom.Location = new System.Drawing.Point(3, 30);
             this.cboRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -310,6 +315,7 @@
             // cboNameMovie
             // 
             this.cboNameMovie.DisplayMember = "id_movie";
+            this.cboNameMovie.Enabled = false;
             this.cboNameMovie.FormattingEnabled = true;
             this.cboNameMovie.Location = new System.Drawing.Point(5, 23);
             this.cboNameMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -330,6 +336,7 @@
             // 
             // cboShiftShow
             // 
+            this.cboShiftShow.Enabled = false;
             this.cboShiftShow.FormattingEnabled = true;
             this.cboShiftShow.Location = new System.Drawing.Point(3, 27);
             this.cboShiftShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -407,6 +414,17 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Quản lí Lịch chiếu";
             // 
+            // iconClose
+            // 
+            this.iconClose.Location = new System.Drawing.Point(28, 37);
+            this.iconClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconClose.Name = "iconClose";
+            this.iconClose.Size = new System.Drawing.Size(83, 63);
+            this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconClose.TabIndex = 5;
+            this.iconClose.TabStop = false;
+            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -461,6 +479,7 @@
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

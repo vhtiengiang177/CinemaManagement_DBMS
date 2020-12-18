@@ -22,7 +22,7 @@ namespace CinemaManagement.DAO
 
         public DataTable countMovie()
         {
-            string query = "select*from Movie";
+            string query = "select * from Movie";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

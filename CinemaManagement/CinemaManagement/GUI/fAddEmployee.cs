@@ -22,6 +22,7 @@ namespace CinemaManagement.GUI
         MemoryStream ms;
         byte[] arrImage = null;
         public static string idNew;
+        public static string idCinemaCurrent = "";
 
         public fAddEmployee()
         {
@@ -42,10 +43,24 @@ namespace CinemaManagement.GUI
             txtID.Enabled = false;
         }
 
+        public fAddEmployee(string id, string idCinema)
+        {
+            fAddEmployee.idNew = id;
+            fAddEmployee.idCinemaCurrent = idCinema;
+            InitializeComponent();
+            setArrayByteImage();
+            setDataCmbCinema();
+            setDataCmbTypeEmployee();
+            txtID.Text = fAddEmployee.idNew;
+            txtID.Enabled = false;
+        }
+
         #region SET DATA
         public void setDataCmbTypeEmployee()
         {
-            cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeEmployee();
+            if (idCinemaCurrent == "")
+                cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeForAddEmployee();
+            else cboTypeEmployee.DataSource = EmployeeDAO.Instance.getDataTypeForAddEmployeeOfCinemaAcurrent();
             cboTypeEmployee.ValueMember = "id_typeemployee";
             cboTypeEmployee.DisplayMember = "name_typeemployee";
         }
@@ -53,7 +68,10 @@ namespace CinemaManagement.GUI
 
         public void setDataCmbCinema()
         {
-            cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            if(idCinemaCurrent == "")
+                cboCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            else cboCinema.DataSource = EmployeeDAO.Instance.getDataCinemaForCinemaCurrent(idCinemaCurrent);
+
             cboCinema.ValueMember = "id_cinema";
             cboCinema.DisplayMember = "name_cinema";
         }
@@ -66,7 +84,7 @@ namespace CinemaManagement.GUI
             cboTypeEmployee.Text = "";
             cboCinema.Text = "";
             txtID.Text = fAddEmployee.idNew;
-            txtBirthday.Clear();
+            //txtBirthday.Clear();
             txtSalary.Clear();
             txtIndentity.Clear();
             txtPhoneEmployee.Clear();
@@ -97,10 +115,10 @@ namespace CinemaManagement.GUI
 
             Byte state = 1;
 
-            DateTime birthDay;
-            if (this.txtBirthday.Text != "")
-                birthDay = DateTime.Parse(this.txtBirthday.Text);
-            else birthDay = DateTime.Now;
+            DateTime birthDay = dpkBirthDateEmp.Value;
+            //if (this.txtBirthday.Text != "")
+            //    birthDay = DateTime.Parse(this.txtBirthday.Text);
+            //else birthDay = DateTime.Now;
 
             Double salary = 0;
             if (this.txtSalary.Text != "")
@@ -186,7 +204,7 @@ namespace CinemaManagement.GUI
             try
             {
                 int err = 0;
-                if(EmployeeDAO.Instance.search_IdentityCardEmployee(txtIndentity.Text) != null)
+                if(EmployeeDAO.Instance.search_IdentityCardEmployee(txtIndentity.Text).Rows.Count != 0)
                 {
                     txtIndentity.Text = "CMND đã tồn tại !";
                     
@@ -194,14 +212,14 @@ namespace CinemaManagement.GUI
                     txtIndentity.GotFocus += RemovetxtIndentity;
                 }
 
-                if (EmployeeDAO.Instance.search_PhoneEmployee(txtPhoneEmployee.Text) != null)
+                if (EmployeeDAO.Instance.search_PhoneEmployee(txtPhoneEmployee.Text).Rows.Count != 0)
                 {
                     txtPhoneEmployee.Text = "SĐT đã tồn tại !";
                     err = err + 1;
                     txtPhoneEmployee.GotFocus += RemovetxtPhone;
                 }
 
-                if (EmployeeDAO.Instance.search_EmailEmployee(txtEmailEmployee.Text) != null)
+                if (EmployeeDAO.Instance.search_EmailEmployee(txtEmailEmployee.Text).Rows.Count != 0)
                 {
                     txtEmailEmployee.Text = "Email đã tồn tại !";
                     err = err + 1;

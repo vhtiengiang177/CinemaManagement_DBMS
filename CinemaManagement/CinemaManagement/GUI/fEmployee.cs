@@ -18,6 +18,8 @@ namespace CinemaManagement.GUI
 {
     public partial class fEmployee : Form
     {
+        public static int typeEmployee;
+        public static string idCinemaCurrent = "";
         public static int cellClickIndex = 0;
         public static int searchTypeIndex = 0;
         MemoryStream ms;
@@ -26,6 +28,20 @@ namespace CinemaManagement.GUI
         public fEmployee()
         {
             InitializeComponent();
+            loadData();
+            btnCancel.Hide();
+            btnAddImg.Hide();
+            btnSave.Hide();
+            unenableEdit(false);
+            setArrayByteImage();
+            this.txtID.Enabled = false;
+        }
+
+        public fEmployee(int type, string idCinema)
+        {
+            InitializeComponent();
+            fEmployee.typeEmployee = type;
+            fEmployee.idCinemaCurrent = idCinema;          
             loadData();
             btnCancel.Hide();
             btnAddImg.Hide();
@@ -47,7 +63,11 @@ namespace CinemaManagement.GUI
 
         public void loadData()
         {
-            dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
+            if(typeEmployee == 4)
+                 dgvListEmployee.DataSource = EmployeeDAO.Instance.loadData();
+            else
+                dgvListEmployee.DataSource = EmployeeDAO.Instance.loadDataForCinemaCurrent(idCinemaCurrent);
+            
             dgvListEmployee.AutoResizeColumns();
             clearValue();
             setDataCboTypeEmployee();
@@ -62,7 +82,9 @@ namespace CinemaManagement.GUI
 
             this.txtID.Text = dgvListEmployee.Rows[r].Cells[0].Value.ToString();
             this.txtNameEmployee.Text = dgvListEmployee.Rows[r].Cells[1].Value.ToString();
-            this.txtBirthday.Text = ((DateTime)(dgvListEmployee.Rows[r].Cells[2].Value)).ToShortDateString();
+            dpkBirthDateEmp.Value = Convert.ToDateTime(dgvListEmployee.Rows[r].Cells[2].Value);
+            //this.txtBirthday.Text = ((DateTime)(dgvListEmployee.Rows[r].Cells[2].Value)).ToShortDateString();
+
             string sex = dgvListEmployee.Rows[r].Cells[3].Value.ToString();
             if (sex == "Nữ")
             {
@@ -84,14 +106,21 @@ namespace CinemaManagement.GUI
                 this.txtStateEmployee.Text = "Đang hoạt động";
             else this.txtStateEmployee.Text = "Ngưng hoạt động";
 
-            if (dgvListEmployee.Rows[r].Cells[11].Value != DBNull.Value)
+            try
             {
-                this.picEmployee.Image = (System.Drawing.Image)
-             dgvListEmployee.Rows[r].Cells[11].FormattedValue;
+                if (dgvListEmployee.Rows[r].Cells[11].Value != DBNull.Value)
+                {
+                    this.picEmployee.Image = (System.Drawing.Image)
+                 dgvListEmployee.Rows[r].Cells[11].FormattedValue;
 
-                setArrayByteImage();
+                    setArrayByteImage();
+                }
+                else this.picEmployee.Image = this.picEmployee.ErrorImage;
             }
-            else this.picEmployee.Image = this.picEmployee.ErrorImage;
+            catch
+            {
+                this.picEmployee.Image = this.picEmployee.ErrorImage;
+            }
 
         }
 
@@ -123,7 +152,11 @@ namespace CinemaManagement.GUI
 
         public void setDataCboCinema()
         {
-            cmbCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            if (typeEmployee == 4)
+                cmbCinema.DataSource = EmployeeDAO.Instance.getDataCinema();
+            else
+                cmbCinema.DataSource = EmployeeDAO.Instance.getDataCinemaForCinemaCurrent(idCinemaCurrent);
+
             cmbCinema.ValueMember = "id_cinema";
             cmbCinema.DisplayMember = "name_cinema";
         }
@@ -154,7 +187,7 @@ namespace CinemaManagement.GUI
             this.txtPhoneEmployee.Enabled = enable;
             this.txtSalary.Enabled = enable;
             this.txtEmailEmployee.Enabled = enable;
-            this.txtBirthday.Enabled = enable;
+            //this.txtBirthday.Enabled = enable;
             this.cmbCinema.Enabled = enable;
             this.cboTypeEmployee.Enabled = enable;
             this.txtStateEmployee.Enabled = enable;
@@ -181,10 +214,10 @@ namespace CinemaManagement.GUI
                 state = 0;
             else state = 1;
 
-            DateTime birthDay;
-            if (this.txtBirthday.Text != "")
-                birthDay = DateTime.Parse(this.txtBirthday.Text);
-            else birthDay = DateTime.Now;
+            DateTime birthDay = dpkBirthDateEmp.Value;
+            //if (this.txtBirthday.Text != "")
+            //    birthDay = DateTime.Parse(this.txtBirthday.Text);
+            //else birthDay = DateTime.Now;
 
             Double salary = 0;
             if (this.txtSalary.Text != "")
@@ -215,7 +248,7 @@ namespace CinemaManagement.GUI
             txtNameEmployee.Clear();
             cboTypeEmployee.Text = "";
             cmbCinema.Text = "";
-            txtBirthday.Clear();
+            //txtBirthday.Clear();
             txtSalary.Clear();
             txtIndentity.Clear();
             txtPhoneEmployee.Clear();
@@ -338,7 +371,13 @@ namespace CinemaManagement.GUI
         private void btnAddNewEmployee_Click(object sender, EventArgs e)
         {
             string idNew = (string)EmployeeDAO.Instance.createNewIDEmployee();
-            fAddEmployee fAdd = new fAddEmployee(idNew);
+            fAddEmployee fAdd;
+
+            if (idCinemaCurrent == "")
+                fAdd = new fAddEmployee(idNew);
+            else 
+                fAdd = new fAddEmployee(idNew, idCinemaCurrent);
+
             fAdd.ShowDialog();
         }
 

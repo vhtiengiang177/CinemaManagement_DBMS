@@ -232,23 +232,34 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(460, 545);
+            this.btnBack.BackColor = System.Drawing.Color.Maroon;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(420, 550);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(139, 36);
             this.btnBack.TabIndex = 96;
             this.btnBack.Text = "Quay lại";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(583, 545);
+            this.btnDone.BackColor = System.Drawing.Color.Maroon;
+            this.btnDone.FlatAppearance.BorderSize = 0;
+            this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDone.Location = new System.Drawing.Point(570, 550);
             this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(100, 28);
+            this.btnDone.Size = new System.Drawing.Size(139, 36);
             this.btnDone.TabIndex = 95;
             this.btnDone.Text = "Thanh toán";
-            this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // label11
@@ -270,12 +281,17 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(642, 24);
+            this.btnReset.BackColor = System.Drawing.Color.Maroon;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReset.Location = new System.Drawing.Point(570, 23);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(147, 32);
             this.btnReset.TabIndex = 92;
             this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // nudHSSV
@@ -317,7 +333,7 @@
             this.panel3.Controls.Add(this.lbTongGiam);
             this.panel3.Controls.Add(this.lbTongTra);
             this.panel3.Controls.Add(this.lbThanhTien);
-            this.panel3.Location = new System.Drawing.Point(72, 406);
+            this.panel3.Location = new System.Drawing.Point(143, 390);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(313, 100);
             this.panel3.TabIndex = 87;

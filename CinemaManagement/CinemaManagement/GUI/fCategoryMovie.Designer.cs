@@ -66,9 +66,11 @@
             // 
             // btnDeleteCategoryMovie
             // 
-            this.btnDeleteCategoryMovie.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDeleteCategoryMovie.BackColor = System.Drawing.Color.Maroon;
+            this.btnDeleteCategoryMovie.FlatAppearance.BorderSize = 0;
+            this.btnDeleteCategoryMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCategoryMovie.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDeleteCategoryMovie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDeleteCategoryMovie.Location = new System.Drawing.Point(203, 191);
             this.btnDeleteCategoryMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteCategoryMovie.Name = "btnDeleteCategoryMovie";
@@ -79,9 +81,11 @@
             // 
             // btnInsertCategoryMovie
             // 
-            this.btnInsertCategoryMovie.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInsertCategoryMovie.BackColor = System.Drawing.Color.Maroon;
+            this.btnInsertCategoryMovie.FlatAppearance.BorderSize = 0;
+            this.btnInsertCategoryMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertCategoryMovie.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnInsertCategoryMovie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnInsertCategoryMovie.Location = new System.Drawing.Point(12, 191);
             this.btnInsertCategoryMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertCategoryMovie.Name = "btnInsertCategoryMovie";
@@ -92,9 +96,11 @@
             // 
             // btnUpdateCategoryMovie
             // 
-            this.btnUpdateCategoryMovie.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpdateCategoryMovie.BackColor = System.Drawing.Color.Maroon;
+            this.btnUpdateCategoryMovie.FlatAppearance.BorderSize = 0;
+            this.btnUpdateCategoryMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateCategoryMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCategoryMovie.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnUpdateCategoryMovie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdateCategoryMovie.Location = new System.Drawing.Point(106, 191);
             this.btnUpdateCategoryMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateCategoryMovie.Name = "btnUpdateCategoryMovie";
@@ -144,13 +150,14 @@
             // 
             // dgvCategoryMovie
             // 
+            this.dgvCategoryMovie.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvCategoryMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoryMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategoryMovie.Location = new System.Drawing.Point(0, 0);
             this.dgvCategoryMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCategoryMovie.Name = "dgvCategoryMovie";
             this.dgvCategoryMovie.RowHeadersWidth = 51;
-            this.dgvCategoryMovie.Size = new System.Drawing.Size(555, 498);
+            this.dgvCategoryMovie.Size = new System.Drawing.Size(545, 553);
             this.dgvCategoryMovie.TabIndex = 0;
             // 
             // picReload
@@ -210,8 +217,8 @@
             // splctnBodyRight.Panel2
             // 
             this.splctnBodyRight.Panel2.Controls.Add(this.dgvCategoryMovie);
-            this.splctnBodyRight.Size = new System.Drawing.Size(555, 581);
-            this.splctnBodyRight.SplitterDistance = 81;
+            this.splctnBodyRight.Size = new System.Drawing.Size(545, 644);
+            this.splctnBodyRight.SplitterDistance = 89;
             this.splctnBodyRight.SplitterWidth = 2;
             this.splctnBodyRight.TabIndex = 0;
             // 
@@ -255,8 +262,8 @@
             // splctnBody.Panel2
             // 
             this.splctnBody.Panel2.Controls.Add(this.splctnBodyRight);
-            this.splctnBody.Size = new System.Drawing.Size(922, 581);
-            this.splctnBody.SplitterDistance = 364;
+            this.splctnBody.Size = new System.Drawing.Size(905, 644);
+            this.splctnBody.SplitterDistance = 357;
             this.splctnBody.SplitterWidth = 3;
             this.splctnBody.TabIndex = 1;
             // 
@@ -265,7 +272,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(922, 581);
+            this.ClientSize = new System.Drawing.Size(905, 644);
             this.Controls.Add(this.splctnBody);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;

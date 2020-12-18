@@ -66,7 +66,6 @@
             this.txtIndentity = new System.Windows.Forms.TextBox();
             this.plBirthDay = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBirthday = new System.Windows.Forms.TextBox();
             this.plType = new System.Windows.Forms.Panel();
             this.cboTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
+            this.dpkBirthDateEmp = new System.Windows.Forms.DateTimePicker();
             this.plInforMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.plInforContact.SuspendLayout();
@@ -465,8 +465,8 @@
             // 
             // plBirthDay
             // 
+            this.plBirthDay.Controls.Add(this.dpkBirthDateEmp);
             this.plBirthDay.Controls.Add(this.label2);
-            this.plBirthDay.Controls.Add(this.txtBirthday);
             this.plBirthDay.Location = new System.Drawing.Point(167, 145);
             this.plBirthDay.Name = "plBirthDay";
             this.plBirthDay.Size = new System.Drawing.Size(231, 44);
@@ -482,15 +482,6 @@
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Năm sinh:";
-            // 
-            // txtBirthday
-            // 
-            this.txtBirthday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBirthday.Location = new System.Drawing.Point(98, 13);
-            this.txtBirthday.Multiline = true;
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(122, 20);
-            this.txtBirthday.TabIndex = 0;
             // 
             // plType
             // 
@@ -562,6 +553,14 @@
             this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
+            // 
+            // dpkBirthDateEmp
+            // 
+            this.dpkBirthDateEmp.Location = new System.Drawing.Point(77, 18);
+            this.dpkBirthDateEmp.Margin = new System.Windows.Forms.Padding(2);
+            this.dpkBirthDateEmp.Name = "dpkBirthDateEmp";
+            this.dpkBirthDateEmp.Size = new System.Drawing.Size(150, 20);
+            this.dpkBirthDateEmp.TabIndex = 15;
             // 
             // fAddEmployee
             // 
@@ -642,7 +641,6 @@
         private System.Windows.Forms.TextBox txtIndentity;
         private System.Windows.Forms.Panel plBirthDay;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBirthday;
         private System.Windows.Forms.Panel plType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel plName;
@@ -655,5 +653,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DateTimePicker dpkBirthDateEmp;
     }
 }

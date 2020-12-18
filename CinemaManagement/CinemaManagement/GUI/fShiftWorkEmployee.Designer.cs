@@ -32,7 +32,6 @@
             this.plMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.plSearch = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -117,15 +116,15 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.btnChangeWeek = new System.Windows.Forms.Button();
             this.plInfoOne = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.lbID = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.plMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.plSearch.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -155,6 +154,7 @@
             this.panel22.SuspendLayout();
             this.plInfoOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // plMain
@@ -187,16 +187,6 @@
             this.panel1.Size = new System.Drawing.Size(916, 80);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnLoadData
             // 
             this.btnLoadData.BackColor = System.Drawing.Color.Salmon;
@@ -218,7 +208,7 @@
             this.plSearch.Controls.Add(this.btnSearchEmployee);
             this.plSearch.Controls.Add(this.txtSearchEmployee);
             this.plSearch.Controls.Add(this.cboTypeSearchEmployee);
-            this.plSearch.Location = new System.Drawing.Point(127, 6);
+            this.plSearch.Location = new System.Drawing.Point(111, 6);
             this.plSearch.Name = "plSearch";
             this.plSearch.Size = new System.Drawing.Size(467, 68);
             this.plSearch.TabIndex = 6;
@@ -274,7 +264,7 @@
             this.panel20.Controls.Add(this.btnSearchType);
             this.panel20.Controls.Add(this.cboSortTypeEmployee);
             this.panel20.Controls.Add(this.label6);
-            this.panel20.Location = new System.Drawing.Point(601, 8);
+            this.panel20.Location = new System.Drawing.Point(590, 8);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(226, 62);
             this.panel20.TabIndex = 5;
@@ -1204,6 +1194,28 @@
             this.plInfoOne.Size = new System.Drawing.Size(259, 253);
             this.plInfoOne.TabIndex = 0;
             // 
+            // lbName
+            // 
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbName.Location = new System.Drawing.Point(3, 153);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(251, 33);
+            this.lbName.TabIndex = 4;
+            this.lbName.Text = "label8";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbID
+            // 
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbID.Location = new System.Drawing.Point(139, 67);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(100, 33);
+            this.lbID.TabIndex = 3;
+            this.lbID.Text = "label7";
+            this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Info;
@@ -1235,27 +1247,15 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // lbID
+            // pictureBox1
             // 
-            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbID.Location = new System.Drawing.Point(139, 67);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(100, 33);
-            this.lbID.TabIndex = 3;
-            this.lbID.Text = "label7";
-            this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbName
-            // 
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbName.Location = new System.Drawing.Point(3, 153);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(251, 33);
-            this.lbName.TabIndex = 4;
-            this.lbName.Text = "label8";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // fShifWorkEmployee
             // 
@@ -1271,7 +1271,6 @@
             this.plMain.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.plSearch.ResumeLayout(false);
             this.plSearch.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -1322,6 +1321,7 @@
             this.plInfoOne.ResumeLayout(false);
             this.plInfoOne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1418,8 +1418,8 @@
         private System.Windows.Forms.RadioButton rdoFullFullWeek;
         private System.Windows.Forms.RadioButton rdoEvrFullWeek;
         private System.Windows.Forms.RadioButton rdoMorFullWeek;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

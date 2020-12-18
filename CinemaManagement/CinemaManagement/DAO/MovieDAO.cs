@@ -164,17 +164,6 @@ namespace CinemaManagement.DAO
         }
 
         /// <summary>
-        /// Tìm kiếm phim theo ngày khởi chiếu
-        /// </summary>
-        /// <param name="search"></param>
-        /// <returns></returns>
-        public DataTable searchReleaseDateMovie(string search)
-        {
-            string query = "EXEC sp_SearchReleaseDateMovie @search";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { search });
-        }
-
-        /// <summary>
         /// Tìm kiếm phim theo ngôn ngữ
         /// </summary>
         /// <param name="search"></param>
@@ -211,7 +200,7 @@ namespace CinemaManagement.DAO
         {
             List<Movie> listMovie = new List<Movie>();
 
-            string query = "select * from Movie";
+            string query = "SELECT * FROM Movie";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

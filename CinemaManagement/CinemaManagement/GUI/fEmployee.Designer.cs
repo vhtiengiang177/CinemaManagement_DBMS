@@ -41,6 +41,20 @@
             this.cboSortTypeEmployee = new System.Windows.Forms.ComboBox();
             this.plList = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
+            this.idEML = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmndEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameTypeEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinemaEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qrEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plSearch = new System.Windows.Forms.Panel();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.txtSearchEmployee = new System.Windows.Forms.TextBox();
@@ -73,6 +87,7 @@
             this.txtPhoneEmployee = new System.Windows.Forms.TextBox();
             this.btnAddNewEmployee = new System.Windows.Forms.Button();
             this.plInfor = new System.Windows.Forms.Panel();
+            this.btnChangeShift = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -99,7 +114,7 @@
             this.plName = new System.Windows.Forms.Panel();
             this.txtNameEmployee = new System.Windows.Forms.TextBox();
             this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.btnChangeShift = new System.Windows.Forms.Button();
+            this.dpkBirthDateEmp = new System.Windows.Forms.DateTimePicker();
             this.plMain.SuspendLayout();
             this.plListMain.SuspendLayout();
             this.plControl.SuspendLayout();
@@ -250,12 +265,111 @@
             this.dgvListEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvListEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEML,
+            this.nameEmp,
+            this.birthDay,
+            this.sexEmp,
+            this.cmndEmp,
+            this.phoneEmp,
+            this.emailEmp,
+            this.addressEmp,
+            this.salaryEmp,
+            this.nameTypeEmp,
+            this.cinemaEmp,
+            this.imageEmp,
+            this.qrEmp,
+            this.stateEmp});
             this.dgvListEmployee.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvListEmployee.Location = new System.Drawing.Point(1, 5);
             this.dgvListEmployee.Name = "dgvListEmployee";
             this.dgvListEmployee.Size = new System.Drawing.Size(495, 460);
             this.dgvListEmployee.TabIndex = 0;
             this.dgvListEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellClick);
+            // 
+            // idEML
+            // 
+            this.idEML.DataPropertyName = "id_employee";
+            this.idEML.HeaderText = "Mã nhân viên";
+            this.idEML.Name = "idEML";
+            // 
+            // nameEmp
+            // 
+            this.nameEmp.DataPropertyName = "name_employee";
+            this.nameEmp.HeaderText = "Tên nhân viên";
+            this.nameEmp.Name = "nameEmp";
+            // 
+            // birthDay
+            // 
+            this.birthDay.DataPropertyName = "birthday_employee";
+            this.birthDay.HeaderText = "Sinh nhật";
+            this.birthDay.Name = "birthDay";
+            // 
+            // sexEmp
+            // 
+            this.sexEmp.DataPropertyName = "sex_employee";
+            this.sexEmp.HeaderText = "Giới tính";
+            this.sexEmp.Name = "sexEmp";
+            // 
+            // cmndEmp
+            // 
+            this.cmndEmp.DataPropertyName = "identitycard_employee";
+            this.cmndEmp.HeaderText = "CMND";
+            this.cmndEmp.Name = "cmndEmp";
+            // 
+            // phoneEmp
+            // 
+            this.phoneEmp.DataPropertyName = "phone_employee";
+            this.phoneEmp.HeaderText = "SĐT";
+            this.phoneEmp.Name = "phoneEmp";
+            // 
+            // emailEmp
+            // 
+            this.emailEmp.DataPropertyName = "email_employee";
+            this.emailEmp.HeaderText = "Email";
+            this.emailEmp.Name = "emailEmp";
+            // 
+            // addressEmp
+            // 
+            this.addressEmp.DataPropertyName = "address_employee";
+            this.addressEmp.HeaderText = "Địa chỉ";
+            this.addressEmp.Name = "addressEmp";
+            // 
+            // salaryEmp
+            // 
+            this.salaryEmp.DataPropertyName = "salary_employee";
+            this.salaryEmp.HeaderText = "Lương";
+            this.salaryEmp.Name = "salaryEmp";
+            // 
+            // nameTypeEmp
+            // 
+            this.nameTypeEmp.DataPropertyName = "name_typeemployee";
+            this.nameTypeEmp.HeaderText = "Loại nhân viên";
+            this.nameTypeEmp.Name = "nameTypeEmp";
+            // 
+            // cinemaEmp
+            // 
+            this.cinemaEmp.DataPropertyName = "name_cinema";
+            this.cinemaEmp.HeaderText = "Rạp";
+            this.cinemaEmp.Name = "cinemaEmp";
+            // 
+            // imageEmp
+            // 
+            this.imageEmp.DataPropertyName = "img_employee";
+            this.imageEmp.HeaderText = "Hình ảnh";
+            this.imageEmp.Name = "imageEmp";
+            // 
+            // qrEmp
+            // 
+            this.qrEmp.DataPropertyName = "qr_employee";
+            this.qrEmp.HeaderText = "Mã QR";
+            this.qrEmp.Name = "qrEmp";
+            // 
+            // stateEmp
+            // 
+            this.stateEmp.DataPropertyName = "state_employee";
+            this.stateEmp.HeaderText = "Trạng thái";
+            this.stateEmp.Name = "stateEmp";
             // 
             // plSearch
             // 
@@ -605,6 +719,7 @@
             // plInfor
             // 
             this.plInfor.Controls.Add(this.btnChangeShift);
+            this.plInfor.Controls.Add(this.txtBirthday);
             this.plInfor.Controls.Add(this.textBox7);
             this.plInfor.Controls.Add(this.textBox6);
             this.plInfor.Controls.Add(this.textBox5);
@@ -622,6 +737,21 @@
             this.plInfor.Name = "plInfor";
             this.plInfor.Size = new System.Drawing.Size(403, 332);
             this.plInfor.TabIndex = 0;
+            // 
+            // btnChangeShift
+            // 
+            this.btnChangeShift.BackColor = System.Drawing.Color.Salmon;
+            this.btnChangeShift.FlatAppearance.BorderSize = 0;
+            this.btnChangeShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeShift.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeShift.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChangeShift.Location = new System.Drawing.Point(20, 305);
+            this.btnChangeShift.Name = "btnChangeShift";
+            this.btnChangeShift.Size = new System.Drawing.Size(140, 23);
+            this.btnChangeShift.TabIndex = 14;
+            this.btnChangeShift.Text = "Xếp ca ";
+            this.btnChangeShift.UseVisualStyleBackColor = false;
+            this.btnChangeShift.Click += new System.EventHandler(this.btnChangeShift_Click);
             // 
             // textBox7
             // 
@@ -781,8 +911,8 @@
             // 
             // plBirthDay
             // 
+            this.plBirthDay.Controls.Add(this.dpkBirthDateEmp);
             this.plBirthDay.Controls.Add(this.label2);
-            this.plBirthDay.Controls.Add(this.txtBirthday);
             this.plBirthDay.Location = new System.Drawing.Point(165, 122);
             this.plBirthDay.Name = "plBirthDay";
             this.plBirthDay.Size = new System.Drawing.Size(231, 47);
@@ -802,7 +932,7 @@
             // 
             this.txtBirthday.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBirthday.ForeColor = System.Drawing.Color.LightCoral;
-            this.txtBirthday.Location = new System.Drawing.Point(98, 14);
+            this.txtBirthday.Location = new System.Drawing.Point(101, 106);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(122, 14);
             this.txtBirthday.TabIndex = 0;
@@ -878,20 +1008,13 @@
             this.picEmployee.TabIndex = 0;
             this.picEmployee.TabStop = false;
             // 
-            // btnChangeShift
+            // dpkBirthDateEmp
             // 
-            this.btnChangeShift.BackColor = System.Drawing.Color.Salmon;
-            this.btnChangeShift.FlatAppearance.BorderSize = 0;
-            this.btnChangeShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeShift.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeShift.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnChangeShift.Location = new System.Drawing.Point(20, 305);
-            this.btnChangeShift.Name = "btnChangeShift";
-            this.btnChangeShift.Size = new System.Drawing.Size(140, 23);
-            this.btnChangeShift.TabIndex = 14;
-            this.btnChangeShift.Text = "Xếp ca ";
-            this.btnChangeShift.UseVisualStyleBackColor = false;
-            this.btnChangeShift.Click += new System.EventHandler(this.btnChangeShift_Click);
+            this.dpkBirthDateEmp.Location = new System.Drawing.Point(78, 10);
+            this.dpkBirthDateEmp.Margin = new System.Windows.Forms.Padding(2);
+            this.dpkBirthDateEmp.Name = "dpkBirthDateEmp";
+            this.dpkBirthDateEmp.Size = new System.Drawing.Size(150, 21);
+            this.dpkBirthDateEmp.TabIndex = 16;
             // 
             // fEmployee
             // 
@@ -1022,5 +1145,20 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnChangeShift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEML;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmndEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameTypeEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cinemaEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imageEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qrEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateEmp;
+        private System.Windows.Forms.DateTimePicker dpkBirthDateEmp;
     }
 }

@@ -22,6 +22,8 @@ namespace CinemaManagement.GUI
         {
             InitializeComponent();
             resetdgvPromotion();
+            //DateTime date = new DateTime();
+            //dtmStart.Value = date.Now();
             
         }
 
@@ -98,11 +100,14 @@ namespace CinemaManagement.GUI
         /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-           
-            // Thêm dữ liệu          
-                
-                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == ""   || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
+
+
+                // Thêm dữ liệu          
+
+                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" || txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
                 {
                     MessageBox.Show("Phải nhập đầy đủ thông tin");
                 }
@@ -119,17 +124,22 @@ namespace CinemaManagement.GUI
 
                     if (f)
                     {
-                    // Load lại dữ liệu trên DataGridView 
-                    resetdgvPromotion();
+                        // Load lại dữ liệu trên DataGridView 
+                        resetdgvPromotion();
 
                         // Thông báo 
-                    MessageBox.Show("Đã thêm xong!");
+                        MessageBox.Show("Đã thêm xong!");
                     }
                     else
                     {
                         MessageBox.Show("Thêm chưa xong!");
                     }
                 }
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
 
@@ -151,36 +161,46 @@ namespace CinemaManagement.GUI
         /// </summary>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
-            if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" ||  txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
-            {
-                MessageBox.Show("Phải chọn thông tin để sửa");
-            }
-            else
+            try
             {
 
-
-                // Gọi method UpdatePromotion  và thực hiện lệnh
-                f = PromotionDAO.Instance.updatePromotion(
-                   this.txtIDPromotion.Text.ToString(),
-                   this.txtNamePromotion.Text.ToString(),
-                    this.dtmStart.Value.ToString(),
-                    this.dtmEnd.Value.ToString(),
-                   this.txtObjectPromotion.Text.ToString(),
-                   Convert.ToDouble(this.txtValuePromotion.Text.ToString()));
-                if (f)
+       
+                if (txtIDPromotion.Text.Trim() == " " || txtNamePromotion.Text.Trim() == "" ||  txtObjectPromotion.Text.Trim() == "" || txtValuePromotion.Text.Trim() == "")
                 {
-                    // Load lại dữ liệu trên DataGridView 
-                    resetdgvPromotion();
-
-                    // Thông báo 
-                    MessageBox.Show("Đã cập nhật xong!");
+                    MessageBox.Show("Phải chọn thông tin để sửa");
                 }
                 else
                 {
-                    MessageBox.Show("Đã cập nhật chưa xong!");
+
+
+                    // Gọi method UpdatePromotion  và thực hiện lệnh
+                    f = PromotionDAO.Instance.updatePromotion(
+                       this.txtIDPromotion.Text.ToString(),
+                       this.txtNamePromotion.Text.ToString(),
+                        this.dtmStart.Value.ToString(),
+                        this.dtmEnd.Value.ToString(),
+                       this.txtObjectPromotion.Text.ToString(),
+                       Convert.ToDouble(this.txtValuePromotion.Text.ToString()));
+                    if (f)
+                    {
+                        // Load lại dữ liệu trên DataGridView 
+                        resetdgvPromotion();
+
+                        // Thông báo 
+                        MessageBox.Show("Đã cập nhật xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã cập nhật chưa xong!");
+                    }
                 }
             }
+            catch(SqlException ex)
+
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+
 
         }
 
@@ -284,12 +304,34 @@ namespace CinemaManagement.GUI
             }
         }
 
+
+
+        private void txtSearchPromotion_TextChanged(object sender, EventArgs e)
+        {
+            if (cboPromotion.Text == "" || txtSearchPromotion.Text == "")
+            {
+                MessageBox.Show("Phải nhập thông tin tìm kiếm");
+            }
+            else
+            {
+                if (cboPromotion.SelectedIndex == 0) //Tìm theo tên chương trình
+                {
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyname(txtSearchPromotion.Text.ToString().Trim());
+                }
+                if (cboPromotion.SelectedIndex == 1) //Tìm theo đối tượng
+                {
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyobject(txtSearchPromotion.Text.ToString());
+                }
+                if (cboPromotion.SelectedIndex == 2) //Tìm theo mức khuyến mãi
+                {
+                    dgvPromotion.DataSource = PromotionDAO.Instance.searchPromotionbyvalue(txtSearchPromotion.Text.ToString());
+                }
+            }
+        }
+
+
         #endregion
 
-        
 
-        
-
-        
     }
 }

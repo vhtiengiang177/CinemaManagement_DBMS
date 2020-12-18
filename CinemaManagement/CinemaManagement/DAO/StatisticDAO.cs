@@ -18,11 +18,7 @@ namespace CinemaManagement.DAO
 
         private StatisticDAO() { }
 
-        public DataTable loaddata()
-        {
-            string query = "exec sp_CalMoneyInMonth";
-            return DataProvider.Instance.ExecuteQuery(query);
-        }
+
 
         public DataTable countMovie()
         {
@@ -30,43 +26,51 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        //load doanh số all năm
         public DataTable loadAll()
         {
             string query = "select*from fc_CalTotalAll()";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable loadInMonth(int month)
+
+        //load các năm hoạt động của hệ thống
+        public DataTable loadYear()
         {
-            string query = "select*from fc_CalTotalInMonth( @num )";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { month });
+            string query = "exec sp_loadYear";
+            return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public int deleteTicket()
+        //load doanh số của rạp được chọn, năm đc chọn trong tháng đc chọn
+        public DataTable countTotalOnCinemabyMonthbyYear(string id_year, string id_month, string id_cinema)
         {
-            string query = "delete from dbo.Ticket";
-            return DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "select*from dbo.fc_countTotalOnCinemabyMonthbyYear( @id_year , @id_month , @id_cinema )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDouble(id_year), Convert.ToDouble(id_month), id_cinema });
         }
 
-        public int deleteShowtimes()
+        //load doanh số của rạp được chọn trong năm đc chọn
+        public DataTable loadOnCinemabyYear(string id_cinema, string id_year)
         {
-            string query = "delete from dbo.Showtimes";
-            return DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "select*from dbo.fc_countTotalOnCinemabyYear( @id_cinema , @id_year )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id_cinema, Convert.ToDouble(id_year) });
         }
 
 
-        public DataTable loadOnCinema(string id)
+        //load doanh số của rạp được chọn trong các năm
+        public DataTable loadOnCinema(string id_cinema)
         {
             string query = "select*from fc_countTotalOnCinemaAllMonth( @id )";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id_cinema });
         }
 
-
-        public DataTable loadOnCinemaInMonth(int num,string id)
+        //load doanh số của năm được chọn
+        public DataTable countTotalbyYear(string id_year)
         {
-            string query = "select*from fc_countTotalOnCinemaInMonth( @num , @id )";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { num,id });
+            string query = "select*from dbo.fc_countTotalbyYear( @id_year )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDouble(id_year) });
         }
+
+
 
 
 

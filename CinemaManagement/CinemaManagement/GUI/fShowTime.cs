@@ -94,22 +94,6 @@ namespace CinemaManagement.GUI
 
         private void btnSearchShowtimes_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text=="" && cboSearchST.Text != "")
-            {
-                resetdgvShowtimes();
-            }    
-            if (cboSearchST.Text == "" && txtSearch.Text == "")
-            {
-                MessageBox.Show("Phải chọn thông tin tìm kiếm");
-            }
-            else
-            {
-                if (cboSearchST.SelectedIndex == 0) //Tìm theo tên phim
-                {
-                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.searchShowtimesbyNameMovie(txtSearch.Text.ToString().Trim());
-                }
-
-            }
         }
 
 
@@ -152,41 +136,71 @@ namespace CinemaManagement.GUI
 
         private void btnDeleteSS_Click(object sender, EventArgs e)
         {
-            bool f;
-            // Thứ tự dòng hiện hành 
-            int r = dgvShowtimes.CurrentCell.RowIndex;
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp 
-            traloi = MessageBox.Show("Bạn có chắc chắn xóa lịch chiếu này không?", "Trả lời",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không? 
-            try
+            if (cboRoom.Text==" ")
             {
-                if (traloi == DialogResult.Yes)
+                MessageBox.Show("Chưa chọn lịch chiếu để xóa!");
+                
+            }
+            else
+            {
+                bool f;
+                // Thứ tự dòng hiện hành 
+                int r = dgvShowtimes.CurrentCell.RowIndex;
+                MessageBox.Show(r.ToString());
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp 
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa lịch chiếu này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không? 
+                try
                 {
-
-                    // Thực hiện câu lệnh SQL 
-                    f = ShowtimesDAO.Instance.deleteShowtimes(dtmDateShow.Value.ToString(), dgvShowtimes.Rows[r].Cells[0].Value.ToString(), dgvShowtimes.Rows[r].Cells[2].Value.ToString(), dgvShowtimes.Rows[r].Cells[1].Value.ToString());
-
-                    if (f)
+                    if (traloi == DialogResult.Yes)
                     {
-                        // Cập nhật lại DataGridView 
-                        resetdgvShowtimes();
 
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không xóa được!");
+                        // Thực hiện câu lệnh SQL 
+                        f = ShowtimesDAO.Instance.deleteShowtimes(dtmDateShow.Value.ToString(), dgvShowtimes.Rows[r].Cells[0].Value.ToString(), dgvShowtimes.Rows[r].Cells[2].Value.ToString(), dgvShowtimes.Rows[r].Cells[1].Value.ToString());
+
+                        if (f)
+                        {
+                            // Cập nhật lại DataGridView 
+                            resetdgvShowtimes();
+
+                            // Thông báo 
+                            MessageBox.Show("Đã xóa xong!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lịch chiếu này đã bán vé. Không xóa được!");
+                        }
                     }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Suất chiếu này không thể hủy do đã bán vé");
+                }
+
             }
-            catch(Exception)
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "" && cboSearchST.Text != "")
             {
-                MessageBox.Show("Suất chiếu này không thể hủy do đã bán vé");
+                resetdgvShowtimes();
             }
-            
+            if (cboSearchST.Text == "" && txtSearch.Text == "")
+            {
+                MessageBox.Show("Phải chọn thông tin tìm kiếm");
+            }
+            else
+            {
+                if (cboSearchST.SelectedIndex == 0) //Tìm theo tên phim
+                {
+                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.searchShowtimesbyNameMovie(txtSearch.Text.ToString().Trim());
+                }
+
+            }
         }
     }
 }

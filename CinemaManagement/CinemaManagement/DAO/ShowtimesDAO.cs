@@ -44,6 +44,9 @@ namespace CinemaManagement.DAO
         //    return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift,Convert.ToDateTime(date) });
         //}
 
+
+
+
         //lấy ds ca chiếu
         public DataTable loadShiftShow()
         {
@@ -58,7 +61,7 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        //lấy ds phim theo thể loại
+        //lấy ds phim theo thể loại và phim có state = 1
         public DataTable loadMovie(string idcategory)
         {
             string query = "SELECT *FROM dbo.fc_loadMovie( @idCategory )";
@@ -71,6 +74,20 @@ namespace CinemaManagement.DAO
             string query = "exec sp_insertShowtimes  @date , @idRoom , @idMovie , @idShift ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] {  Convert.ToDateTime(date),idRoom,idMovie,idShift }) > 0;
         }
+
+
+        //Xóa lịch chiếu
+        public bool deleteShowtimes(string date, string idss, string idroom, string idmovie)
+        {
+            string query = "exec sp_deleteShowtimes @date , @idshift , @idroom , @idmovie ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { Convert.ToDateTime(date), idss, idroom, idmovie }) > 0;
+        }
+
+
+
+
+
+
 
         //Kiểm tra phim đó đã được xếp lịch vào ngày, ca, phòng đó chưa
         public DataTable checkMovie(string date, string idShift ,  string idRoom)
@@ -86,25 +103,28 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date), idShift, idMovie });
         }
 
-        public bool deleteShowtimes(string date, string idss,string idroom,string idmovie)
-        {
-            string query = "exec sp_deleteShowtimes @date , @idshift , @idroom , @idmovie ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { Convert.ToDateTime(date), idss, idroom,idmovie }) > 0;
-        }
+       
 
         //đếm số lượng lich phim dã chiếu trong ngày đc chọn
-        public DataTable countMovieInDay(string date)
+        public DataTable countMovieInDay(string date,string id)
         {
-            string query = "SELECT*FROM dbo.fc_Count_MovieInDay( @date ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) });
+            string query = "SELECT*FROM dbo.fc_Count_MovieInDay( @date , @id_cinema ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date),id });
         }
 
-        //đém số lượng ca chiếu đã đc chọn trong ngày
-        public DataTable countShiftInDay(string idShift, string date)
-        {
-            string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift, Convert.ToDateTime(date) });
-        }
+        ////đém số lượng ca chiếu đã đc chọn trong ngày
+        //public DataTable countShiftInDay(string idShift, string date,string id)
+        //{
+        //    string query = "SELECT *FROM dbo.fc_CountShiftShowInDay( @idShift , @date , @id_cinema ) ";
+        //    return DataProvider.Instance.ExecuteQuery(query, new object[] { idShift, Convert.ToDateTime(date),id });
+        //}
+
+
+
+
+
+
+
 
         public List<Showtimes> getListShowtimesByIdMovie(string idMovie)
         {

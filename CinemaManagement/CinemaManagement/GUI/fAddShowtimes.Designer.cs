@@ -52,7 +52,6 @@
             this.iconClose = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtmDay = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnResetInfo = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtRoom = new System.Windows.Forms.TextBox();
@@ -101,7 +100,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(21, 76);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 213);
             this.panel1.TabIndex = 0;
@@ -182,8 +181,8 @@
             this.panel2.Controls.Add(this.cboShift);
             this.panel2.Controls.Add(this.txtCountShift);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(388, 79);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(671, 76);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(249, 210);
             this.panel2.TabIndex = 1;
@@ -207,7 +206,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 17);
             this.label7.TabIndex = 19;
-            this.label7.Text = "2.Chọn ca chiếu";
+            this.label7.Text = "3.Chọn ca chiếu";
             // 
             // cboShift
             // 
@@ -232,6 +231,7 @@
             this.txtCountShift.ReadOnly = true;
             this.txtCountShift.Size = new System.Drawing.Size(100, 22);
             this.txtCountShift.TabIndex = 23;
+            this.txtCountShift.Visible = false;
             // 
             // label9
             // 
@@ -241,6 +241,7 @@
             this.label9.Size = new System.Drawing.Size(137, 17);
             this.label9.TabIndex = 24;
             this.label9.Text = "Số lượt chọn ca còn:";
+            this.label9.Visible = false;
             // 
             // panel3
             // 
@@ -322,7 +323,6 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel4.Controls.Add(this.dtmDay);
-            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.btnResetInfo);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.txtRoom);
@@ -348,31 +348,21 @@
             this.dtmDay.Size = new System.Drawing.Size(111, 22);
             this.dtmDay.TabIndex = 39;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(376, 121);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 34);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Sửa lịch chiếu";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnResetInfo
             // 
-            this.btnResetInfo.Location = new System.Drawing.Point(204, 121);
+            this.btnResetInfo.Location = new System.Drawing.Point(196, 121);
             this.btnResetInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnResetInfo.Name = "btnResetInfo";
             this.btnResetInfo.Size = new System.Drawing.Size(148, 34);
             this.btnResetInfo.TabIndex = 28;
-            this.btnResetInfo.Text = "Hủy lịch chiếu";
+            this.btnResetInfo.Text = "Reset lịch chiếu";
             this.btnResetInfo.UseVisualStyleBackColor = true;
             this.btnResetInfo.Click += new System.EventHandler(this.btnResetInfo_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(335, 32);
+            this.label14.Location = new System.Drawing.Point(179, 34);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 17);
             this.label14.TabIndex = 27;
@@ -380,7 +370,7 @@
             // 
             // txtRoom
             // 
-            this.txtRoom.Location = new System.Drawing.Point(331, 66);
+            this.txtRoom.Location = new System.Drawing.Point(175, 68);
             this.txtRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.ReadOnly = true;
@@ -419,7 +409,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(184, 32);
+            this.label11.Location = new System.Drawing.Point(339, 32);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 17);
             this.label11.TabIndex = 23;
@@ -427,7 +417,7 @@
             // 
             // txtShift
             // 
-            this.txtShift.Location = new System.Drawing.Point(168, 66);
+            this.txtShift.Location = new System.Drawing.Point(323, 66);
             this.txtShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShift.Name = "txtShift";
             this.txtShift.ReadOnly = true;
@@ -451,7 +441,7 @@
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.cboRoom);
-            this.panel5.Location = new System.Drawing.Point(645, 78);
+            this.panel5.Location = new System.Drawing.Point(387, 77);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 212);
@@ -476,6 +466,7 @@
             this.txtCountRoom.ReadOnly = true;
             this.txtCountRoom.Size = new System.Drawing.Size(119, 22);
             this.txtCountRoom.TabIndex = 30;
+            this.txtCountRoom.Visible = false;
             // 
             // label16
             // 
@@ -485,6 +476,7 @@
             this.label16.Size = new System.Drawing.Size(162, 17);
             this.label16.TabIndex = 35;
             this.label16.Text = "Số lượt chọn phòng còn:";
+            this.label16.Visible = false;
             // 
             // label15
             // 
@@ -494,7 +486,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(153, 17);
             this.label15.TabIndex = 33;
-            this.label15.Text = "3.Chọn phòng chiếu";
+            this.label15.Text = "2.Chọn phòng chiếu";
             // 
             // cboRoom
             // 
@@ -595,9 +587,9 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(17, 126);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(183, 24);
+            this.label18.Size = new System.Drawing.Size(148, 24);
             this.label18.TabIndex = 8;
-            this.label18.Text = "3.Chọn phòng chiếu";
+            this.label18.Text = "3.Chọn ca chiếu";
             // 
             // label17
             // 
@@ -605,9 +597,9 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(17, 94);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(148, 24);
+            this.label17.Size = new System.Drawing.Size(183, 24);
             this.label17.TabIndex = 7;
-            this.label17.Text = "2.Chọn ca chiếu";
+            this.label17.Text = "2.Chọn phòng chiếu";
             // 
             // label10
             // 
@@ -632,7 +624,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 38);
+            this.label13.Location = new System.Drawing.Point(41, 34);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 17);
             this.label13.TabIndex = 8;
@@ -646,10 +638,10 @@
             "11am-1pm",
             "1pm-3pm",
             "3pm-5pm"});
-            this.cboCinema.Location = new System.Drawing.Point(107, 35);
+            this.cboCinema.Location = new System.Drawing.Point(113, 34);
             this.cboCinema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCinema.Name = "cboCinema";
-            this.cboCinema.Size = new System.Drawing.Size(121, 24);
+            this.cboCinema.Size = new System.Drawing.Size(184, 24);
             this.cboCinema.TabIndex = 21;
             this.cboCinema.SelectedValueChanged += new System.EventHandler(this.cboCinema_SelectedValueChanged);
             // 
@@ -720,7 +712,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtShift;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox iconClose;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cboRoom;

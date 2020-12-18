@@ -219,6 +219,7 @@ namespace CinemaManagement.GUI
             //    birthDay = DateTime.Parse(this.txtBirthday.Text);
             //else birthDay = DateTime.Now;
 
+            setArrayByteImage();
             Double salary = 0;
             if (this.txtSalary.Text != "")
                 salary = Convert.ToDouble(this.txtSalary.Text);

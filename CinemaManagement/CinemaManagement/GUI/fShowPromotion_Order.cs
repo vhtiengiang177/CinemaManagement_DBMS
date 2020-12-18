@@ -25,8 +25,8 @@ namespace CinemaManagement.GUI
 
         MemoryStream ms;
 
-        public static string idEmployee = "em01";
-        public static int typeEmployee;
+        public static string idEmployee = fMain.idEmployeeMain;
+        public static int typeEmployee = fMain.typeEmp;
 
         List<String> listPromotion = new List<String>();
         public fShowPromotion_Order(Showtimes st, List<Seat> se)

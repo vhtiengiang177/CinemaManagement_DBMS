@@ -230,6 +230,7 @@
             // 
             // cboSortTypeEmployee
             // 
+            this.cboSortTypeEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSortTypeEmployee.FormattingEnabled = true;
             this.cboSortTypeEmployee.Location = new System.Drawing.Point(3, 23);
             this.cboSortTypeEmployee.Name = "cboSortTypeEmployee";
@@ -376,7 +377,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 40);
             this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -391,7 +392,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 40);
             this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -406,7 +407,7 @@
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(80, 40);
             this.btnEditEmployee.TabIndex = 5;
-            this.btnEditEmployee.Text = "Edit";
+            this.btnEditEmployee.Text = "Sửa";
             this.btnEditEmployee.UseVisualStyleBackColor = false;
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
@@ -441,9 +442,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.Info;
             this.label8.Location = new System.Drawing.Point(8, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 17);
+            this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Contact:";
+            this.label8.Text = "Liên hệ:";
             // 
             // textBox3
             // 
@@ -599,7 +600,7 @@
             this.btnAddNewEmployee.Name = "btnAddNewEmployee";
             this.btnAddNewEmployee.Size = new System.Drawing.Size(80, 40);
             this.btnAddNewEmployee.TabIndex = 3;
-            this.btnAddNewEmployee.Text = "Add new employee";
+            this.btnAddNewEmployee.Text = "Thêm";
             this.btnAddNewEmployee.UseVisualStyleBackColor = false;
             this.btnAddNewEmployee.Click += new System.EventHandler(this.btnAddNewEmployee_Click);
             // 

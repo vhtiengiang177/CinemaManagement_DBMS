@@ -95,6 +95,7 @@ namespace CinemaManagement
            
             cboSortTypeEmployee.Enabled = false;
             setDataCboSortTypeEmployee();
+            picEmployee.Image = picEmployee.ErrorImage;
             
             dgvListEmployee_CellClick(null, null);
         }

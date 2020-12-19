@@ -18,7 +18,7 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             resetdgvShowtimes();
             loadShowtimes();
-
+            cboSearchST.SelectedIndex = 0;
         }
 
         #region Load  và Reset dữ liệu

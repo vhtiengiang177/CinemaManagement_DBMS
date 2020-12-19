@@ -279,8 +279,32 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                MovieDAO.Instance.deleteMovie(this.lblShowIDMovie.Text.ToString());
-                loadData();
+               
+
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp 
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa  phim này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không? 
+
+                if (traloi == DialogResult.Yes)
+                {
+
+                    // Thực hiện câu lệnh SQL 
+                    bool f = MovieDAO.Instance.deleteMovie(this.lblShowIDMovie.Text.ToString());
+                    if (f)
+                    {
+                        // Cập nhật lại DataGridView 
+                        loadData();
+
+                        // Thông báo 
+                        MessageBox.Show("Đã xóa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!");
+                    }
+                }
             }
             catch
             {

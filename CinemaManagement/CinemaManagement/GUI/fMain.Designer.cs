@@ -44,6 +44,7 @@
             this.trgCinemaManager = new System.Windows.Forms.ToolStripMenuItem();
             this.plOpenChildForm = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbLogout = new System.Windows.Forms.Label();
             this.lbNameEmployeeMain = new System.Windows.Forms.Label();
             this.lbIdEmployeeMain = new System.Windows.Forms.Label();
             this.lbChangeAccount = new System.Windows.Forms.Label();
@@ -184,6 +185,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.lbLogout);
             this.panel2.Controls.Add(this.lbNameEmployeeMain);
             this.panel2.Controls.Add(this.lbIdEmployeeMain);
             this.panel2.Controls.Add(this.lbChangeAccount);
@@ -194,6 +196,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 827);
             this.panel2.TabIndex = 0;
+            // 
+            // lbLogout
+            // 
+            this.lbLogout.AutoSize = true;
+            this.lbLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogout.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbLogout.Location = new System.Drawing.Point(80, 740);
+            this.lbLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Size = new System.Drawing.Size(84, 20);
+            this.lbLogout.TabIndex = 6;
+            this.lbLogout.Text = "Đăng xuất";
+            this.lbLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
             // 
             // lbNameEmployeeMain
             // 
@@ -224,12 +240,12 @@
             this.lbChangeAccount.AutoSize = true;
             this.lbChangeAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChangeAccount.ForeColor = System.Drawing.Color.DarkGray;
-            this.lbChangeAccount.Location = new System.Drawing.Point(44, 809);
+            this.lbChangeAccount.Location = new System.Drawing.Point(62, 705);
             this.lbChangeAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbChangeAccount.Name = "lbChangeAccount";
-            this.lbChangeAccount.Size = new System.Drawing.Size(132, 20);
+            this.lbChangeAccount.Size = new System.Drawing.Size(144, 20);
             this.lbChangeAccount.TabIndex = 3;
-            this.lbChangeAccount.Text = "Change Account";
+            this.lbChangeAccount.Text = "Thay đổi tài khoản";
             this.lbChangeAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbChangeAccount.Click += new System.EventHandler(this.lbChangeAccount_Click);
             // 
@@ -258,7 +274,7 @@
             this.MaximumSize = new System.Drawing.Size(1506, 905);
             this.MinimumSize = new System.Drawing.Size(1506, 883);
             this.Name = "fMain";
-            this.Text = "fMain";
+            this.Text = "Rạp chiếu phim BYTG";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -290,6 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem trgCinemaManager;
         private System.Windows.Forms.ToolStripMenuItem trgEmpManager;
         private System.Windows.Forms.ToolStripMenuItem trgShiftManager;
+        private System.Windows.Forms.Label lbLogout;
     }
 }
 

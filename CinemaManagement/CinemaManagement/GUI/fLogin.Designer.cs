@@ -137,7 +137,7 @@
             this.ckbHidePass.AutoSize = true;
             this.ckbHidePass.Location = new System.Drawing.Point(252, 24);
             this.ckbHidePass.Name = "ckbHidePass";
-            this.ckbHidePass.Size = new System.Drawing.Size(15, 14);
+            this.ckbHidePass.Size = new System.Drawing.Size(18, 17);
             this.ckbHidePass.TabIndex = 2;
             this.ckbHidePass.UseVisualStyleBackColor = true;
             this.ckbHidePass.CheckedChanged += new System.EventHandler(this.ckbHidePass_CheckedChanged);
@@ -165,7 +165,7 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(5, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(91, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password: ";
             // 
@@ -199,7 +199,7 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Size = new System.Drawing.Size(93, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username: ";
             // 
@@ -230,23 +230,23 @@
             this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(131, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 19);
+            this.label3.Size = new System.Drawing.Size(129, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Xin chào bạn !";
             // 
             // fLogin
             // 
             this.AcceptButton = this.btnSignIn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(316, 284);
+            this.ClientSize = new System.Drawing.Size(314, 276);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(332, 323);
             this.MinimumSize = new System.Drawing.Size(332, 323);
             this.Name = "fLogin";
-            this.Text = "fLogin";
+            this.Text = "Đăng nhập";
             this.panel1.ResumeLayout(false);
             this.plMainLogin.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

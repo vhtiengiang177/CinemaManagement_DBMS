@@ -30,11 +30,11 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
         //select*from fc_chooseRoomOnCinema('ci01')
-        public DataTable countRoomInDay(string date,string idRoom,string idShift)
-        {
-            string query = "SELECT *FROM fc_countRoomInDay( @date , @idRoom , @idShift ) ";
-            return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) , idRoom , idShift}) ;
-        }
+        //public DataTable countRoomInDay(string date,string idRoom,string idShift)
+        //{
+        //    string query = "SELECT *FROM fc_countRoomInDay( @date , @idRoom , @idShift ) ";
+        //    return DataProvider.Instance.ExecuteQuery(query, new object[] { Convert.ToDateTime(date) , idRoom , idShift}) ;
+        //}
 
         public string getNameRoom(string id_room)
         {

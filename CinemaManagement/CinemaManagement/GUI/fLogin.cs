@@ -99,26 +99,33 @@ namespace CinemaManagement.GUI
 
             if(checkInfoLogin() == 2)
             {
-                DataProvider.username = this.userName;
-                DataProvider.pass = this.passWord;
-
-                string id = isLogin();
-                if (id != null && id != "" )
+               
+                    DataProvider.username = this.userName;
+                    DataProvider.pass = this.passWord;
+               
+                string id = "";
+                try
                 {
-                    int type = getTypeEmployee();
-                    this.Hide();
-                    fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
-                    f.ShowDialog();
-                    this.Show();
-                    txtPassword.Clear();
-                    txtUserName.Clear();
+                     id = isLogin();
+                    if(id != null && id != "")
+                    {
+                        int type = getTypeEmployee();
+                        this.Hide();
+                        fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtUserName.Clear();
+                    }
+                    
+                }
+                catch (Exception)
+                {
                    
-                    // Đăng nhập thành công, set quyền truy cập
-                }
-                else
-                {
                     MessageBox.Show("Sai tài khoản hoặc mật khẩu !", "Thông báo");
+                    
                 }
+                            
             }
         }
 

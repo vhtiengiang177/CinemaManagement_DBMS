@@ -117,8 +117,30 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                CategoryMovieDAO.Instance.deleteCategoryMovie(this.lblShowIDCategoryMovie.Text.ToString().Trim());
-                loadData();
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp 
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa thể loại phim này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không? 
+
+                if (traloi == DialogResult.Yes)
+                {
+
+                    // Thực hiện câu lệnh SQL 
+                    bool f = CategoryMovieDAO.Instance.deleteCategoryMovie(this.lblShowIDCategoryMovie.Text.ToString().Trim());
+                    if (f)
+                    {
+                        // Cập nhật lại DataGridView 
+                         loadData();
+
+                        // Thông báo 
+                        MessageBox.Show("Đã xóa xong!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!");
+                    }
+                }
             }
             catch
             {

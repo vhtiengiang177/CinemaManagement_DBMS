@@ -35,7 +35,7 @@ namespace CinemaManagement.GUI
 
             if(type ==  3)
                 fMain.idCinemaCurrent =(string)EmployeeDAO.Instance.getIdCinema(idEmp);
-            MessageBox.Show(fMain.idCinemaCurrent);
+            //MessageBox.Show(fMain.idCinemaCurrent);
 
             DataTable dtEmp = EmployeeDAO.Instance.search_IDEmployee(fMain.idEmployeeMain);
             lbIdEmployeeMain.Text = dtEmp.Rows[0][0].ToString();
@@ -134,6 +134,11 @@ namespace CinemaManagement.GUI
         {
             if (typeEmp != 1 && typeEmp != 2)
                 openAchildForm(new fShifWorkEmployee());
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

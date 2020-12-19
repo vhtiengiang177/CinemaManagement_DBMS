@@ -222,27 +222,27 @@ namespace CinemaManagement.GUI
         private void cboRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnChoosrRoom.Show();
-            DataTable dt = new DataTable();
-            dt = RoomDAO.Instance.countRoomInDay(dtmChooseDay.Value.ToString(), cboRoom.SelectedValue.ToString(), cboShift.SelectedValue.ToString());
+            //DataTable dt = new DataTable();
+            //dt = RoomDAO.Instance.countRoomInDay(dtmChooseDay.Value.ToString(), cboRoom.SelectedValue.ToString(), cboShift.SelectedValue.ToString());
 
-            if (dt.Rows.Count > 0)
-            {
-                int num = 3 - Convert.ToInt32(dt.Rows[0][0].ToString());
-                if (num < 3)
-                    txtCountRoom.Text = num.ToString();
-                else
-                    txtCountRoom.Text = "0";
-            }
+            //if (dt.Rows.Count > 0)
+            //{
+            //    int num = 3 - Convert.ToInt32(dt.Rows[0][0].ToString());
+            //    if (num < 3)
+            //        txtCountRoom.Text = num.ToString();
+            //    else
+            //        txtCountRoom.Text = "0";
+            //}
 
-            else
-                txtCountRoom.Text = "3";
+            //else
+            //    txtCountRoom.Text = "3";
 
-            DataTable dts = new DataTable();
-            dts = ShowtimesDAO.Instance.checkMovie(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboRoom.SelectedValue.ToString());
-            if (dts.Rows.Count > 0)
-                MessageBox.Show("Phòng này đã có lịch vào khung giờ bạn chọn! Vui lòng thay đổi phòng!");
-            //txtCountMovie.Text = dts.Rows[0][0].ToString();
-            //else txtCountMovie.Text = "0";
+            //DataTable dts = new DataTable();
+            //dts = ShowtimesDAO.Instance.checkMovie(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboRoom.SelectedValue.ToString());
+            //if (dts.Rows.Count > 0)
+            //    MessageBox.Show("Phòng này đã có lịch vào khung giờ bạn chọn! Vui lòng thay đổi phòng!");
+            ////txtCountMovie.Text = dts.Rows[0][0].ToString();
+            ////else txtCountMovie.Text = "0";
 
         }
 

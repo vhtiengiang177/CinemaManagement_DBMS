@@ -69,12 +69,17 @@
             // 
             // btnExcel
             // 
+            this.btnExcel.BackColor = System.Drawing.Color.White;
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExcel.Location = new System.Drawing.Point(935, 87);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(126, 32);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.Text = "Xuất file Excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // cboTimeStatistic
@@ -292,22 +297,32 @@
             // 
             // txtCtrl
             // 
+            this.txtCtrl.BackColor = System.Drawing.Color.White;
+            this.txtCtrl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtCtrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCtrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtCtrl.Location = new System.Drawing.Point(234, 118);
             this.txtCtrl.Name = "txtCtrl";
             this.txtCtrl.Size = new System.Drawing.Size(158, 32);
             this.txtCtrl.TabIndex = 23;
             this.txtCtrl.Text = "Tùy chỉnh thống kê";
-            this.txtCtrl.UseVisualStyleBackColor = true;
+            this.txtCtrl.UseVisualStyleBackColor = false;
             this.txtCtrl.Click += new System.EventHandler(this.txtCtrl_Click);
             // 
             // btnOrgan
             // 
+            this.btnOrgan.BackColor = System.Drawing.Color.White;
+            this.btnOrgan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnOrgan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrgan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOrgan.Location = new System.Drawing.Point(54, 118);
             this.btnOrgan.Name = "btnOrgan";
             this.btnOrgan.Size = new System.Drawing.Size(158, 32);
             this.btnOrgan.TabIndex = 24;
             this.btnOrgan.Text = "Thống kê mặc định";
-            this.btnOrgan.UseVisualStyleBackColor = true;
+            this.btnOrgan.UseVisualStyleBackColor = false;
             this.btnOrgan.Click += new System.EventHandler(this.btnOrgan_Click);
             // 
             // lbNotice
@@ -323,6 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1196, 639);
             this.Controls.Add(this.lbNotice);
             this.Controls.Add(this.btnOrgan);
@@ -337,7 +353,7 @@
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label1);
             this.Name = "fStatistic";
-            this.Text = "fStatistic";
+            this.Text = "Khuyến mãi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistic)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

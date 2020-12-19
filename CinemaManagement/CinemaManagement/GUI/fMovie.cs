@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -169,6 +170,7 @@ namespace CinemaManagement.GUI
         {
             if(inputValidate())
             {
+                imageToByteArray(picImageMovie.Image);
                 mo = new Movie(this.lblShowIDMovie.Text.ToString(),
                      this.txtNameMovie.Text.ToString(),
                      this.txtLanguageMovie.Text.ToString(),
@@ -183,9 +185,9 @@ namespace CinemaManagement.GUI
                     MovieDAO.Instance.insertMovie(mo);
                     loadData();
                 }
-                catch
+                catch(SqlException ex)
                 {
-                    MessageBox.Show("Thêm không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -242,7 +244,7 @@ namespace CinemaManagement.GUI
             if(inputValidate())
             {
                 byte stateM;
-                if(rdoActiveMovie.Checked == true)
+                if (rdoActiveMovie.Checked == true)
                 {
                     stateM = 1;
                 }
@@ -263,15 +265,11 @@ namespace CinemaManagement.GUI
 
                 MovieDAO.Instance.updateMovie(mo);
                 loadData();
-                //try
-                //{
-                   
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
             }
+            else
+            {
+                MessageBox.Show("Sửa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         // Xóa phim
@@ -279,8 +277,6 @@ namespace CinemaManagement.GUI
         {
             try
             {
-               
-
                 DialogResult traloi;
                 // Hiện hộp thoại hỏi đáp 
                 traloi = MessageBox.Show("Bạn có chắc chắn xóa  phim này không?", "Trả lời",
@@ -296,9 +292,6 @@ namespace CinemaManagement.GUI
                     {
                         // Cập nhật lại DataGridView 
                         loadData();
-
-                        // Thông báo 
-                        MessageBox.Show("Đã xóa xong!");
                     }
                     else
                     {
@@ -376,6 +369,11 @@ namespace CinemaManagement.GUI
             {
                 loadData();
             }
+        }
+
+        private void fMovie_Load(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

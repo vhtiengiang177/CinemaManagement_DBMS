@@ -124,6 +124,7 @@
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel14
             // 
@@ -134,6 +135,7 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(179, 39);
             this.panel14.TabIndex = 18;
+            this.panel14.Visible = false;
             // 
             // txtIdCustomer
             // 
@@ -257,6 +259,7 @@
             // 
             // cboTypeCustomer
             // 
+            this.cboTypeCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTypeCustomer.FormattingEnabled = true;
             this.cboTypeCustomer.Location = new System.Drawing.Point(132, 9);
             this.cboTypeCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -320,6 +323,7 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -335,6 +339,7 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel13
             // 
@@ -382,12 +387,13 @@
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 283);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -410,7 +416,7 @@
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Location = new System.Drawing.Point(-1, 132);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(588, 578);
             this.panel1.TabIndex = 12;
@@ -424,7 +430,7 @@
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.panel15);
             this.panel3.Location = new System.Drawing.Point(309, 5);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(275, 443);
             this.panel3.TabIndex = 35;
@@ -596,6 +602,7 @@
             this.txtPointCustomer.Name = "txtPointCustomer";
             this.txtPointCustomer.Size = new System.Drawing.Size(125, 22);
             this.txtPointCustomer.TabIndex = 1;
+            this.txtPointCustomer.Text = "0";
             // 
             // label6
             // 

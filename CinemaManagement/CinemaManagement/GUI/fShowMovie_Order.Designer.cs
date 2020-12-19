@@ -43,7 +43,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -66,7 +66,7 @@
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTitle.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(1251, 40);
             this.pnlTitle.TabIndex = 0;
@@ -85,12 +85,14 @@
             // 
             // flpnlMovie
             // 
+            this.flpnlMovie.AutoScroll = true;
             this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.flpnlMovie.Location = new System.Drawing.Point(71, 54);
-            this.flpnlMovie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
+            this.flpnlMovie.Margin = new System.Windows.Forms.Padding(4);
             this.flpnlMovie.Name = "flpnlMovie";
-            this.flpnlMovie.Size = new System.Drawing.Size(1115, 567);
+            this.flpnlMovie.Size = new System.Drawing.Size(1251, 673);
             this.flpnlMovie.TabIndex = 0;
             // 
             // fShowMovie_Order
@@ -102,7 +104,7 @@
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fShowMovie_Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fShowMovie_Order";

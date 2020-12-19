@@ -25,8 +25,8 @@ namespace CinemaManagement.DAO
 
 
         //cách viết 
-        //viết câu query như bìnhthuongwf
-        //return dataprovrder . instance (Thằng nào cũng v, hk cần khai báo, cứ gọi class.instance là ra) . execute(tùy loại) (query, new object[]{ các object, viết theo thứ tự của câu query}
+        //viết câu query như bình thường
+        //return dataprovrder . instance 
 
         public bool AddCustomer(Customer cus)
         {

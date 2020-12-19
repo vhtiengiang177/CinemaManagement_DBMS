@@ -117,7 +117,8 @@ namespace CinemaManagement.GUI
         private void btnAddShowtimes_Click(object sender, EventArgs e)
         {
             fAddShowtimes frm = new fAddShowtimes();  
-            frm.Show();
+            frm.ShowDialog();
+            loadShowtimes();
             
         }
 

@@ -774,28 +774,30 @@ namespace CinemaManagement.cinemaDBMSDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CategoryMovie] ([id_categorymovie], [name_categorymovie]) VALU" +
-                "ES (@id_categorymovie, @name_categorymovie);\r\nSELECT id_categorymovie, name_cate" +
-                "gorymovie FROM CategoryMovie WHERE (id_categorymovie = @id_categorymovie)";
+                "ES (@id_categorymovie, @name_categorymovie);\r\nSELECT id_CategoryMovie, name_Cate" +
+                "goryMovie FROM CategoryMovie WHERE (id_CategoryMovie = @id_CategoryMovie)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_categorymovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name_categorymovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_CategoryMovie", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "id_CategoryMovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CategoryMovie] SET [id_categorymovie] = @id_categorymovie, [name_categorymovie] = @name_categorymovie WHERE (([id_categorymovie] = @Original_id_categorymovie) AND ((@IsNull_name_categorymovie = 1 AND [name_categorymovie] IS NULL) OR ([name_categorymovie] = @Original_name_categorymovie)));
-SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categorymovie = @id_categorymovie)";
+SELECT id_CategoryMovie, name_CategoryMovie FROM CategoryMovie WHERE (id_CategoryMovie = @id_CategoryMovie)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_categorymovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name_categorymovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_categorymovie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_name_categorymovie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name_categorymovie", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name_categorymovie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name_categorymovie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_CategoryMovie", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "id_CategoryMovie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaManagement.Properties.Settings.Default.DB24ConnectionString;
+            this._connection.ConnectionString = global::CinemaManagement.Properties.Settings.Default.DB25ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -873,8 +875,7 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_id_categorymovie));
             }
             if ((Original_name_categorymovie == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_name_categorymovie");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -900,7 +901,7 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id_categorymovie, string name_categorymovie) {
+        public virtual int Insert(string id_categorymovie, string name_categorymovie, string id_CategoryMovie1) {
             if ((id_categorymovie == null)) {
                 throw new global::System.ArgumentNullException("id_categorymovie");
             }
@@ -908,10 +909,16 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(id_categorymovie));
             }
             if ((name_categorymovie == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("name_categorymovie");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name_categorymovie));
+            }
+            if ((id_CategoryMovie1 == null)) {
+                throw new global::System.ArgumentNullException("id_CategoryMovie1");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(id_CategoryMovie1));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -933,7 +940,7 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id_categorymovie, string name_categorymovie, string Original_id_categorymovie, string Original_name_categorymovie) {
+        public virtual int Update(string id_categorymovie, string name_categorymovie, string Original_id_categorymovie, string Original_name_categorymovie, string id_CategoryMovie1) {
             if ((id_categorymovie == null)) {
                 throw new global::System.ArgumentNullException("id_categorymovie");
             }
@@ -941,7 +948,7 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(id_categorymovie));
             }
             if ((name_categorymovie == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("name_categorymovie");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(name_categorymovie));
@@ -953,12 +960,17 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_id_categorymovie));
             }
             if ((Original_name_categorymovie == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_name_categorymovie");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_name_categorymovie));
+            }
+            if ((id_CategoryMovie1 == null)) {
+                throw new global::System.ArgumentNullException("id_CategoryMovie1");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(id_CategoryMovie1));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -980,8 +992,8 @@ SELECT id_categorymovie, name_categorymovie FROM CategoryMovie WHERE (id_categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name_categorymovie, string Original_id_categorymovie, string Original_name_categorymovie) {
-            return this.Update(Original_id_categorymovie, name_categorymovie, Original_id_categorymovie, Original_name_categorymovie);
+        public virtual int Update(string name_categorymovie, string Original_id_categorymovie, string Original_name_categorymovie, string id_CategoryMovie) {
+            return this.Update(Original_id_categorymovie, name_categorymovie, Original_id_categorymovie, Original_name_categorymovie, id_CategoryMovie);
         }
     }
     

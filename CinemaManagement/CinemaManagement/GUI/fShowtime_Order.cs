@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CinemaManagement.DAO;
 using CinemaManagement.DTO;
-using CinemaManagement.Ticket1;
 
 namespace CinemaManagement.GUI
 {
@@ -193,6 +192,12 @@ namespace CinemaManagement.GUI
         {
             fShowSeat_Order f = new fShowSeat_Order(this.stSelect);
             f.Show();
+            f.FormClosed += F_FormClosed;
+        }
+
+        private void F_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void picImageMovie_Click(object sender, EventArgs e)

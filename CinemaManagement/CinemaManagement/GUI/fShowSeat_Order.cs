@@ -1,6 +1,5 @@
 ﻿using CinemaManagement.DAO;
 using CinemaManagement.DTO;
-using CinemaManagement.Ticket1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,6 +125,12 @@ namespace CinemaManagement.GUI
             fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
             //this.Hide();
             f.Show();
+            f.FormClosed += F_FormClosed;
+        }
+
+        private void F_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

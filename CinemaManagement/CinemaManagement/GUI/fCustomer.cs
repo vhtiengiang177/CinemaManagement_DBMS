@@ -30,9 +30,9 @@ namespace CinemaManagement.GUI
 
             if (type == 1)
                 btnDelete.Hide();
-
-            loadData();
             fillCboTypeCustomer();
+            loadData();
+            
         }
 
         void loadCustomer()
@@ -63,7 +63,7 @@ namespace CinemaManagement.GUI
             this.txtEmailCustomer.Text = customer.Email_Customer;
             this.txtAddressCustomer.Text = customer.Address_Customer;
             this.txtPointCustomer.Text = customer.Point_Customer.ToString();
-            this.cboTypeCustomer.SelectedValue = customer.Id_TypeCustomer;
+            this.cboTypeCustomer.Text = customer.Id_TypeCustomer.ToString();
             this.txtQrCustomer.Text = customer.Qr_Customer;
         }
 
@@ -73,10 +73,10 @@ namespace CinemaManagement.GUI
             loadCustomer();
             if (CustomerDAO.Instance.AddCustomer(customer))
             {
-                MessageBox.Show("Success");
+                MessageBox.Show("Thành công");
                 loadData();
             }
-            else MessageBox.Show("error");
+            else MessageBox.Show("Lỗi");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -84,10 +84,10 @@ namespace CinemaManagement.GUI
             loadCustomer();
             if (CustomerDAO.Instance.UpdateCustomer(customer))
             { 
-                MessageBox.Show("Success");
+                MessageBox.Show("Thành công");
                 loadData();
             }
-            else MessageBox.Show("error");
+            else MessageBox.Show("Lỗi");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -95,10 +95,10 @@ namespace CinemaManagement.GUI
             loadCustomer();
             if (CustomerDAO.Instance.DeleteCustomer(customer))
             {
-                MessageBox.Show("Success");
+                MessageBox.Show("Thành công");
                 loadData();
             }
-            else MessageBox.Show("error");
+            else MessageBox.Show("Lỗi");
         }
 
         void loadData()
@@ -132,7 +132,8 @@ namespace CinemaManagement.GUI
             customer.Address_Customer = dgvListCustomer.CurrentRow.Cells[8].Value.ToString();
             customer.Point_Customer = Convert.ToInt32(dgvListCustomer.CurrentRow.Cells[9].Value.ToString());
             customer.Id_TypeCustomer = dgvListCustomer.CurrentRow.Cells[10].Value.ToString();
-            customer.Qr_Customer = dgvListCustomer.CurrentRow.Cells[11].Value.ToString();
+
+            //customer.Qr_Customer = dgvListCustomer.CurrentRow.Cells[11].Value.ToString();
             showCustomer();
         }
 

@@ -42,5 +42,15 @@ namespace CinemaManagement.Properties {
                 return ((string)(this["DB24ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=DB25;Integrated Security=True")]
+        public string DB25ConnectionString {
+            get {
+                return ((string)(this["DB25ConnectionString"]));
+            }
+        }
     }
 }

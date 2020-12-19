@@ -270,6 +270,7 @@ namespace CinemaManagement.GUI
             loadListPromotion();
 
             loadTicket();
+            this.Close();
         }
 
         void loadTicket()

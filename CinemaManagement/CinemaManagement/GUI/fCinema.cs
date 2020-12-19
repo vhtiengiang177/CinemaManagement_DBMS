@@ -90,6 +90,7 @@ namespace CinemaManagement.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
             // Thêm dữ liệu          
 
             if (txtID.Text.Trim() == " " || txtNum.Text.Trim() == "" || txtAddress.Text.Trim() == "" || txtName.Text.Trim() == "" || txtStt.Text.Trim() == "")

@@ -285,17 +285,25 @@ namespace CinemaManagement.GUI
 
         private void cboMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            DataTable dt = new DataTable();
-            dt = ShowtimesDAO.Instance.checkMovieandRoom(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboMovie.SelectedValue.ToString());
-            if (dt.Rows.Count>0)
+            try
             {
-                MessageBox.Show("Phim đã được xếp ở {0} trong cùng thời điểm", dt.Rows[0][2].ToString());
-            }    
-            else
-            {
-                btnChooseMovie.Show();
+                DataTable dt = new DataTable();
+                dt = ShowtimesDAO.Instance.checkMovieandRoom(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboMovie.SelectedValue.ToString());
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Phim đã được xếp ở {0} trong cùng thời điểm", dt.Rows[0][2].ToString());
+                }
+                else
+                {
+                    btnChooseMovie.Show();
+                }
+
             }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Lỗi: ", ex.Message);
+            }
+
 
 
         }

@@ -302,9 +302,9 @@
             this.txtCtrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCtrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtCtrl.Location = new System.Drawing.Point(234, 118);
+            this.txtCtrl.Location = new System.Drawing.Point(285, 118);
             this.txtCtrl.Name = "txtCtrl";
-            this.txtCtrl.Size = new System.Drawing.Size(158, 32);
+            this.txtCtrl.Size = new System.Drawing.Size(194, 32);
             this.txtCtrl.TabIndex = 23;
             this.txtCtrl.Text = "Tùy chỉnh thống kê";
             this.txtCtrl.UseVisualStyleBackColor = false;
@@ -319,7 +319,7 @@
             this.btnOrgan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOrgan.Location = new System.Drawing.Point(54, 118);
             this.btnOrgan.Name = "btnOrgan";
-            this.btnOrgan.Size = new System.Drawing.Size(158, 32);
+            this.btnOrgan.Size = new System.Drawing.Size(216, 32);
             this.btnOrgan.TabIndex = 24;
             this.btnOrgan.Text = "Thống kê mặc định";
             this.btnOrgan.UseVisualStyleBackColor = false;

@@ -198,7 +198,7 @@
             // lblSearchFor
             // 
             this.lblSearchFor.AutoSize = true;
-            this.lblSearchFor.Location = new System.Drawing.Point(27, 43);
+            this.lblSearchFor.Location = new System.Drawing.Point(9, 43);
             this.lblSearchFor.Name = "lblSearchFor";
             this.lblSearchFor.Size = new System.Drawing.Size(114, 20);
             this.lblSearchFor.TabIndex = 30;

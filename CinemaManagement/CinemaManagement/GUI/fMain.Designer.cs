@@ -274,6 +274,7 @@
             this.MaximumSize = new System.Drawing.Size(1506, 905);
             this.MinimumSize = new System.Drawing.Size(1506, 883);
             this.Name = "fMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rạp chiếu phim BYTG";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

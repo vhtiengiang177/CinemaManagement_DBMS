@@ -111,18 +111,25 @@ namespace CinemaManagement.GUI
                     {
                         int type = getTypeEmployee();
                         this.Hide();
-                        fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
-                        f.ShowDialog();
-                        this.Show();
-                        txtPassword.Clear();
-                        txtUserName.Clear();
+                        try
+                        {
+                            fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                            f.ShowDialog();
+                            this.Show();
+                            txtPassword.Clear();
+                            txtUserName.Clear();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Lỗi form main !");
+                        }
                     }
                     
                 }
                 catch (Exception)
                 {
                    
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !", "Thông báo");
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu login !", "Thông báo");
                     
                 }
                             

@@ -135,13 +135,13 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(179, 39);
             this.panel14.TabIndex = 18;
-            this.panel14.Visible = false;
             // 
             // txtIdCustomer
             // 
             this.txtIdCustomer.Location = new System.Drawing.Point(33, 7);
             this.txtIdCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdCustomer.Name = "txtIdCustomer";
+            this.txtIdCustomer.ReadOnly = true;
             this.txtIdCustomer.Size = new System.Drawing.Size(128, 22);
             this.txtIdCustomer.TabIndex = 1;
             // 

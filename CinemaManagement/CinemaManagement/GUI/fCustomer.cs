@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -66,28 +67,56 @@ namespace CinemaManagement.GUI
             this.cboTypeCustomer.Text = customer.Id_TypeCustomer.ToString();
             this.txtQrCustomer.Text = customer.Qr_Customer;
         }
+        string createAutoIdCustomer()
+        {
+            string lastID = CustomerDAO.Instance.getLastIdCustomer();
+            //MessageBox.Show(lastID);
+            int id = Convert.ToInt32(lastID[2].ToString() + lastID[3].ToString()) + 1;
 
+            if (id < 10)
+            {
+                return "cu0" + id.ToString();
+            }
+            return "cu" + id.ToString();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            loadCustomer();
-            if (CustomerDAO.Instance.AddCustomer(customer))
+            try
             {
-                MessageBox.Show("Thành công");
-                loadData();
+                loadCustomer();
+                string id = createAutoIdCustomer();
+                if (CustomerDAO.Instance.AddCustomer(customer, id))
+                {
+                    MessageBox.Show("Thành công");
+                    loadData();
+                }
+                else MessageBox.Show("Lỗi");
             }
-            else MessageBox.Show("Lỗi");
+            catch(SqlException ex )
+            {
+                MessageBox.Show("Lỗi: "+ex.Message);
+            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            loadCustomer();
-            if (CustomerDAO.Instance.UpdateCustomer(customer))
-            { 
-                MessageBox.Show("Thành công");
-                loadData();
+            
+            try
+            {
+                loadCustomer();
+                if (CustomerDAO.Instance.UpdateCustomer(customer))
+                {
+                    MessageBox.Show("Thành công");
+                    loadData();
+                }
+                //else MessageBox.Show("Lỗi");
             }
-            else MessageBox.Show("Lỗi");
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi: "+ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

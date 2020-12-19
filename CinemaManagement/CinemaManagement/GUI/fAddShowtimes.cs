@@ -24,7 +24,7 @@ namespace CinemaManagement.GUI
             reset();
             chooseCinema();
             //cboCinema.SelectedItem = null;
-            
+            //cboTypeMovie.SelectedItem = null;
 
 
 
@@ -310,6 +310,7 @@ namespace CinemaManagement.GUI
 
         private void cboTypeMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             if (ShowtimesDAO.Instance.loadMovie(cboTypeMovie.SelectedValue.ToString()).Rows.Count > 0)
             {
 

@@ -28,10 +28,10 @@ namespace CinemaManagement.DAO
         //viết câu query như bình thường
         //return dataprovrder . instance 
 
-        public bool AddCustomer(Customer cus)
+        public bool AddCustomer(Customer cus, string id)
         {
             string query = "exec sp_InsertCustomer @id_customer , @lname_customer , @fname_customer , @birthday_customer , @sex_customer , @identitycard_customer , @phone_customer , @email_customer , @address_customer , @point_customer , @id_typecustomer , @qr_customer ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer}) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer }) > 0;
         }
 
 
@@ -85,6 +85,15 @@ namespace CinemaManagement.DAO
         {
             string query = "select * from Customer";
             return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+
+        public string getLastIdCustomer()
+        {
+            string query = "select * from Customer";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data.Rows[data.Rows.Count - 1][0].ToString();
         }
     }
 }

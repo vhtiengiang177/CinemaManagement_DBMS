@@ -807,6 +807,7 @@
             // 
             // dpkBirthDateEmp
             // 
+            this.dpkBirthDateEmp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dpkBirthDateEmp.Location = new System.Drawing.Point(78, 10);
             this.dpkBirthDateEmp.Margin = new System.Windows.Forms.Padding(2);
             this.dpkBirthDateEmp.Name = "dpkBirthDateEmp";

@@ -35,13 +35,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvShowtimes = new System.Windows.Forms.DataGridView();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namemovie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdShift = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMovie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +56,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TenRap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namemovie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdShift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdMovie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowtimes)).BeginInit();
@@ -91,7 +92,8 @@
             // 
             this.cboSearchST.FormattingEnabled = true;
             this.cboSearchST.Items.AddRange(new object[] {
-            "Tên Phim"});
+            "Tên Phim",
+            "Rạp Phim"});
             this.cboSearchST.Location = new System.Drawing.Point(387, 28);
             this.cboSearchST.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSearchST.Name = "cboSearchST";
@@ -137,6 +139,7 @@
             this.dgvShowtimes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowtimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowtimes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenRap,
             this.date,
             this.room,
             this.namemovie,
@@ -152,58 +155,6 @@
             this.dgvShowtimes.Size = new System.Drawing.Size(755, 481);
             this.dgvShowtimes.TabIndex = 0;
             this.dgvShowtimes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowtimes_CellClick);
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "NgayChieu";
-            this.date.HeaderText = "Ngày chiếu";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            // 
-            // room
-            // 
-            this.room.DataPropertyName = "PhongChieu";
-            this.room.HeaderText = "Phòng chiếu";
-            this.room.MinimumWidth = 6;
-            this.room.Name = "room";
-            // 
-            // namemovie
-            // 
-            this.namemovie.DataPropertyName = "TenPhim";
-            this.namemovie.HeaderText = "Tên Phim";
-            this.namemovie.MinimumWidth = 6;
-            this.namemovie.Name = "namemovie";
-            // 
-            // idTime
-            // 
-            this.idTime.DataPropertyName = "CaChieu";
-            this.idTime.HeaderText = "Ca chiếu";
-            this.idTime.MinimumWidth = 6;
-            this.idTime.Name = "idTime";
-            // 
-            // IdShift
-            // 
-            this.IdShift.DataPropertyName = "IdShift";
-            this.IdShift.HeaderText = "Mã ca";
-            this.IdShift.MinimumWidth = 6;
-            this.IdShift.Name = "IdShift";
-            this.IdShift.Visible = false;
-            // 
-            // IdMovie
-            // 
-            this.IdMovie.DataPropertyName = "IdMovie";
-            this.IdMovie.HeaderText = "Mã phim";
-            this.IdMovie.MinimumWidth = 6;
-            this.IdMovie.Name = "IdMovie";
-            this.IdMovie.Visible = false;
-            // 
-            // IdRoom
-            // 
-            this.IdRoom.DataPropertyName = "IdRoom";
-            this.IdRoom.HeaderText = "Mã phòng";
-            this.IdRoom.MinimumWidth = 6;
-            this.IdRoom.Name = "IdRoom";
-            this.IdRoom.Visible = false;
             // 
             // panel3
             // 
@@ -423,12 +374,71 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-4, 102);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 87);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
+            // 
+            // TenRap
+            // 
+            this.TenRap.DataPropertyName = "TenRap";
+            this.TenRap.HeaderText = "Tên Rạp";
+            this.TenRap.MinimumWidth = 6;
+            this.TenRap.Name = "TenRap";
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "NgayChieu";
+            this.date.HeaderText = "Ngày chiếu";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            // 
+            // room
+            // 
+            this.room.DataPropertyName = "PhongChieu";
+            this.room.HeaderText = "Phòng chiếu";
+            this.room.MinimumWidth = 6;
+            this.room.Name = "room";
+            // 
+            // namemovie
+            // 
+            this.namemovie.DataPropertyName = "TenPhim";
+            this.namemovie.HeaderText = "Tên Phim";
+            this.namemovie.MinimumWidth = 6;
+            this.namemovie.Name = "namemovie";
+            // 
+            // idTime
+            // 
+            this.idTime.DataPropertyName = "CaChieu";
+            this.idTime.HeaderText = "Ca chiếu";
+            this.idTime.MinimumWidth = 6;
+            this.idTime.Name = "idTime";
+            // 
+            // IdShift
+            // 
+            this.IdShift.DataPropertyName = "IdShift";
+            this.IdShift.HeaderText = "Mã ca";
+            this.IdShift.MinimumWidth = 6;
+            this.IdShift.Name = "IdShift";
+            this.IdShift.Visible = false;
+            // 
+            // IdMovie
+            // 
+            this.IdMovie.DataPropertyName = "IdMovie";
+            this.IdMovie.HeaderText = "Mã phim";
+            this.IdMovie.MinimumWidth = 6;
+            this.IdMovie.Name = "IdMovie";
+            this.IdMovie.Visible = false;
+            // 
+            // IdRoom
+            // 
+            this.IdRoom.DataPropertyName = "IdRoom";
+            this.IdRoom.HeaderText = "Mã phòng";
+            this.IdRoom.MinimumWidth = 6;
+            this.IdRoom.Name = "IdRoom";
+            this.IdRoom.Visible = false;
             // 
             // fShowTime
             // 
@@ -492,6 +502,13 @@
         private System.Windows.Forms.ComboBox cboNameMovie;
         private System.Windows.Forms.DateTimePicker dtmDateShow;
         private System.Windows.Forms.ComboBox cboRoom;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenRap;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn room;
         private System.Windows.Forms.DataGridViewTextBoxColumn namemovie;
@@ -499,11 +516,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdShift;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMovie;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRoom;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

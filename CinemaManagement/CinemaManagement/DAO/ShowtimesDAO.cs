@@ -35,7 +35,15 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
         }
 
-        
+
+        //tìm lịch chiếu theo rạp phim
+        public DataTable searchShowtimesbyCinemaMovie(string name)
+        {
+            string query = "SELECT *FROM fc_searchShowtimesbyCinemaMovie( @cinema ) ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+        }
+
+
 
         //đém số lượng ca chiếu đã đc chọn trong ngày
         //public DataTable countShiftInDay(string idShift,string date)

@@ -18,7 +18,7 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             resetdgvShowtimes();
             loadShowtimes();
-            cboSearchST.SelectedIndex = 0;
+            //cboSearchST.SelectedIndex = null;
         }
 
         #region Load  và Reset dữ liệu
@@ -199,6 +199,10 @@ namespace CinemaManagement.GUI
                 if (cboSearchST.SelectedIndex == 0) //Tìm theo tên phim
                 {
                     dgvShowtimes.DataSource = ShowtimesDAO.Instance.searchShowtimesbyNameMovie(txtSearch.Text.ToString().Trim());
+                }
+                else if (cboSearchST.SelectedIndex == 1) //Tìm theo rạp phim
+                {
+                    dgvShowtimes.DataSource = ShowtimesDAO.Instance.searchShowtimesbyCinemaMovie(txtSearch.Text.ToString().Trim());
                 }
 
             }

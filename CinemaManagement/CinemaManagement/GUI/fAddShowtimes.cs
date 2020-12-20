@@ -172,7 +172,7 @@ namespace CinemaManagement.GUI
         {
             chooseCinema();
             addShiftInDay();
-            btnChooseShift.Show();
+            
             //if (ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows.Count > 0)
             //{
             //    int count = Convert.ToInt32(ShowtimesDAO.Instance.countShiftInDay(cboShift.SelectedValue.ToString(), dtmChooseDay.Value.ToString(), cboCinema.SelectedValue.ToString()).Rows[0][0].ToString());
@@ -184,6 +184,19 @@ namespace CinemaManagement.GUI
 
             //else
             //    txtCountShift.Text = "3";
+
+            //DataTable dts = new DataTable();
+            //dts = ShowtimesDAO.Instance.checkMovie(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboRoom.SelectedValue.ToString());
+            //if (dts.Rows.Count > 0)
+            //{
+            //    MessageBox.Show("Bị trùng lịch rồi vui ! Vui lòng thay đổi thông tin ở phía trước");
+            //    MessageBox.Show(cboRoom.SelectedValue.ToString());
+            //}    
+               
+            //else
+            //{
+            //    btnChooseShift.Show();
+            //}    
         }
 
 
@@ -241,8 +254,8 @@ namespace CinemaManagement.GUI
             //dts = ShowtimesDAO.Instance.checkMovie(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboRoom.SelectedValue.ToString());
             //if (dts.Rows.Count > 0)
             //    MessageBox.Show("Phòng này đã có lịch vào khung giờ bạn chọn! Vui lòng thay đổi phòng!");
-            ////txtCountMovie.Text = dts.Rows[0][0].ToString();
-            ////else txtCountMovie.Text = "0";
+            //txtCountMovie.Text = dts.Rows[0][0].ToString();
+            //else txtCountMovie.Text = "0";
 
         }
 

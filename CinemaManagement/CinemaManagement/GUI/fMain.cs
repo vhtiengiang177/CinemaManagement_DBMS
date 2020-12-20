@@ -22,6 +22,8 @@ namespace CinemaManagement.GUI
         {
             InitializeComponent();
             openAchildForm(new fShowMovie_Order());
+           // WindowState = FormWindowState.Maximized;
+            this.CenterToScreen();
         }
 
         public fMain(int type, string idEmp, string username, string pass)

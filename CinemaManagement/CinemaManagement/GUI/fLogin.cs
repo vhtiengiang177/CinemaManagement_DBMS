@@ -71,6 +71,7 @@ namespace CinemaManagement.GUI
 
         public string isLogin()
         {
+            getInfoLogin();
             string id = "";
             id = (string)LoginDAO.Instance.isLogin(userName, passWord);
             return id;
@@ -100,11 +101,20 @@ namespace CinemaManagement.GUI
             if(checkInfoLogin() == 2)
             {
                
-                    DataProvider.username = this.userName;
-                    DataProvider.pass = this.passWord;
+                    DataProvider.username = txtUserName.Text.Trim();
+                    DataProvider.pass= txtPassword.Text.Trim();
                
                 string id = "";
-                id = isLogin();
+                try
+                {
+                    id = isLogin();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại"+ex.Message);
+                    DataProvider.unInstance();
+                }
+                
                 if (id != null && id != "")
                 {
                     int type = getTypeEmployee();
@@ -122,10 +132,10 @@ namespace CinemaManagement.GUI
                         MessageBox.Show("Lỗi form main!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo");
-                }          
+                //else
+                //{
+                //    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo");
+                //}          
             }
         }
 

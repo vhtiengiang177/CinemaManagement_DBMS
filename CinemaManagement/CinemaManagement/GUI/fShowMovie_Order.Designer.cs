@@ -87,12 +87,12 @@
             // 
             this.flpnlMovie.AutoScroll = true;
             this.flpnlMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpnlMovie.Dock = System.Windows.Forms.DockStyle.Right;
             this.flpnlMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.flpnlMovie.Location = new System.Drawing.Point(0, 0);
+            this.flpnlMovie.Location = new System.Drawing.Point(102, 0);
             this.flpnlMovie.Margin = new System.Windows.Forms.Padding(4);
             this.flpnlMovie.Name = "flpnlMovie";
-            this.flpnlMovie.Size = new System.Drawing.Size(1251, 673);
+            this.flpnlMovie.Size = new System.Drawing.Size(1149, 673);
             this.flpnlMovie.TabIndex = 0;
             // 
             // fShowMovie_Order

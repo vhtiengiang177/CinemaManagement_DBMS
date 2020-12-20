@@ -12,22 +12,41 @@ namespace CinemaManagement.DAO
     {
         private static DataProvider instance;
 
+        //public static DataProvider Instance
+        //{
+        //    get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
+        //    private set { DataProvider.instance = value; }
+        //}
+
+
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
             private set { DataProvider.instance = value; }
         }
 
+        public static void unInstance()
+        {
+            instance = null;
+        }
+
+
+
         private DataProvider()
         {
  
         }
 
-        private string connectionString = @"Data Source=localhost;Initial Catalog=DB25;Integrated Security=True";
+   
+
+        //private string connectionString = @"Data Source=localhost;Initial Catalog=DB25;Integrated Security=True";
 
         public static string username = "";
         public static string pass = "";
-        //private string connectionString = @"Data Source=192.168.0.150,1433;Initial Catalog=cinemaDBMS;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass ;
+
+   
+
+        private string connectionString = @"Data Source=192.168.1.50,1433;Initial Catalog=DB25;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass;
         //private string connectionString = @"Data Source=localhost;Initial Catalog=DB24;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass ;
         /// <summary>
         /// Execute query trả về table. Dùng cho DataSoure của DataGridView.

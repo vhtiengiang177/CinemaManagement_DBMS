@@ -284,6 +284,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fCategoryMovie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thể loại phim";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fCategoryMovie_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryMovie)).EndInit();

@@ -174,6 +174,7 @@
             this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReload.TabIndex = 28;
             this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
             // 
             // txtSearchCategoryMovie
             // 
@@ -184,6 +185,7 @@
             this.txtSearchCategoryMovie.Size = new System.Drawing.Size(183, 23);
             this.txtSearchCategoryMovie.TabIndex = 5;
             this.txtSearchCategoryMovie.Click += new System.EventHandler(this.txtSearchCategoryMovie_TextChanged);
+            this.txtSearchCategoryMovie.TextChanged += new System.EventHandler(this.txtSearchCategoryMovie_TextChanged);
             // 
             // label1
             // 

@@ -36,6 +36,20 @@ namespace CinemaManagement.GUI
             
         }
 
+        void reset()
+        {
+            txtAddressCustomer.ResetText();
+            txtEmailCustomer.ResetText();
+            txtFNameCustomer.ResetText();
+            txtIdentityCardCustomer.ResetText();
+            txtLNameCustomer.ResetText();
+            txtPhoneCustomer.ResetText();
+            txtPointCustomer.ResetText();
+            txtQrCustomer.ResetText();
+            txtSexCustomer.ResetText();
+            txtSearch.ResetText();
+            txtIdCustomer.ResetText();
+        }
         void loadCustomer()
         {
             customer.Id_Customer = this.txtIdCustomer.Text;
@@ -90,6 +104,7 @@ namespace CinemaManagement.GUI
                 {
                     MessageBox.Show("Thành công");
                     loadData();
+                    reset();
                 }
                 else MessageBox.Show("Lỗi");
             }
@@ -110,6 +125,7 @@ namespace CinemaManagement.GUI
                 {
                     MessageBox.Show("Thành công");
                     loadData();
+                    reset();
                 }
                 //else MessageBox.Show("Lỗi");
             }
@@ -126,6 +142,7 @@ namespace CinemaManagement.GUI
             {
                 MessageBox.Show("Thành công");
                 loadData();
+                reset();
             }
             else MessageBox.Show("Lỗi");
         }

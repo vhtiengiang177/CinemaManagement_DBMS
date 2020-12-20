@@ -439,7 +439,7 @@
             // 
             this.panel6.Controls.Add(this.txtPhoneCustomer);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(3, 129);
+            this.panel6.Location = new System.Drawing.Point(3, 217);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(269, 49);
@@ -469,7 +469,7 @@
             // 
             this.panel11.Controls.Add(this.txtIdentityCardCustomer);
             this.panel11.Controls.Add(this.label12);
-            this.panel11.Location = new System.Drawing.Point(3, 228);
+            this.panel11.Location = new System.Drawing.Point(3, 129);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(269, 37);

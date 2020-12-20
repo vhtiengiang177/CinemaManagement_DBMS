@@ -187,16 +187,23 @@ namespace CinemaManagement
 
         private void btnChangeMonth_Click(object sender, EventArgs e)
         {
-            if(lbID.Text.Trim()!="")
+            try
             {
-                string idShift = "";
-                if (rdoEveningMonth.Checked)
-                    idShift = "sw01";
-                if (rdoMoringMonth.Checked)
-                    idShift = "sw02";
-                if (rdoFullMonth.Checked)
-                    idShift = "sw03";
-                changeShiftOfMonth(idShift);
+                if (lbID.Text.Trim() != "")
+                {
+                    string idShift = "";
+                    if (rdoEveningMonth.Checked)
+                        idShift = "sw01";
+                    if (rdoMoringMonth.Checked)
+                        idShift = "sw02";
+                    if (rdoFullMonth.Checked)
+                        idShift = "sw03";
+                    changeShiftOfMonth(idShift);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Mời bạn chọn lại !");
             }
         }
 
@@ -413,6 +420,7 @@ namespace CinemaManagement
 
         private void btnCreateFullWeek_Click(object sender, EventArgs e)
         {
+            
             DateTime date = Convert.ToDateTime(txtFirstDate.Text.Trim());
             String idShift = "";
 

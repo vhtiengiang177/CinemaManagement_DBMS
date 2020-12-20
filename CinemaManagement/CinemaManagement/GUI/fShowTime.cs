@@ -147,7 +147,7 @@ namespace CinemaManagement.GUI
                 bool f;
                 // Thứ tự dòng hiện hành 
                 int r = dgvShowtimes.CurrentCell.RowIndex;
-                MessageBox.Show(r.ToString());
+                
                 DialogResult traloi;
                 // Hiện hộp thoại hỏi đáp 
                 traloi = MessageBox.Show("Bạn có chắc chắn xóa lịch chiếu này không?", "Trả lời",

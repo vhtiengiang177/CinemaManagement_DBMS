@@ -210,6 +210,8 @@
             this.lbLogout.Text = "Đăng xuất";
             this.lbLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
+            this.lbLogout.MouseLeave += new System.EventHandler(this.lbLogout_MouseLeave);
+            this.lbLogout.MouseHover += new System.EventHandler(this.lbLogout_MouseHover);
             // 
             // lbNameEmployeeMain
             // 
@@ -247,6 +249,7 @@
             this.lbChangeAccount.TabIndex = 3;
             this.lbChangeAccount.Text = "Thay đổi tài khoản";
             this.lbChangeAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbChangeAccount.Visible = false;
             this.lbChangeAccount.Click += new System.EventHandler(this.lbChangeAccount_Click);
             // 
             // picEmployeeMain

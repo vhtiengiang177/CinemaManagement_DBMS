@@ -239,6 +239,16 @@ namespace CinemaManagement.GUI
                     txtSalary.GotFocus += RemovetxtSalary;
                 }
 
+                try
+                {
+                    int testSala = Int32.Parse(txtSalary.Text);                  
+                }
+                catch(Exception ex)
+                {
+                    err++;
+                    MessageBox.Show("Lương nhân viên phải là số !");
+                }
+
                 if (err == 0)
                     if (EmployeeDAO.Instance.insertEmployee(createEmp()))
                     {

@@ -303,7 +303,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 0, idEmployee, setShiftOfMonday()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         MessageBox.Show("Xếp lịch cho thứ 2 không thành công !");
                     }
@@ -318,7 +318,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 1, idEmployee, setShiftOfTus()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         { MessageBox.Show("Xếp lịch cho thứ 3 không thành công !"); }
                     }
@@ -331,7 +331,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 2, idEmployee, setShiftOfWed()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         MessageBox.Show("Xếp lịch cho thứ 4 không thành công !");
                     }
@@ -344,7 +344,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 3, idEmployee, setShiftOfThur()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         MessageBox.Show("Xếp lịch cho thứ 5 không thành công !");
                     }
@@ -357,7 +357,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 4, idEmployee, setShiftOfFri()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch 
                     {
                         MessageBox.Show("Xếp lịch cho thứ 6 không thành công !");
                     }
@@ -369,7 +369,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 5, idEmployee, setShiftOfSa()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         MessageBox.Show("Xếp lịch cho thứ 7 không thành công !");
                     }
@@ -381,7 +381,7 @@ namespace CinemaManagement
                         if (EmployeeDAO.Instance.createShitfOnlyOneDay(date, 6, idEmployee, setShiftOfSa()))
                         { }
                     }
-                    catch (SqlException ex)
+                    catch 
                     {
                         MessageBox.Show("Xếp lịch cho chủ nhật không thành công !");
                     }

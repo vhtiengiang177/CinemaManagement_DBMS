@@ -13,7 +13,6 @@ namespace CinemaManagement.GUI
    
     public partial class fChangeAccount : Form
     {
-        string err = "";
         string userName = "";
         string oldPassword = "";
         public fChangeAccount()

@@ -18,7 +18,6 @@ namespace CinemaManagement.GUI
 
     public partial class fAddEmployee : Form
     {
-        string MessErr = "";
         MemoryStream ms;
         byte[] arrImage = null;
         public static string idNew;

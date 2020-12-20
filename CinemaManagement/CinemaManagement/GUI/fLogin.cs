@@ -104,35 +104,28 @@ namespace CinemaManagement.GUI
                     DataProvider.pass = this.passWord;
                
                 string id = "";
-                try
+                id = isLogin();
+                if (id != null && id != "")
                 {
-                     id = isLogin();
-                    if(id != null && id != "")
+                    int type = getTypeEmployee();
+                    this.Hide();
+                    try
                     {
-                        int type = getTypeEmployee();
-                        this.Hide();
-                        try
-                        {
-                            fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
-                            f.ShowDialog();
-                            this.Show();
-                            txtPassword.Clear();
-                            txtUserName.Clear();
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Lỗi form main !");
-                        }
+                        fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                        f.ShowDialog();
+                        this.Show();
+                        txtPassword.Clear();
+                        txtUserName.Clear();
                     }
-                    
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lỗi form main!");
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                   
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu login !", "Thông báo");
-                    
-                }
-                            
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo");
+                }          
             }
         }
 

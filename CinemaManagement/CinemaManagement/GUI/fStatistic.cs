@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -91,8 +94,17 @@ namespace CinemaManagement.GUI
                     if (g.Rows[i].Cells[j].Value != null) { obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString(); }
                 }
             }
-            obj.ActiveWorkbook.SaveCopyAs(duongDan + tenTap + ".xlsx");
-            obj.ActiveWorkbook.Saved = true;
+
+            string fullPath = Path.GetFullPath(duongDan + tenTap + ".xlsx");
+            try
+            {
+                obj.ActiveWorkbook.SaveAs(fullPath);
+                obj.ActiveWorkbook.Saved = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Xóa các kí tự đặc biệt,khoảng trắng
@@ -107,7 +119,9 @@ namespace CinemaManagement.GUI
             DateTime now = DateTime.Now;
             string str = now.ToString();
             str = RemoveSpecialCharacters(str);
-            export2Excel(dgvStatistic, @"D:\", "xuatfileExcel " + str);
+
+            export2Excel(dgvStatistic, @"..\..\Excel_Statistic\", "xuatfileExcel_" + str);
+            MessageBox.Show("Đã xuất file excel thành công!");
         }
 
 
@@ -262,33 +276,33 @@ namespace CinemaManagement.GUI
 
         private void cboYear_TextChanged(object sender, EventArgs e)
         {
-            cboTimeStatistic.ResetText();
+            //cboTimeStatistic.ResetText();
             
-            if (cboCinema.Text !="")
-            {
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.loadOnCinema(cboCinema.SelectedValue.ToString());
-                dgvStatistic.DataSource = st;
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
+            //if (cboCinema.Text !="")
+            //{
+            //    DataTable st = new DataTable();
+            //    st = StatisticDAO.Instance.loadOnCinema(cboCinema.SelectedValue.ToString());
+            //    dgvStatistic.DataSource = st;
+            //    //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
+            //    int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+            //    int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+            //    lbTotalReal.Text = sum.ToString();
+            //    lbTotalPro.Text = pro.ToString();
 
-            }
-            else
-            {
-                lbNotice.Text = "THỐNG KÊ DOANH SỐ TRONG NĂM " + cboYear.Text + " CỦA HỆ THỐNG";
-                lbNotice.Show();
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.countTotalbyYear(cboYear.Text);
-                dgvStatistic.DataSource = st;
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
-            }
+            //}
+            //else
+            //{
+            //    lbNotice.Text = "THỐNG KÊ DOANH SỐ TRONG NĂM " + cboYear.Text + " CỦA HỆ THỐNG";
+            //    lbNotice.Show();
+            //    DataTable st = new DataTable();
+            //    st = StatisticDAO.Instance.countTotalbyYear(cboYear.Text);
+            //    dgvStatistic.DataSource = st;
+            //    //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
+            //    int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+            //    int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+            //    lbTotalReal.Text = sum.ToString();
+            //    lbTotalPro.Text = pro.ToString();
+            //}
             
         }
 

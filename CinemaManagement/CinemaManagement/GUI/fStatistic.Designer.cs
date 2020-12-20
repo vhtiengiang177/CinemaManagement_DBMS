@@ -61,9 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(282, 82);
+            this.label1.Location = new System.Drawing.Point(212, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Chọn tháng";
             // 
@@ -74,9 +75,10 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcel.Location = new System.Drawing.Point(935, 87);
+            this.btnExcel.Location = new System.Drawing.Point(701, 71);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(126, 32);
+            this.btnExcel.Size = new System.Drawing.Size(94, 26);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.Text = "Xuất file Excel";
             this.btnExcel.UseVisualStyleBackColor = false;
@@ -84,6 +86,7 @@
             // 
             // cboTimeStatistic
             // 
+            this.cboTimeStatistic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimeStatistic.Enabled = false;
             this.cboTimeStatistic.FormattingEnabled = true;
             this.cboTimeStatistic.Items.AddRange(new object[] {
@@ -100,9 +103,10 @@
             "Tháng 10",
             "Tháng 11",
             "Tháng 12"});
-            this.cboTimeStatistic.Location = new System.Drawing.Point(383, 79);
+            this.cboTimeStatistic.Location = new System.Drawing.Point(287, 64);
+            this.cboTimeStatistic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboTimeStatistic.Name = "cboTimeStatistic";
-            this.cboTimeStatistic.Size = new System.Drawing.Size(121, 24);
+            this.cboTimeStatistic.Size = new System.Drawing.Size(92, 21);
             this.cboTimeStatistic.TabIndex = 11;
             this.cboTimeStatistic.SelectedIndexChanged += new System.EventHandler(this.cboTimeStatistic_SelectedIndexChanged);
             // 
@@ -116,11 +120,12 @@
             this.total,
             this.promotion,
             this.real});
-            this.dgvStatistic.Location = new System.Drawing.Point(47, 200);
+            this.dgvStatistic.Location = new System.Drawing.Point(35, 162);
+            this.dgvStatistic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStatistic.Name = "dgvStatistic";
             this.dgvStatistic.RowHeadersWidth = 51;
             this.dgvStatistic.RowTemplate.Height = 24;
-            this.dgvStatistic.Size = new System.Drawing.Size(676, 378);
+            this.dgvStatistic.Size = new System.Drawing.Size(507, 307);
             this.dgvStatistic.TabIndex = 12;
             // 
             // name
@@ -161,102 +166,115 @@
             // lbmovie
             // 
             this.lbmovie.AutoSize = true;
-            this.lbmovie.Location = new System.Drawing.Point(229, 43);
+            this.lbmovie.Location = new System.Drawing.Point(172, 35);
+            this.lbmovie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbmovie.Name = "lbmovie";
-            this.lbmovie.Size = new System.Drawing.Size(16, 17);
+            this.lbmovie.Size = new System.Drawing.Size(13, 13);
             this.lbmovie.TabIndex = 21;
             this.lbmovie.Text = "0";
             // 
             // lbTotalPro
             // 
             this.lbTotalPro.AutoSize = true;
-            this.lbTotalPro.Location = new System.Drawing.Point(229, 154);
+            this.lbTotalPro.Location = new System.Drawing.Point(172, 125);
+            this.lbTotalPro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalPro.Name = "lbTotalPro";
-            this.lbTotalPro.Size = new System.Drawing.Size(16, 17);
+            this.lbTotalPro.Size = new System.Drawing.Size(13, 13);
             this.lbTotalPro.TabIndex = 20;
             this.lbTotalPro.Text = "0";
             // 
             // lbTotalReal
             // 
             this.lbTotalReal.AutoSize = true;
-            this.lbTotalReal.Location = new System.Drawing.Point(229, 116);
+            this.lbTotalReal.Location = new System.Drawing.Point(172, 94);
+            this.lbTotalReal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalReal.Name = "lbTotalReal";
-            this.lbTotalReal.Size = new System.Drawing.Size(16, 17);
+            this.lbTotalReal.Size = new System.Drawing.Size(13, 13);
             this.lbTotalReal.TabIndex = 19;
             this.lbTotalReal.Text = "0";
             // 
             // lbCinema
             // 
             this.lbCinema.AutoSize = true;
-            this.lbCinema.Location = new System.Drawing.Point(229, 14);
+            this.lbCinema.Location = new System.Drawing.Point(172, 11);
+            this.lbCinema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCinema.Name = "lbCinema";
-            this.lbCinema.Size = new System.Drawing.Size(16, 17);
+            this.lbCinema.Size = new System.Drawing.Size(13, 13);
             this.lbCinema.TabIndex = 17;
             this.lbCinema.Text = "0";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 154);
+            this.label6.Location = new System.Drawing.Point(20, 125);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 17);
+            this.label6.Size = new System.Drawing.Size(135, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Tổng giảm cho khuyến mãi";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 116);
+            this.label5.Location = new System.Drawing.Point(20, 94);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 17);
+            this.label5.Size = new System.Drawing.Size(115, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tổng doanh số thực tế";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 14);
+            this.label4.Location = new System.Drawing.Point(20, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Số chi nhánh";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 43);
+            this.label2.Location = new System.Drawing.Point(20, 35);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Số lượng phim ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(520, 82);
+            this.label3.Location = new System.Drawing.Point(390, 67);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Chọn rạp";
             // 
             // cboCinema
             // 
+            this.cboCinema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCinema.Enabled = false;
             this.cboCinema.FormattingEnabled = true;
-            this.cboCinema.Location = new System.Drawing.Point(592, 79);
+            this.cboCinema.Location = new System.Drawing.Point(444, 64);
+            this.cboCinema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboCinema.Name = "cboCinema";
-            this.cboCinema.Size = new System.Drawing.Size(131, 24);
+            this.cboCinema.Size = new System.Drawing.Size(99, 21);
             this.cboCinema.TabIndex = 16;
             this.cboCinema.SelectedIndexChanged += new System.EventHandler(this.cboCinema_SelectedIndexChanged);
             this.cboCinema.TextChanged += new System.EventHandler(this.cboCinema_TextChanged);
             // 
             // cboYear
             // 
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYear.Enabled = false;
             this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(129, 79);
+            this.cboYear.Location = new System.Drawing.Point(97, 64);
+            this.cboYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(131, 24);
+            this.cboYear.Size = new System.Drawing.Size(99, 21);
             this.cboYear.TabIndex = 18;
             this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboYear_SelectedIndexChanged);
             this.cboYear.TextChanged += new System.EventHandler(this.cboYear_TextChanged);
@@ -264,9 +282,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 82);
+            this.label7.Location = new System.Drawing.Point(38, 67);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Chọn năm";
             // 
@@ -281,17 +300,19 @@
             this.panel2.Controls.Add(this.lbCinema);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(751, 189);
+            this.panel2.Location = new System.Drawing.Point(563, 154);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 191);
+            this.panel2.Size = new System.Drawing.Size(300, 155);
             this.panel2.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(-31, 72);
+            this.label8.Location = new System.Drawing.Point(-23, 58);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(629, 17);
+            this.label8.Size = new System.Drawing.Size(472, 13);
             this.label8.TabIndex = 22;
             this.label8.Text = "_____________________________________________________________________________-";
             // 
@@ -302,9 +323,10 @@
             this.txtCtrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCtrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtCtrl.Location = new System.Drawing.Point(285, 118);
+            this.txtCtrl.Location = new System.Drawing.Point(214, 96);
+            this.txtCtrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCtrl.Name = "txtCtrl";
-            this.txtCtrl.Size = new System.Drawing.Size(194, 32);
+            this.txtCtrl.Size = new System.Drawing.Size(146, 26);
             this.txtCtrl.TabIndex = 23;
             this.txtCtrl.Text = "Tùy chỉnh thống kê";
             this.txtCtrl.UseVisualStyleBackColor = false;
@@ -317,9 +339,10 @@
             this.btnOrgan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrgan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnOrgan.Location = new System.Drawing.Point(54, 118);
+            this.btnOrgan.Location = new System.Drawing.Point(40, 96);
+            this.btnOrgan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOrgan.Name = "btnOrgan";
-            this.btnOrgan.Size = new System.Drawing.Size(216, 32);
+            this.btnOrgan.Size = new System.Drawing.Size(162, 26);
             this.btnOrgan.TabIndex = 24;
             this.btnOrgan.Text = "Thống kê mặc định";
             this.btnOrgan.UseVisualStyleBackColor = false;
@@ -328,18 +351,19 @@
             // lbNotice
             // 
             this.lbNotice.AutoSize = true;
-            this.lbNotice.Location = new System.Drawing.Point(143, 174);
+            this.lbNotice.Location = new System.Drawing.Point(107, 141);
+            this.lbNotice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNotice.Name = "lbNotice";
-            this.lbNotice.Size = new System.Drawing.Size(536, 17);
+            this.lbNotice.Size = new System.Drawing.Size(414, 13);
             this.lbNotice.TabIndex = 25;
             this.lbNotice.Text = "THỐNG KÊ DOANH SỐ CỦA TOÀN HỆ THỐNG TRONG QUÁ TRÌNH HOẠT ĐỘNG";
             // 
             // fStatistic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1196, 639);
+            this.ClientSize = new System.Drawing.Size(897, 519);
             this.Controls.Add(this.lbNotice);
             this.Controls.Add(this.btnOrgan);
             this.Controls.Add(this.txtCtrl);
@@ -352,6 +376,7 @@
             this.Controls.Add(this.cboTimeStatistic);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fStatistic";
             this.Text = "Khuyến mãi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatistic)).EndInit();

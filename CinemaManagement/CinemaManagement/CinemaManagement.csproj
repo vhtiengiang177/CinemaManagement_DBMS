@@ -250,7 +250,6 @@
     <Compile Include="GUI\ucMovie_Order.Designer.cs">
       <DependentUpon>ucMovie_Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\fChangeAccount.resx">
@@ -371,6 +370,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Excel_Statistic\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

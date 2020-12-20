@@ -43,7 +43,6 @@
             this.btnSearchType = new System.Windows.Forms.Button();
             this.cboSortTypeEmployee = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.plChooseShif = new System.Windows.Forms.Panel();
@@ -181,7 +180,6 @@
             this.panel1.Controls.Add(this.btnLoadData);
             this.panel1.Controls.Add(this.plSearch);
             this.panel1.Controls.Add(this.panel20);
-            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -324,21 +322,6 @@
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Phòng ban:";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(134)))), ((int)(((byte)(128)))));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(1177, -4);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(49, 28);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel2
             // 
@@ -1400,7 +1383,6 @@
         private System.Windows.Forms.Panel plChooseShif;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvListEmployee;
         private System.Windows.Forms.Panel plInfoOne;

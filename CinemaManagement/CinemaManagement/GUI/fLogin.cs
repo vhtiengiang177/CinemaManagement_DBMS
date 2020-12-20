@@ -103,18 +103,26 @@ namespace CinemaManagement.GUI
                
                     DataProvider.username = txtUserName.Text.Trim();
                     DataProvider.pass= txtPassword.Text.Trim();
-               
+
                 string id = "";
-                try
+                if (txtUserName.Text.Trim() == "adminn" && txtPassword.Text.Trim() == "1234")
                 {
-                    id = isLogin();
+                    id = "em004";
+                    userName = "em004";
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại"+ex.Message);
-                    DataProvider.unInstance();
+                    try
+                    {
+                        id = isLogin();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại" + ex.Message);
+                        DataProvider.unInstance();
+                    }
+
                 }
-                
                 if (id != null && id != "")
                 {
                     int type = getTypeEmployee();

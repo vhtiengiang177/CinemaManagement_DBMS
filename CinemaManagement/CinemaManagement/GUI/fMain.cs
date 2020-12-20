@@ -142,5 +142,16 @@ namespace CinemaManagement.GUI
         {
             this.Close();
         }
+
+        private void lbLogout_MouseHover(object sender, EventArgs e)
+        {
+            //object underline = lbLogout.Text.FontStyle.Underline;
+            lbLogout.Font = new Font(lbLogout.Font, FontStyle.Underline);
+        }
+
+        private void lbLogout_MouseLeave(object sender, EventArgs e)
+        {
+            lbLogout.Font = new Font(lbLogout.Font, FontStyle.Regular);
+        }
     }
 }

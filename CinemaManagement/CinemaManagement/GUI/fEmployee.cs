@@ -221,8 +221,18 @@ namespace CinemaManagement.GUI
 
             setArrayByteImage();
             Double salary = 0;
-            if (this.txtSalary.Text != "")
-                salary = Convert.ToDouble(this.txtSalary.Text);
+
+            try
+            {
+                if (this.txtSalary.Text != "")
+                    salary = Convert.ToDouble(this.txtSalary.Text);
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show("Lương nhân viên không được là chữ số !");
+                salary = 30000;
+            }
+
 
             string name = dgvListEmployee.Rows[fEmployee.cellClickIndex].Cells[1].Value.ToString().Trim();
 

@@ -26,20 +26,22 @@ namespace CinemaManagement.GUI
         public fAddEmployee()
         {
             InitializeComponent();
-            setArrayByteImage();
+            //setArrayByteImage();
             setDataCmbCinema();
             setDataCmbTypeEmployee();
+            rdoFemale.Checked = true;
         }
 
         public fAddEmployee(string id)
         {
             fAddEmployee.idNew = id;
             InitializeComponent();
-            setArrayByteImage();
+            //setArrayByteImage();
             setDataCmbCinema();
             setDataCmbTypeEmployee();
             txtID.Text = fAddEmployee.idNew;
             txtID.Enabled = false;
+            rdoFemale.Checked = true;
         }
 
         public fAddEmployee(string id, string idCinema)
@@ -47,11 +49,12 @@ namespace CinemaManagement.GUI
             fAddEmployee.idNew = id;
             fAddEmployee.idCinemaCurrent = idCinema;
             InitializeComponent();
-            setArrayByteImage();
+            //setArrayByteImage();
             setDataCmbCinema();
             setDataCmbTypeEmployee();
             txtID.Text = fAddEmployee.idNew;
             txtID.Enabled = false;
+            rdoFemale.Checked = true;
         }
 
         #region SET DATA
@@ -89,8 +92,9 @@ namespace CinemaManagement.GUI
             txtPhoneEmployee.Clear();
             txtEmailEmployee.Clear();
             txtAddressEmployee.Clear();         
-            rdoFemale.Checked = false;
+            rdoFemale.Checked = true;
             rdoMale.Checked = false;
+            picEmployee.Image = picEmployee.InitialImage;
         }
 
         /// <summary>
@@ -99,7 +103,7 @@ namespace CinemaManagement.GUI
         public void setArrayByteImage()
         {
             ms = new MemoryStream();
-            this.picEmployee.Image.Save(ms, picEmployee.Image.RawFormat);
+            this.picEmployee.Image.Save(ms, this.picEmployee.Image.RawFormat);
             arrImage = ms.GetBuffer();
             ms.Close();
         }
@@ -123,7 +127,7 @@ namespace CinemaManagement.GUI
             if (this.txtSalary.Text != "")
                 salary = Convert.ToDouble(this.txtSalary.Text);
             string name = txtNameEmployee.Text.Trim();
-
+            setArrayByteImage();
             Employee emp = new Employee();
             emp = new Employee(this.txtID.Text.Trim(),
                                      name,

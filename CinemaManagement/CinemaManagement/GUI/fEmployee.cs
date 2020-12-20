@@ -390,6 +390,7 @@ namespace CinemaManagement.GUI
                 fAdd = new fAddEmployee(idNew, idCinemaCurrent);
 
             fAdd.ShowDialog();
+            loadData();
         }
 
         #endregion

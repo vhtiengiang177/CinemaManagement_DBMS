@@ -20,13 +20,12 @@ namespace CinemaManagement.GUI
             InitializeComponent();
             addShiftInDay();
             addCategoryMovie();
-            
+
             reset();
+            // SỬA: Nếu mở comment ở sửa bên reset thì comment 3 hàm dưới này và 2 hàm addShiftInDay(); addCategoryMovie();
             chooseCinema();
-            //cboCinema.SelectedItem = null;
-            //cboTypeMovie.SelectedItem = null;
-
-
+            cboCinema.SelectedItem = null;
+            cboTypeMovie.SelectedItem = null;
 
 
         }
@@ -46,7 +45,7 @@ namespace CinemaManagement.GUI
         private void iconClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            fShowTime frm = new fShowTime();
+            //fShowTime frm = new fShowTime();
             
         }
 
@@ -55,7 +54,7 @@ namespace CinemaManagement.GUI
             txtMovie.ResetText();
             txtRoom.ResetText();
             txtShift.ResetText();
-           
+            dtmChooseDay.Value = DateTime.Now;
             txtCountMovieInDay.ResetText();
             txtCountRoom.ResetText();
             txtCountShift.ResetText();
@@ -67,6 +66,12 @@ namespace CinemaManagement.GUI
             btnChooseShift.Hide();
             btnChoosrRoom.Hide();
             btnChooseMovie.Hide();
+
+            // SỬA: Ngay từ mới vào form dữ liệu đã được đổ sẵn vào cbo, nhưng bấm vào lần nữa mới hiện nút chọn, vậy nên dùng những dòng dưới để bớt đi thao tác
+            //addShiftInDay();
+            //addCategoryMovie();
+            //dtmChooseDay.Value = DateTime.Now;
+            //chooseCinema();
         }
 
         #region CHỌN NGÀY CHIẾU
@@ -277,6 +282,19 @@ namespace CinemaManagement.GUI
             cboTypeMovie.DisplayMember = dt.Columns[1].ToString();
             cboTypeMovie.ValueMember = dt.Columns[0].ToString();
 
+            // Load hẳn phim tự động
+            if (ShowtimesDAO.Instance.loadMovie(cboTypeMovie.SelectedValue.ToString()).Rows.Count > 0)
+            {
+
+                DataTable dt1 = new DataTable();
+                dt1 = ShowtimesDAO.Instance.loadMovie(cboTypeMovie.SelectedValue.ToString());
+
+                cboMovie.DataSource = dt1;
+                cboMovie.DisplayMember = dt1.Columns[1].ToString();
+                cboMovie.ValueMember = dt1.Columns[0].ToString();
+
+            }
+
         }
 
         /// <summary>
@@ -291,12 +309,15 @@ namespace CinemaManagement.GUI
                 dt = ShowtimesDAO.Instance.checkMovieandRoom(dtmChooseDay.Value.ToString(), cboShift.SelectedValue.ToString(), cboMovie.SelectedValue.ToString());
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Phim đã được xếp ở {0} trong cùng thời điểm", dt.Rows[0][2].ToString());
+                    MessageBox.Show("Phim đã được xếp ở " + dt.Rows[0][1].ToString() + " trong cùng thời điểm");
                 }
                 else
                 {
                     btnChooseMovie.Show();
                 }
+
+                // SỬA: Phim đã được xếp ở phòng đó rồi thì để báo 1 lỗi trùng lúc thêm lịch, còn chỗ chọn phim vẫn để chọn bình thường. Ẩn 10 dòng trên
+                //btnChooseMovie.Show();
 
             }
             catch(SqlException ex)
@@ -313,7 +334,6 @@ namespace CinemaManagement.GUI
            
             if (ShowtimesDAO.Instance.loadMovie(cboTypeMovie.SelectedValue.ToString()).Rows.Count > 0)
             {
-
 
                 DataTable dt = new DataTable();
                 dt = ShowtimesDAO.Instance.loadMovie(cboTypeMovie.SelectedValue.ToString());
@@ -343,8 +363,6 @@ namespace CinemaManagement.GUI
         {
             try
             {
-
-            
             
                 bool f;
                 if (dtmDay.Text.Trim() == " " || txtRoom.Text.Trim() == "" || txtShift.Text.Trim() == "" || txtMovie.Text.Trim() == "" || flagDay==false)

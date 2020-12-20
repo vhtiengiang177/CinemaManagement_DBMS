@@ -253,30 +253,6 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket1\fAddTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket1\fAddTicket.Designer.cs">
-      <DependentUpon>fAddTicket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket1\fMovieTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket1\fMovieTicket.Designer.cs">
-      <DependentUpon>fMovieTicket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket1\fSeatTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket1\fSeatTicket.Designer.cs">
-      <DependentUpon>fSeatTicket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket1\fShowtimesTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket1\fShowtimesTicket.Designer.cs">
-      <DependentUpon>fShowtimesTicket.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="GUI\fChangeAccount.resx">
       <DependentUpon>fChangeAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,26 +328,10 @@
     <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.fShowtime_Order.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagement.GUI.ucMovie_Order.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagement.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fAddTicket.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fMovieTicket.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fSeatTicket.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagement.Ticket1.fShowtimesTicket.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticket1\fAddTicket.resx">
-      <DependentUpon>fAddTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticket1\fMovieTicket.resx">
-      <DependentUpon>fMovieTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticket1\fSeatTicket.resx">
-      <DependentUpon>fSeatTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticket1\fShowtimesTicket.resx">
-      <DependentUpon>fShowtimesTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="cinemaDBMSDataSet1.xsc">
       <DependentUpon>cinemaDBMSDataSet1.xsd</DependentUpon>

@@ -212,5 +212,12 @@ namespace CinemaManagement.DAO
 
             return listMovie;
         }
+
+        public DataTable loadCategory()
+        {
+            string query = "SELECT * FROM dbo.CategoryMovie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
     }
 }

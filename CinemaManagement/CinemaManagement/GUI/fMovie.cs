@@ -28,6 +28,8 @@ namespace CinemaManagement.GUI
             cboInfoSearchMovie.SelectedItem = "Tên phim";
         }
 
+
+
         // Tải lại toàn bộ dữ liệu
         public void loadData()
         {
@@ -37,7 +39,7 @@ namespace CinemaManagement.GUI
             this.lblShowIDMovie.Text = MovieDAO.Instance.createIDMovie().ToString(); 
             this.txtNameMovie.Text = "";
             this.txtDirectorMovie.Text = "";
-            this.cboCategoryMovie.ValueMember[0].ToString();
+           // this.cboCategoryMovie.ValueMember[0].ToString();
             this.txtRunningTimeMovie.Text = "";
             this.dtmReleaseDate.Value = DateTime.Now;
             this.txtLanguageMovie.Text = "";
@@ -56,7 +58,16 @@ namespace CinemaManagement.GUI
 
             // TODO: This line of code loads data into the 'cinemaDBMSDataSet.CategoryMovie' table. You can move, or remove it, as needed.
             // Kết nối Combo Box thể loại dưới dtb
-            this.categoryMovieTableAdapter.Fill(this.cinemaDBMSDataSet.CategoryMovie);
+            //this.categoryMovieTableAdapter.Fill(this.cinemaDBMSDataSet.CategoryMovie);
+
+
+
+            //load Category Movie
+            DataTable dtCategory = new DataTable();
+            dtCategory = MovieDAO.Instance.loadCategory();
+            cboCategoryMovie.DataSource = dtCategory;
+            cboCategoryMovie.DisplayMember = dtCategory.Columns[1].ToString();
+            cboCategoryMovie.ValueMember = dtCategory.Columns[0].ToString();
         }
 
         // Nhấn vào nút reload lại form. (tải lại danh sách)

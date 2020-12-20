@@ -32,17 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChooseDay = new System.Windows.Forms.Button();
             this.dtmChooseDay = new System.Windows.Forms.DateTimePicker();
-            this.txtCountMovieInDay = new System.Windows.Forms.TextBox();
-            this.txtShiftEmpty = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChooseShift = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cboShift = new System.Windows.Forms.ComboBox();
-            this.txtCountShift = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnChooseMovie = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,8 +57,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnChoosrRoom = new System.Windows.Forms.Button();
-            this.txtCountRoom = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cboRoom = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,6 +72,14 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboCinema = new System.Windows.Forms.ComboBox();
+            this.txtShiftEmpty = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCountMovieInDay = new System.Windows.Forms.TextBox();
+            this.txtCountRoom = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCountShift = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,33 +127,6 @@
             this.dtmChooseDay.TabIndex = 13;
             this.dtmChooseDay.ValueChanged += new System.EventHandler(this.dtmChooseDay_ValueChanged);
             // 
-            // txtCountMovieInDay
-            // 
-            this.txtCountMovieInDay.Location = new System.Drawing.Point(37, 126);
-            this.txtCountMovieInDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCountMovieInDay.Name = "txtCountMovieInDay";
-            this.txtCountMovieInDay.ReadOnly = true;
-            this.txtCountMovieInDay.Size = new System.Drawing.Size(100, 22);
-            this.txtCountMovieInDay.TabIndex = 8;
-            // 
-            // txtShiftEmpty
-            // 
-            this.txtShiftEmpty.Location = new System.Drawing.Point(36, 174);
-            this.txtShiftEmpty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtShiftEmpty.Name = "txtShiftEmpty";
-            this.txtShiftEmpty.ReadOnly = true;
-            this.txtShiftEmpty.Size = new System.Drawing.Size(100, 22);
-            this.txtShiftEmpty.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Số lượng phim đã xếp:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -163,15 +136,6 @@
             this.label3.Size = new System.Drawing.Size(159, 17);
             this.label3.TabIndex = 14;
             this.label3.Text = "1.Chọn ngày xếp lịch";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Số lượng ca còn trống:";
             // 
             // panel2
             // 
@@ -214,34 +178,13 @@
             this.cboShift.Items.AddRange(new object[] {
             "9am-11am",
             "11am-1pm",
-            "1pm-3pm",
-            "3pm-5pm"});
+            "1pm-3pm"});
             this.cboShift.Location = new System.Drawing.Point(24, 37);
             this.cboShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboShift.Name = "cboShift";
             this.cboShift.Size = new System.Drawing.Size(121, 24);
             this.cboShift.TabIndex = 20;
             this.cboShift.SelectedIndexChanged += new System.EventHandler(this.cboShift_SelectedIndexChanged);
-            // 
-            // txtCountShift
-            // 
-            this.txtCountShift.Location = new System.Drawing.Point(24, 127);
-            this.txtCountShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCountShift.Name = "txtCountShift";
-            this.txtCountShift.ReadOnly = true;
-            this.txtCountShift.Size = new System.Drawing.Size(100, 22);
-            this.txtCountShift.TabIndex = 23;
-            this.txtCountShift.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 17);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Số lượt chọn ca còn:";
-            this.label9.Visible = false;
             // 
             // panel3
             // 
@@ -458,26 +401,6 @@
             this.btnChoosrRoom.UseVisualStyleBackColor = true;
             this.btnChoosrRoom.Click += new System.EventHandler(this.btnChoosrRoom_Click);
             // 
-            // txtCountRoom
-            // 
-            this.txtCountRoom.Location = new System.Drawing.Point(23, 124);
-            this.txtCountRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCountRoom.Name = "txtCountRoom";
-            this.txtCountRoom.ReadOnly = true;
-            this.txtCountRoom.Size = new System.Drawing.Size(119, 22);
-            this.txtCountRoom.TabIndex = 30;
-            this.txtCountRoom.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(20, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(162, 17);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "Số lượt chọn phòng còn:";
-            this.label16.Visible = false;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -645,6 +568,86 @@
             this.cboCinema.TabIndex = 21;
             this.cboCinema.SelectedValueChanged += new System.EventHandler(this.cboCinema_SelectedValueChanged);
             // 
+            // txtShiftEmpty
+            // 
+            this.txtShiftEmpty.Location = new System.Drawing.Point(36, 174);
+            this.txtShiftEmpty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtShiftEmpty.Name = "txtShiftEmpty";
+            this.txtShiftEmpty.ReadOnly = true;
+            this.txtShiftEmpty.Size = new System.Drawing.Size(100, 22);
+            this.txtShiftEmpty.TabIndex = 9;
+            this.txtShiftEmpty.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Số lượng ca còn trống:";
+            this.label2.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Số lượng phim đã xếp:";
+            this.label1.Visible = false;
+            // 
+            // txtCountMovieInDay
+            // 
+            this.txtCountMovieInDay.Location = new System.Drawing.Point(37, 126);
+            this.txtCountMovieInDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCountMovieInDay.Name = "txtCountMovieInDay";
+            this.txtCountMovieInDay.ReadOnly = true;
+            this.txtCountMovieInDay.Size = new System.Drawing.Size(100, 22);
+            this.txtCountMovieInDay.TabIndex = 8;
+            this.txtCountMovieInDay.Visible = false;
+            // 
+            // txtCountRoom
+            // 
+            this.txtCountRoom.Location = new System.Drawing.Point(23, 124);
+            this.txtCountRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCountRoom.Name = "txtCountRoom";
+            this.txtCountRoom.ReadOnly = true;
+            this.txtCountRoom.Size = new System.Drawing.Size(119, 22);
+            this.txtCountRoom.TabIndex = 30;
+            this.txtCountRoom.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(20, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(162, 17);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Số lượt chọn phòng còn:";
+            this.label16.Visible = false;
+            // 
+            // txtCountShift
+            // 
+            this.txtCountShift.Location = new System.Drawing.Point(24, 127);
+            this.txtCountShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCountShift.Name = "txtCountShift";
+            this.txtCountShift.ReadOnly = true;
+            this.txtCountShift.Size = new System.Drawing.Size(100, 22);
+            this.txtCountShift.TabIndex = 23;
+            this.txtCountShift.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 17);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Số lượt chọn ca còn:";
+            this.label9.Visible = false;
+            // 
             // fAddShowtimes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -687,16 +690,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtmChooseDay;
-        private System.Windows.Forms.TextBox txtCountMovieInDay;
-        private System.Windows.Forms.TextBox txtShiftEmpty;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboShift;
-        private System.Windows.Forms.TextBox txtCountShift;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboTypeMovie;
@@ -720,8 +717,6 @@
         private System.Windows.Forms.Button btnChooseShift;
         private System.Windows.Forms.Button btnChooseMovie;
         private System.Windows.Forms.Button btnChoosrRoom;
-        private System.Windows.Forms.TextBox txtCountRoom;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label23;
@@ -736,6 +731,14 @@
         private System.Windows.Forms.DateTimePicker dtmDay;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboCinema;
+        private System.Windows.Forms.TextBox txtCountMovieInDay;
+        private System.Windows.Forms.TextBox txtShiftEmpty;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCountShift;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCountRoom;
+        private System.Windows.Forms.Label label16;
         //        private cinemaDBMSDataSet1TableAdapters.MovieTableAdapter movieTableAdapter;
     }
 }

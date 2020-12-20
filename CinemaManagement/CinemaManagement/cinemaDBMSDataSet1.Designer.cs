@@ -797,7 +797,7 @@ SELECT id_CategoryMovie, name_CategoryMovie FROM CategoryMovie WHERE (id_Categor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CinemaManagement.Properties.Settings.Default.DB25ConnectionString;
+            this._connection.ConnectionString = global::CinemaManagement.Properties.Settings.Default.DB27ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

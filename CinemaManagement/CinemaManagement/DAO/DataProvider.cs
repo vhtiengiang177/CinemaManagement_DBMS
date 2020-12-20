@@ -46,7 +46,7 @@ namespace CinemaManagement.DAO
 
    
 
-        private string connectionString = @"Data Source=192.168.1.50,1433;Initial Catalog=DB25;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass;
+        private string connectionString = @"Data Source=192.168.1.239,1433;Initial Catalog=DB27;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass;
         //private string connectionString = @"Data Source=localhost;Initial Catalog=DB24;Integrated Security=False;Connect Timeout=30;user ID= "+ username + ";password=" + pass ;
         /// <summary>
         /// Execute query trả về table. Dùng cho DataSoure của DataGridView.

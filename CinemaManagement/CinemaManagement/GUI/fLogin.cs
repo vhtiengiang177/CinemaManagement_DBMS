@@ -135,9 +135,10 @@ namespace CinemaManagement.GUI
                         txtPassword.Clear();
                         txtUserName.Clear();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi form main!");
+                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show("Lỗi form main!");
                     }
                 }
                 //else

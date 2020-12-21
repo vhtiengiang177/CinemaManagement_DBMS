@@ -69,8 +69,8 @@
             this.trgCinemaManager});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1028, 27);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1371, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,7 +78,7 @@
             // 
             this.trpHome_Order.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpHome_Order.Name = "trpHome_Order";
-            this.trpHome_Order.Size = new System.Drawing.Size(81, 23);
+            this.trpHome_Order.Size = new System.Drawing.Size(100, 27);
             this.trpHome_Order.Text = "Trang chủ";
             this.trpHome_Order.Click += new System.EventHandler(this.trpHome_Order_Click);
             // 
@@ -89,20 +89,20 @@
             this.trgShiftManager});
             this.trpEmployeeManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpEmployeeManager.Name = "trpEmployeeManager";
-            this.trpEmployeeManager.Size = new System.Drawing.Size(133, 23);
+            this.trpEmployeeManager.Size = new System.Drawing.Size(163, 27);
             this.trpEmployeeManager.Text = "Quản lý nhân viên";
             // 
             // trgEmpManager
             // 
             this.trgEmpManager.Name = "trgEmpManager";
-            this.trgEmpManager.Size = new System.Drawing.Size(190, 24);
+            this.trgEmpManager.Size = new System.Drawing.Size(233, 28);
             this.trgEmpManager.Text = "Quản lý nhân viên";
             this.trgEmpManager.Click += new System.EventHandler(this.trgEmpManager_Click);
             // 
             // trgShiftManager
             // 
             this.trgShiftManager.Name = "trgShiftManager";
-            this.trgShiftManager.Size = new System.Drawing.Size(190, 24);
+            this.trgShiftManager.Size = new System.Drawing.Size(233, 28);
             this.trgShiftManager.Text = "Xếp ca làm việc";
             this.trgShiftManager.Click += new System.EventHandler(this.trgShiftManager_Click);
             // 
@@ -110,7 +110,7 @@
             // 
             this.trpCustomerManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpCustomerManager.Name = "trpCustomerManager";
-            this.trpCustomerManager.Size = new System.Drawing.Size(144, 23);
+            this.trpCustomerManager.Size = new System.Drawing.Size(177, 27);
             this.trpCustomerManager.Text = "Quản lý khách hàng";
             this.trpCustomerManager.Click += new System.EventHandler(this.trpCustomerManager_Click);
             // 
@@ -122,27 +122,27 @@
             this.trpShowTimeManager});
             this.quảnLýPhimToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.quảnLýPhimToolStripMenuItem.Name = "quảnLýPhimToolStripMenuItem";
-            this.quảnLýPhimToolStripMenuItem.Size = new System.Drawing.Size(104, 23);
+            this.quảnLýPhimToolStripMenuItem.Size = new System.Drawing.Size(127, 27);
             this.quảnLýPhimToolStripMenuItem.Text = "Quản lý phim";
             // 
             // trpFilmManager
             // 
             this.trpFilmManager.Name = "trpFilmManager";
-            this.trpFilmManager.Size = new System.Drawing.Size(186, 24);
+            this.trpFilmManager.Size = new System.Drawing.Size(229, 28);
             this.trpFilmManager.Text = "Quản lý phim";
             this.trpFilmManager.Click += new System.EventHandler(this.trpFilmManager_Click);
             // 
             // trpFilmCategoryManager
             // 
             this.trpFilmCategoryManager.Name = "trpFilmCategoryManager";
-            this.trpFilmCategoryManager.Size = new System.Drawing.Size(186, 24);
+            this.trpFilmCategoryManager.Size = new System.Drawing.Size(229, 28);
             this.trpFilmCategoryManager.Text = "Quản lý loại phim";
             this.trpFilmCategoryManager.Click += new System.EventHandler(this.trpFilmCategoryManager_Click);
             // 
             // trpShowTimeManager
             // 
             this.trpShowTimeManager.Name = "trpShowTimeManager";
-            this.trpShowTimeManager.Size = new System.Drawing.Size(186, 24);
+            this.trpShowTimeManager.Size = new System.Drawing.Size(229, 28);
             this.trpShowTimeManager.Text = "Xếp lịch chiếu";
             this.trpShowTimeManager.Click += new System.EventHandler(this.trpShowTimeManager_Click);
             // 
@@ -150,7 +150,7 @@
             // 
             this.trpPromotionManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpPromotionManager.Name = "trpPromotionManager";
-            this.trpPromotionManager.Size = new System.Drawing.Size(144, 23);
+            this.trpPromotionManager.Size = new System.Drawing.Size(176, 27);
             this.trpPromotionManager.Text = "Quản lý khuyến mãi";
             this.trpPromotionManager.Click += new System.EventHandler(this.trpPromotionManager_Click);
             // 
@@ -158,7 +158,7 @@
             // 
             this.trpSatis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trpSatis.Name = "trpSatis";
-            this.trpSatis.Size = new System.Drawing.Size(78, 23);
+            this.trpSatis.Size = new System.Drawing.Size(95, 27);
             this.trpSatis.Text = "Thống kê";
             this.trpSatis.Click += new System.EventHandler(this.trpSatis_Click);
             // 
@@ -166,7 +166,7 @@
             // 
             this.trgCinemaManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trgCinemaManager.Name = "trgCinemaManager";
-            this.trgCinemaManager.Size = new System.Drawing.Size(93, 23);
+            this.trgCinemaManager.Size = new System.Drawing.Size(113, 27);
             this.trgCinemaManager.Text = "Quản lý rạp";
             this.trgCinemaManager.Click += new System.EventHandler(this.trgCinemaManager_Click);
             // 
@@ -174,11 +174,12 @@
             // 
             this.plOpenChildForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plOpenChildForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plOpenChildForm.Location = new System.Drawing.Point(107, 27);
-            this.plOpenChildForm.MaximumSize = new System.Drawing.Size(921, 683);
-            this.plOpenChildForm.MinimumSize = new System.Drawing.Size(921, 683);
+            this.plOpenChildForm.Location = new System.Drawing.Point(143, 31);
+            this.plOpenChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plOpenChildForm.MaximumSize = new System.Drawing.Size(1228, 841);
+            this.plOpenChildForm.MinimumSize = new System.Drawing.Size(1228, 841);
             this.plOpenChildForm.Name = "plOpenChildForm";
-            this.plOpenChildForm.Size = new System.Drawing.Size(921, 683);
+            this.plOpenChildForm.Size = new System.Drawing.Size(1228, 841);
             this.plOpenChildForm.TabIndex = 1;
             // 
             // panel2
@@ -190,9 +191,10 @@
             this.panel2.Controls.Add(this.lbChangeAccount);
             this.panel2.Controls.Add(this.picEmployeeMain);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Location = new System.Drawing.Point(0, 31);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 582);
+            this.panel2.Size = new System.Drawing.Size(267, 719);
             this.panel2.TabIndex = 0;
             // 
             // lbLogout
@@ -200,9 +202,10 @@
             this.lbLogout.AutoSize = true;
             this.lbLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogout.ForeColor = System.Drawing.Color.DarkGray;
-            this.lbLogout.Location = new System.Drawing.Point(60, 601);
+            this.lbLogout.Location = new System.Drawing.Point(80, 740);
+            this.lbLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLogout.Name = "lbLogout";
-            this.lbLogout.Size = new System.Drawing.Size(72, 17);
+            this.lbLogout.Size = new System.Drawing.Size(84, 20);
             this.lbLogout.TabIndex = 6;
             this.lbLogout.Text = "Đăng xuất";
             this.lbLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,9 +217,10 @@
             // 
             this.lbNameEmployeeMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameEmployeeMain.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbNameEmployeeMain.Location = new System.Drawing.Point(6, 237);
+            this.lbNameEmployeeMain.Location = new System.Drawing.Point(8, 292);
+            this.lbNameEmployeeMain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameEmployeeMain.Name = "lbNameEmployeeMain";
-            this.lbNameEmployeeMain.Size = new System.Drawing.Size(191, 27);
+            this.lbNameEmployeeMain.Size = new System.Drawing.Size(255, 33);
             this.lbNameEmployeeMain.TabIndex = 5;
             this.lbNameEmployeeMain.Text = "Name";
             this.lbNameEmployeeMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +229,10 @@
             // 
             this.lbIdEmployeeMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdEmployeeMain.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbIdEmployeeMain.Location = new System.Drawing.Point(3, 199);
+            this.lbIdEmployeeMain.Location = new System.Drawing.Point(4, 245);
+            this.lbIdEmployeeMain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdEmployeeMain.Name = "lbIdEmployeeMain";
-            this.lbIdEmployeeMain.Size = new System.Drawing.Size(189, 23);
+            this.lbIdEmployeeMain.Size = new System.Drawing.Size(252, 28);
             this.lbIdEmployeeMain.TabIndex = 4;
             this.lbIdEmployeeMain.Text = "ID";
             this.lbIdEmployeeMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,9 +242,10 @@
             this.lbChangeAccount.AutoSize = true;
             this.lbChangeAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChangeAccount.ForeColor = System.Drawing.Color.DarkGray;
-            this.lbChangeAccount.Location = new System.Drawing.Point(46, 573);
+            this.lbChangeAccount.Location = new System.Drawing.Point(61, 705);
+            this.lbChangeAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbChangeAccount.Name = "lbChangeAccount";
-            this.lbChangeAccount.Size = new System.Drawing.Size(125, 17);
+            this.lbChangeAccount.Size = new System.Drawing.Size(144, 20);
             this.lbChangeAccount.TabIndex = 3;
             this.lbChangeAccount.Text = "Thay đổi tài khoản";
             this.lbChangeAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,25 +256,26 @@
             // 
             this.picEmployeeMain.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picEmployeeMain.ErrorImage")));
             this.picEmployeeMain.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEmployeeMain.InitialImage")));
-            this.picEmployeeMain.Location = new System.Drawing.Point(23, 22);
+            this.picEmployeeMain.Location = new System.Drawing.Point(31, 27);
+            this.picEmployeeMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picEmployeeMain.Name = "picEmployeeMain";
-            this.picEmployeeMain.Size = new System.Drawing.Size(151, 174);
+            this.picEmployeeMain.Size = new System.Drawing.Size(201, 214);
             this.picEmployeeMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployeeMain.TabIndex = 0;
             this.picEmployeeMain.TabStop = false;
             // 
             // fMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1371, 750);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.plOpenChildForm);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(1134, 743);
-            this.MinimumSize = new System.Drawing.Size(1027, 597);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1506, 904);
+            this.MinimumSize = new System.Drawing.Size(1363, 724);
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rạp chiếu phim BYTG";

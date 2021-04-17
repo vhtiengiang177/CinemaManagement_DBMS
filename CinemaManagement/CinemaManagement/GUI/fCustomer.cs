@@ -123,7 +123,7 @@ namespace CinemaManagement.GUI
                 loadCustomer();
                 if (CustomerDAO.Instance.UpdateCustomer(customer))
                 {
-                    MessageBox.Show("Thành công");
+                    MessageBox.Show("Sửa Thành công");
                     loadData();
                     reset();
                 }
@@ -138,13 +138,38 @@ namespace CinemaManagement.GUI
         private void btnDelete_Click(object sender, EventArgs e)
         {
             loadCustomer();
-            if (CustomerDAO.Instance.DeleteCustomer(customer))
+            
+
+            try
             {
-                MessageBox.Show("Thành công");
-                loadData();
-                reset();
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp 
+                traloi = MessageBox.Show("Bạn có chắc chắn xóa  khách hàng này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không? 
+
+                if (traloi == DialogResult.Yes)
+                {
+
+                    // Thực hiện câu lệnh SQL 
+                   
+                    if (CustomerDAO.Instance.DeleteCustomer(customer))
+                    {
+                        // Cập nhật lại DataGridView 
+                        reset();
+                        MessageBox.Show(" Xóa thành công!");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không xóa được!");
+                    }
+                }
             }
-            else MessageBox.Show("Lỗi");
+            catch
+            {
+                MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         void loadData()

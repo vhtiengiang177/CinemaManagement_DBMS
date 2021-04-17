@@ -47,7 +47,11 @@ namespace CinemaManagement.GUI
                 picEmployeeMain.Image =BSImage.convertToImage((byte[])dtEmp.Rows[0][11]);
             else
                 picEmployeeMain.Image = picEmployeeMain.ErrorImage;
-
+            trgCinemaManager.Visible = false;
+            trgEmpManager.Visible = false;
+            trpPromotionManager.Visible = false;
+            trpSatis.Visible = false;
+            trgShiftManager.Visible = false;
             openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
         }
 

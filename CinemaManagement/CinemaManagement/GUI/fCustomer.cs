@@ -232,5 +232,10 @@ namespace CinemaManagement.GUI
 
             }
         }
+
+        private void fCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

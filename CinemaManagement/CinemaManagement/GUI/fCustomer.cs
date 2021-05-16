@@ -45,7 +45,7 @@ namespace CinemaManagement.GUI
             txtLNameCustomer.ResetText();
             txtPhoneCustomer.ResetText();
             txtPointCustomer.ResetText();
-            txtQrCustomer.ResetText();
+            //txtQrCustomer.ResetText();
             txtSexCustomer.ResetText();
             txtSearch.ResetText();
             txtIdCustomer.ResetText();
@@ -63,7 +63,7 @@ namespace CinemaManagement.GUI
             customer.Address_Customer = txtAddressCustomer.Text;
             customer.Point_Customer = Convert.ToInt32(txtPointCustomer.Text);
             customer.Id_TypeCustomer = cboTypeCustomer.SelectedValue.ToString();
-            customer.Qr_Customer = txtQrCustomer.Text;
+            //customer.Qr_Customer = txtQrCustomer.Text;
         }
 
         void showCustomer()
@@ -79,7 +79,7 @@ namespace CinemaManagement.GUI
             this.txtAddressCustomer.Text = customer.Address_Customer;
             this.txtPointCustomer.Text = customer.Point_Customer.ToString();
             this.cboTypeCustomer.Text = customer.Id_TypeCustomer.ToString();
-            this.txtQrCustomer.Text = customer.Qr_Customer;
+            //this.txtQrCustomer.Text = customer.Qr_Customer;
         }
         string createAutoIdCustomer()
         {

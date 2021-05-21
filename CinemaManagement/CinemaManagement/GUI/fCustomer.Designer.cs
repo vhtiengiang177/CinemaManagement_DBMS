@@ -58,23 +58,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtPhoneCustomer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.txtIdentityCardCustomer = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.txtPointCustomer = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtSexCustomer = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtFNameCustomer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.txtPointCustomer = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picReload = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCustomer)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,12 +87,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListCustomer
@@ -342,6 +344,7 @@
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.picReload);
             this.panel13.Controls.Add(this.label9);
             this.panel13.Controls.Add(this.txtSearch);
             this.panel13.Controls.Add(this.btnSearch);
@@ -365,11 +368,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(75, 17);
+            this.txtSearch.Location = new System.Drawing.Point(103, 18);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(383, 29);
+            this.txtSearch.Size = new System.Drawing.Size(293, 29);
             this.txtSearch.TabIndex = 13;
             // 
             // btnSearch
@@ -379,7 +382,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(464, 17);
+            this.btnSearch.Location = new System.Drawing.Point(402, 17);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(95, 30);
@@ -434,6 +437,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(291, 443);
             this.panel3.TabIndex = 35;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(4, 278);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(151, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
             // 
             // panel6
             // 
@@ -495,6 +509,37 @@
             this.label12.Text = "CMND: ";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.txtPointCustomer);
+            this.panel15.Controls.Add(this.label6);
+            this.panel15.Location = new System.Drawing.Point(7, 383);
+            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(255, 46);
+            this.panel15.TabIndex = 37;
+            // 
+            // txtPointCustomer
+            // 
+            this.txtPointCustomer.Location = new System.Drawing.Point(121, 9);
+            this.txtPointCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPointCustomer.Name = "txtPointCustomer";
+            this.txtPointCustomer.Size = new System.Drawing.Size(125, 22);
+            this.txtPointCustomer.TabIndex = 1;
+            this.txtPointCustomer.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(3, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Điểm tích lũy: ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.txtSexCustomer);
@@ -555,37 +600,6 @@
             this.label10.Text = "Tên: ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.txtPointCustomer);
-            this.panel15.Controls.Add(this.label6);
-            this.panel15.Location = new System.Drawing.Point(7, 383);
-            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(255, 46);
-            this.panel15.TabIndex = 37;
-            // 
-            // txtPointCustomer
-            // 
-            this.txtPointCustomer.Location = new System.Drawing.Point(121, 9);
-            this.txtPointCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPointCustomer.Name = "txtPointCustomer";
-            this.txtPointCustomer.Size = new System.Drawing.Size(125, 22);
-            this.txtPointCustomer.TabIndex = 1;
-            this.txtPointCustomer.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(3, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Điểm tích lũy: ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -598,16 +612,17 @@
             this.label14.TabIndex = 17;
             this.label14.Text = "CINEMA BYTG";
             // 
-            // pictureBox2
+            // picReload
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(4, 278);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(151, 79);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
+            this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
+            this.picReload.Location = new System.Drawing.Point(506, 17);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(37, 30);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReload.TabIndex = 44;
+            this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
             // 
             // fCustomer
             // 
@@ -641,17 +656,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,5 +720,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picReload;
     }
 }

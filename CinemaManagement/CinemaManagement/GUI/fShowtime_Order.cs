@@ -106,13 +106,18 @@ namespace CinemaManagement.GUI
         void loadDateShiftShow()
         {
             List<DateTime> listDate = ShowTimeOrderDAO.Instance.getDateShiftShow(Id_movie);
-            if (fplShiftShow.Controls.Count > 0)
+            if (listDate.Count == 0)
+            {
+                btnNext.Hide();
+            }
+                if (fplShiftShow.Controls.Count > 0)
             {
                 // Xóa các control trên flow layout panel để không bị hiện lặp lại
                 fplShiftShow.Controls.Clear();
             }
             foreach (var item in listDate)
             {
+                
                 Button btn = new Button() { Width = 100, Height = 100 };
 
                

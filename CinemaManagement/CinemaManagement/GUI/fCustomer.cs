@@ -237,5 +237,11 @@ namespace CinemaManagement.GUI
         {
 
         }
+
+        private void picReload_Click(object sender, EventArgs e)
+        {
+            reset();
+            loadData();
+        }
     }
 }

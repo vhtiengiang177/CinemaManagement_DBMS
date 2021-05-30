@@ -137,6 +137,12 @@
     <Compile Include="GUI\fCinema.Designer.cs">
       <DependentUpon>fCinema.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fEmployee_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fEmployee_New.Designer.cs">
+      <DependentUpon>fEmployee_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fShowSeat_Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fCinema.resx">
       <DependentUpon>fCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fEmployee_New.resx">
+      <DependentUpon>fEmployee_New.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fShowSeat_Order.resx">
       <DependentUpon>fShowSeat_Order.cs</DependentUpon>

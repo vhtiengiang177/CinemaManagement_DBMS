@@ -224,7 +224,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(0, 4);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(215, 18);
+            this.label10.Size = new System.Drawing.Size(340, 29);
             this.label10.TabIndex = 3;
             this.label10.Text = "Thống kê theo chức vụ nhân viên:";
             // 
@@ -234,7 +234,7 @@
             this.cboSortTypeEmployee.FormattingEnabled = true;
             this.cboSortTypeEmployee.Location = new System.Drawing.Point(3, 23);
             this.cboSortTypeEmployee.Name = "cboSortTypeEmployee";
-            this.cboSortTypeEmployee.Size = new System.Drawing.Size(169, 26);
+            this.cboSortTypeEmployee.Size = new System.Drawing.Size(169, 37);
             this.cboSortTypeEmployee.TabIndex = 4;
             this.cboSortTypeEmployee.SelectedValueChanged += new System.EventHandler(this.cmbSortTypeEmployee_SelectedValueChanged);
             // 
@@ -307,7 +307,7 @@
             "CMND"});
             this.cboTypeSearchEmployee.Location = new System.Drawing.Point(5, 28);
             this.cboTypeSearchEmployee.Name = "cboTypeSearchEmployee";
-            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(96, 26);
+            this.cboTypeSearchEmployee.Size = new System.Drawing.Size(96, 37);
             this.cboTypeSearchEmployee.TabIndex = 0;
             this.cboTypeSearchEmployee.SelectedIndexChanged += new System.EventHandler(this.cboTypeSearchEmployee_SelectedIndexChanged);
             // 
@@ -442,7 +442,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.Info;
             this.label8.Location = new System.Drawing.Point(8, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 17);
+            this.label8.Size = new System.Drawing.Size(98, 27);
             this.label8.TabIndex = 3;
             this.label8.Text = "Liên hệ:";
             // 
@@ -492,7 +492,7 @@
             this.cmbCinema.FormattingEnabled = true;
             this.cmbCinema.Location = new System.Drawing.Point(137, 8);
             this.cmbCinema.Name = "cmbCinema";
-            this.cmbCinema.Size = new System.Drawing.Size(233, 26);
+            this.cmbCinema.Size = new System.Drawing.Size(233, 37);
             this.cmbCinema.TabIndex = 2;
             // 
             // label9
@@ -501,7 +501,7 @@
             this.label9.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 17);
+            this.label9.Size = new System.Drawing.Size(63, 27);
             this.label9.TabIndex = 1;
             this.label9.Text = "Rạp:";
             // 
@@ -520,7 +520,7 @@
             this.label7.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 17);
+            this.label7.Size = new System.Drawing.Size(92, 27);
             this.label7.TabIndex = 1;
             this.label7.Text = "Địa chỉ:";
             // 
@@ -530,7 +530,7 @@
             this.txtAddressEmployee.ForeColor = System.Drawing.Color.LightCoral;
             this.txtAddressEmployee.Location = new System.Drawing.Point(138, 9);
             this.txtAddressEmployee.Name = "txtAddressEmployee";
-            this.txtAddressEmployee.Size = new System.Drawing.Size(243, 18);
+            this.txtAddressEmployee.Size = new System.Drawing.Size(243, 28);
             this.txtAddressEmployee.TabIndex = 0;
             // 
             // plEmail
@@ -548,7 +548,7 @@
             this.label6.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(11, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.Size = new System.Drawing.Size(79, 27);
             this.label6.TabIndex = 1;
             this.label6.Text = "Email:";
             // 
@@ -558,7 +558,7 @@
             this.txtEmailEmployee.ForeColor = System.Drawing.Color.LightCoral;
             this.txtEmailEmployee.Location = new System.Drawing.Point(138, 15);
             this.txtEmailEmployee.Name = "txtEmailEmployee";
-            this.txtEmailEmployee.Size = new System.Drawing.Size(243, 18);
+            this.txtEmailEmployee.Size = new System.Drawing.Size(243, 28);
             this.txtEmailEmployee.TabIndex = 0;
             // 
             // plPhone
@@ -567,7 +567,7 @@
             this.plPhone.Controls.Add(this.txtPhoneEmployee);
             this.plPhone.Location = new System.Drawing.Point(3, 40);
             this.plPhone.Name = "plPhone";
-            this.plPhone.Size = new System.Drawing.Size(391, 37);
+            this.plPhone.Size = new System.Drawing.Size(391, 45);
             this.plPhone.TabIndex = 0;
             // 
             // label5
@@ -576,7 +576,7 @@
             this.label5.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(11, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.Size = new System.Drawing.Size(63, 27);
             this.label5.TabIndex = 1;
             this.label5.Text = "SĐT:";
             // 
@@ -586,7 +586,7 @@
             this.txtPhoneEmployee.ForeColor = System.Drawing.Color.LightCoral;
             this.txtPhoneEmployee.Location = new System.Drawing.Point(138, 15);
             this.txtPhoneEmployee.Name = "txtPhoneEmployee";
-            this.txtPhoneEmployee.Size = new System.Drawing.Size(243, 18);
+            this.txtPhoneEmployee.Size = new System.Drawing.Size(243, 28);
             this.txtPhoneEmployee.TabIndex = 0;
             // 
             // btnAddNewEmployee
@@ -690,7 +690,7 @@
             this.txtStateEmployee.ForeColor = System.Drawing.Color.Salmon;
             this.txtStateEmployee.Location = new System.Drawing.Point(286, 302);
             this.txtStateEmployee.Name = "txtStateEmployee";
-            this.txtStateEmployee.Size = new System.Drawing.Size(100, 18);
+            this.txtStateEmployee.Size = new System.Drawing.Size(100, 28);
             this.txtStateEmployee.TabIndex = 9;
             // 
             // plGender
@@ -707,7 +707,7 @@
             this.rdoMale.AutoSize = true;
             this.rdoMale.Location = new System.Drawing.Point(48, 16);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(58, 22);
+            this.rdoMale.Size = new System.Drawing.Size(90, 33);
             this.rdoMale.TabIndex = 1;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Nam";
@@ -718,7 +718,7 @@
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Location = new System.Drawing.Point(3, 16);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(47, 22);
+            this.rdoFemale.Size = new System.Drawing.Size(73, 33);
             this.rdoFemale.TabIndex = 0;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Nữ";
@@ -737,7 +737,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.Location = new System.Drawing.Point(23, 23);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(93, 18);
+            this.txtID.Size = new System.Drawing.Size(93, 28);
             this.txtID.TabIndex = 0;
             // 
             // pl
@@ -755,7 +755,7 @@
             this.label4.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(11, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.Size = new System.Drawing.Size(92, 27);
             this.label4.TabIndex = 1;
             this.label4.Text = "Lương:";
             // 
@@ -765,7 +765,7 @@
             this.txtSalary.ForeColor = System.Drawing.Color.LightCoral;
             this.txtSalary.Location = new System.Drawing.Point(98, 14);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(122, 18);
+            this.txtSalary.Size = new System.Drawing.Size(122, 28);
             this.txtSalary.TabIndex = 0;
             // 
             // plIdentify
@@ -783,7 +783,7 @@
             this.label3.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(89, 27);
             this.label3.TabIndex = 1;
             this.label3.Text = "CMND:";
             // 
@@ -793,7 +793,7 @@
             this.txtIndentity.ForeColor = System.Drawing.Color.LightCoral;
             this.txtIndentity.Location = new System.Drawing.Point(98, 12);
             this.txtIndentity.Name = "txtIndentity";
-            this.txtIndentity.Size = new System.Drawing.Size(122, 18);
+            this.txtIndentity.Size = new System.Drawing.Size(122, 28);
             this.txtIndentity.TabIndex = 0;
             // 
             // plBirthDay
@@ -811,7 +811,7 @@
             this.dpkBirthDateEmp.Location = new System.Drawing.Point(78, 10);
             this.dpkBirthDateEmp.Margin = new System.Windows.Forms.Padding(2);
             this.dpkBirthDateEmp.Name = "dpkBirthDateEmp";
-            this.dpkBirthDateEmp.Size = new System.Drawing.Size(150, 25);
+            this.dpkBirthDateEmp.Size = new System.Drawing.Size(150, 35);
             this.dpkBirthDateEmp.TabIndex = 16;
             // 
             // label2
@@ -820,7 +820,7 @@
             this.label2.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(121, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Năm sinh:";
             // 
@@ -852,7 +852,7 @@
             this.cboTypeEmployee.FormattingEnabled = true;
             this.cboTypeEmployee.Location = new System.Drawing.Point(98, 3);
             this.cboTypeEmployee.Name = "cboTypeEmployee";
-            this.cboTypeEmployee.Size = new System.Drawing.Size(121, 26);
+            this.cboTypeEmployee.Size = new System.Drawing.Size(121, 37);
             this.cboTypeEmployee.TabIndex = 2;
             // 
             // label1
@@ -861,7 +861,7 @@
             this.label1.Font = new System.Drawing.Font("MT Extra", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(110, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chức vụ:";
             // 
@@ -897,7 +897,7 @@
             // 
             // fEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(921, 644);

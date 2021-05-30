@@ -116,35 +116,46 @@ namespace CinemaManagement.GUI
                     {
                         id = isLogin();
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại" + ex.Message);
+                        MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại");
                         DataProvider.unInstance();
                     }
 
                 }
                 if (id != null && id != "")
                 {
-                    int type = getTypeEmployee();
-                    this.Hide();
-                    try
+                    // kiểm tra trạng thái
+                    if ((bool)LoginDAO.Instance.checkStateLogin(userName, passWord) != true)
                     {
-                        fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
-                        f.ShowDialog();
-                        this.Show();
-                        txtPassword.Clear();
-                        txtUserName.Clear();
+                        id = "";
+                        MessageBox.Show("Tài khoản đã ngừng hoạt động! Vui lòng liên hệ quản lý hệ thống để mở lại tài khoản.");
+                        DataProvider.unInstance();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show(ex.Message);
-                        //MessageBox.Show("Lỗi form main!");
+                        int type = getTypeEmployee();
+                        this.Hide();
+                        try
+                        {
+                            fMain f = new fMain(type, id, this.txtUserName.Text.Trim(), this.txtPassword.Text.Trim());
+                            f.ShowDialog();
+                            this.Show();
+                            txtPassword.Clear();
+                            txtUserName.Clear();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            //MessageBox.Show("Lỗi form main!");
+                        }
                     }
                 }
-                //else
-                //{
-                //    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo");
-                //}          
+                else
+                {
+                    MessageBox.Show("Mật khẩu bị sai hoặc tài khoản không tồn tại");
+                    DataProvider.unInstance();
+                }
             }
         }
 

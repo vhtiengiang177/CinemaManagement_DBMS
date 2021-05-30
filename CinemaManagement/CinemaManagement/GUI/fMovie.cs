@@ -288,13 +288,13 @@ namespace CinemaManagement.GUI
         {
             try
             {
-                DialogResult traloi;
+                DialogResult result;
                 // Hiện hộp thoại hỏi đáp 
-                traloi = MessageBox.Show("Bạn có chắc chắn xóa  phim này không?", "Trả lời",
+                result = MessageBox.Show("Bạn có chắc chắn xóa phim này không?", "Thông báo",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 // Kiểm tra có nhắp chọn nút Ok không? 
 
-                if (traloi == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
 
                     // Thực hiện câu lệnh SQL 

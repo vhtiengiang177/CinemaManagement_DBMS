@@ -9,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -238,6 +239,10 @@ namespace CinemaManagement.GUI
         public bool inputValidate()
         {
             int errorCount = 0;
+            string pattern = @"^[_a-zA-Z0-9][_.a-zA-Z0-9]*@[-.a-zA-Z0-9]+(\.[_.a-zA-Z0-9]+)*\.
+   (com|edu|info|gov|int|mil|net|org|biz|name|museum|coop|aero|pro|tv|vn|[a-zA-Z]{2})$";
+            //Regular expression object
+            Regex check = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
             if (txtNameEmployee.Text.Trim().Length <= 0)
             {
                 errorProvider.SetError(this.txtNameEmployee, "Không để trống trường này.");
@@ -270,10 +275,21 @@ namespace CinemaManagement.GUI
                 errorProvider.SetError(this.txtEmailEmployee, "Không để trống trường này.");
                 errorCount += 1;
             }
+            else if (!check.IsMatch(this.txtEmailEmployee.Text.Trim().ToLower()))
+            {
+                errorProvider.SetError(this.txtEmailEmployee, "Định dạng email chưa chính xác.");
+                errorCount += 1;
+            }
             else
             {
                 errorProvider.SetError(this.txtEmailEmployee, null);
             }
+            if (DateTime.Now.Year - dpkBirthDateEmp.Value.Year < 18)
+            {
+                errorProvider.SetError(this.dpkBirthDateEmp, "Nhân viên phải từ 18 tuổi trở lên.");
+                errorCount += 1;
+            }
+            else errorProvider.SetError(this.dpkBirthDateEmp, null);
             if (errorCount == 0)
             {
                 return true; // Không có lỗi nào nữa

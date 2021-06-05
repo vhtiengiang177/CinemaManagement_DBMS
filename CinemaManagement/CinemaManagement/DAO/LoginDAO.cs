@@ -34,5 +34,11 @@ namespace CinemaManagement.DAO
             string query = "select dbo.fun_selectTypeEmployee( @user )";
             return DataProvider.Instance.ExecuteScalar(query, new object[] { userName });
         }
+
+        public object checkStateLogin(string userName, string passWord)
+        {
+            string query = "exec sp_CheckStateLogin @user , @pass";
+            return DataProvider.Instance.ExecuteScalar(query, new object[] { userName, passWord });
+        }
     }
 }

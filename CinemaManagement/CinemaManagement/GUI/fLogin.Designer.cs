@@ -138,7 +138,7 @@
             this.ckbHidePass.AutoSize = true;
             this.ckbHidePass.Location = new System.Drawing.Point(252, 24);
             this.ckbHidePass.Name = "ckbHidePass";
-            this.ckbHidePass.Size = new System.Drawing.Size(18, 17);
+            this.ckbHidePass.Size = new System.Drawing.Size(22, 21);
             this.ckbHidePass.TabIndex = 2;
             this.ckbHidePass.UseVisualStyleBackColor = true;
             this.ckbHidePass.CheckedChanged += new System.EventHandler(this.ckbHidePass_CheckedChanged);
@@ -150,11 +150,11 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPassword.Location = new System.Drawing.Point(92, 18);
+            this.txtPassword.Location = new System.Drawing.Point(80, 18);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(148, 22);
+            this.txtPassword.Size = new System.Drawing.Size(160, 22);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -166,9 +166,9 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(5, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 19);
+            this.label2.Size = new System.Drawing.Size(102, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Mật khẩu";
+            this.label2.Text = "Password: ";
             // 
             // panel6
             // 
@@ -186,10 +186,10 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtUserName.Location = new System.Drawing.Point(92, 20);
+            this.txtUserName.Location = new System.Drawing.Point(80, 20);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(185, 22);
+            this.txtUserName.Size = new System.Drawing.Size(197, 22);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -200,9 +200,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 19);
+            this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tài khoản";
+            this.label1.Text = "Username: ";
             // 
             // panel4
             // 
@@ -231,17 +231,17 @@
             this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(131, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 23);
+            this.label3.Size = new System.Drawing.Size(159, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Xin chào bạn !";
             // 
             // fLogin
             // 
             this.AcceptButton = this.btnSignIn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(314, 276);
+            this.ClientSize = new System.Drawing.Size(310, 267);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(332, 323);

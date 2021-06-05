@@ -32,7 +32,7 @@ namespace CinemaManagement.GUI
         {
             int a, b, c, d, f;
             a = 1; b = 1; c = 1; d = 1; f = 1;
-            if (String.Compare(txtPassW.Text.ToString().Trim(), oldPassword.Trim(), true) != 0) MessageBox.Show("Mật khẩu không đúng !"); else f = 0;
+            if (String.Compare(txtPassW.Text.ToString().Trim(), oldPassword.Trim(), true) != 0) MessageBox.Show("Mật khẩu không đúng!"); else f = 0;
             if (txtPassW.Text == "") MessageBox.Show("Chưa nhập mật khẩu"); else a = 0;
             if (txtNewPass.Text == "") MessageBox.Show("Chưa nhập mật khẩu mới"); else b = 0;
             if (txtNewPass.Text == txtPassW.Text) MessageBox.Show("Mật khẩu trùng với mật khẩu cũ"); else c = 0;

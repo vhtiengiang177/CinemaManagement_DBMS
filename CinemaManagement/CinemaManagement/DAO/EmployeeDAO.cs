@@ -50,10 +50,10 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public int editInfoEmployee(Employee emp)
         {
-            string query = "exec sp_updateInforEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee ";
+            string query = "exec sp_updateInforEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee , @state_employee ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,
                 emp.Birthday_employee, emp.Sex_employeeloyee, emp.Identitycard_employee, emp.Phone_employee,
-                emp.Email_employee, emp.Address_employee, emp.Salary_employee, emp.Id_typeemployee, emp.Id_cinema, emp.Img_employee});
+                emp.Email_employee, emp.Address_employee, emp.Salary_employee, emp.Id_typeemployee, emp.Id_cinema, emp.Img_employee, emp.State_employee});
 
         }
 
@@ -76,10 +76,10 @@ namespace CinemaManagement.DAO
         /// <returns></returns>
         public bool insertEmployee(Employee emp)
         {
-            string query = "exec sp_InsertInfoEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee  ";
+            string query = "exec sp_InsertInfoEmployee @id_employee , @name_employee , @birthday_employee , @sex_employee , @identitycard_employee , @phone_employee , @email_employee , @address_employee , @salary_employee , @id_typeemployee , @id_cinema , @img_employee , @state_employee  ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { emp.Id_employee, emp.Name_employee,
                 emp.Birthday_employee, emp.Sex_employeeloyee, emp.Identitycard_employee, emp.Phone_employee,
-                emp.Email_employee, emp.Address_employee, emp.Salary_employee, emp.Id_typeemployee, emp.Id_cinema, emp.Img_employee}) > 0;
+                emp.Email_employee, emp.Address_employee, emp.Salary_employee, emp.Id_typeemployee, emp.Id_cinema, emp.Img_employee, emp.State_employee}) > 0;
 
         }
 
@@ -246,6 +246,17 @@ namespace CinemaManagement.DAO
         {
             string query = "select name_employee from Employee where id_employee = @id ";
             return DataProvider.Instance.ExecuteScalar(query , new object[] { id });
+        }
+
+        /// <summary>
+        /// Lấy thông tin 1 nhân viên
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DataTable getAnEmployee(string id)
+        {
+            string query = "EXEC sp_GetAnEmployee @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
     }
 }

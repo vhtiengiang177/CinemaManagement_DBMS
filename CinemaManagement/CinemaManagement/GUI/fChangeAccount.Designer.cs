@@ -63,20 +63,20 @@ namespace CinemaManagement.GUI
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.txtNewPass);
             this.pnlMain.Location = new System.Drawing.Point(3, 2);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(608, 326);
+            this.pnlMain.Size = new System.Drawing.Size(684, 408);
             this.pnlMain.TabIndex = 1;
             // 
             // ckbShowAgainPass
             // 
             this.ckbShowAgainPass.AutoSize = true;
-            this.ckbShowAgainPass.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbShowAgainPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbShowAgainPass.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ckbShowAgainPass.Location = new System.Drawing.Point(483, 180);
+            this.ckbShowAgainPass.Location = new System.Drawing.Point(544, 219);
             this.ckbShowAgainPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ckbShowAgainPass.Name = "ckbShowAgainPass";
-            this.ckbShowAgainPass.Size = new System.Drawing.Size(64, 23);
+            this.ckbShowAgainPass.Size = new System.Drawing.Size(73, 26);
             this.ckbShowAgainPass.TabIndex = 38;
             this.ckbShowAgainPass.Text = "Hiện";
             this.ckbShowAgainPass.UseVisualStyleBackColor = true;
@@ -85,12 +85,12 @@ namespace CinemaManagement.GUI
             // ckbShowNewPass
             // 
             this.ckbShowNewPass.AutoSize = true;
-            this.ckbShowNewPass.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbShowNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbShowNewPass.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ckbShowNewPass.Location = new System.Drawing.Point(483, 142);
+            this.ckbShowNewPass.Location = new System.Drawing.Point(544, 172);
             this.ckbShowNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ckbShowNewPass.Name = "ckbShowNewPass";
-            this.ckbShowNewPass.Size = new System.Drawing.Size(64, 23);
+            this.ckbShowNewPass.Size = new System.Drawing.Size(73, 26);
             this.ckbShowNewPass.TabIndex = 37;
             this.ckbShowNewPass.Text = "Hiện";
             this.ckbShowNewPass.UseVisualStyleBackColor = true;
@@ -99,12 +99,12 @@ namespace CinemaManagement.GUI
             // ckShowPassOld
             // 
             this.ckShowPassOld.AutoSize = true;
-            this.ckShowPassOld.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckShowPassOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckShowPassOld.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ckShowPassOld.Location = new System.Drawing.Point(483, 103);
+            this.ckShowPassOld.Location = new System.Drawing.Point(544, 123);
             this.ckShowPassOld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ckShowPassOld.Name = "ckShowPassOld";
-            this.ckShowPassOld.Size = new System.Drawing.Size(64, 23);
+            this.ckShowPassOld.Size = new System.Drawing.Size(73, 26);
             this.ckShowPassOld.TabIndex = 36;
             this.ckShowPassOld.Text = "Hiện";
             this.ckShowPassOld.UseVisualStyleBackColor = true;
@@ -112,15 +112,15 @@ namespace CinemaManagement.GUI
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.Color.Coral;
+            this.btnHuy.BackColor = System.Drawing.Color.MistyRose;
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnHuy.Location = new System.Drawing.Point(439, 229);
+            this.btnHuy.Location = new System.Drawing.Point(494, 286);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(113, 34);
+            this.btnHuy.Size = new System.Drawing.Size(113, 39);
             this.btnHuy.TabIndex = 35;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -128,15 +128,15 @@ namespace CinemaManagement.GUI
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.Coral;
+            this.btnCapNhat.BackColor = System.Drawing.Color.LightCoral;
             this.btnCapNhat.FlatAppearance.BorderSize = 0;
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnCapNhat.Location = new System.Drawing.Point(307, 229);
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCapNhat.Location = new System.Drawing.Point(345, 286);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(113, 34);
+            this.btnCapNhat.Size = new System.Drawing.Size(113, 39);
             this.btnCapNhat.TabIndex = 34;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
@@ -145,94 +145,95 @@ namespace CinemaManagement.GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(37, 63);
+            this.label4.Location = new System.Drawing.Point(72, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 19);
+            this.label4.Size = new System.Drawing.Size(108, 25);
             this.label4.TabIndex = 33;
-            this.label4.Text = "Tên Đăng Nhập";
+            this.label4.Text = "Tài khoản";
             // 
             // txtTDN
             // 
-            this.txtTDN.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTDN.Location = new System.Drawing.Point(213, 63);
+            this.txtTDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTDN.Location = new System.Drawing.Point(240, 79);
             this.txtTDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTDN.Name = "txtTDN";
             this.txtTDN.ReadOnly = true;
-            this.txtTDN.Size = new System.Drawing.Size(251, 29);
-            this.txtTDN.TabIndex = 32;
+            this.txtTDN.Size = new System.Drawing.Size(282, 30);
+            this.txtTDN.TabIndex = 24;
             // 
             // txtAgainPass
             // 
-            this.txtAgainPass.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAgainPass.Location = new System.Drawing.Point(213, 175);
+            this.txtAgainPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgainPass.Location = new System.Drawing.Point(240, 219);
             this.txtAgainPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAgainPass.Name = "txtAgainPass";
-            this.txtAgainPass.Size = new System.Drawing.Size(251, 29);
+            this.txtAgainPass.Size = new System.Drawing.Size(282, 30);
             this.txtAgainPass.TabIndex = 31;
             this.txtAgainPass.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(37, 185);
+            this.label3.Location = new System.Drawing.Point(9, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 19);
+            this.label3.Size = new System.Drawing.Size(185, 25);
             this.label3.TabIndex = 30;
             this.label3.Text = "Nhập lại mật khẩu";
             // 
             // txtPassW
             // 
-            this.txtPassW.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassW.Location = new System.Drawing.Point(213, 103);
+            this.txtPassW.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassW.Location = new System.Drawing.Point(240, 129);
             this.txtPassW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassW.Name = "txtPassW";
-            this.txtPassW.Size = new System.Drawing.Size(251, 29);
-            this.txtPassW.TabIndex = 29;
+            this.txtPassW.Size = new System.Drawing.Size(282, 30);
+            this.txtPassW.TabIndex = 26;
             this.txtPassW.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(37, 142);
+            this.label2.Location = new System.Drawing.Point(42, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 19);
+            this.label2.Size = new System.Drawing.Size(141, 25);
             this.label2.TabIndex = 28;
             this.label2.Text = "Mật khẩu mới";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(37, 103);
+            this.label1.Location = new System.Drawing.Point(50, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 19);
+            this.label1.Size = new System.Drawing.Size(130, 25);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Mật khẩu";
+            this.label1.Text = "Mật khẩu cũ";
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPass.Location = new System.Drawing.Point(213, 140);
+            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.Location = new System.Drawing.Point(240, 175);
             this.txtNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(251, 29);
-            this.txtNewPass.TabIndex = 26;
+            this.txtNewPass.Size = new System.Drawing.Size(282, 30);
+            this.txtNewPass.TabIndex = 29;
             this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // fChangeAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.btnCapNhat;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 334);
+            this.ClientSize = new System.Drawing.Size(679, 407);
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fChangeAccount";
             this.Text = "Thay đổi tài khoản";
             this.pnlMain.ResumeLayout(false);

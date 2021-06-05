@@ -39,7 +39,7 @@ namespace CinemaManagement.GUI
                 fMain.idCinemaCurrent =(string)EmployeeDAO.Instance.getIdCinema(idEmp);
             //MessageBox.Show(fMain.idCinemaCurrent);
 
-            DataTable dtEmp = EmployeeDAO.Instance.search_IDEmployee(fMain.idEmployeeMain);
+            DataTable dtEmp = EmployeeDAO.Instance.getAnEmployee(fMain.idEmployeeMain);
             lbIdEmployeeMain.Text = dtEmp.Rows[0][0].ToString();
             lbNameEmployeeMain.Text = dtEmp.Rows[0][1].ToString();
 
@@ -133,7 +133,8 @@ namespace CinemaManagement.GUI
         private void trgEmpManager_Click(object sender, EventArgs e)
         {
             if (typeEmp == 4 || typeEmp == 3) //  tùy theo nếu là admin thì quản lý tất cả rạp, còn người quản lý rạp quản lý nhân viên của rạp mình
-                openAchildForm(new fEmployee(typeEmp, idCinemaCurrent));
+                //openAchildForm(new fEmployee(typeEmp, idCinemaCurrent));
+                openAchildForm(new fEmployee_New(typeEmp, idCinemaCurrent));
         }
 
         private void trgShiftManager_Click(object sender, EventArgs e)

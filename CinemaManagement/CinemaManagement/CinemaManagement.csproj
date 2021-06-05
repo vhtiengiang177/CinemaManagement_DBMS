@@ -370,6 +370,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ExcelTemplates\" />
     <Folder Include="Excel_Statistic\" />
     <Folder Include="Resources\" />
   </ItemGroup>

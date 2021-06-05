@@ -42,6 +42,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable loadDataMovie()
+        {
+            string query = "SELECT * FROM Movie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public DataTable showMovieActive()
         {
             string query = "SELECT * FROM v_ShowMovieActive";

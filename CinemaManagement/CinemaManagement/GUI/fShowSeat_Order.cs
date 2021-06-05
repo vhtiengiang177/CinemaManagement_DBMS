@@ -122,10 +122,18 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
-            //this.Hide();
-            f.Show();
-            f.FormClosed += F_FormClosed;
+            if (this.ListSeat.Count==0)
+            {
+                MessageBox.Show("Chưa chọn ghế");
+            }
+            else
+            {
+                fShowPromotion_Order f = new fShowPromotion_Order(this.Showtimes, this.ListSeat);
+                //this.Hide();
+                f.Show();
+                f.FormClosed += F_FormClosed;
+            }
+            
         }
 
         private void F_FormClosed(object sender, FormClosedEventArgs e)

@@ -31,14 +31,14 @@ namespace CinemaManagement.DAO
         public bool AddCustomer(Customer cus, string id)
         {
             string query = "exec sp_InsertCustomer @id_customer , @lname_customer , @fname_customer , @birthday_customer , @sex_customer , @identitycard_customer , @phone_customer , @email_customer , @address_customer , @point_customer , @id_typecustomer , @qr_customer ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, "" }) > 0;
         }
 
 
         public bool UpdateCustomer(Customer cus)
         {
             string query = "exec sp_UpdateCustomer @id_customer , @lname_customer , @fname_customer , @birthday_customer , @sex_customer , @identitycard_customer , @phone_customer , @email_customer , @address_customer , @point_customer , @id_typecustomer , @qr_customer ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, cus.Qr_Customer }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.Id_Customer, cus.Lname_Customer, cus.Fname_Customer, Convert.ToDateTime(cus.Birthday_Customer), cus.Sex_Customer, cus.Identitycard_Customer, cus.Phone_Customer, cus.Email_Customer, cus.Address_Customer, Convert.ToInt32(cus.Point_Customer), cus.Id_TypeCustomer, "" }) > 0;
         }
 
         public bool DeleteCustomer(Customer cus)

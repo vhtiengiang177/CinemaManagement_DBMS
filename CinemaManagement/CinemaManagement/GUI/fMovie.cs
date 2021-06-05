@@ -386,5 +386,10 @@ namespace CinemaManagement.GUI
         {
             loadData();
         }
+
+        private void dgvMovie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

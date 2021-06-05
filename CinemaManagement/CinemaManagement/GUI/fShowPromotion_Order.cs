@@ -92,7 +92,7 @@ namespace CinemaManagement.GUI
         private void loadPromotion()
         {
             DataTable dt = new DataTable();
-            dt = PromotionDAO.Instance.LoadData();
+            dt = PromotionDAO.Instance.LoadDataPR();
             cboPromotion.DataSource = dt;
             cboPromotion.DisplayMember= dt.Columns[1].ToString();
             cboPromotion.ValueMember= dt.Columns[0].ToString();

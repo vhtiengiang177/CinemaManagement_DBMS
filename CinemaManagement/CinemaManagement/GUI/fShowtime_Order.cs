@@ -195,9 +195,16 @@ namespace CinemaManagement.GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            fShowSeat_Order f = new fShowSeat_Order(this.stSelect);
-            f.Show();
-            f.FormClosed += F_FormClosed;
+            if (this.stSelect.Starttime_shiftshow==null || this.stSelect.Id_room ==null)
+            {
+                MessageBox.Show("Chưa chọn thời gian chiếu");
+            }
+            else {
+                fShowSeat_Order f = new fShowSeat_Order(this.stSelect);
+                f.Show();
+                f.FormClosed += F_FormClosed;
+            }
+            
         }
 
         private void F_FormClosed(object sender, FormClosedEventArgs e)

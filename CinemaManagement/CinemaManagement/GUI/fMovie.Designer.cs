@@ -38,6 +38,9 @@
             this.txtNameMovie = new System.Windows.Forms.TextBox();
             this.txtDirectorMovie = new System.Windows.Forms.TextBox();
             this.cboCategoryMovie = new System.Windows.Forms.ComboBox();
+            this.categoryMovieBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryMovieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cinemaDBMSDataSet = new CinemaManagement.cinemaDBMSDataSet();
             this.lblStateMovie = new System.Windows.Forms.Label();
             this.rdoActiveMovie = new System.Windows.Forms.RadioButton();
             this.rdoInactiveMovie = new System.Windows.Forms.RadioButton();
@@ -66,11 +69,11 @@
             this.dgvMovie = new System.Windows.Forms.DataGridView();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.categoryMovieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cinemaDBMSDataSet = new CinemaManagement.cinemaDBMSDataSet();
             this.categoryMovieTableAdapter = new CinemaManagement.cinemaDBMSDataSetTableAdapters.CategoryMovieTableAdapter();
-            this.categoryMovieBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splcBody)).BeginInit();
             this.splcBody.Panel1.SuspendLayout();
             this.splcBody.Panel2.SuspendLayout();
@@ -84,9 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearchMovie
@@ -178,6 +178,21 @@
             this.cboCategoryMovie.TabIndex = 5;
             this.toolTip.SetToolTip(this.cboCategoryMovie, "Chọn thể loại phim.");
             this.cboCategoryMovie.ValueMember = "id_categorymovie";
+            // 
+            // categoryMovieBindingSource1
+            // 
+            this.categoryMovieBindingSource1.DataMember = "CategoryMovie";
+            this.categoryMovieBindingSource1.DataSource = this.categoryMovieBindingSource;
+            // 
+            // categoryMovieBindingSource
+            // 
+            this.categoryMovieBindingSource.DataSource = this.cinemaDBMSDataSet;
+            this.categoryMovieBindingSource.Position = 0;
+            // 
+            // cinemaDBMSDataSet
+            // 
+            this.cinemaDBMSDataSet.DataSetName = "cinemaDBMSDataSet";
+            this.cinemaDBMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblStateMovie
             // 
@@ -548,6 +563,7 @@
             this.dgvMovie.Size = new System.Drawing.Size(566, 538);
             this.dgvMovie.TabIndex = 0;
             this.dgvMovie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovie_CellClick);
+            this.dgvMovie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovie_CellContentClick);
             // 
             // toolTip
             // 
@@ -558,24 +574,9 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // categoryMovieBindingSource
-            // 
-            this.categoryMovieBindingSource.DataSource = this.cinemaDBMSDataSet;
-            this.categoryMovieBindingSource.Position = 0;
-            // 
-            // cinemaDBMSDataSet
-            // 
-            this.cinemaDBMSDataSet.DataSetName = "cinemaDBMSDataSet";
-            this.cinemaDBMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // categoryMovieTableAdapter
             // 
             this.categoryMovieTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoryMovieBindingSource1
-            // 
-            this.categoryMovieBindingSource1.DataMember = "CategoryMovie";
-            this.categoryMovieBindingSource1.DataSource = this.categoryMovieBindingSource;
             // 
             // fMovie
             // 
@@ -592,6 +593,9 @@
             this.Text = "fMovie";
             this.Load += new System.EventHandler(this.fMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImageMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();
             this.splcBody.Panel1.ResumeLayout(false);
             this.splcBody.Panel1.PerformLayout();
             this.splcBody.Panel2.ResumeLayout(false);
@@ -608,9 +612,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cinemaDBMSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryMovieBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

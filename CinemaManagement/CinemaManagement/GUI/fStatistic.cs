@@ -24,60 +24,223 @@ namespace CinemaManagement.GUI
         public fStatistic()
         {
             InitializeComponent();
-            
-            load();
-            
-            lbNotice.Show();
-            cboYear.Enabled = false;
-            cboCinema.Enabled = false;
-            cboTimeStatistic.Enabled = false;
-            cboTimeStatistic.ResetText();
-            cboYear.ResetText();
-            cboCinema.ResetText();
-
-          
+            loadAll();
+            blockAll();
 
         }
 
 
         /// <summary>
-        /// Load các thông tin thống kê
+        /// Hàm load doanh số của toàn hệ thống trong 1 năm
         /// </summary>
-        public void load()
+        public void loadAll()
         {
-
-            //load danh sách rạp của hệ thống
-            DataTable cm = new DataTable();
-            cm = CinemaDAO.Instance.loadCinema();
-            cboCinema.DataSource = cm;
-            cboCinema.ValueMember = cm.Columns[0].ToString();
-            cboCinema.DisplayMember = cm.Columns[1].ToString();
-
-            
-
-
-            //load thông tin chung của hệ thống
             DataTable st = new DataTable();
             st = StatisticDAO.Instance.loadAll();
-            lbmovie.Text = StatisticDAO.Instance.countMovie().Rows.Count.ToString();
-            int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-            int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-            lbCinema.Text = cm.Rows.Count.ToString();
+            int count = st.Rows.Count;
+            dgvStatistic.DataSource = st;
 
 
-            //load danh sách năm của hệ thống
-            DataTable dt = new DataTable();
-            dt = StatisticDAO.Instance.loadYear();
-            cboYear.DataSource = dt;
-            cboYear.DisplayMember = dt.Columns[0].ToString();
-            cboYear.ValueMember = dt.Columns[0].ToString();
+            //load danh sách thể loại phim
+            DataTable cmv = new DataTable();
+            cmv = CategoryMovieDAO.Instance.loadDataCategoryMovie();
+            cboChooseCategory.DataSource = cmv;
+            cboChooseCategory.ValueMember = cmv.Columns[0].ToString();
+            cboChooseCategory.DisplayMember = cmv.Columns[1].ToString();
 
-            
+            //load thông tin chung của hệ thống
+            DataTable st1 = new DataTable();
+            st1 = StatisticDAO.Instance.loadAll();
+            //lbmovie.Text = StatisticDAO.Instance.countMovie().Rows.Count.ToString();
+            int sum = st1.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+            int pro = st1.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+            //lbCinema.Text = cm.Rows.Count.ToString();
+        }
+        public void blockAll()
+        { 
+            cboChooseCategory.Enabled = false;
+            cboChooseCategory.ResetText();
+            cboChooseMovie.Enabled = false;
+            cboChooseMovie.ResetText();
+            dtpFrom.Enabled = false;
+            dtpTo.Enabled = false;
+            btnFilter.Enabled = false;
+            rbAll.Enabled = false;
+            rbMovie.Enabled = false;
+            rbTime.Enabled = false;
+            loaddgv();
 
 
         }
 
-        
+        public void loaddgv()
+        {
+            DataTable st = new DataTable();
+            st = StatisticDAO.Instance.loadAll();
+            dgvStatistic.DataSource = st;
+            int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+            int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+            int all = st.AsEnumerable().Sum(row => row.Field<int>("Tong"));
+            int count = st.AsEnumerable().Sum(row => row.Field<int>("SoLuong"));
+            lbTotalReal.Text = sum.ToString() + " VNĐ";
+            lbTotalPro.Text = pro.ToString() + " VNĐ";
+            lbTotalAll.Text = all.ToString() + " VNĐ";
+            lbCount.Text = count.ToString() + " vé";
+        }
+
+
+        /// <summary>
+        /// load Thống kê toàn hệ thống
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtCtrl_Click(object sender, EventArgs e)
+        {
+            rbTime.Checked = false;
+            rbMovie.Checked = false;
+            rbAll.Checked = false;
+
+            btnFilter.Enabled = true;
+            rbAll.Enabled = true;
+            rbMovie.Enabled = true;
+            rbTime.Enabled = true;
+
+            DataTable st = new DataTable();
+            st = StatisticDAO.Instance.loadAll();
+
+            //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
+            int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+            int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+            lbTotalReal.Text = sum.ToString()+" VNĐ";
+            lbTotalPro.Text = pro.ToString()+" VNĐ";
+
+        }
+
+
+        private void btnOrgan_Click(object sender, EventArgs e)
+        {
+            blockAll();
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+        }
+
+
+
+        private void rbTime_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFrom.Enabled = true;
+            dtpFrom.Value = DateTime.Now.Date;
+            dtpTo.Value = DateTime.Now.Date;
+            dtpTo.Enabled = true;
+            cboChooseCategory.Enabled = false;
+            cboChooseMovie.Enabled = false;
+            loaddgv();
+        }
+
+        private void rbMovie_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFrom.Enabled = false;
+            dtpTo.Enabled = false;
+            dtpFrom.Value = DateTime.Now.Date;
+            dtpTo.Value = DateTime.Now.Date;
+            cboChooseCategory.Enabled = true;
+
+            cboChooseMovie.Enabled = true;
+            cboChooseCategory.ResetText();
+            cboChooseMovie.ResetText();
+            loaddgv();
+        }
+
+        private void rbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFrom.Enabled = true;
+            dtpTo.Enabled = true;
+            cboChooseCategory.Enabled = true;
+            dtpFrom.Value = DateTime.Now.Date;
+            dtpTo.Value = DateTime.Now.Date;
+
+            cboChooseMovie.Enabled = true;
+            cboChooseCategory.ResetText();
+            cboChooseMovie.ResetText();
+            loaddgv();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable st = new DataTable();
+                string datefrom = dtpFrom.Value.ToString("yyyy/MM/dd");
+                string dateto = dtpTo.Value.ToString("yyyy/MM/dd");
+                if (rbTime.Checked)
+                {
+
+                    
+                    st = StatisticDAO.Instance.loadTotalByTime(datefrom, dateto);
+
+                }
+                if (rbMovie.Checked)
+                {
+                    if (cboChooseMovie.Text == "" && cboChooseCategory.Text == "")
+                    {
+                        MessageBox.Show("Bạn chưa chọn thể loại phim!");
+
+
+                    }
+
+                    if (cboChooseMovie.Text == "" && cboChooseCategory.Text != "")
+                    {
+                        st = StatisticDAO.Instance.loadTotalByCategory(cboChooseCategory.SelectedValue.ToString());
+
+                    }
+                    if (cboChooseMovie.Text != "" && cboChooseCategory.Text != "")
+                    {
+                        st = StatisticDAO.Instance.loadTotalByMovie(cboChooseMovie.SelectedValue.ToString());
+
+                    }
+                }
+
+                if (rbAll.Checked)
+                {
+                    if (cboChooseMovie.Text == "" && cboChooseCategory.Text == "")
+                    {
+                        MessageBox.Show("Bạn chưa chọn thể loại phim!");
+
+
+                    }
+
+                    if (cboChooseMovie.Text == "" && cboChooseCategory.Text != "")
+                    {
+                        st = StatisticDAO.Instance.loadTotalByTimeByCategory(datefrom,dateto,cboChooseCategory.SelectedValue.ToString());
+
+                    }
+                    if (cboChooseMovie.Text != "" && cboChooseCategory.Text != "")
+                    {
+                        st = StatisticDAO.Instance.loadTotalByTimeByMovie(datefrom,dateto,cboChooseMovie.SelectedValue.ToString());
+
+                    }
+                }
+
+
+                dgvStatistic.DataSource = st;
+                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
+                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
+                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
+                int all = st.AsEnumerable().Sum(row => row.Field<int>("Tong"));
+                int count = st.AsEnumerable().Sum(row => row.Field<int>("SoLuong"));
+                lbTotalReal.Text = sum.ToString() + " VNĐ";
+                lbTotalPro.Text = pro.ToString() + " VNĐ";
+                lbTotalAll.Text = all.ToString() + " VNĐ";
+                lbCount.Text = count.ToString() + " vé";
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không có dữ liệu tìm kiếm",ex.Message);
+                blockAll();
+            }
+        }
 
         //Xuất file Excel
 
@@ -116,203 +279,61 @@ namespace CinemaManagement.GUI
         //Lưu file Excel
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-            string str = now.ToString();
-            str = RemoveSpecialCharacters(str);
-
-            export2Excel(dgvStatistic, @"..\..\Excel_Statistic\", "xuatfileExcel_" + str);
-            MessageBox.Show("Đã xuất file excel thành công!");
-        }
-
-
-        /// <summary>
-        /// Hàm load doanh số của toàn hệ thống trong 1 năm
-        /// </summary>
-        public void loadAll()
-        {
-            DataTable st = new DataTable();
-            st = StatisticDAO.Instance.loadAll();
-            dgvStatistic.DataSource = st;
-
-
-        }
-
-       
-        
-        
-
-        int dem = 0;
-        private void cboTimeStatistic_SelectedIndexChanged(object sender, EventArgs e)
-        {
-             dem = cboTimeStatistic.SelectedIndex;
-            if(dem>0)
+            try
             {
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.countTotalOnCinemabyMonthbyYear(cboYear.SelectedValue.ToString(), dem.ToString(), cboCinema.SelectedValue.ToString());
-                dgvStatistic.DataSource = st;
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
-            }
-            else
-            {
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.loadOnCinemabyYear(cboCinema.SelectedValue.ToString(), cboYear.SelectedValue.ToString());
-                dgvStatistic.DataSource = st;
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
-            }
+                DateTime now = DateTime.Now;
+                string str = now.ToString();
+                str = RemoveSpecialCharacters(str);
 
+                export2Excel(dgvStatistic, @"D:\Excel_Statistic\", "xuatfileExcel_" + str);
+                MessageBox.Show("Đã xuất file excel thành công!");
+            }
+            catch
+            {
+                MessageBox.Show("Không xuất file excel được!");
+            }
             
+           
+        }
+
+        private void cboChooseCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Load  phim theo danh mục
+            if (ShowtimesDAO.Instance.loadMovie(cboChooseCategory.SelectedValue.ToString()).Rows.Count > 0)
+            {
+
+                DataTable dt1 = new DataTable();
+                dt1 = ShowtimesDAO.Instance.loadMovie(cboChooseCategory.SelectedValue.ToString());
+
+                cboChooseMovie.DataSource = dt1;
+                cboChooseMovie.DisplayMember = dt1.Columns[1].ToString();
+                cboChooseMovie.ValueMember = dt1.Columns[0].ToString();
+
+            }
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFrom.Value.Date>dtpTo.Value.Date )
+            {
+                MessageBox.Show("Vui lòng chọn thời gian bắt đầu nhỏ hơn hoặc bằng thời gian kết thúc ");
+                dtpFrom.Value = DateTime.Now;
+            }
             
         }
 
-        //khi loa loại danh sách thì xóa text cboCinema
-        private void cboCinema_TextChanged(object sender, EventArgs e)
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-            loadAll();
-            DataTable st = new DataTable();
-            st = StatisticDAO.Instance.loadAll();
-            //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-            int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-            int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-            lbTotalReal.Text = sum.ToString(); 
-            lbTotalPro.Text =  pro.ToString();
-
-        }
-
-        private void cboCinema_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lbNotice.Hide();
-
-            if (cboYear.SelectedItem != null && cboTimeStatistic.SelectedItem == null) //doanh số của rạp được chọn qua  năm được chọn
+            if (dtpFrom.Value.Date > dtpTo.Value.Date)
             {
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.loadOnCinemabyYear(cboCinema.SelectedValue.ToString(), cboYear.SelectedValue.ToString());
-                dgvStatistic.DataSource = st;
-
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
+                MessageBox.Show("Vui lòng chọn thời gian kết thúc lớn hơn hoặc bằng thời gian bắt đầu ");
+                dtpTo.Value = DateTime.Now;
             }
-        }
-
-        /// <summary>
-        /// load Thống kê toàn hệ thống
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtCtrl_Click(object sender, EventArgs e)
-        {
-            lbNotice.Hide();
-            cboYear.Enabled = true;
-            cboCinema.Enabled = true;
-            cboTimeStatistic.Enabled = true;
-
-            DataTable st = new DataTable();
-            st = StatisticDAO.Instance.loadAll();
-
-            //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-            int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-            int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-            lbTotalReal.Text = sum.ToString();
-            lbTotalPro.Text = pro.ToString();
-
-        }
-
-        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cboTimeStatistic.ResetText();
-
-            if (cboCinema.Text != "")
-            {
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.loadOnCinema(cboCinema.SelectedValue.ToString());
-                dgvStatistic.DataSource = st;
-
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
-
-            }
-            else
-            {
-                lbNotice.Text = "THỐNG KÊ DOANH SỐ TRONG NĂM " + cboYear.Text + " CỦA HỆ THỐNG";
-                lbNotice.Show();
-
-                DataTable st = new DataTable();
-                st = StatisticDAO.Instance.countTotalbyYear(cboYear.Text);
-                dgvStatistic.DataSource = st;
-
-                //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-                int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-                int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-                lbTotalReal.Text = sum.ToString();
-                lbTotalPro.Text = pro.ToString();
-            }
-
-        }
-
-        private void btnOrgan_Click(object sender, EventArgs e)
-        {
-            lbNotice.Show();
-            cboYear.Enabled = false;
-            cboCinema.Enabled = false;
-            cboTimeStatistic.Enabled = false;
-            cboTimeStatistic.ResetText();
-            cboYear.ResetText();
-            cboCinema.ResetText();
-        }
-
-        private void cboYear_TextChanged(object sender, EventArgs e)
-        {
-            //cboTimeStatistic.ResetText();
-            
-            //if (cboCinema.Text !="")
+            //if (dtpTo.Value.Date > DateTime.Now.Date)
             //{
-            //    DataTable st = new DataTable();
-            //    st = StatisticDAO.Instance.loadOnCinema(cboCinema.SelectedValue.ToString());
-            //    dgvStatistic.DataSource = st;
-            //    //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-            //    int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-            //    int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-            //    lbTotalReal.Text = sum.ToString();
-            //    lbTotalPro.Text = pro.ToString();
-
+            //    MessageBox.Show("Vui lòng chọn thời gian kết thúc nhỏ hơn hoặc bằng thời gian hiện tại");
+            //    dtpTo.Value = DateTime.Now;
             //}
-            //else
-            //{
-            //    lbNotice.Text = "THỐNG KÊ DOANH SỐ TRONG NĂM " + cboYear.Text + " CỦA HỆ THỐNG";
-            //    lbNotice.Show();
-            //    DataTable st = new DataTable();
-            //    st = StatisticDAO.Instance.countTotalbyYear(cboYear.Text);
-            //    dgvStatistic.DataSource = st;
-            //    //load thông tin tổng doanh só thực và tổng giảm khuyến mãi
-            //    int sum = st.AsEnumerable().Sum(row => row.Field<int>("TongThu"));
-            //    int pro = st.AsEnumerable().Sum(row => row.Field<int>("TongGiam"));
-            //    lbTotalReal.Text = sum.ToString();
-            //    lbTotalPro.Text = pro.ToString();
-            //}
-            
         }
-
-        
-        
-
-
-
-
-
-        
     }
 }

@@ -100,13 +100,22 @@ namespace CinemaManagement.GUI
             {
                 loadCustomer();
                 string id = createAutoIdCustomer();
-                if (CustomerDAO.Instance.AddCustomer(customer, id))
+                if(customer.Fname_Customer== "" || customer.Lname_Customer == "")
                 {
-                    MessageBox.Show("Thành công");
-                    loadData();
-                    reset();
+                    MessageBox.Show("Chưa nhập tên khách hàng");
+
                 }
-                else MessageBox.Show("Lỗi");
+                else
+                {
+                    if (CustomerDAO.Instance.AddCustomer(customer, id))
+                    {
+                        MessageBox.Show("Thành công");
+                        loadData();
+                        reset();
+                    }
+                    else MessageBox.Show("Lỗi");
+                }
+                
             }
             catch(SqlException ex )
             {

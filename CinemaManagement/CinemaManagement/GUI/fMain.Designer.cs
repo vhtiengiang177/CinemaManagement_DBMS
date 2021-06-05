@@ -175,7 +175,7 @@
             this.plOpenChildForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plOpenChildForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.plOpenChildForm.Location = new System.Drawing.Point(143, 31);
-            this.plOpenChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plOpenChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.plOpenChildForm.MaximumSize = new System.Drawing.Size(1228, 841);
             this.plOpenChildForm.MinimumSize = new System.Drawing.Size(1228, 841);
             this.plOpenChildForm.Name = "plOpenChildForm";
@@ -192,7 +192,7 @@
             this.panel2.Controls.Add(this.picEmployeeMain);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 31);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 719);
             this.panel2.TabIndex = 0;
@@ -257,7 +257,7 @@
             this.picEmployeeMain.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picEmployeeMain.ErrorImage")));
             this.picEmployeeMain.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEmployeeMain.InitialImage")));
             this.picEmployeeMain.Location = new System.Drawing.Point(31, 27);
-            this.picEmployeeMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picEmployeeMain.Margin = new System.Windows.Forms.Padding(4);
             this.picEmployeeMain.Name = "picEmployeeMain";
             this.picEmployeeMain.Size = new System.Drawing.Size(201, 214);
             this.picEmployeeMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

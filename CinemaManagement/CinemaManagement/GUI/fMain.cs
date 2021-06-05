@@ -48,9 +48,9 @@ namespace CinemaManagement.GUI
             else
                 picEmployeeMain.Image = picEmployeeMain.ErrorImage;
             trgCinemaManager.Visible = false;
-            trgEmpManager.Visible = false;
-            trpPromotionManager.Visible = false;
-            trpSatis.Visible = false;
+            trgEmpManager.Visible = true;
+            trpPromotionManager.Visible = true;
+            trpSatis.Visible = true;
             trgShiftManager.Visible = false;
             openAchildForm(new fShowMovie_Order(typeEmp, idEmployeeMain));
         }

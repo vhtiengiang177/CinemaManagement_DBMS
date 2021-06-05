@@ -104,6 +104,7 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSignIn
@@ -149,11 +150,11 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPassword.Location = new System.Drawing.Point(80, 18);
+            this.txtPassword.Location = new System.Drawing.Point(92, 18);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(160, 22);
+            this.txtPassword.Size = new System.Drawing.Size(148, 22);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -165,9 +166,9 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(5, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Password: ";
+            this.label2.Text = "Mật khẩu";
             // 
             // panel6
             // 
@@ -185,10 +186,10 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtUserName.Location = new System.Drawing.Point(80, 20);
+            this.txtUserName.Location = new System.Drawing.Point(92, 20);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(197, 22);
+            this.txtUserName.Size = new System.Drawing.Size(185, 22);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -199,9 +200,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Username: ";
+            this.label1.Text = "Tài khoản";
             // 
             // panel4
             // 

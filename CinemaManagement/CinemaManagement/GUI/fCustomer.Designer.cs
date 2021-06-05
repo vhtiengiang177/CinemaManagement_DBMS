@@ -52,6 +52,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.picReload = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.txtFNameCustomer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.picReload = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCustomer)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,6 +84,7 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,7 +94,6 @@
             this.panel15.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListCustomer
@@ -144,6 +144,7 @@
             this.txtIdCustomer.ReadOnly = true;
             this.txtIdCustomer.Size = new System.Drawing.Size(154, 22);
             this.txtIdCustomer.TabIndex = 1;
+            this.txtIdCustomer.Visible = false;
             // 
             // label1
             // 
@@ -156,6 +157,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
             // 
             // panel2
             // 
@@ -353,6 +355,18 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(577, 62);
             this.panel13.TabIndex = 32;
+            // 
+            // picReload
+            // 
+            this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
+            this.picReload.Location = new System.Drawing.Point(506, 17);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(37, 30);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReload.TabIndex = 44;
+            this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.picReload_Click);
             // 
             // label9
             // 
@@ -612,18 +626,6 @@
             this.label14.TabIndex = 17;
             this.label14.Text = "CINEMA BYTG";
             // 
-            // picReload
-            // 
-            this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReload.Image = ((System.Drawing.Image)(resources.GetObject("picReload.Image")));
-            this.picReload.Location = new System.Drawing.Point(506, 17);
-            this.picReload.Name = "picReload";
-            this.picReload.Size = new System.Drawing.Size(37, 30);
-            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picReload.TabIndex = 44;
-            this.picReload.TabStop = false;
-            this.picReload.Click += new System.EventHandler(this.picReload_Click);
-            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -653,6 +655,7 @@
             this.panel8.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -667,7 +670,6 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

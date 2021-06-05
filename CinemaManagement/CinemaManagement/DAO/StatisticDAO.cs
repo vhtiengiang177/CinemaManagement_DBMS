@@ -33,6 +33,40 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        //load doanh số theo thời gian
+        public DataTable loadTotalByTime(string datefrom,string dateto)
+        {
+            string query = "select* from fc_CalByTime( @datefrom , @dateto )"; 
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { datefrom, dateto });
+        }
+        
+
+        public DataTable loadTotalByCategory(string idcategory)
+        {
+            string query = "select* from fc_CalByCategory( @idCategory )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { idcategory});
+        }
+
+        public DataTable loadTotalByMovie(string idmovie)
+        {
+            string query = "select* from fc_CalByMovie( @idMovie )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { idmovie });
+        }
+
+        public DataTable loadTotalByTimeByCategory(string datefrom, string dateto,string idcategoty)
+        {
+            string query = "select* from fc_CalByTimeByCategory( @datefrom , @dateto , @idCategory )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { datefrom, dateto, idcategoty });
+        }
+
+
+        public DataTable loadTotalByTimeByMovie(string datefrom, string dateto, string idmovie)
+        {
+            string query = "select* from fc_CalByTimeByMovie( @datefrom , @dateto , @idMovie )";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { datefrom, dateto, idmovie });
+        }
+
+
 
         //load các năm hoạt động của hệ thống
         public DataTable loadYear()

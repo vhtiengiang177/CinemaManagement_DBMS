@@ -25,6 +25,13 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable LoadDataPR()
+        {
+            string query = "SELECT * FROM dbo.Promotion where id_promotion <>'pr02'";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+
         public bool addPromotion(string id, string name, string start, string end, string objects, double values)
         {
             string query = "exec sp_insertPromotion @id_promotion , @name_promotion , @starttime_promotion , @endtime_promotion , @object_promotion , @value_promotion ";

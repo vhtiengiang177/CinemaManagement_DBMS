@@ -38,6 +38,12 @@ namespace CinemaManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable loadDataCategoryMovie()
+        {
+            string query = "SELECT * FROM CategoryMovie";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         /// <summary>
         /// Sinh ID cho thể loại phim
         /// </summary>

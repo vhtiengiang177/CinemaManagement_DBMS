@@ -45,7 +45,10 @@ namespace CinemaManagement.DAO
         {
             string query = "select * from Ticket";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
+            //if (data.Rows.Count == 0)
+            //{
+            //    return "ti01"
+            //}
             return data.Rows[data.Rows.Count - 1][0].ToString();
         }
 

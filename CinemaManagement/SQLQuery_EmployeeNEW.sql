@@ -156,8 +156,8 @@ return select id_employee as N'Mã nhân viên',
 	@state_employee bit
 as 
 begin
-	insert into Employee (id_employee,name_employee,  birthday_employee, sex_employee, identitycard_employee, phone_employee, email_employee, address_employee, salary_employee, id_typeemployee, id_cinema, state_employee)
-	values(@id_employee,@name_employee,  @birthday_employee, @sex_employee, @identitycard_employee, @phone_employee,@email_employee, @address_employee, @salary_employee, @id_typeemployee, @id_cinema, @state_employee)
+	insert into Employee (id_employee,name_employee,  birthday_employee, sex_employee, identitycard_employee, phone_employee, email_employee, address_employee, salary_employee, id_typeemployee, id_cinema, img_employee , state_employee)
+	values(@id_employee,@name_employee,  @birthday_employee, @sex_employee, @identitycard_employee, @phone_employee,@email_employee, @address_employee, @salary_employee, @id_typeemployee, @id_cinema, @img_employee , @state_employee)
 end
 
 ALTER  PROC [dbo].[sp_updateInforEmployee]
@@ -220,10 +220,3 @@ begin
 			ROLLBACK TRAN
 		end
 end
-
-update Employee set phone_employee = '0383509600' where id_employee = 'em001'
-update Employee set phone_employee = '0383509601' where id_employee = 'em002'
-update Employee set phone_employee = '0383509602' where id_employee = 'em003'
-update Employee set phone_employee = '0383509603' where id_employee = 'em004'
-update Employee set phone_employee = '0383509604' where id_employee = 'em005'
-update Employee set phone_employee = '0383509605' where id_employee = 'em006'
